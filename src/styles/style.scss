@@ -1,4 +1,6 @@
-@import 'variables';
-@import 'basic';
+@import "variables";
+@import "basic";
+@import "mixin";
+@import "functions";
 
-@import '../components/catalog.scss';
+@import "../components/catalog.scss";
