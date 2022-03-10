@@ -1,3 +1,4 @@
+// Colors
 $color-text: #2c2d2e;
 $color-text-secondary: #919399;
 $color-link: #005bd1;
@@ -12,23 +13,32 @@ $color-bg-secondary: rgba(#00103d, 0.06);
 $color-bg-secondary--hover: rgba(#00103d, 0.1);
 $color-rating: #ffd400;
 $color-bg-warning: #fffce0;
-
+$color-white: #ffffff;
+// Shadows
 $depth2: 0px 4px 32px rgba(0, 16, 61, 0.16);
 $depth3: 0px 16px 48px rgba(0, 16, 61, 0.48);
 
+// Main sizes
 $minWidth: 280;
 $maxWidth: 1920;
 $mainFontSize: 15;
+$maxWidthContainer: 1700; // 1810 - 1640 где то в этом районе контейнеры :)
 
+//Z-Index
+$zIndexLight: 10;
+$zIndexNormal: 100;
+$zIndexHight: 1000;
+
+// Transitions
+$transitionLight: 0.3s;
+$transitionNormal: 0.5s;
+$transitionHight: 0.8s;
+
+// Breakpoints
 $breakpoints: (
-  sm: 375px,
-  md: 770px,
-  lg: 1280px,
-  xl: 1440px,
+  es: 280,
+  sm: 375,
+  md: 770,
+  lg: 1280,
+  xl: 1440,
 );
-
-@mixin media($breakpoint) {
-  @media (min-width: map-get($breakpoints, $breakpoint)) {
-    @content;
-  }
-}

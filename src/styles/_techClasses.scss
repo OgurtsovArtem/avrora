@@ -1,0 +1,43 @@
+.h1 {
+  @include adaptive-value("font-size", 72, 36, map-get($breakpoints, sm));
+  line-height: 0.8;
+}
+
+.h2 {
+  @include adaptive-value("font-size", 36, 32, map-get($breakpoints, sm));
+  line-height: 1;
+}
+
+.h3 {
+  font-weight: 600;
+  @include adaptive-value("font-size", 28, 24, map-get($breakpoints, sm));
+  line-height: 1;
+}
+
+.h4 {
+  font-weight: 600;
+  font-size: rem(18);
+  line-height: 100%;
+}
+
+.txt {
+  font-size: rem(15);
+  line-height: 1.6;
+}
+
+.note {
+  font-size: rem(14);
+  line-height: 1.4;
+}
+
+.dd {
+  font-size: rem(18);
+  line-height: 1.5;
+}
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: rem($maxWidthContainer);
+  padding: 0 rem(20);
+}

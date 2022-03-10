@@ -1,4 +1,6 @@
 @use "sass:math";
+// ________________ADAPTIVE VALUE________________
+
 /* |Как использовать|
 Передаем в функцию параметры
 1 - css Свойство ($value_name)
@@ -39,5 +41,13 @@
         #{$value_name}: $min_value + px;
       }
     }
+  }
+}
+
+// ________________MEDIA QUERIES________________
+
+@mixin media($breakpoint) {
+  @media (min-width: (map-get($breakpoints, $breakpoint)+px)) {
+    @content;
   }
 }
