@@ -1,0 +1,37 @@
+.main-intro {
+  &__list {
+    display: none;
+    @include media(md) {
+      display: block;
+    }
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -25%;
+      width: 125%;
+      height: rem(1);
+      background-color: $color-border;
+    }
+  }
+  &__list-item {
+    @include adaptive-value("padding-top", 27, 17, map-get($breakpoints, lg));
+    @include adaptive-value(
+      "padding-bottom",
+      27,
+      17,
+      map-get($breakpoints, lg)
+    );
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: -25%;
+      width: 125%;
+      height: rem(1);
+      background-color: $color-border;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+include ../../blocks/social-box/social-box
+include ../../blocks/main-intro-list/main-intro-list
+
+mixin main-intro
+    section.main-intro
+        div.main-intro__image-box
+            img.main-intro__image(src='/assets/images/intro/main-intro.jpg')
+        .main-intro__container.container
+            .main-intro__box
+                +main-intro-list(
+                    "Прямые кухни",
+                    "Угловые кухни",
+                    "П-образные кухни",
+                    "Маленькие кухни",
+                    "Кухни с барной стойкой",
+                    "Кухни с островом",
+                )
+                div.main-intro__title-box
+                    h1.main-intro__title.h1 Кухни на заказ <br> от производителя
+                    .main-intro__discount.h3
+                        p.main-intro__discount-number.main-intro__discount-number_accent -50%
+                        p.main-intro__discount-text скидки до конца месяца
+                +social-box({
+                    iconsName: ['vk', 'instagram', 'youtube'],
+                    className: "main-intro__social"
+                    })
