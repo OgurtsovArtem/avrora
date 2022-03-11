@@ -3,5 +3,5 @@ include ../../Ui-kit/icon/icon
 mixin social-box({iconsName, className})
     div(class= `${className} social-box`)
         each name in iconsName
-            div(class= `${className}-icon-container social-box__icon-container`)
+            div(class= `${className}-icon-container social-box__icon-container _hover-scale`)
                 +icon(name, "social-box__icon")

@@ -16,6 +16,7 @@
     }
   }
   &__list-item {
+    cursor: pointer;
     @include adaptive-value("padding-top", 27, 17, map-get($breakpoints, lg));
     @include adaptive-value(
       "padding-bottom",

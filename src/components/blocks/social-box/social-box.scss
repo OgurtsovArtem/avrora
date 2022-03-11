@@ -5,6 +5,7 @@
     @include adaptive-value("width", 60, 40, 0);
     @include adaptive-value("height", 60, 40, 0);
     border: rem(1.5) solid $color-primary;
+    cursor: pointer;
   }
   &__icon {
     width: 100%;
