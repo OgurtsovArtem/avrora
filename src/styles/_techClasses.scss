@@ -1,3 +1,4 @@
+// text
 .h1 {
   @include adaptive-value("font-size", 72, 36, map-get($breakpoints, sm));
   line-height: 0.8;
@@ -34,10 +35,38 @@
   font-size: rem(18);
   line-height: 1.5;
 }
-
+// Blocks
 .container {
   margin: 0 auto;
   width: 100%;
   max-width: rem($maxWidthContainer);
   padding: 0 rem(20);
+}
+// Animation-hover
+._hover-up {
+  transition: $transitionNormal;
+
+  &:hover {
+    @media (any-hover: hover) {
+      transform: translateY(rem(-4));
+      box-shadow: $depth2;
+    }
+  }
+}
+._hover-right {
+  transition: $transitionNormal;
+
+  &:hover {
+    @media (any-hover: hover) {
+      transform: translateX(rem(4));
+    }
+  }
+}
+._hover-scale {
+  transition: $transitionNormal;
+  &:hover {
+    @media (any-hover: hover) {
+      transform: scale(1.05);
+    }
+  }
 }
