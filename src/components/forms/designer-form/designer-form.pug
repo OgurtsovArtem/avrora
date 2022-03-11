@@ -1,0 +1,29 @@
+include ../../Ui-kit/input/input
+include ../../Ui-kit/textarea/textarea
+include ../../Ui-kit/button/button
+
+mixin designer-form()
+    form.designer-from(name="designer")
+        legend.designer-from__legend
+        +input({
+            id: "designer-form-name",
+            placeholder: "Представьтесь",
+            type: "text",
+            className: 'designer-from__input'
+        })
+        +input({
+            id: "designer-form-tel",
+            type:"tel",
+            placeholder: "Контактный номер телефона",
+            className: 'designer-from__input'
+        })
+        +textarea({
+            id: "designer-form-textarea",
+            placeholder: "Комментарий, например, удобное время замера...",
+            className: 'designer-from__textarea',
+
+        })
+        +button({
+            text: 'Пригласить дизайнера',
+            className: 'designer-from__button'
+        })

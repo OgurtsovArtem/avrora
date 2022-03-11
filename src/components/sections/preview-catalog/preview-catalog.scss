@@ -1,0 +1,102 @@
+.preview-catalog {
+  @include adaptive-value("margin-top", 154, 90, map-get($breakpoints, es));
+  @include adaptive-value("margin-bottom", 110, 41, map-get($breakpoints, es));
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: rem(10);
+    @include media(md) {
+      grid-template-columns: repeat(2, 1fr);
+      @include adaptive-value("column-gap", 53, 40, map-get($breakpoints, md));
+    }
+    @include media(xl) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  &__title {
+    font-family: "Philosopher";
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+    margin-top: rem(20);
+    @include adaptive-value(
+      "margin-bottom",
+      100,
+      33,
+      map-get($breakpoints, md)
+    );
+    @include adaptive-value("font-size", 36, 32, map-get($breakpoints, es));
+  }
+  &__column {
+    &_mobile-hidden {
+      display: none;
+      @include media(xl) {
+        display: block;
+      }
+    }
+    &_margin-top {
+      @include media(md) {
+        @include adaptive-value(
+          "margin-top",
+          100,
+          85,
+          map-get($breakpoints, md)
+        );
+      }
+    }
+  }
+  &__image-box {
+    position: relative;
+    cursor: pointer;
+    &:not(:last-child) {
+      margin-bottom: rem(10);
+      @include media(md) {
+        @include adaptive-value(
+          "margin-bottom",
+          65,
+          35,
+          map-get($breakpoints, md)
+        );
+      }
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0) 55.91%,
+        rgba(0, 0, 0, 0.6) 100%
+      );
+      filter: $depth2;
+    }
+  }
+  &__image {
+    object-fit: cover;
+    width: 100%;
+    @include adaptive-value("height", 500, 150, map-get($breakpoints, es));
+    @include media(md) {
+      height: rem(360);
+    }
+    @include media(xl) {
+      height: rem(333);
+    }
+    // @include adaptive-value("height", 360, 150, 0);
+  }
+
+  &__image-text {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%;
+    color: $color-white;
+    @include adaptive-value("font-size", 28, 16, map-get($breakpoints, es));
+    @include adaptive-value("margin-left", 62, 30, map-get($breakpoints, es));
+    @include adaptive-value("margin-bottom", 46, 25, map-get($breakpoints, es));
+  }
+}

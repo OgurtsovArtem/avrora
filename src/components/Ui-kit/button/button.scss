@@ -1,0 +1,11 @@
+.button {
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 600;
+  font-size: rem(14);
+  line-height: 143%;
+  text-transform: uppercase;
+  color: $color-white;
+  background-color: $color-primary;
+  padding: rem(25);
+}

@@ -1,0 +1,14 @@
+include ../../Ui-kit/learn-more-button/learn-more-button
+include ../../forms/designer-form/designer-form
+
+mixin form-section
+    section.form-section
+        .form-section__container.container
+            .form-section__description
+                h2.form-section__title
+                    span.form-section__title_accent  Бесплатный
+                    |  профессиональный замер у вас дома
+                p.form-section__text Наша компания предлагает уникальную услугу: наш дизайнер-замерщик приедет к вам с образцами материалов и дельными советами по обустройсву и планировке.
+                +learn-more-button('/production')
+            .form-section__from-box
+                +designer-form()

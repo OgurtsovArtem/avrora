@@ -1,0 +1,14 @@
+.form-section {
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  &__title {
+    &_accent {
+    }
+  }
+  &__text {
+  }
+  &__form-box {
+  }
+}

@@ -1,0 +1,5 @@
+mixin textarea({id, placeholder, name, cols="25", rows="6", className})
+        div(class= className ? `textarea ${className}`: 'textarea')
+            textarea.textarea__field(id=id, name=name || false, cols=cols, rows=rows)
+            label.textarea__label(for=id)
+                p.textarea__label-text=placeholder
