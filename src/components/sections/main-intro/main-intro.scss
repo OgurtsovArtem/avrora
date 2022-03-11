@@ -5,7 +5,8 @@
     top: 0;
     right: 0;
     width: 100%;
-    @include adaptive-value("height", 650, 429, map-get($breakpoints, sm));
+    @include adaptive-value("height", 850, 660, map-get($breakpoints, sm));
+    height: 100%;
     z-index: -1;
     height: 500px;
     &::after {
@@ -32,6 +33,7 @@
 
     @include media(md) {
       max-width: 53%;
+      bottom: 0;
       @include adaptive-value("width", 1014, 600, map-get($breakpoints, sm));
       @include adaptive-value("height", 835, 490, map-get($breakpoints, sm));
       &::after {
@@ -56,6 +58,11 @@
   }
   &__container {
     @include adaptive-value("padding-top", 256, 95, map-get($breakpoints, sm));
+    min-height: rem(640);
+    padding-bottom: rem(20);
+    @include media(md) {
+      min-height: auto;
+    }
   }
   &__box {
     @include media(md) {
@@ -86,12 +93,17 @@
 
   &__discount {
     display: flex;
-    align-items: center;
+
     justify-content: center;
+    flex-direction: column;
     margin: 0 auto;
     gap: rem(17);
     margin-top: rem(20);
-    max-width: rem(430);
+    max-width: rem(400);
+    @include media(sm) {
+      flex-direction: row;
+      align-items: center;
+    }
   }
   &__discount-number {
     &_accent {
