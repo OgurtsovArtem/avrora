@@ -8,23 +8,30 @@
 3* - минимальное значение свойства. ($min_value)
 4* - конечная миимальная ширина на которой свойство примет свое минимальное значение ($min_width),
     если величина меньше ($minWidth - задается в _variables.scss как стандартное значение).
+5* - максимальная ширина с которой начнет адаптироваться свойство (по умолчанию равана $maxWidth - задается в _variables.scss как стандартное значение)
 
-* -- !!!без учета едениц измерения (px)
+* -- без учета едениц измерения (px)
 
 |ПРИМЕР @include adaptive-value('margin-right', 50, 20, 540);|
 */
 
-@mixin adaptive-value($value_name, $max_value, $min_value, $min_width) {
+@mixin adaptive-value(
+  $value_name,
+  $max_value,
+  $min_value,
+  $min_width,
+  $max_width: $maxWidth
+) {
   // Если больше максимального значения фиксируем максимальное значение как константу
   #{$value_name}: math.div($max_value, $mainFontSize) + rem;
-  @media (max-width: ($maxWidth+px)) {
+  @media (max-width: ($max_width+px)) {
     // Получаем возможность регулирования нужной минмальной ширины для адаптива
     @if ($min_width >= $minWidth) {
       #{$value_name}: calc(
         #{$min_value +
           px} +
           #{($max_value - $min_value)} *
-          ((100vw - #{$min_width + px}) / #{($maxWidth - $min_width)})
+          ((100vw - #{$min_width + px}) / #{($max_width - $min_width)})
       );
       // Если меньше минимального значения фиксируем минимальное значение как константу
       @media (max-width: ($min_width+px)) {
