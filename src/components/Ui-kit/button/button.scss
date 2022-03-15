@@ -7,5 +7,5 @@
   text-transform: uppercase;
   color: $color-white;
   background-color: $color-primary;
-  padding: rem(25);
+  @include adaptive-value("padding", 25, 15, map-get($breakpoints, es));
 }

@@ -34,7 +34,7 @@
     position: absolute;
     top: 0;
     left: $left-padding;
-    width: 100%;
+    width: calc(100% - $left-padding);
     height: 100%;
     transition: $transitionNormal;
   }

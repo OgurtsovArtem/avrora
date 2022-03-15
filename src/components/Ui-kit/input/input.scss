@@ -14,6 +14,7 @@
     height: 100%;
     padding-top: rem(8);
     padding-bottom: rem(8);
+    padding-right: rem(8);
     padding-left: $left-padding;
 
     &:focus + .input__label {
@@ -34,7 +35,7 @@
     position: absolute;
     top: 50%;
     left: $left-padding;
-    width: 100%;
+    width: calc(100% - $left-padding);
     height: 100%;
     transform: translateY(-50%);
     transition: $transitionNormal;
