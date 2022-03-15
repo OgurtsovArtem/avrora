@@ -3,9 +3,10 @@ include ../../blocks/main-intro-list/main-intro-list
 
 mixin main-intro
     section.main-intro
-        div.main-intro__image-box
-            img.main-intro__image(src='/assets/images/intro/main-intro.jpg' alt='background')
+
         .main-intro__container.container
+            div.main-intro__image-box
+                img.main-intro__image(src='/assets/images/intro/main-intro.jpg' alt='background')
             .main-intro__box
                 +main-intro-list(
                     "Прямые кухни",

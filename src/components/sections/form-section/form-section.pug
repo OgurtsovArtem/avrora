@@ -5,10 +5,14 @@ mixin form-section
     section.form-section
         .form-section__container.container
             .form-section__description
-                h2.form-section__title
-                    span.form-section__title_accent  Бесплатный
-                    |  профессиональный замер у вас дома
-                p.form-section__text Наша компания предлагает уникальную услугу: наш дизайнер-замерщик приедет к вам с образцами материалов и дельными советами по обустройсву и планировке.
-                +learn-more-button('/production')
-            .form-section__from-box
+                .form-section__description-box
+                    h2.form-section__title.h2
+                        span.form-section__title_accent  Бесплатный
+                        |  профессиональный замер у вас дома
+                    p.form-section__text.txt Наша компания предлагает уникальную услугу: наш дизайнер-замерщик приедет к вам с образцами материалов и дельными советами по обустройсву и планировке.
+                    +learn-more-button({
+                        link: '/production',
+                        className: 'form-section__button',
+                    })
+            .form-section__form-box
                 +designer-form()

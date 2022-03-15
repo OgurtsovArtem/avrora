@@ -1,14 +1,12 @@
 .main-intro {
-  position: relative;
   &__image-box {
     position: absolute;
     top: 0;
     right: 0;
     width: 100%;
-    @include adaptive-value("height", 850, 660, map-get($breakpoints, sm));
-    height: 100%;
     z-index: -1;
     height: 500px;
+    @include adaptive-value("height", 850, 660, map-get($breakpoints, sm));
     &::after {
       content: "";
       position: absolute;
@@ -34,6 +32,7 @@
     @include media(md) {
       max-width: 53%;
       bottom: 0;
+      top: auto;
       @include adaptive-value("width", 1014, 600, map-get($breakpoints, sm));
       @include adaptive-value("height", 835, 490, map-get($breakpoints, sm));
       &::after {
@@ -57,9 +56,10 @@
     );
   }
   &__container {
-    @include adaptive-value("padding-top", 256, 95, map-get($breakpoints, sm));
+    position: relative;
     min-height: rem(640);
     padding-bottom: rem(20);
+    @include adaptive-value("padding-top", 256, 95, map-get($breakpoints, sm));
     @include media(md) {
       min-height: auto;
     }
@@ -77,7 +77,7 @@
     justify-self: left;
     max-width: rem(625);
     @include media(md) {
-      @include adaptive-value("margin-top", 65, -63, map-get($breakpoints, lg));
+      @include adaptive-value("margin-top", 65, -43, map-get($breakpoints, lg));
     }
   }
   &__title {
@@ -110,10 +110,10 @@
       font-family: "Philosopher";
       font-style: italic;
       font-weight: 700;
-      @include adaptive-value("font-size", 96, 76, 0);
       line-height: 100%;
       letter-spacing: rem(-6);
       color: $color-primary;
+      @include adaptive-value("font-size", 96, 76, 0);
     }
   }
   &__discount-text {

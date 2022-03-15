@@ -4,7 +4,7 @@ include ../../Ui-kit/button/button
 
 mixin designer-form()
     form.designer-from(name="designer")
-        legend.designer-from__legend
+        legend.designer-from__legend Оставить заявку
         +input({
             id: "designer-form-name",
             placeholder: "Представьтесь",
@@ -21,9 +21,10 @@ mixin designer-form()
             id: "designer-form-textarea",
             placeholder: "Комментарий, например, удобное время замера...",
             className: 'designer-from__textarea',
+            rows: 1,
 
         })
         +button({
             text: 'Пригласить дизайнера',
-            className: 'designer-from__button'
+            className: 'designer-from__button',
         })

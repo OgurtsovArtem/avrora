@@ -1,14 +1,97 @@
 .form-section {
+  background-color: $color-gray-600;
+  @include media(md) {
+    background-color: initial;
+  }
+
   &__container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
+    @include adaptive-value("gap", 135, 40, map-get($breakpoints, sm));
+    @include media(md) {
+      grid-template-columns: 1.4fr 1fr;
+    }
+  }
+  &__description {
+    position: relative;
+    @include adaptive-value(
+      "padding-top",
+      170,
+      54,
+      map-get($breakpoints, es),
+      map-get($breakpoints, lg)
+    );
+
+    @include media(md) {
+      @include adaptive-value(
+        "padding-top",
+        163,
+        170,
+        map-get($breakpoints, lg)
+      );
+      @include adaptive-value(
+        "padding-bottom",
+        277,
+        128,
+        map-get($breakpoints, lg)
+      );
+      @include adaptive-value("padding-left", 70, 0, map-get($breakpoints, lg));
+      @include adaptive-value(
+        "padding-right",
+        40,
+        20,
+        map-get($breakpoints, md),
+        map-get($breakpoints, lg)
+      );
+    }
+    @include media(md) {
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -900%;
+        background-color: $color-gray-600;
+        width: 1000%;
+        height: 100%;
+        z-index: -1;
+      }
+    }
+  }
+  &__description-box {
+    max-width: rem(570);
   }
   &__title {
+    font-family: "Philosopher";
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
     &_accent {
+      color: $color-primary;
     }
   }
   &__text {
+    color: $color-text-secondary;
+    @include adaptive-value(
+      "margin-top",
+      32,
+      14,
+      map-get($breakpoints, sm),
+      map-get($breakpoints, lg)
+    );
+    @include media(md) {
+      @include adaptive-value("margin-top", 25, 32, map-get($breakpoints, lg));
+    }
+  }
+  &__button {
+    @include adaptive-value("margin-top", 43, 15, map-get($breakpoints, sm));
   }
   &__form-box {
+    align-self: center;
+    @include adaptive-value("padding", 20, 0, map-get($breakpoints, sm));
+    max-width: rem(350);
+    margin-bottom: rem(45);
+    @include media(md) {
+      margin-bottom: 0;
+    }
   }
 }
