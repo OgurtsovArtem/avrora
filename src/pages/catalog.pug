@@ -1,5 +1,8 @@
 extends ../layouts/default.pug
-include ../components/catalog
-
+include ../components/sections/steps/steps
+include ../components/sections/form-section/form-section
+include ../components/sections/catalog-kitchen/catalog-kitchen
 block content
-  +catalog
+  +catalog-kitchen
+  +form-section
+  +steps
