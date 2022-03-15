@@ -15,8 +15,12 @@ $color-rating: #ffd400;
 $color-bg-warning: #fffce0;
 // Not specified
 $color-white: #ffffff;
+
 $color-gray-300: #bfc1c7;
 $color-gray-500: rgba(217, 217, 217, 0.4);
+$color-gray-510: rgba(211, 211, 211, 0.4);
+$color-gray-600: rgba(0, 16, 61, 0.06);
+
 // Shadows
 $depth2: 0px 4px 32px rgba(0, 16, 61, 0.16);
 $depth3: 0px 16px 48px rgba(0, 16, 61, 0.48);
@@ -25,6 +29,7 @@ $depth3: 0px 16px 48px rgba(0, 16, 61, 0.48);
 $minWidth: 280;
 $maxWidth: 1920;
 $mainFontSize: 15;
+$containerIndentation: 20; // отступ контейнера
 $maxWidthContainer: 1700; // 1810 - 1640 где то в этом районе контейнеры :)
 
 //Z-Index
