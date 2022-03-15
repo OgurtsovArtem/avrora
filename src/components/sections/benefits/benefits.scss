@@ -1,0 +1,93 @@
+.benefits {
+  background-image: url("../images/benefits/background.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  @include adaptive-value("padding-top", 127, 50, map-get($breakpoints, sm));
+  @include adaptive-value("padding-bottom", 140, 70, map-get($breakpoints, sm));
+  &__container {
+    color: $color-white;
+  }
+  &__title {
+    font-family: "Philosopher";
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+    @include adaptive-value("margin-bottom", 70, 18, map-get($breakpoints, sm));
+  }
+  &__body {
+    @include media(md) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      @include adaptive-value("column-gap", 160, 40, map-get($breakpoints, md));
+    }
+  }
+  &__accordion {
+  }
+  &__accordion-item {
+    &.accordion-body-open {
+      .benefits__accordion-icon {
+        transform: rotate(45deg);
+      }
+      .benefits__accordion-button {
+        padding-bottom: 0;
+      }
+    }
+  }
+  &__accordion-button {
+    text-align: start;
+    width: 100%;
+    border-top: rem(1) solid $color-gray-500;
+    display: flex;
+    justify-content: space-between;
+    @include adaptive-value("padding-top", 32, 22, map-get($breakpoints, sm));
+    @include adaptive-value(
+      "padding-bottom",
+      32,
+      22,
+      map-get($breakpoints, sm)
+    );
+    transition: padding $transitionNormal;
+  }
+  &__accordion-title {
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    text-transform: uppercase;
+  }
+  &__accordion-icon {
+    position: relative;
+    width: rem(27);
+    height: rem(27);
+    transition: transform $transitionNormal;
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      width: 100%;
+      height: rem(1.5);
+      background-color: $color-gray-500;
+    }
+    &::after {
+      transform: rotate(90deg);
+    }
+  }
+  &__accordion-body {
+    @include adaptive-value("padding-top", 33, 10, map-get($breakpoints, sm));
+    padding-bottom: rem(19);
+  }
+  &__accordion-text {
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    color: $color-text-secondary;
+    transition: $transitionNormal;
+    max-width: rem(520);
+    &:not(:last-child) {
+      margin-bottom: rem(20);
+    }
+  }
+}
