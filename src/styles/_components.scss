@@ -1,8 +1,9 @@
-@import "../components/catalog.scss";
-
 // BLOCKS
 @import "../components/blocks/main-intro-list/main-intro-list.scss";
 @import "../components/blocks/social-box/social-box.scss";
+@import "../components/blocks/kitchen-large/kitchen-large.scss";
+@import "../components/blocks/kitchen-small/kitchen-small.scss";
+@import "../components/blocks/kitchen-set/kitchen-set.scss";
 
 // UI-KIT
 @import "../components/Ui-kit/icon/icon.scss";
@@ -10,12 +11,20 @@
 @import "../components/Ui-kit/input/input.scss";
 @import "../components/Ui-kit/textarea/textarea.scss";
 @import "../components/Ui-kit/button/button.scss";
+@import "../components/Ui-kit/filter-button/filter-button.scss";
+@import "../components/Ui-kit/kitchen-button/kitchen-button.scss";
 
 // SECTIONS
 @import "../components/sections/main-intro/main-intro.scss";
 @import "../components/sections/advantages-line/advantages-line.scss";
 @import "../components/sections/preview-catalog/preview-catalog.scss";
 @import "../components/sections/form-section/form-section.scss";
+@import "../components/sections/benefits/benefits.scss";
+@import "../components/sections/steps/steps.scss";
+@import "../components/sections/catalog-kitchen/catalog-kitchen.scss";
 
 // FORMS
 @import "../components/forms/designer-form/designer-form.scss";
+
+// BANNERS
+@import "../components/banners/kitchen-set-banner/kitchen-set-banner.scss";
