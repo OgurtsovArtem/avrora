@@ -1,0 +1,22 @@
+include ../../Ui-kit/kitchen-controls/kitchen-controls
+include ../../Ui-kit/kitchen-button/kitchen-button
+
+mixin kitchen-small({className})
+    div(class=className ? `${className} kitchen-small`: `kitchen-small`)
+        .kitchen-small__swiper
+            .swiper-wrapper
+                .kitchen-small__item
+                    img(src="/assets/images/kitchens/small.jpg", alt="kitchen")
+            .kitchen-small__discount -50%
+            +kitchen-controls()
+        .kitchen-small__footer
+            h3.kitchen-small__title Название
+            .kitchen-small__price
+                span.kitchen-small__price-old 100 500 Р
+                span.kitchen-small__price-current 100 500 ₽
+                p.kitchen-small__price-text цена за весь гарнитур
+            +kitchen-button({
+                className: 'kitchen-small__button',
+                text: "Рассчитать мой проект",
+                style: 'transperent'
+            })

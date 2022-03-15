@@ -1,0 +1,21 @@
+include ../../Ui-kit/kitchen-button/kitchen-button
+
+mixin kitchen-large({className})
+    div(class=className ? `${className} kitchen-large`: `kitchen-large`)
+        .kitchen-large__swiper
+            .swiper-wrapper
+                .kitchen-large__item
+                    img.kitchen-large__image(src="/assets/images/kitchens/large.jpg", alt="kitchen")
+            .kitchen-large__discount -50%
+            .kitchen-large__controls
+        .kitchen-large__footer
+            h3.kitchen-large__title.h3 Название
+            .kitchen-large__price
+                span.kitchen-large__price-old 100 500 Р
+                span.kitchen-large__price-current 100 500 Р
+                p.kitchen-large__price-text цена за весь гарнитур
+            +kitchen-button({
+                className: 'kitchen-large__button',
+                text: "Рассчитать мой проект",
+                style: 'fill'
+            })
