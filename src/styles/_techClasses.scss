@@ -1,11 +1,11 @@
 // text
 .h1 {
-  @include adaptive-value("font-size", 72, 36, map-get($breakpoints, sm));
+  @include adaptive-value("font-size", 72, 32, map-get($breakpoints, es));
   line-height: 0.8;
 }
 
 .h2 {
-  @include adaptive-value("font-size", 36, 32, map-get($breakpoints, sm));
+  @include adaptive-value("font-size", 36, 26, map-get($breakpoints, es));
   line-height: 1;
 }
 
@@ -40,7 +40,7 @@
   margin: 0 auto;
   width: 100%;
   max-width: rem($maxWidthContainer);
-  padding: 0 rem(20);
+  padding: 0 rem($containerIndentation);
 }
 // Animation-hover
 ._hover-up {
