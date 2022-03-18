@@ -40,7 +40,27 @@
   margin: 0 auto;
   width: 100%;
   max-width: rem($maxWidthContainer);
-  padding: 0 rem($containerIndentation);
+  padding-top: 0;
+  padding-bottom: 0;
+  @include adaptive-value(
+    "padding-left",
+    $containerIndentation,
+    $containerIndentationMin,
+    map-get($breakpoints, es),
+    map-get($breakpoints, sm)
+  );
+  @include adaptive-value(
+    "padding-right",
+    $containerIndentation,
+    $containerIndentationMin,
+    map-get($breakpoints, es),
+    map-get($breakpoints, sm)
+  );
+}
+.max-container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: rem($maxWidthContainerMax);
 }
 // Animation-hover
 ._hover-up {
