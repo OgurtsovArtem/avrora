@@ -19,10 +19,12 @@
     &:focus + .textarea__label {
       left: 0;
       transform: translateY(rem(-20));
+      -webkit-line-clamp: 1;
     }
     &._filled + .textarea__label {
       left: 0;
       transform: translateY(rem(-20));
+      -webkit-line-clamp: 1;
     }
     &:active,
     &:focus {
@@ -35,8 +37,12 @@
     top: 0;
     left: $left-padding;
     width: calc(100% - $left-padding);
-    height: 100%;
     transition: $transitionNormal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
   }
   &__label-text {
     font-style: normal;

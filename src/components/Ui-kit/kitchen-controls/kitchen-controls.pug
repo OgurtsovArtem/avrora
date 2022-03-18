@@ -1,4 +1,8 @@
-mixin kitchen-controls()
-    div.kitchen-controls
-        button.kitchen-controls__button.kitchen-controls__button_left(type="button")
-        button.kitchen-controls__button.kitchen-controls__button_right(type="button")
+include ../icon/icon
+
+mixin kitchen-controls({className})
+    div(class=`${className} kitchen-controls`)
+        button.kitchen-controls__button.kitchen-controls__button_left(class=`${className}_left`,type="button")
+            +icon('arrow-mini', `kitchen-controls__button-icon`)
+        button.kitchen-controls__button.kitchen-controls__button_right(class=`${className}_right`,type="button")
+            +icon('arrow-mini', `kitchen-controls__button-icon`)

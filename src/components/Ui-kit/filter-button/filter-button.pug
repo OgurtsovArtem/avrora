@@ -1,2 +1,2 @@
-mixin filter-button({text, className})
-    button(class=className ? `${className} filter-button`: `filter-button`)=text
+mixin filter-button({text, className, active})
+    button(class=className ? `${className} ${active ? "filter-button filter-button_active" : 'filter-button'}`: `${active ? "filter-button filter-button_active" : 'filter-button'}`)=text

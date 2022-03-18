@@ -1,2 +1,6 @@
-mixin button({text, className})
-    button(class=className ? `${className} button`: `button`)=text
+mixin button({text, className, color})
+    case color
+        when 'white'
+            button(class=className ? `${className} ${className}_white button button_white`: `button button_white`)=text
+        default
+            button(class=className ? `${className} button`: `button`)=text

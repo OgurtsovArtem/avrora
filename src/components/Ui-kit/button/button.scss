@@ -8,4 +8,8 @@
   color: $color-white;
   background-color: $color-primary;
   @include adaptive-value("padding", 25, 15, map-get($breakpoints, es));
+  &_white {
+    color: $color-text-secondary;
+    background-color: $color-white;
+  }
 }

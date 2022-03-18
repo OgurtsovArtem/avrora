@@ -1,0 +1,17 @@
+.filter-button {
+  padding-top: rem(10);
+  padding-bottom: rem(10);
+  padding-left: rem(30);
+  padding-right: rem(30);
+  font-style: normal;
+  font-weight: 600;
+  font-size: rem(14);
+  line-height: 143%;
+  text-transform: uppercase;
+  border-radius: rem(2);
+  background-color: $color-dark-blue-200;
+  color: $color-white;
+  &_active {
+    background-color: $color-accent;
+  }
+}
