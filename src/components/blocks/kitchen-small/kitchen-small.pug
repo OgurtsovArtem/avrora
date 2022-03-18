@@ -5,10 +5,12 @@ mixin kitchen-small({className})
     div(class=className ? `${className} kitchen-small`: `kitchen-small`)
         .kitchen-small__swiper
             .swiper-wrapper
-                .kitchen-small__item
+                .kitchen-small__item.swiper-slide
                     img(src="/assets/images/kitchens/small.jpg", alt="kitchen")
             .kitchen-small__discount -50%
-            +kitchen-controls()
+            +kitchen-controls({
+                className: "kitchen-small__controls"
+            })
         .kitchen-small__footer
             h3.kitchen-small__title Название
             .kitchen-small__price

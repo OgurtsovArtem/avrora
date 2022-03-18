@@ -1,19 +1,25 @@
-.swiper-wrapper {
-  height: 100%;
-}
 .kitchen-large {
   position: relative;
   &__swiper {
-    height: 100%;
+    position: relative;
+    min-width: 0;
+    overflow: hidden;
+    @include media(md) {
+      height: 100%;
+    }
   }
   &__item {
-    height: 100%;
+    @include media(md) {
+      height: 100%;
+    }
   }
   &__image {
-    height: 100%;
-    object-fit: cover;
+    @include media(md) {
+      height: 100%;
+    }
   }
   &__discount {
+    z-index: $zIndexLight;
     position: absolute;
     top: 0;
     right: 0;
@@ -41,8 +47,10 @@
     background-color: $color-primary;
   }
   &__controls {
+    z-index: $zIndexLight;
   }
   &__footer {
+    z-index: $zIndexLight;
     display: flex;
     margin-top: rem(16);
     align-items: baseline;

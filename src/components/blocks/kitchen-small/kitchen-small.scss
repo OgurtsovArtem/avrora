@@ -1,6 +1,8 @@
 .kitchen-small {
   position: relative;
   &__swiper {
+    position: relative;
+    overflow: hidden;
   }
   &__item {
   }
@@ -20,8 +22,10 @@
     line-height: rem(29);
     letter-spacing: rem(-0.883333);
     background-color: $color-primary;
+    z-index: $zIndexLight;
   }
   &__controls {
+    z-index: $zIndexLight;
   }
   &__footer {
     display: grid;
@@ -29,6 +33,7 @@
     align-items: baseline;
     margin-left: rem(10);
     margin-right: rem(10);
+    margin-top: rem(10);
     @include media(md) {
       grid-template-columns: repeat(2, 1fr);
       margin-left: 0;

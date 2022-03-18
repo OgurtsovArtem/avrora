@@ -1,13 +1,20 @@
 include ../../Ui-kit/kitchen-button/kitchen-button
+include ../../Ui-kit/kitchen-controls/kitchen-controls
 
-mixin kitchen-large({className})
+mixin kitchen-large({className, buttonStyle})
     div(class=className ? `${className} kitchen-large`: `kitchen-large`)
         .kitchen-large__swiper
             .swiper-wrapper
-                .kitchen-large__item
+                .kitchen-large__item.swiper-slide
+                    img.kitchen-large__image(src="/assets/images/kitchens/large.jpg", alt="kitchen")
+                .kitchen-large__item.swiper-slide
+                    img.kitchen-large__image(src="/assets/images/kitchens/large.jpg", alt="kitchen")
+                .kitchen-large__item.swiper-slide
                     img.kitchen-large__image(src="/assets/images/kitchens/large.jpg", alt="kitchen")
             .kitchen-large__discount -50%
-            .kitchen-large__controls
+            +kitchen-controls({
+                className: 'kitchen-large__controls'
+            })
         .kitchen-large__footer
             h3.kitchen-large__title.h3 Название
             .kitchen-large__price
