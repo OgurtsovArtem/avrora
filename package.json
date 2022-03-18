@@ -22,5 +22,8 @@
     "gulp-ttf2woff2": "^4.0.1",
     "gulp-uglify": "^3.0.2",
     "sass": "^1.49.9"
+  },
+  "dependencies": {
+    "swiper": "^8.0.7"
   }
 }

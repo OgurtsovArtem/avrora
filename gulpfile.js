@@ -52,6 +52,21 @@ function scripts() {
     .pipe(gulp.dest("dist/assets/js/"));
 }
 
+function vendorJs() {
+  const modules = [
+    "node_modules/swiper/swiper-bundle.min.js",
+    "node_modules/swiper/swiper-bundle.min.js.map",
+  ];
+
+  return gulp.src(modules).pipe(gulp.dest("dist/assets/libs/js"));
+}
+
+function vendorCss() {
+  const modules = ["node_modules/swiper/swiper-bundle.min.css"];
+
+  return gulp.src(modules).pipe(gulp.dest("dist/assets/libs/style/"));
+}
+
 function icons() {
   return gulp
     .src("src/icons/*.svg")
@@ -118,7 +133,17 @@ function reload(done) {
 
 const build = gulp.series(
   clean,
-  gulp.parallel(views, styles, scripts, icons, images, fonts, public)
+  gulp.parallel(
+    views,
+    styles,
+    scripts,
+    icons,
+    images,
+    vendorJs,
+    vendorCss,
+    fonts,
+    public
+  )
 );
 
 exports.build = build;
