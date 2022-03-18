@@ -1,0 +1,7 @@
+
+mixin stars({className, quantity})
+    div(class=className ? `${className} stars` : `stars`)
+        -let count = 0;
+        while count < quantity
+            -count++;
+            +icon('star', 'stars__icon')

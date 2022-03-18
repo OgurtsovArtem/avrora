@@ -1,0 +1,4 @@
+mixin button-back({text, className})
+    button(class=className ? `${className} button-back`: `button-back`)
+        +icon('arrow-medium', 'button-back__icon')
+        a.button-back__link(href="#", target="_blank", rel="noopener noreferrer")=text
