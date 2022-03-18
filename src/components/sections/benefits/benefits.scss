@@ -5,6 +5,7 @@
   background-size: cover;
   @include adaptive-value("padding-top", 127, 50, map-get($breakpoints, sm));
   @include adaptive-value("padding-bottom", 140, 70, map-get($breakpoints, sm));
+  overflow: hidden;
   &__container {
     color: $color-white;
   }
@@ -25,14 +26,6 @@
   &__accordion {
   }
   &__accordion-item {
-    &.accordion-body-open {
-      .benefits__accordion-icon {
-        transform: rotate(45deg);
-      }
-      .benefits__accordion-button {
-        padding-bottom: 0;
-      }
-    }
   }
   &__accordion-button {
     text-align: start;
@@ -47,15 +40,23 @@
       22,
       map-get($breakpoints, sm)
     );
+    &.accordion-button-active {
+      padding-bottom: 0;
+      .benefits__accordion-icon {
+        transform: rotate(45deg);
+      }
+    }
     transition: padding $transitionNormal;
   }
   &__accordion-title {
+    pointer-events: none;
     font-style: normal;
     font-weight: 400;
     line-height: 150%;
     text-transform: uppercase;
   }
   &__accordion-icon {
+    pointer-events: none;
     position: relative;
     width: rem(27);
     height: rem(27);

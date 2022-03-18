@@ -1,5 +1,8 @@
 include ../../blocks/kitchen-set/kitchen-set
 include ../../Ui-kit/filter-button/filter-button
+include ../../sections/kitchen-advantages/kitchen-advantages
+include ../../blocks/filter-selector/filter-selector
+include ../../blocks/pagination/pagination
 
 mixin catalog-kitchen()
     section.catalog-kitchen
@@ -16,29 +19,41 @@ mixin catalog-kitchen()
                         .catalog-kitchen__header-column
                             span.catalog-kitchen__count.h1 638
                             p.catalog-kitchen__text.txt выполненных <br> работ в 2021 году
+                +filter-selector({
+                    className: "catalog-kitchen__filter-selector",
+                    buttonText: 'фильтры',
+                    selectors: ['Все кухни', 'Угловые', 'Прямые', 'С барной стойкой'],
+                })
                 .catalog-kitchen__filter
+
                     +filter-button({
-                        className: ".catalog-kitchen__filter-button",
-                        text: 'Все кухни'
+                        className: "catalog-kitchen__filter-button",
+                        text: 'Все кухни',
+                        active: true
                     })
                     +filter-button({
-                        className: ".catalog-kitchen__filter-button",
+                        className: "catalog-kitchen__filter-button",
                         text: 'Угловые'
                     })
                     +filter-button({
-                        className: ".catalog-kitchen__filter-button",
+                        className: "catalog-kitchen__filter-button",
                         text: 'Прямые'
                     })
                     +filter-button({
-                        className: ".catalog-kitchen__filter-button",
+                        className: "catalog-kitchen__filter-button",
                         text: 'С барной стойкой'
                     })
                 +kitchen-set({
                     className: 'catalog-kitchen__set',
                     version: 'version-1'
                 })
+        +kitchen-advantages()
         div.catalog-kitchen__bottom-section.container
             +kitchen-set({
                 className: 'catalog-kitchen__set',
                 version: 'version-2'
             })
+        +pagination({
+            className: 'catalog-kitchen__pagination',
+            numbers: [1, 2, 3, 4, 5, 6]
+        })
