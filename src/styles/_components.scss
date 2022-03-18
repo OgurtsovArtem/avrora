@@ -1,10 +1,3 @@
-// BLOCKS
-@import "../components/blocks/main-intro-list/main-intro-list.scss";
-@import "../components/blocks/social-box/social-box.scss";
-@import "../components/blocks/kitchen-large/kitchen-large.scss";
-@import "../components/blocks/kitchen-small/kitchen-small.scss";
-@import "../components/blocks/kitchen-set/kitchen-set.scss";
-
 // UI-KIT
 @import "../components/Ui-kit/icon/icon.scss";
 @import "../components/Ui-kit/learn-more-button/learn-more-button.scss";
@@ -13,6 +6,26 @@
 @import "../components/Ui-kit/button/button.scss";
 @import "../components/Ui-kit/filter-button/filter-button.scss";
 @import "../components/Ui-kit/kitchen-button/kitchen-button.scss";
+@import "../components/Ui-kit/kitchen-controls/kitchen-controls.scss";
+@import "../components/Ui-kit/button-back/button-back.scss";
+@import "../components/Ui-kit/video-button/video-button.scss";
+@import "../components/Ui-kit/stars/stars.scss";
+@import "../components/Ui-kit/circle-button/circle-button.scss";
+@import "../components/Ui-kit/input-file/input-file.scss";
+
+// BLOCKS
+@import "../components/blocks/main-intro-list/main-intro-list.scss";
+@import "../components/blocks/social-box/social-box.scss";
+@import "../components/blocks/kitchen-large/kitchen-large.scss";
+@import "../components/blocks/kitchen-small/kitchen-small.scss";
+@import "../components/blocks/kitchen-set/kitchen-set.scss";
+@import "../components/blocks/filter-selector/filter-selector.scss";
+@import "../components/blocks/pagination/pagination.scss";
+@import "../components/blocks/kitchen-full/kitchen-full.scss";
+@import "../components/blocks/kitchen-info-box/kitchen-info-box.scss";
+@import "../components/blocks/blog-card/blog-card.scss";
+@import "../components/blocks/blog-popular/blog-popular.scss";
+@import "../components/blocks/assembling-card/assembling-card.scss";
 
 // SECTIONS
 @import "../components/sections/main-intro/main-intro.scss";
@@ -22,9 +35,20 @@
 @import "../components/sections/benefits/benefits.scss";
 @import "../components/sections/steps/steps.scss";
 @import "../components/sections/catalog-kitchen/catalog-kitchen.scss";
+@import "../components/sections/kitchen-advantages/kitchen-advantages.scss";
+@import "../components/sections/detail-advantages/detail-advantages.scss";
+@import "../components/sections/specifications/specifications.scss";
+@import "../components/sections/detail-gallary/detail-gallary.scss";
+@import "../components/sections/detail-feedback/detail-feedback.scss";
+@import "../components/sections/popular-kit/popular-kit.scss";
+@import "../components/sections/blog-list/blog-list.scss";
+@import "../components/sections/delivery/delivery.scss";
+@import "../components/sections/assembling/assembling.scss";
 
 // FORMS
 @import "../components/forms/designer-form/designer-form.scss";
+@import "../components/forms/application-form/application-form.scss";
 
 // BANNERS
 @import "../components/banners/kitchen-set-banner/kitchen-set-banner.scss";
+@import "../components/banners/assembling-banner/assembling-banner.scss";
