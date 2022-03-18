@@ -1,0 +1,41 @@
+include ../../Ui-kit/circle-button/circle-button
+include ../../Ui-kit/kitchen-button/kitchen-button
+include ../../blocks/kitchen-small/kitchen-small
+
+mixin popular-kit()
+    section.popular-kit.max-container
+        .popular-kit__container.container
+            .popular-kit__header
+                h2.popular-kit__title.h2 Полулярные проекты
+                .popular-kit__controls
+                    +circle-button({
+                        className: "popular-kit__button popular-kit__button_left"
+                    })
+                    +circle-button({
+                        className: "popular-kit__button popular-kit__button_right"
+                    })
+            .popular-kit__swiper
+                .swiper-wrapper
+                    +kitchen-small({
+                        className: 'popular-kit__item swiper-slide'
+                    })
+                    +kitchen-small({
+                        className: 'popular-kit__item swiper-slide'
+                    })
+                    +kitchen-small({
+                        className: 'popular-kit__item swiper-slide'
+                    })
+                    +kitchen-small({
+                        className: 'popular-kit__item swiper-slide'
+                    })
+                    +kitchen-small({
+                        className: 'popular-kit__item swiper-slide'
+                    })
+                    +kitchen-small({
+                        className: 'popular-kit__item swiper-slide'
+                    })
+            +kitchen-button({
+                className: 'popular-kit__kitchen-button',
+                text: 'Рассчитать мой проект',
+                style: 'transperent'
+            })

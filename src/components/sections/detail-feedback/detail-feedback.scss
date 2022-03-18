@@ -1,0 +1,68 @@
+.detail-feedback {
+  @include adaptive-value("margin-top", 110, 60, map-get($breakpoints, es));
+  @include adaptive-value("margin-bottom", 98, 80, map-get($breakpoints, es));
+  &__container {
+    @include media(md) {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+    }
+  }
+  &__title {
+    font-family: "Philosopher";
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+    margin-bottom: rem(37);
+  }
+  &__description {
+  }
+  &__text {
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+    &:not(:last-child) {
+      @include adaptive-value(
+        "margin-bottom",
+        40,
+        20,
+        map-get($breakpoints, es)
+      );
+    }
+  }
+  &__description-footer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: rem(10);
+    max-width: rem(800);
+    margin-top: rem(40);
+  }
+  &__video-button {
+  }
+  &__rating {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    @include adaptive-value("gap", 25, 0, map-get($breakpoints, es));
+    @include media(md) {
+      flex-direction: row;
+    }
+  }
+  &__stars {
+  }
+  &__value {
+    display: flex;
+    font-style: normal;
+    font-weight: 600;
+    @include adaptive-value("font-size", 28, 24, map-get($breakpoints, es));
+
+    line-height: 100%;
+  }
+  &__value-current {
+  }
+  &__value-total {
+  }
+  &__value-text {
+  }
+}

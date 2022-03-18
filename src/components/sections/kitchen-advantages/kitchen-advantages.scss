@@ -1,0 +1,47 @@
+.kitchen-advantages {
+  @include adaptive-value("margin-top", 87, 110, map-get($breakpoints, lg));
+  @include adaptive-value("margin-bottom", 108, 130, map-get($breakpoints, lg));
+  @include adaptive-value(
+    "margin-top",
+    110,
+    50,
+    map-get($breakpoints, es),
+    map-get($breakpoints, lg)
+  );
+  @include adaptive-value(
+    "margin-bottom",
+    130,
+    110,
+    map-get($breakpoints, es),
+    map-get($breakpoints, lg)
+  );
+
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    @include adaptive-value("gap", 60, 40, map-get($breakpoints, es));
+    @include media(md) {
+      justify-content: space-around;
+    }
+  }
+  &__column {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    @include adaptive-value("gap", 15, 8, map-get($breakpoints, es));
+  }
+  &__text-large {
+    font-family: "Philosopher";
+    font-style: normal;
+    font-weight: 400;
+    line-height: 80%;
+
+    color: $color-text-secondary;
+  }
+  &__text {
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%;
+    color: $color-text-secondary;
+  }
+}

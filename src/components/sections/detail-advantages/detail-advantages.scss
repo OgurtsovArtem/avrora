@@ -1,0 +1,64 @@
+.detail-advantages {
+  position: relative;
+  background-color: $color-white;
+  overflow: hidden;
+  @include media(md) {
+    overflow: initial;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $color-gray-600;
+    pointer-events: none;
+    @include media(md) {
+      top: -100%;
+      height: 200%;
+    }
+  }
+  @include adaptive-value("padding-top", 0, 70, map-get($breakpoints, es));
+  @include adaptive-value("padding-bottom", 101, 80, map-get($breakpoints, es));
+
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr;
+    @include media(md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  &__column {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    @include adaptive-value("row-gap", 150, 50, map-get($breakpoints, es));
+    @include adaptive-value("column-gap", 90, 40, map-get($breakpoints, es));
+  }
+  &__box {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: rem(8);
+  }
+  &__title {
+    font-family: "Philosopher";
+    font-style: normal;
+    font-weight: 400;
+    line-height: 80%;
+    color: $color-text-secondary;
+    &_accent {
+      color: $color-primary;
+    }
+  }
+  &__text {
+    color: $color-text-secondary;
+  }
+  &__icon {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    @include adaptive-value("width", 895, 500, map-get($breakpoints, es));
+    height: rem(445);
+  }
+}

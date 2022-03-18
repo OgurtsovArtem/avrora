@@ -1,0 +1,24 @@
+.detail-gallary {
+  @include adaptive-value("margin-top", 162, 60, map-get($breakpoints, es));
+  @include adaptive-value("margin-bottom", 110, 60, map-get($breakpoints, es));
+  &__swiper {
+    overflow: hidden;
+  }
+  &__item {
+    width: auto;
+
+    &.swiper-slide {
+      width: auto;
+    }
+  }
+  &__image {
+    object-fit: cover;
+    @include adaptive-value(
+      "height",
+      573,
+      255,
+      map-get($breakpoints, sm),
+      map-get($breakpoints, lg)
+    );
+  }
+}

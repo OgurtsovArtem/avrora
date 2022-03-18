@@ -1,0 +1,45 @@
+include ../../blocks/assembling-card/assembling-card
+include ../../banners/assembling-banner/assembling-banner
+
+mixin assembling()
+    section.assembling
+        .assembling__container.container
+            h2.assembling__title.h2 Сборка
+            .assembling__cards
+                +assembling-card({
+                    className: 'assembling__card',
+                    text: 'Расстановка и выравнивание нижних модулей',
+                    number: '01',
+                    img: 'background-card.jpg'
+                })
+                +assembling-card({
+                    className: 'assembling__card',
+                    text: 'Крепление столешницы',
+                    number: '02',
+                    img: 'background-card.jpg'
+                })
+                +assembling-card({
+                    className: 'assembling__card',
+                    text: 'Навес верхних модулей',
+                    number: '03',
+                    img: 'background-card.jpg'
+                })
+                +assembling-card({
+                    className: 'assembling__card',
+                    text: 'Установка и регулировка фасадов',
+                    number: '04',
+                    img: 'background-card.jpg'
+                })
+                +assembling-card({
+                    className: 'assembling__card',
+                    text: 'Уборка мусора',
+                    number: '05',
+                    img: 'background-card.jpg'
+                })
+                +assembling-banner({
+                    className: 'assembling__banner',
+                    text: 'sad',
+                    number: '05',
+                    img: 'background-card.jpg'
+                })
+        +icon('background-pattern-assembling', 'assembling__background-icon')

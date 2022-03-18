@@ -1,0 +1,50 @@
+include ../../Ui-kit/icon/icon
+include ../../blocks/blog-card/blog-card
+include ../../blocks/blog-popular/blog-popular
+include ../../blocks/pagination/pagination
+
+mixin blog-list()
+    section.blog-list.max-container
+        .blog-list__container.container
+            .blog-list__header
+                h1.blog-list__title.h1 Блог
+                form.blog-list__form(name="blog-search")
+                    .blog-list__input-box
+                        input.blog-list__input(type="text", placeholder='Поиск статьи')
+                        button.blog-list__form-button._hover-scale(type="submit")
+                            +icon('loupe', "blog-list__input-icon")
+            .blog-list__body
+                +blog-card({
+                    className: "blog-list__card",
+                    text: "5 полезных советов, как выбрать кухню на заказ",
+                    image: "card_1.jpg"
+                })
+                +blog-card({
+                    className: "blog-list__card",
+                    text: "Как выбрать самую прочную столешницу",
+                    image: "card_2.jpg"
+                })
+                +blog-popular({
+                    className: 'blog-list__popular',
+                    title: 'ТОП популярных статей',
+                    texts: ['Фасады в светлых тонах: тренд сезона или вечная классика','Как выбрать кухню на заказ. Советы бывалых.','5 полезных советов, как выбрать кухню на заказ']
+                })
+                +blog-card({
+                    className: "blog-list__card",
+                    text: "5 полезных советов, как выбрать кухню на заказ",
+                    image: "card_3.jpg"
+                })
+                +blog-card({
+                    className: "blog-list__card",
+                    text: "10 способов сделать кухню уютнее",
+                    image: "card_4.jpg"
+                })
+                +blog-card({
+                    className: "blog-list__card",
+                    text: "5 полезных советов, как выбрать кухню на заказ",
+                    image: "card_5.jpg"
+                })
+        +pagination({
+            className: 'blog-list__pagination',
+            numbers: [1, 2, 3, 4, 5, 6]
+        })
