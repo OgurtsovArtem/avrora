@@ -1,0 +1,41 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include adaptive-value("gap", 20, 0, map-get($breakpoints, es));
+  &__button {
+    @include adaptive-value("padding", 15, 10, map-get($breakpoints, es));
+    &_left {
+    }
+    &_right {
+      & svg {
+        transform: rotate(180deg);
+      }
+    }
+  }
+  &__button-icon {
+    width: rem(20);
+    height: rem(20);
+    fill: $color-primary;
+    stroke: $color-primary;
+  }
+  &__numbers {
+    display: flex;
+  }
+  &__number {
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    @include adaptive-value("font-size", 18, 16, map-get($breakpoints, es));
+    @include adaptive-value("width", 44, 34, map-get($breakpoints, es));
+    @include adaptive-value("height", 44, 34, map-get($breakpoints, es));
+    &_active {
+      border-radius: 50%;
+      background-color: $color-primary;
+    }
+  }
+}

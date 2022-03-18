@@ -1,0 +1,22 @@
+include ../../Ui-kit/button-back/button-back
+include ../../Ui-kit/video-button/video-button
+include ../../Ui-kit/button/button
+include ../../Ui-kit/kitchen-controls/kitchen-controls
+include ../kitchen-info-box/kitchen-info-box
+
+mixin kitchen-full()
+    section.kitchen-full.max-container
+        .kitchen-full__swiper
+            .swiper-wrapper
+                .kitchen-full__item.swiper-slide
+                    img.kitchen-full__item-image(src="/assets/images/kitchen-detail/kitchen.jpg", alt="kitchen")
+            +kitchen-controls({
+                className: 'kitchen-full__controls'
+            })
+            +button-back({
+                className: "kitchen-full__button-back",
+                text: 'Назад в каталог'
+            })
+        +kitchen-info-box({
+            className: "kitchen-full__info"
+        })
