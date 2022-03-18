@@ -1,0 +1,29 @@
+include ../../Ui-kit/input/input
+include ../../Ui-kit/textarea/textarea
+include ../../Ui-kit/button/button
+include ../../Ui-kit/input-file/input-file
+
+mixin application-form()
+    form.application-form(name="application")
+        legend.application-form__legend Оставить заявку
+        +input({
+            id: "application-form-name",
+            placeholder: "Представьтесь",
+            type: "text",
+            className: 'application-form__input'
+        })
+        +input({
+            id: "application-form-tel",
+            type:"tel",
+            placeholder: "Контактный номер телефона",
+            className: 'application-form__input'
+        })
+        +input-file({
+            id: "application-form-file",
+            text: "Хочу приложить эскиз или пример",
+            className: 'application-form__input'
+        })
+        +button({
+            text: 'Отправить',
+            className: 'application-form__button',
+        })
