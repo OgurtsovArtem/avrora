@@ -13,7 +13,7 @@
       @include adaptive-value(
         "margin-bottom",
         95,
-        50,
+        65,
         map-get($breakpoints, es)
       );
     }
