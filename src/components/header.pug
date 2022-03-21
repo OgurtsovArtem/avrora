@@ -1,0 +1,53 @@
+include ./icon
+
+mixin header
+  header.header.open-menu
+    .header__bar
+      button.header__menu-btn
+        span
+      a.header__logo(href="/")
+        picture
+          source(srcset="/assets/icons/logo-lg.svg" media="(min-width: 1280px)")
+          img(src="/assets/icons/logo.svg", alt="Аврора").header__logo-img
+      a.header__call(href="tel:+7 (812) 612 30 49")
+        +icon('phone').header__call-icon
+      .header__menu
+        nav.header__nav
+          .header__nav-item.header__nav-item_sub
+            button.header__link.header__link_sub Каталог кухонь
+              +icon('angle').header__link-arrow
+            .header__subnav
+              a.header__sublink.header__sublink_main(href="/") Все кухни
+              a.header__sublink(href="/") Прямые кухни
+              a.header__sublink(href="/") Угловые кухни
+              a.header__sublink(href="/") П-образные кухни
+              a.header__sublink(href="/") Маленькие кухни
+              a.header__sublink(href="/") Кухни с барной стойкой
+              a.header__sublink(href="/") Кухни с островом
+              a.header__sublink(href="/")
+                +icon('crown').header__sublink-icon
+                | Популярные кухни
+          .header__nav-item
+            a.header__link(href="/") Производство
+          .header__nav-item
+            a.header__link(href="/") Доставка и сборка
+          .header__nav-item
+            a.header__link(href="/") Отзывы
+          .header__nav-item
+            a.header__link(href="/") Акции
+          .header__nav-item
+            a.header__link(href="/") Блог
+          .header__nav-item
+            a.header__link(href="/") Контакты
+        .header__social
+          a.header__social-item(href="/" target="_blank")
+            +icon('youtube')(width="30" height="21")
+          a.header__social-item(href="/" target="_blank")
+            +icon('vk')(width="21" height="13")
+          a.header__social-item(href="/" target="_blank")
+            +icon('instagram')(width="28" height="28")
+        .header__contacts
+          button.header__city Санкт-Петербург
+          a.header__phone(href="tel:+7 (812) 612 30 49") +7 (812) 612 30 49
+          p.header__time ежедневно с 9 до 21
+        button.header__btn Пригласить дизайнера
