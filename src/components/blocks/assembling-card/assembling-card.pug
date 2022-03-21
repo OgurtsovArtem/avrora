@@ -1,5 +1,5 @@
 mixin assembling-card({className, text, number, img})
     div(class=className ? `${className} assembling-card`: `assembling-card`)
         img.assembling-card__image(src=`/assets/images/assembling/${img}`, alt="card-background")
-        p.assembling-card__text=text
+        p.assembling-card__text.txt=text
         span.assembling-card__number.h2=number
