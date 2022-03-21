@@ -1,4 +1,4 @@
-.main-intro {
+.intro-list {
   &__list {
     display: none;
     @include media(md) {
@@ -15,7 +15,8 @@
       background-color: $color-border;
     }
   }
-  &__list-item {
+  &__link {
+    display: block;
     cursor: pointer;
     @include adaptive-value("padding-top", 27, 17, map-get($breakpoints, lg));
     @include adaptive-value(

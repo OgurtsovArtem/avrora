@@ -2,19 +2,22 @@ include ../../blocks/social-box/social-box
 include ../../blocks/main-intro-list/main-intro-list
 
 mixin main-intro
-    section.main-intro
-
+    section.main-intro.max-container
         .main-intro__container.container
             div.main-intro__image-box
                 img.main-intro__image(src='/assets/images/intro/main-intro.jpg' alt='background')
             .main-intro__box
-                +main-intro-list(
-                    "Прямые кухни",
+                +main-intro-list({
+                    className: 'main-intro__list',
+                    list: ["Прямые кухни",
                     "Угловые кухни",
                     "П-образные кухни",
                     "Маленькие кухни",
                     "Кухни с барной стойкой",
                     "Кухни с островом",
+                    ]
+                }
+
                 )
                 div.main-intro__title-box
                     h1.main-intro__title.h1 Кухни на заказ <br> от производителя

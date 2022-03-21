@@ -46,6 +46,7 @@
     }
   }
   &__image-box {
+    display: block;
     position: relative;
     cursor: pointer;
     &:not(:last-child) {

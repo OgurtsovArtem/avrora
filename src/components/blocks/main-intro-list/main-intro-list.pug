@@ -1,4 +1,5 @@
-mixin main-intro-list(...list)
-    ul.main-intro__list
+mixin main-intro-list({className, list})
+    ul(class=className ? `${className} intro-list`: `intro-list`)
         each item in list
-            li.main-intro__list-item._hover-right.dd=item
+            li.intro-list__item._hover-right
+                a.intro-list__link.dd(href="#", target="_blank", rel="noopener noreferrer")=item
