@@ -1,0 +1,82 @@
+.payment-form {
+  &__legend {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 100%;
+    color: $color-primary;
+  }
+  &__box {
+    border: none;
+    padding: 0;
+    &:not(:last-child) {
+      @include adaptive-value(
+        "margin-bottom",
+        95,
+        50,
+        map-get($breakpoints, es)
+      );
+    }
+  }
+  &__box-title {
+  }
+  &__input {
+    font-style: normal;
+    font-weight: 400;
+    font-size: rem(16);
+    line-height: 140%;
+    color: $color-white;
+  }
+  &__input-twice {
+    @include media(md) {
+      display: grid;
+      grid-auto-rows: auto;
+      grid-template-columns: repeat(2, 1fr);
+      @include adaptive-value("gap", 46, 40, map-get($breakpoints, md));
+    }
+  }
+  &__input-footnote {
+    position: absolute;
+    font-style: normal;
+    font-weight: 400;
+    font-size: rem(14);
+    line-height: 140%;
+    color: $color-primary;
+    text-align: right;
+    width: 100%;
+    display: block;
+  }
+  &__footer {
+    margin-top: rem(45);
+    display: grid;
+    @include adaptive-value("gap", 50, 36, map-get($breakpoints, md));
+    @include media(md) {
+      grid-template-columns: 1fr 1fr;
+    }
+    @include media(lg) {
+      grid-template-columns: 2fr 1fr;
+    }
+  }
+  &__checkbox {
+  }
+  &__checkbox-text {
+    cursor: auto;
+    font-style: normal;
+    font-weight: 400;
+    font-size: rem(14);
+    color: $color-text-secondary;
+    line-height: 140%;
+  }
+  &__checkbox-link {
+    color: $color-link;
+    :visited {
+      color: $color-link-visited;
+    }
+  }
+  &__submit {
+    width: 100%;
+    @include media(md) {
+      max-width: rem(250);
+    }
+  }
+}

@@ -1,0 +1,58 @@
+include ../../Ui-kit/input/input
+include ../../Ui-kit/button/button
+include ../../Ui-kit/checkbox/checkbox
+
+mixin payment-form()
+    form.payment-form(name="payment")
+        fieldset.payment-form__box
+            legend.payment-form__legend.h4 1. Контактная информация
+            h4.payment-form__box-title
+            +input({
+                className: 'payment-form__input',
+                id: 'payment-form-name',
+                placeholder: 'Ваше ФИО',
+                type: 'text'
+            })
+            div.payment-form__input-twice
+                +input({
+                    className: 'payment-form__input',
+                    id: 'payment-form-name',
+                    placeholder: 'Контактный телефон',
+                    type: 'tel'
+                })
+                +input({
+                    className: 'payment-form__input',
+                    id: 'payment-form-name',
+                    placeholder: 'Mail',
+                    type: 'mail'
+                })
+                    span.payment-form__input-footnote Сюда мы пришлём квитанцию об оплате
+        fieldset.payment-form__box
+            legend.payment-form__legend.h4 2. Платёжная информация
+            div.payment-form__input-twice
+                +input({
+                    className: 'payment-form__input',
+                    id: 'payment-form-name',
+                    placeholder: 'Номер договора',
+                    type: 'text'
+                })
+                +input({
+                    className: 'payment-form__input',
+                    id: 'payment-form-name',
+                    placeholder: 'Сумма оплаты, ₽',
+                    type: 'number'
+                })
+        div.payment-form__footer
+            +checkbox({
+                className: 'payment-form__checkbox',
+                id: 'payment-form-checkbox'
+                })
+                p.payment-form__checkbox-text Я принимаю условия&#32;
+                    a.payment-form__checkbox-link(href="http://", target="_blank", rel="noopener noreferrer") Политики конфиденциальности&#32;
+                    | и&#32;
+                    a.payment-form__checkbox-link(href="http://", target="_blank", rel="noopener noreferrer")  Договора оферты
+            +button({
+                className: 'payment-form__submit',
+                type: 'submit',
+                text: 'Перейти к оплате'
+            })

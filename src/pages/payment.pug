@@ -1,0 +1,6 @@
+extends ../layouts/default.pug
+include ../components/sections/payment-intro/payment-intro
+include ../components/sections/payment-online/payment-online
+block content
+    +payment-intro()
+    +payment-online()
