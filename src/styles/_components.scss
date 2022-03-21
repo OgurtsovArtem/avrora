@@ -12,6 +12,7 @@
 @import "../components/Ui-kit/stars/stars.scss";
 @import "../components/Ui-kit/circle-button/circle-button.scss";
 @import "../components/Ui-kit/input-file/input-file.scss";
+@import "../components/Ui-kit/checkbox/checkbox.scss";
 
 // BLOCKS
 @import "../components/blocks/main-intro-list/main-intro-list.scss";
@@ -26,6 +27,17 @@
 @import "../components/blocks/blog-card/blog-card.scss";
 @import "../components/blocks/blog-popular/blog-popular.scss";
 @import "../components/blocks/assembling-card/assembling-card.scss";
+@import "../components/blocks/payment-card/payment-card.scss";
+@import "../components/blocks/payment-popup/payment-popup.scss";
+
+// FORMS
+@import "../components/forms/designer-form/designer-form.scss";
+@import "../components/forms/application-form/application-form.scss";
+@import "../components/forms/payment-form/payment-form.scss";
+
+// BANNERS
+@import "../components/banners/kitchen-set-banner/kitchen-set-banner.scss";
+@import "../components/banners/assembling-banner/assembling-banner.scss";
 
 // SECTIONS
 @import "../components/sections/main-intro/main-intro.scss";
@@ -44,11 +56,6 @@
 @import "../components/sections/blog-list/blog-list.scss";
 @import "../components/sections/delivery/delivery.scss";
 @import "../components/sections/assembling/assembling.scss";
-
-// FORMS
-@import "../components/forms/designer-form/designer-form.scss";
-@import "../components/forms/application-form/application-form.scss";
-
-// BANNERS
-@import "../components/banners/kitchen-set-banner/kitchen-set-banner.scss";
-@import "../components/banners/assembling-banner/assembling-banner.scss";
+@import "../components/sections/contacts-intro/contacts-intro.scss";
+@import "../components/sections/payment-intro/payment-intro.scss";
+@import "../components/sections/payment-online/payment-online.scss";
