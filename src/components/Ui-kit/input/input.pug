@@ -3,3 +3,4 @@ mixin input({id, placeholder, type='text', name, className})
             input.input__field(id=id, type=type, name=name || false)
             label.input__label(for=id)
                 p.input__label-text=placeholder
+            block
