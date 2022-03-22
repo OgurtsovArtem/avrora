@@ -24,6 +24,7 @@
     "sass": "^1.49.9"
   },
   "dependencies": {
+    "masonry-layout": "^4.2.2",
     "swiper": "^8.0.7"
   }
 }

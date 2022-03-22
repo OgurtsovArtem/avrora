@@ -251,10 +251,7 @@ const kitchenSmallSwiper = new Swiper(".kitchen-large__swiper", {
     prevEl: ".kitchen-large__controls_left",
   },
 });
-
 const kitchenLargeSwiper = new Swiper(".kitchen-small__swiper", {
-  loop: true,
-
   slidesPerView: 1,
   spaceBetween: 32,
   speed: 800,
@@ -266,7 +263,6 @@ const kitchenLargeSwiper = new Swiper(".kitchen-small__swiper", {
     prevEl: ".kitchen-small__controls_left",
   },
 });
-
 const kitchenFullSwiper = new Swiper(".kitchen-full__swiper", {
   loop: true,
   slidesPerView: 1,
@@ -279,14 +275,13 @@ const kitchenFullSwiper = new Swiper(".kitchen-full__swiper", {
     prevEl: ".kitchen-full__controls_left",
   },
 });
-
-const gallaryDetail = new Swiper(".detail-gallary__swiper", {
+const gallaryDetailSwiper = new Swiper(".detail-gallary__swiper", {
   loop: true,
   slidesPerView: "auto",
   spaceBetween: 20,
   freeMode: true,
 });
-const popularKit = new Swiper(".popular-kit__swiper", {
+const popularKitSwiper = new Swiper(".popular-kit__swiper", {
   slidesPerView: 1,
   spaceBetween: 10,
 
@@ -308,4 +303,21 @@ const popularKit = new Swiper(".popular-kit__swiper", {
     nextEl: ".popular-kit__button_right",
     prevEl: ".popular-kit__button_left",
   },
+});
+const rewievsCardSwiper = new Swiper(".reviews-card__swiper", {
+  slidesPerView: 1,
+  spaceBetween: 10,
+  speed: 800,
+  loop: true,
+  navigation: {
+    nextEl: ".reviews-card__swiper-controls_right",
+    prevEl: ".reviews-card__swiper-controls_left",
+  },
+});
+
+const masonryReviews = new Masonry(".reviews-list__body", {
+  itemSelector: ".masonry-element",
+  columnWidth: ".reviews-list__card",
+  gutter: ".reviews-list__column-gap",
+  percentPosition: true,
 });
