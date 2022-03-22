@@ -33,8 +33,10 @@
     background-color: $color-gray-600;
     border-bottom-left-radius: rem(8);
     border-top-right-radius: rem(8);
-    padding-top: rem(15);
-    padding-bottom: rem(15);
+    margin-top: rem(30);
+    margin-bottom: rem(15);
+    overflow: hidden;
+    height: 0;
   }
   &__button {
     width: 100%;
