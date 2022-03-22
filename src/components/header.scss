@@ -1,12 +1,13 @@
 .header {
   $b: &;
 
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
   pointer-events: none;
+  z-index: 10;
 
   &.open-menu {
     #{$b} {
@@ -280,6 +281,7 @@
       height: 65px;
       padding: 0;
       background-color: transparent;
+      box-shadow: none;
       z-index: 1;
 
       &::before {
@@ -290,6 +292,7 @@
         width: 100%;
         height: 100%;
         background-color: #fff;
+        box-shadow: $depth2;
         z-index: -1;
       }
     }
