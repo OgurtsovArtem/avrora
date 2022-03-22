@@ -1,9 +1,5 @@
 .intro-list {
   &__list {
-    display: none;
-    @include media(md) {
-      display: block;
-    }
     position: relative;
     &::before {
       content: "";
