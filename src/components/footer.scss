@@ -1,0 +1,328 @@
+$left-space-lg: 102px;
+$center-space-lg: 180px;
+$left-space-xl: 130px;
+$center-space-xl: 136px;
+
+.footer {
+  padding-bottom: 36px;
+  background-color: $color-text;
+  color: #fff;
+
+  &__nav {
+    padding: 50px 0 20px;
+  }
+
+  &__nav-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    margin-bottom: 16px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.5;
+
+    &_cat {
+      margin-bottom: 21px;
+      font-size: 18px;
+      text-transform: uppercase;
+    }
+
+    &_main {
+      margin-bottom: 28px;
+      font-weight: 700;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__payment {
+    border-top: 1px solid $color-divider;
+    border-bottom: 1px solid $color-divider;
+    padding: 30px 0;
+    text-align: center;
+
+    &-link {
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 1.43;
+      text-transform: uppercase;
+      color: $color-primary;
+    }
+  }
+
+  &__contacts {
+    margin-top: 40px;
+    padding: 0 24px;
+    text-align: center;
+  }
+
+  &__logo {
+    margin: 0 auto;
+    width: 210px;
+  }
+
+  &__title {
+    margin-top: 12px;
+    font-size: 18px;
+    line-height: 1.5;
+    text-transform: uppercase;
+
+    span {
+      color: $color-primary;
+    }
+  }
+
+  &__call {
+    margin-top: 50px;
+  }
+
+  &__phone {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 1.5;
+  }
+
+  &__time {
+    margin-top: -10px;
+    font-size: 15px;
+    line-height: 1.6;
+    color: $color-text-secondary;
+  }
+
+  &__btn {
+    margin-top: 30px;
+    width: 100%;
+    padding: 25px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.43;
+    text-transform: uppercase;
+    background-color: $color-primary;
+  }
+
+  &__social {
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+
+    &-item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 57px;
+      height: 57px;
+      margin-right: 12px;
+      border: 1px solid $color-primary;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    &-icon {
+      width: 28px;
+      height: 28px;
+    }
+  }
+
+  &__email {
+    display: none;
+  }
+
+  &__address {
+    display: none;
+  }
+
+  &__bottom {
+    margin-top: 36px;
+    text-align: center;
+  }
+
+  &__policy {
+    font-size: 14px;
+    line-height: 1.4;
+    color: $color-text-secondary;
+  }
+
+  @include media(lg) {
+    display: grid;
+    grid-template-columns: 1fr 600px;
+    grid-template-rows: 1fr auto;
+    padding: 85px 0 47px;
+
+    &__menu {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    &__nav {
+      display: flex;
+      padding: 0;
+      padding-left: $left-space-lg;
+      padding-right: $center-space-lg;
+
+      &-group {
+        margin-right: 85px;
+        margin-bottom: 0;
+        align-items: flex-start;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+
+    &__link {
+      &_cat {
+        text-transform: none;
+      }
+    }
+
+    &__payment {
+      margin-top: 48px;
+      padding: 0;
+      padding-left: $left-space-lg;
+      padding-right: $center-space-lg;
+      border: none;
+      text-align: left;
+    }
+
+    &__contacts {
+      grid-row-end: span 2;
+      margin-top: 0;
+      padding: 0;
+      max-width: 500px;
+      text-align: left;
+    }
+
+    &__logo {
+      margin-left: 0;
+      width: 215px;
+    }
+
+    &__title {
+      margin-top: 16px;
+      max-width: 405px;
+      font-size: 16px;
+    }
+
+    &__call {
+      display: grid;
+      grid-auto-flow: column;
+      grid-template-columns: auto 250px;
+      justify-content: space-between;
+      align-items: start;
+      margin-top: 32px;
+    }
+
+    &__phone {
+      font-size: 22px;
+    }
+
+    &__time {
+      margin-top: -20px;
+    }
+
+    &__btn {
+      grid-row-end: span 2;
+      margin-top: 0;
+    }
+
+    &__social {
+      justify-content: flex-start;
+      margin-top: 10px;
+
+      &-item {
+        width: 41px;
+        height: 41px;
+      }
+
+      &-icon {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    &__email {
+      display: inline-block;
+      margin-top: 28px;
+      font-size: 15px;
+      line-height: 1.6;
+      color: $color-primary;
+    }
+
+    &__address {
+      display: block;
+      margin-top: 30px;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    &__bottom {
+      margin-top: 27px;
+      margin-right: $center-space-lg;
+      border-top: 1px solid $color-divider;
+      padding-left: $left-space-lg;
+      padding-top: 21px;
+      text-align: left;
+    }
+  }
+
+  @include media(xl) {
+    grid-template-columns: 1fr 650px;
+
+    &__nav {
+      padding-left: $left-space-xl;
+      padding-right: $center-space-xl;
+
+      &-group {
+        margin-right: 155px;
+      }
+    }
+
+    &__payment {
+      padding-left: $left-space-xl;
+      padding-right: $center-space-xl;
+    }
+
+    &__contacts {
+      padding-bottom: 30px;
+    }
+
+    &__call {
+      align-items: center;
+    }
+
+    &__phone {
+      font-size: 25px;
+    }
+
+    &__social {
+      margin-top: 70px;
+    }
+
+    &__email {
+      margin-top: 18px;
+    }
+
+    &__address {
+      margin-top: 50px;
+    }
+
+    &__bottom {
+      margin-right: $center-space-xl;
+      padding-left: $left-space-xl;
+    }
+  }
+}
