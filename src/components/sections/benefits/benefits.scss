@@ -20,6 +20,7 @@
     @include media(md) {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
+      grid-auto-rows: auto;
       @include adaptive-value("column-gap", 160, 40, map-get($breakpoints, md));
     }
   }
@@ -77,8 +78,8 @@
     }
   }
   &__accordion-body {
-    @include adaptive-value("padding-top", 33, 10, map-get($breakpoints, sm));
-    padding-bottom: rem(19);
+    overflow: hidden;
+    height: 0;
   }
   &__accordion-text {
     font-style: normal;
@@ -87,6 +88,9 @@
     color: $color-text-secondary;
     transition: $transitionNormal;
     max-width: rem(520);
+    @include adaptive-value("padding-top", 33, 10, map-get($breakpoints, sm));
+    padding-bottom: rem(19);
+
     &:not(:last-child) {
       margin-bottom: rem(20);
     }

@@ -1,0 +1,22 @@
+include ../../blocks/blog-card/blog-card
+
+mixin may-interested()
+    section.may-interested
+        .may-interested__container.container
+            h2.may-interested__title.h2 Вам может быть интересно
+            .may-interested__cards
+                +blog-card({
+                    className: "may-interested__card",
+                    text: "5 полезных советов, как выбрать кухню на заказ",
+                    image: "card_5.jpg"
+                })
+                +blog-card({
+                    className: "may-interested__card",
+                    text: "10 способов сделать кухню уютнее",
+                    image: "card_2.jpg"
+                })
+                +blog-card({
+                    className: "may-interested__card",
+                    text: "5 полезных советов, как выбрать кухню на заказ",
+                    image: "card_1.jpg"
+                })

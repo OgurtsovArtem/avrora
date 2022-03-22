@@ -1,0 +1,102 @@
+.article-section {
+  overflow: hidden;
+  &__intro-image {
+    min-height: rem(250);
+    object-fit: cover;
+  }
+  &__body {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    @include adaptive-value("column-gap", 40, 20, map-get($breakpoints, sm));
+    @include adaptive-value("padding-top", 86, 30, map-get($breakpoints, es));
+    @include adaptive-value("margin-top", -150, 0, map-get($breakpoints, md));
+    background-color: $color-white;
+    @include media(md) {
+      grid-template-columns: 1fr 2fr;
+    }
+  }
+  &__title {
+    font-family: "Philosopher";
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+    margin-bottom: rem(55);
+    @include adaptive-value("font-size", 36, 26, map-get($breakpoints, es));
+  }
+  &__description {
+    font-style: normal;
+    font-weight: 700;
+    font-size: rem(15);
+    line-height: 160%;
+    @include media(md) {
+      grid-column-start: 2;
+    }
+  }
+  &__subtitle {
+    font-style: normal;
+    font-weight: 600;
+    font-size: rem(18);
+    line-height: 100%;
+    @include adaptive-value("margin-bottom", 27, 22, map-get($breakpoints, es));
+    @include adaptive-value("margin-top", 85, 60, map-get($breakpoints, md));
+    @include media(md) {
+      grid-column-start: 2;
+    }
+  }
+  &__subtitle-number {
+    font-style: normal;
+    font-weight: 600;
+    font-size: rem(18);
+    line-height: 100%;
+    @include adaptive-value("margin-right", 12, 8, map-get($breakpoints, es));
+    color: $color-primary;
+  }
+  &__text {
+    font-style: normal;
+    font-weight: 400;
+    font-size: rem(15);
+    line-height: 160%;
+    margin-bottom: rem(15);
+    @include media(md) {
+      grid-column-start: 2;
+    }
+  }
+  &__image {
+    object-fit: cover;
+    width: 110%;
+    margin-left: rem(-$containerIndentationMin);
+    margin-right: rem(-$containerIndentationMin);
+    @include adaptive-value(
+      "margin-top",
+      25,
+      10,
+      map-get($breakpoints, es),
+      map-get($breakpoints, md)
+    );
+    @include adaptive-value("height", 512, 240, map-get($breakpoints, sm));
+    @include media(sm) {
+      margin-left: rem(-$containerIndentation);
+      margin-right: rem(-$containerIndentation);
+    }
+    @include media(md) {
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      @include adaptive-value("margin-top", 85, 25, map-get($breakpoints, md));
+    }
+    &_first {
+      @include media(md) {
+        position: relative;
+        width: 119%;
+        left: -19%;
+      }
+    }
+    &_second {
+      @include media(md) {
+        position: relative;
+        width: 119%;
+      }
+    }
+  }
+}
