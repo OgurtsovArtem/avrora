@@ -1,0 +1,67 @@
+include ../../blocks/kitchen-small/kitchen-small
+include ../../blocks/kitchen-large/kitchen-large
+include ../../banners/kitchen-set-banner/kitchen-set-banner
+
+mixin kitchen-set({className, version})
+
+    case version
+        when 'version-1'
+            div(class=className ? `${className} kitchen-set`: `kitchen-set`)
+                +kitchen-large({
+                    className: 'kitchen-set__large-kitchen'
+                })
+                +kitchen-small({
+                    className: 'kitchen-set__small-kitchen'
+                })
+                +kitchen-set-banner({
+                    className: 'kitchen-set__banner'
+                })
+                +kitchen-small({
+                    className: 'kitchen-set__small-kitchen'
+                })
+                +kitchen-small({
+                    className: 'kitchen-set__small-kitchen'
+                })
+                +kitchen-small({
+                    className: 'kitchen-set__small-kitchen'
+                })
+        when 'version-2'
+            div(class=className ? `${className} kitchen-set`: `kitchen-set`)
+                +kitchen-small({
+                    className: 'kitchen-set__small-kitchen'
+                })
+                +kitchen-large({
+                    className: 'kitchen-set__large-kitchen kitchen-set__large-kitchen_row-start'
+                })
+                +kitchen-set-banner({
+                    className: 'kitchen-set__banner kitchen-set__banner_dark'
+                })
+                +kitchen-small({
+                    className: 'kitchen-set__small-kitchen'
+                })
+                +kitchen-small({
+                    className: 'kitchen-set__small-kitchen'
+                })
+                +kitchen-small({
+                    className: 'kitchen-set__small-kitchen'
+                })
+        default
+            div(class=className ? `${className} kitchen-set`: `kitchen-set`)
+                +kitchen-large({
+                    className: 'kitchen-set__large-kitchen'
+                })
+                +kitchen-small({
+                    className: 'kitchen-set__small-kitchen'
+                })
+                +kitchen-set-banner({
+                    className: 'kitchen-set__banner'
+                })
+                +kitchen-small({
+                    className: 'kitchen-set__small-kitchen'
+                })
+                +kitchen-small({
+                    className: 'kitchen-set__small-kitchen'
+                })
+                +kitchen-small({
+                    className: 'kitchen-set__small-kitchen'
+                })

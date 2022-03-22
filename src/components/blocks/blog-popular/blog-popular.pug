@@ -1,0 +1,10 @@
+mixin blog-popular({className, texts, title})
+    div(class=className ? `${className} blog-popular`: `blog-popular`)
+        h2.blog-popular__title.h2=title
+        ul.blog-popular__list
+            -let number = 1;
+            each text in texts
+                li.blog-popular__item
+                    a.blog-popular__link._hover-right(href="#", target="_blank", rel="noopener noreferrer")
+                        span.blog-popular__number.h2=number++
+                        p.blog-popular__text.txt=text

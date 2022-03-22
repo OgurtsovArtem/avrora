@@ -1,0 +1,28 @@
+.advantages-line {
+  @include adaptive-value("margin-top", 110, 65, map-get($breakpoints, es));
+  @include adaptive-value("margin-bottom", 150, 90, map-get($breakpoints, es));
+  &__list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0;
+    @include media(sm) {
+      justify-content: space-evenly;
+    }
+    @include adaptive-value("gap", 110, 33, map-get($breakpoints, es));
+  }
+  &__item {
+    position: relative;
+    padding-left: rem(20);
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: rem(8);
+      height: rem(8);
+      transform: translate(0, -50%) rotate(45deg);
+      background-color: $color-gray-300;
+    }
+  }
+}

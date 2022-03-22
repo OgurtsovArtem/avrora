@@ -1,0 +1,23 @@
+.learn-more-button {
+  &__link {
+    font-family: "Source Sans Pro";
+    font-style: normal;
+    font-weight: 600;
+    font-size: rem(14);
+    line-height: 143%;
+    text-transform: uppercase;
+    &_blue {
+      color: $color-link;
+      &:visited {
+        color: $color-link-visited;
+      }
+    }
+    &_yellow {
+      color: $color-primary;
+      &:visited {
+        color: $color-primary;
+        opacity: 0.9;
+      }
+    }
+  }
+}

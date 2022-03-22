@@ -1,0 +1,20 @@
+extends ../layouts/default.pug
+include ../components/sections/steps/steps
+include ../components/sections/form-section/form-section
+include ../components/sections/popular-kit/popular-kit
+include ../components/sections/blog-list/blog-list
+
+
+block content
+    +blog-list
+    +popular-kit
+    +form-section({
+        titleVariant: 'variant-1',
+        titleAccentWord:  "бесплатно ?",
+        title: "Хотите получить проект своей будущей кухни ",
+        text: "Да, увидеть проект по вашим размерам своими глазами! Заполните форму рядом и мы мигом свяжемся с вами и расскажем, как это сделать",
+        button: false,
+        backgroundIcon: true,
+        form: 'application',
+    })
+    +steps

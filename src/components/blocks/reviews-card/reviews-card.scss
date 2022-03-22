@@ -1,0 +1,126 @@
+.reviews-card {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -10%;
+    width: 120%;
+    height: 1px;
+    background-color: $color-gray-500;
+  }
+
+  @include media(md) {
+    box-shadow: $depth2;
+    border-radius: rem(8);
+    &::after {
+      display: none;
+    }
+  }
+  &__swiper {
+    overflow: hidden;
+    position: relative;
+    @include adaptive-value("height", 304, 220, map-get($breakpoints, sm));
+    @include adaptive-value("margin-bottom", 30, 20, map-get($breakpoints, es));
+  }
+  &__image {
+    object-fit: cover;
+    max-height: rem(320);
+  }
+
+  &__description {
+    @include adaptive-value("padding-top", 60, 40, map-get($breakpoints, es));
+    @include adaptive-value(
+      "padding-bottom",
+      60,
+      40,
+      map-get($breakpoints, es)
+    );
+    @include adaptive-value("padding-left", 65, 0, map-get($breakpoints, sm));
+    @include adaptive-value("padding-right", 65, 0, map-get($breakpoints, sm));
+    &_remove-top-padding {
+      padding-top: 0;
+    }
+    &_remove-bottom-padding {
+      padding-bottom: 0;
+    }
+  }
+  &__title {
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%;
+    @include adaptive-value("margin-bottom", 26, 20, map-get($breakpoints, es));
+  }
+  &__text {
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+    color: $color-text-secondary;
+    margin-bottom: rem(15);
+  }
+  &__video-button {
+  }
+  &__info {
+    @include adaptive-value("margin-top", 30, 20, map-get($breakpoints, es));
+    @include media(sm) {
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: rem(25);
+    }
+  }
+
+  &__author {
+    @include media(sm) {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      column-gap: rem(20);
+      align-items: center;
+    }
+  }
+  &__author-name {
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%;
+    align-self: flex-end;
+  }
+  &__avatar {
+    width: rem(73);
+    height: rem(73);
+    border-radius: 50%;
+    grid-row-start: span 2;
+    margin-bottom: rem(20);
+    @include media(sm) {
+      margin-bottom: 0;
+    }
+  }
+  &__date {
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+    color: $color-primary;
+    align-self: flex-start;
+  }
+  &__stars {
+  }
+  &__button-project {
+    width: 100%;
+    text-transform: uppercase;
+    color: $color-link;
+    background-color: $color-gray-600;
+    border-radius: rem(6);
+    padding: 0;
+    margin-top: rem(25);
+    @include media(md) {
+      display: block;
+      margin-left: auto;
+      max-width: rem(250);
+    }
+  }
+  &__button-project-link {
+    display: block;
+    padding: rem(18);
+  }
+}

@@ -1,0 +1,40 @@
+include ../../Ui-kit/learn-more-button/learn-more-button
+include ../../Ui-kit/icon/icon
+include ../../forms/designer-form/designer-form
+include ../../forms/application-form/application-form
+
+mixin form-section({title, titleAccentWord, titleVariant, text, backgroundIcon=false, button=false, form})
+    section.form-section.max-container
+        .form-section__container.container
+            .form-section__description
+                .form-section__description-box
+                    case titleVariant
+                        when 'variant-1'
+                            h2.form-section__title.h2=title
+                                span.form-section__title_accent=titleAccentWord
+                        when 'variant-2'
+                            h2.form-section__title.h2
+                                span.form-section__title_accent=titleAccentWord
+                                =title
+                        default
+                            h2.form-section__title.h2
+                                span.form-section__title_accent=titleAccentWord
+                                =title
+                    p.form-section__text.txt=text
+                    if button
+                        +learn-more-button({
+                            link: '/production',
+                            className: 'form-section__button',
+                        })
+                if backgroundIcon
+                    +icon('background-pattern-form-section', 'form-section__background-desctop')
+            .form-section__form-box
+                case form
+                    when 'designer'
+                        +designer-form()
+                    when 'application'
+                        +application-form()
+                    default
+                        +designer-form()
+            if backgroundIcon
+                +icon('background-pattern-form-section', 'form-section__background-mobile')

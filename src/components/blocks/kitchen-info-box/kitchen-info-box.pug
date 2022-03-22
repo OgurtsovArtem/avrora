@@ -1,0 +1,29 @@
+include ../../Ui-kit/button-back/button-back
+include ../../Ui-kit/video-button/video-button
+include ../../Ui-kit/button/button
+
+mixin kitchen-info-box({className})
+    div(class=className ? `${className} kitchen-info-box`: `kitchen-info-box`).container
+        .kitchen-info-box__container
+            .kitchen-info-box__top
+                .kitchen-info-box__header
+                    p.kitchen-info-box__title гарнитур
+                    h1.kitchen-info-box__name Название гарнитура
+                +video-button({
+                    className: "kitchen-full__video-button",
+                    text: 'Видеоотзыв'
+                })
+                .kitchen-info-box__price
+                    span.kitchen-info-box__price-current 100 500 ₽
+                    span.kitchen-info-box__price-old 100 500 ₽
+                    p.kitchen-info-box__price-text цена за весь гарнитур
+            .kitchen-info-box__bottom
+                +button({
+                    className: "kitchen-info-box__button",
+                    text: 'Пригласить замерщика',
+                    color: "white"
+                })
+                +button({
+                    className: "kitchen-info-box__button",
+                    text: 'Рассчитать мой проект',
+                })

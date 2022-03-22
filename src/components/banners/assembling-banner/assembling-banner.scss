@@ -1,0 +1,19 @@
+.assembling-banner {
+  @include adaptive-value("padding", 37, 20, map-get($breakpoints, es));
+  background-color: $color-dark-blue-600;
+  backdrop-filter: blur(rem(10));
+  &__discount {
+    font-family: "Philosopher";
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+    color: $color-primary;
+  }
+  &__text {
+    font-style: normal;
+    font-weight: 700;
+    @include adaptive-value("font-size", 18, 16, map-get($breakpoints, es));
+    line-height: 100%;
+    color: $color-white;
+  }
+}

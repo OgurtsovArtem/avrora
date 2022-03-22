@@ -1,0 +1,44 @@
+// ____________Source Sans Pro___________
+@font-face {
+  font-family: "Source Sans Pro";
+  font-display: swap;
+  src: url("../fonts/SourceSansPro-Regular.woff2") format("woff2"),
+    url("../fonts/SourceSansPro-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  font-display: swap;
+  src: url("../fonts/SourceSansPro-SemiBold.woff2") format("woff2"),
+    url("../fonts/SourceSansPro-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Source Sans Pro";
+  font-display: swap;
+  src: url("../fonts/SourceSansPro-Bold.woff2") format("woff2"),
+    url("../fonts/SourceSansPro-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+// ____________Philosopher___________
+@font-face {
+  font-family: Philosopher;
+  font-display: swap;
+  src: url("../fonts/Philosopher-Regular.woff2") format("woff2"),
+    url("../fonts/Philosopher-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Philosopher;
+  font-display: swap;
+  src: url("../fonts/Philosopher-BoldItalic.woff2") format("woff2"),
+    url("../fonts/Philosopher-BoldItalic.woff") format("woff");
+  font-weight: 700;
+  font-style: italic;
+}

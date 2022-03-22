@@ -1,0 +1,33 @@
+include ../../Ui-kit/stars/stars
+include ../../Ui-kit/video-button/video-button
+include ../../Ui-kit/kitchen-controls/kitchen-controls
+
+mixin reviews-card({className, title, texts, stars, icon, date, name, button, video, image})
+    div(class=className ? `${className} reviews-card`: `reviews-card`)
+        if image
+            .reviews-card__swiper
+                .swiper-wrapper
+                    img.reviews-card__image.swiper-slide(src=`/assets/images/reviews/${image}`, alt="preview")
+                +kitchen-controls({className: 'reviews-card__swiper-controls'})
+        .reviews-card__description(class= image ? 'reviews-card__description_remove-top-padding' : button ? 'reviews-card__description_remove-bottom-padding' : '')
+            h3.reviews-card__title.h3=title
+            if texts
+                each text in texts
+                    p.reviews-card__text.txt=text
+            if video
+                +video-button({
+                    className: 'reviews-card__video-button',
+                    text: 'Смотреть Видеоотзыв'
+                })
+            .reviews-card__info
+                .reviews-card__author
+                    img.reviews-card__avatar(src=`/assets/images/reviews/${icon}`, alt="avatar")
+                    .reviews-card__author-name.h4=name
+                    .reviews-card__date.txt=date
+                +stars({
+                    className: 'reviews-card__stars',
+                    quantity: stars,
+                })
+        if button
+            button.reviews-card__button-project(type='button')
+                a.reviews-card__button-project-link(href="#", target="_blank", rel="noopener noreferrer")  Посмотреть проект

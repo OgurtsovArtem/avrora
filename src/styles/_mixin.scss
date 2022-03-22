@@ -1,0 +1,60 @@
+@use "sass:math";
+// ________________ADAPTIVE VALUE________________
+
+/* |Как использовать|
+Передаем в функцию параметры
+1 - css Свойство ($value_name)
+2* - макимальное значение свойства.($max_value)
+3* - минимальное значение свойства. ($min_value)
+4* - конечная миимальная ширина на которой свойство примет свое минимальное значение ($min_width),
+    если величина меньше ($minWidth - задается в _variables.scss как стандартное значение).
+5* - максимальная ширина с которой начнет адаптироваться свойство (по умолчанию равана $maxWidth - задается в _variables.scss как стандартное значение)
+
+* -- без учета едениц измерения (px)
+
+|ПРИМЕР @include adaptive-value('margin-right', 50, 20, 540);|
+*/
+
+@mixin adaptive-value(
+  $value_name,
+  $max_value,
+  $min_value,
+  $min_width,
+  $max_width: $maxWidth
+) {
+  // Если больше максимального значения фиксируем максимальное значение как константу
+  #{$value_name}: math.div($max_value, $mainFontSize) + rem;
+  @media (max-width: ($max_width+px)) {
+    // Получаем возможность регулирования нужной минмальной ширины для адаптива
+    @if ($min_width >= $minWidth) {
+      #{$value_name}: calc(
+        #{$min_value +
+          px} +
+          #{($max_value - $min_value)} *
+          ((100vw - #{$min_width + px}) / #{($max_width - $min_width)})
+      );
+      // Если меньше минимального значения фиксируем минимальное значение как константу
+      @media (max-width: ($min_width+px)) {
+        #{$value_name}: $min_value + px;
+      }
+    } @else {
+      #{$value_name}: calc(
+        #{$min_value +
+          px} +
+          #{($max_value - $min_value)} *
+          ((100vw - #{$minWidth + px}) / #{($maxWidth - $minWidth)})
+      );
+      @media (max-width: ($minWidth+px)) {
+        #{$value_name}: $min_value + px;
+      }
+    }
+  }
+}
+
+// ________________MEDIA QUERIES________________
+
+@mixin media($breakpoint) {
+  @media (min-width: (map-get($breakpoints, $breakpoint)+px)) {
+    @content;
+  }
+}

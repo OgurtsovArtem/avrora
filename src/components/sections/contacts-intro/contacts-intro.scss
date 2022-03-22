@@ -1,0 +1,101 @@
+.contacts-intro {
+  &__container {
+    @include media(md) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      @include adaptive-value("column-gap", 100, 50, map-get($breakpoints, md));
+    }
+  }
+  &__map {
+    background-color: $color-secondary;
+    display: none;
+    @include media(md) {
+      display: block;
+      margin-left: rem(-$containerIndentation);
+    }
+  }
+  &__info {
+    @include adaptive-value("margin-top", 35, 25, map-get($breakpoints, es));
+  }
+  &__title {
+    font-family: "Philosopher";
+    font-style: normal;
+    font-weight: 400;
+    line-height: 80%;
+    @include adaptive-value("margin-bottom", 57, 30, map-get($breakpoints, sm));
+  }
+  &__call-box {
+    @include adaptive-value("margin-bottom", 57, 15, map-get($breakpoints, sm));
+  }
+  &__call-title {
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%;
+    margin-bottom: rem(10);
+  }
+  &__call-tel {
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%;
+  }
+  &__call-footnote {
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    color: $color-text-secondary;
+  }
+  &__invite-box {
+    display: flex;
+    flex-direction: column;
+    @include adaptive-value("gap", 40, 30, map-get($breakpoints, es));
+    @include adaptive-value("margin-bottom", 57, 35, map-get($breakpoints, sm));
+    @include media(md) {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+  &__invite-button {
+    @include media(sm) {
+      max-width: rem(380);
+    }
+  }
+  &__invite-text {
+    font-style: normal;
+    font-weight: 400;
+    font-size: rem(14);
+    line-height: 140%;
+  }
+  &__adress-box {
+    @include adaptive-value("margin-bottom", 57, 35, map-get($breakpoints, sm));
+  }
+  &__adress-title {
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%;
+    margin-bottom: rem(10);
+  }
+  &__adress-text {
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+  }
+  &__social-box {
+    @include adaptive-value("margin-bottom", 70, 25, map-get($breakpoints, sm));
+  }
+  &__social-title {
+    margin-bottom: rem(23);
+  }
+  &__social-icons {
+  }
+  &__file-box {
+    display: flex;
+    align-items: center;
+    gap: rem(18);
+  }
+  &__file-icon {
+    width: rem(24);
+    height: rem(30);
+  }
+  &__file-text {
+  }
+}

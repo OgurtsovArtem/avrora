@@ -1,0 +1,42 @@
+.blog-popular {
+  &__title {
+    font-family: "Philosopher";
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+    color: $color-primary;
+  }
+  &__list {
+  }
+  &__item {
+    border-bottom: rem(1) solid $color-gray-510;
+    @include adaptive-value("margin-top", 35, 15, map-get($breakpoints, es));
+    @include adaptive-value(
+      "padding-bottom",
+      35,
+      15,
+      map-get($breakpoints, es)
+    );
+    padding-left: rem(15);
+  }
+  &__link {
+    display: grid;
+    grid-template-columns: 1fr 9fr;
+    gap: rem(17);
+    align-items: center;
+  }
+  &__number {
+    font-family: "Philosopher";
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+    color: $color-primary;
+  }
+  &__text {
+    font-style: normal;
+    font-weight: 600;
+    @include adaptive-value("font-size", 18, 16, map-get($breakpoints, sm));
+    line-height: 100%;
+    color: $color-white;
+  }
+}

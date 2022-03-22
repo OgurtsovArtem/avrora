@@ -1,0 +1,23 @@
+.payment-card {
+  background: $color-secondary;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  @include adaptive-value("padding", 48, 38, map-get($breakpoints, es));
+  &__title {
+    font-style: normal;
+    font-weight: 600;
+
+    line-height: 100%;
+    color: $color-white;
+    margin-bottom: rem(10);
+    @include adaptive-value("font-size", 18, 16, map-get($breakpoints, es));
+  }
+  &__number {
+    font-family: "Philosopher";
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+    color: $color-primary;
+  }
+}

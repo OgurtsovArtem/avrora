@@ -1,0 +1,10 @@
+.stars {
+  display: flex;
+  align-items: center;
+  gap: rem(2);
+  &__icon {
+    width: rem(21);
+    height: rem(21);
+    fill: $color-rating;
+  }
+}

@@ -1,6 +1,7 @@
-@import 'variables';
-@import 'basic';
-
-@import '../components/catalog.scss';
-@import '../components/footer.scss';
-@import '../components/header.scss';
+@import "variables";
+@import "basic";
+@import "fonts";
+@import "mixin";
+@import "functions";
+@import "techClasses";
+@import "components";

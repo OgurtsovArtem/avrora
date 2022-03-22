@@ -1,0 +1,35 @@
+.intro-list {
+  &__list {
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -25%;
+      width: 125%;
+      height: rem(1);
+      background-color: $color-border;
+    }
+  }
+  &__link {
+    display: block;
+    cursor: pointer;
+    @include adaptive-value("padding-top", 27, 17, map-get($breakpoints, lg));
+    @include adaptive-value(
+      "padding-bottom",
+      27,
+      17,
+      map-get($breakpoints, lg)
+    );
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: -25%;
+      width: 125%;
+      height: rem(1);
+      background-color: $color-border;
+    }
+  }
+}

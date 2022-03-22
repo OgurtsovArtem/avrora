@@ -1,0 +1,54 @@
+.payment-popup {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  // opacity: 0;
+  pointer-events: none;
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: 0px rem(4) rem(24) rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(rem(10));
+  border-radius: rem(8);
+
+  &__close {
+  }
+  &__container {
+    @include adaptive-value("padding-top", 50, 20, map-get($breakpoints, es));
+    @include adaptive-value(
+      "padding-bottom",
+      50,
+      20,
+      map-get($breakpoints, es)
+    );
+    @include adaptive-value("padding-left", 70, 20, map-get($breakpoints, es));
+    @include adaptive-value("padding-right", 90, 40, map-get($breakpoints, es));
+  }
+  &__title {
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%;
+    @include adaptive-value("font-size", 18, 16, map-get($breakpoints, es));
+    @include adaptive-value("margin-bottom", 40, 20, map-get($breakpoints, es));
+  }
+  &__text {
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+    &:not(:last-child) {
+      @include adaptive-value(
+        "margin-bottom",
+        20,
+        10,
+        map-get($breakpoints, es)
+      );
+    }
+  }
+  &__footnote {
+    font-style: normal;
+    font-weight: 600;
+    color: $color-primary;
+    line-height: 100%;
+    @include adaptive-value("font-size", 18, 16, map-get($breakpoints, es));
+    @include adaptive-value("margin-top", 33, 20, map-get($breakpoints, es));
+  }
+}

@@ -1,0 +1,15 @@
+.button {
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 600;
+  font-size: rem(14);
+  line-height: 143%;
+  text-transform: uppercase;
+  color: $color-white;
+  background-color: $color-primary;
+  @include adaptive-value("padding", 25, 15, map-get($breakpoints, es));
+  &_white {
+    color: $color-text-secondary;
+    background-color: $color-white;
+  }
+}

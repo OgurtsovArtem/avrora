@@ -1,0 +1,25 @@
+include ../../Ui-kit/video-button/video-button
+include ../../Ui-kit/stars/stars
+mixin detail-feedback()
+    section.detail-feedback
+        .detail-feedback__container.container
+            h2.detail-feedback__title.h2 Отзыв клиента
+            .detail-feedback__description
+                p.detail-feedback__text.txt Постоянное информационно-пропагандистское обеспечение нашей деятельности в значительной степени обуславливает создание систем массового участия. Повседневная практика показывает, что постоянное информационно-пропагандистское обеспечение нашей деятельности требуют от нас анализа форм развития. Значимость этих проблем настолько очевидна, что новая модель организационной деятельности влечет за собой процесс внедрения и модернизации направлений прогрессивного развития.
+                p.detail-feedback__text.txt Задача организации, в особенности же реализация намеченных плановых заданий способствует подготовки и реализации модели развития. Значимость этих проблем настолько очевидна, что сложившаяся структура организации в значительной степени обуславливает создание форм развития.
+                .detail-feedback__description-footer
+                    +video-button({
+                        className: 'detail-feedback__video-button',
+                        text: 'Видеоотзыв'
+                    })
+                    .detail-feedback__rating
+                        +stars({
+                            className: 'detail-feedback__stars',
+                            quantity: 5
+                        })
+                        .detail-feedback__value
+                            span.detail-feedback__value-current 5
+                            |/
+                            span.detail-feedback__value-total 5
+                            |,
+                            p.detail-feedback__value-text отлично

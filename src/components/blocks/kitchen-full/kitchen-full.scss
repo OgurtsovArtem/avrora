@@ -1,0 +1,48 @@
+.kitchen-full {
+  &__swiper {
+    position: relative;
+    overflow: hidden;
+  }
+  &__item {
+    width: 100%;
+    position: relative;
+  }
+  &__item-image {
+    @include adaptive-value("height", 733, 380, map-get($breakpoints, es));
+    object-fit: cover;
+  }
+  &__controls {
+    height: 100%;
+    top: 0;
+    transform: translate(0);
+    &_right {
+      height: 100%;
+      @include adaptive-value("width", 120, 60, map-get($breakpoints, es));
+    }
+    &_left {
+      @include adaptive-value("width", 120, 60, map-get($breakpoints, es));
+      height: 100%;
+    }
+    & svg {
+      @include adaptive-value("height", 50, 30, map-get($breakpoints, es));
+    }
+  }
+  &__button-back {
+    position: absolute;
+    @include adaptive-value("top", 24, 8, map-get($breakpoints, es));
+    @include adaptive-value("right", 50, 10, map-get($breakpoints, es));
+  }
+  &__info {
+    margin-top: 0;
+    @include media(md) {
+      @include adaptive-value(
+        "margin-top",
+        -180,
+        -50,
+        map-get($breakpoints, md)
+      );
+    }
+    position: relative;
+    z-index: $zIndexLight;
+  }
+}

@@ -1,0 +1,51 @@
+.popular-kit {
+  background-color: $color-secondary;
+  @include adaptive-value("padding-top", 110, 40, map-get($breakpoints, es));
+  @include adaptive-value("padding-bottom", 110, 40, map-get($breakpoints, es));
+  &__container {
+  }
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    @include adaptive-value(
+      "padding-bottom",
+      35,
+      20,
+      map-get($breakpoints, es)
+    );
+  }
+  &__title {
+    font-family: "Philosopher";
+    font-style: normal;
+    font-weight: 400;
+    color: $color-primary;
+    line-height: 100%;
+  }
+  &__controls {
+    display: flex;
+  }
+  &__button {
+    &_left {
+      transform: translateX(10%);
+    }
+    &_right {
+      transform: translateX(-10%);
+      & svg {
+        transform: rotate(180deg);
+      }
+    }
+  }
+  &__swiper {
+    overflow: hidden;
+  }
+  &__item {
+  }
+  &__kitchen-button {
+    width: 100%;
+    margin-top: rem(25);
+    @include media(md) {
+      display: none;
+    }
+  }
+}

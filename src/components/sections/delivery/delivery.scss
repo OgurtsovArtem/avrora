@@ -1,0 +1,134 @@
+.delivery {
+  @include adaptive-value(
+    "margin-top",
+    102,
+    60,
+    map-get($breakpoints, sm),
+    map-get($breakpoints, lg)
+  );
+  &__container {
+    @include media(lg) {
+      @include adaptive-value(
+        "padding-right",
+        300,
+        $containerIndentation,
+        map-get($breakpoints, lg)
+      );
+    }
+  }
+  &__header {
+    display: grid;
+    @include adaptive-value("gap", 45, 30, map-get($breakpoints, es));
+    @include adaptive-value("margin-bottom", 75, 20, map-get($breakpoints, sm));
+    @include media(md) {
+      grid-template-columns: 1fr 2fr;
+    }
+  }
+  &__title {
+    font-family: "Philosopher";
+    font-style: normal;
+    font-weight: 400;
+    line-height: 80%;
+    color: $color-primary;
+  }
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr;
+    @include adaptive-value("column-gap", 96, 18, map-get($breakpoints, sm));
+    @include adaptive-value("row-gap", 45, 18, map-get($breakpoints, sm));
+    @include media(sm) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: rem(20);
+  }
+  &__item-index {
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+    color: $color-primary;
+  }
+  &__item-text {
+  }
+  &__footer {
+    position: relative;
+  }
+  &__footer-background {
+    width: 100%;
+    object-fit: cover;
+    object-position: 75%;
+    @include adaptive-value("height", 538, 320, map-get($breakpoints, sm));
+    @include adaptive-value(
+      "border-top-left-radius",
+      350,
+      200,
+      map-get($breakpoints, sm)
+    );
+    @include media(sm) {
+      object-position: 80% center;
+    }
+  }
+  &__price {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translateX(-50%);
+    display: flex;
+    @include media(lg) {
+      @include adaptive-value(
+        "padding-right",
+        300,
+        $containerIndentation,
+        map-get($breakpoints, lg)
+      );
+    }
+  }
+  &__price-list {
+    margin-left: auto;
+    align-self: end;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: rem(20);
+    @include adaptive-value(
+      "margin-bottom",
+      100,
+      35,
+      map-get($breakpoints, es)
+    );
+  }
+  &__price-item {
+    display: flex;
+    align-items: flex-start;
+    padding-left: rem(10);
+    gap: rem(24);
+  }
+  &__price-value {
+    font-family: "Philosopher";
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+    color: $color-primary;
+    white-space: nowrap;
+  }
+  &__price-text {
+    font-style: normal;
+    font-weight: 600;
+    font-size: rem(16);
+    line-height: 100%;
+    color: $color-white;
+  }
+  &__price-footnote {
+    font-family: "Philosopher";
+    font-style: normal;
+    font-weight: 400;
+    @include adaptive-value("font-size", 26, 22, map-get($breakpoints, es));
+    line-height: 100%;
+    color: $color-primary;
+    margin-top: rem(10);
+  }
+}

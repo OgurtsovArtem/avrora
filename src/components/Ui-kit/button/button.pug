@@ -1,0 +1,6 @@
+mixin button({text, className, color, type='button'})
+    case color
+        when 'white'
+            button(class=className ? `${className} ${className}_white button button_white`: `button button_white`, type=type)=text
+        default
+            button(class=className ? `${className} button`: `button`, type=type)=text

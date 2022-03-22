@@ -1,30 +1,56 @@
-$color-text: #2C2D2E;
+// Colors
+$color-text: #2c2d2e;
 $color-text-secondary: #919399;
-$color-link: #005BD1;
-$color-link-visited: #528FDF;
+$color-link: #005bd1;
+$color-link-visited: #528fdf;
 
-$color-primary: #E3B23C;
+$color-primary: #e3b23c;
 $color-secondary: #283143;
-$color-accent: #80A4ED;
-$color-border: rgba(#D3D3D3, 0.4);
-$color-divider: rgba(#D9D9D9, 0.4);
-$color-bg-secondary: rgba(#00103D, 0.06);
-$color-bg-secondary--hover: rgba(#00103D, 0.1);
-$color-rating: #FFD400;
-$color-bg-warning: #FFFCE0;
+$color-accent: #80a4ed;
+$color-border: rgba(#d3d3d3, 0.4);
+$color-divider: rgba(#d9d9d9, 0.4);
+$color-bg-secondary: rgba(#00103d, 0.06);
+$color-bg-secondary--hover: rgba(#00103d, 0.1);
+$color-rating: #ffd400;
+$color-bg-warning: #fffce0;
+// Not specified
+$color-white: #ffffff;
 
+$color-gray-200: #f9f9fb;
+$color-gray-300: #bfc1c7;
+$color-gray-500: rgba(217, 217, 217, 0.4);
+$color-gray-510: rgba(211, 211, 211, 0.4);
+$color-gray-600: rgba(0, 16, 61, 0.06);
+
+$color-dark-blue-200: #3d4555;
+$color-dark-blue-600: rgba(128, 164, 237, 0.05);
+// Shadows
 $depth2: 0px 4px 32px rgba(0, 16, 61, 0.16);
 $depth3: 0px 16px 48px rgba(0, 16, 61, 0.48);
 
-$breakpoints: (
-  sm: 375px,
-  md: 770px,
-  lg: 1280px,
-  xl: 1600px
-);
+// Main sizes
+$minWidth: 280;
+$maxWidth: 1920;
+$mainFontSize: 15;
+$containerIndentation: 20; // отступ контейнера
+$containerIndentationMin: 10;
+$maxWidthContainer: 1700; // 1810 - 1640 где то в этом районе контейнеры :)
+$maxWidthContainerMax: 1850;
+//Z-Index
+$zIndexLight: 10;
+$zIndexNormal: 100;
+$zIndexHight: 1000;
 
-@mixin media($breakpoint) {
-  @media (min-width: map-get($breakpoints, $breakpoint)) {
-    @content;
-  }
-}
+// Transitions
+$transitionLight: 0.3s;
+$transitionNormal: 0.5s;
+$transitionHight: 0.8s;
+
+// Breakpoints
+$breakpoints: (
+  es: 280,
+  sm: 375,
+  md: 770,
+  lg: 1280,
+  xl: 1600,
+);

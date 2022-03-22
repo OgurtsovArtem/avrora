@@ -1,0 +1,83 @@
+.blog-list {
+  background-color: $color-secondary;
+  @include adaptive-value("padding-top", 135, 60, map-get($breakpoints, es));
+  &__container {
+  }
+  &__header {
+    display: grid;
+    margin-bottom: rem(50);
+    @include adaptive-value("gap", 60, 10, map-get($breakpoints, es));
+    @include media(md) {
+      grid-template-columns: 1fr 1fr;
+    }
+    @include media(lg) {
+      grid-template-columns: 2fr 1fr;
+    }
+  }
+  &__title {
+    font-family: "Philosopher";
+    font-style: normal;
+    font-weight: 400;
+    color: $color-primary;
+    line-height: 80%;
+  }
+  &__form {
+    width: 100%;
+  }
+  &__input-box {
+    display: flex;
+    align-items: center;
+    gap: rem(8);
+    position: relative;
+    border-radius: rem(8);
+    border: 1px solid $color-gray-510;
+    @include adaptive-value("padding", 18, 9, map-get($breakpoints, es));
+  }
+  &__input {
+    font-style: normal;
+    font-weight: 400;
+    font-size: rem(14);
+    line-height: 140%;
+    width: 100%;
+    color: $color-white;
+
+    &:active,
+    &:focus {
+      outline: none;
+    }
+  }
+  &__input-icon {
+    width: rem(19);
+    height: rem(19);
+  }
+  &__body {
+    display: grid;
+    @include adaptive-value("gap", 60, 10, map-get($breakpoints, es));
+    @include media(md) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-auto-rows: 1fr;
+    }
+    @include media(lg) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  &__card {
+    @include adaptive-value(
+      "max-height",
+      400,
+      300,
+      map-get($breakpoints, es),
+      map-get($breakpoints, md)
+    );
+  }
+  &__popular {
+    margin-top: rem(30);
+    @include media(md) {
+      margin-top: 0;
+    }
+  }
+  &__pagination {
+    color: $color-white;
+    @include adaptive-value("padding-top", 76, 49, map-get($breakpoints, es));
+  }
+}

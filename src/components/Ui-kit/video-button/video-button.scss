@@ -1,0 +1,38 @@
+.video-button {
+  font-style: normal;
+  font-weight: 600;
+  font-size: rem(14);
+  line-height: 143%;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: rem(20);
+  color: $color-text-secondary;
+  padding-top: rem(10);
+  padding-bottom: rem(10);
+  padding-left: rem(13);
+  &__icon-box {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 45%;
+      transform: translate(-50%, -50%);
+      width: rem(40);
+      height: rem(40);
+      background-color: $color-link-visited;
+      border-radius: 50%;
+    }
+  }
+  &__icon {
+    width: rem(15);
+    height: rem(15);
+    z-index: 1;
+  }
+  &__link {
+  }
+}

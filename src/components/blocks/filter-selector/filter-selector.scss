@@ -1,0 +1,45 @@
+//================ .filter-selector =========================
+.filter-selector {
+  &__button {
+    color: $color-secondary;
+    background-color: $color-primary;
+    border-radius: rem(4);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include adaptive-value("padding-top", 27, 20, map-get($breakpoints, es));
+    @include adaptive-value(
+      "padding-bottom",
+      20,
+      15,
+      map-get($breakpoints, es)
+    );
+  }
+  &__button-icon {
+    width: rem(34);
+    height: rem(34);
+    pointer-events: none;
+  }
+  &__button-text {
+    pointer-events: none;
+    font-style: normal;
+    font-weight: 600;
+    font-size: rem(14);
+    line-height: 143%;
+    text-transform: uppercase;
+  }
+  &__body {
+    background-color: $color-gray-600;
+    border-bottom-left-radius: rem(8);
+    border-top-right-radius: rem(8);
+    padding-top: rem(15);
+    padding-bottom: rem(15);
+  }
+  &__button {
+    width: 100%;
+    &:not(:last-child) {
+      margin-bottom: rem(15);
+    }
+  }
+}

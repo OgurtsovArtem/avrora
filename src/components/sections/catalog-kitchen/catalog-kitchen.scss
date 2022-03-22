@@ -1,0 +1,154 @@
+@use "sass:math";
+
+.catalog-kitchen {
+  overflow: hidden;
+  @include media(sm) {
+    overflow: initial;
+  }
+  //================ .catalog-kitchen__top-section =========================
+  &__top-section {
+    background-color: $color-secondary;
+    @include adaptive-value("padding-top", 113, 70, map-get($breakpoints, es));
+  }
+
+  //================ .catalog-kitchen__continaer =========================
+  &__continaer {
+  }
+
+  //================ .catalog-kitchen__header =========================
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    @include adaptive-value(
+      "gap",
+      146,
+      30,
+      map-get($breakpoints, es),
+      map-get($breakpoints, lg)
+    );
+    @include adaptive-value("margin-left", -10, 0, map-get($breakpoints, lg));
+    @include adaptive-value("margin-right", -10, 0, map-get($breakpoints, lg));
+    @include adaptive-value("margin-bottom", 40, 30, map-get($breakpoints, es));
+    //================ MEDIA QUERIES =========================
+    @include media(md) {
+      flex-direction: row;
+    }
+  }
+
+  //================ .catalog-kitchen__header-description =========================
+  &__header-description {
+  }
+
+  //================ .catalog-kitchen__header-advantages =========================
+  &__header-advantages {
+    display: flex;
+    @include adaptive-value("gap", 156, 60, map-get($breakpoints, es));
+    @include adaptive-value("margin-right", 156, 0, map-get($breakpoints, es));
+  }
+
+  //================ .catalog-kitchen__header-column =========================
+  &__header-column {
+  }
+
+  //================ .catalog-kitchen__title =========================
+  &__title {
+    font-family: "Philosopher";
+    font-style: normal;
+    font-weight: 400;
+    line-height: 80%;
+    color: $color-white;
+  }
+
+  //================ .catalog-kitchen__subtitle =========================
+  &__subtitle {
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+    color: $color-text-secondary;
+    margin-top: rem(20);
+    max-width: rem(680);
+  }
+
+  //================ .catalog-kitchen__text =========================
+  &__text {
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+    color: $color-text-secondary;
+    margin-top: rem(20);
+  }
+
+  //================ .catalog-kitchen__discount =========================
+  &__discount {
+    font-family: "Philosopher";
+    font-style: normal;
+    font-weight: 400;
+    color: $color-primary;
+    line-height: 80%;
+  }
+
+  //================ .catalog-kitchen__count =========================
+  &__count {
+    font-family: "Philosopher";
+    font-style: normal;
+    font-weight: 400;
+    color: $color-text-secondary;
+    line-height: 80%;
+  }
+
+  //================ .catalog-kitchen__filter =========================
+  &__filter {
+    display: none;
+    @include media(md) {
+      display: flex;
+      flex-wrap: wrap;
+      gap: rem(22);
+      background-color: $color-gray-600;
+      padding-top: rem(24);
+      padding-bottom: rem(24);
+      @include adaptive-value(
+        "padding-left",
+        70,
+        10,
+        map-get($breakpoints, es)
+      );
+      @include adaptive-value(
+        "padding-right",
+        70,
+        10,
+        map-get($breakpoints, es)
+      );
+    }
+  }
+
+  //================ .catalog-kitchen__filter-selector  =========================
+  &__filter-selector {
+    margin-top: rem(30);
+    margin-bottom: rem(25);
+
+    @include media(sm) {
+      margin-left: rem(math.div($containerIndentation, -2));
+      margin-right: rem(math.div($containerIndentation, -2));
+    }
+    @include media(md) {
+      display: none;
+    }
+  }
+  //================ .catalog-kitchen__filter-button =========================
+  &__filter-button {
+  }
+
+  //================ .catalog-kitchen__set =========================
+  &__set {
+  }
+  &__pagination {
+    @include adaptive-value("margin-top", 40, 20, map-get($breakpoints, es));
+    @include adaptive-value(
+      "margin-bottom",
+      115,
+      70,
+      map-get($breakpoints, es)
+    );
+  }
+}

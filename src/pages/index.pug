@@ -1,5 +1,24 @@
 extends ../layouts/default.pug
+include ../components/sections/main-intro/main-intro
+include ../components/sections/advantages-line/advantages-line
+include ../components/sections/preview-catalog/preview-catalog
+include ../components/sections/form-section/form-section
+include ../components/sections/benefits/benefits
+include ../components/sections/steps/steps
 
 block content
   .index
-    .container
+    +main-intro
+    +advantages-line('Индивидуальные проекты','Доставка по СПБ и регионам','Изготовление до 30 дней', 'Любая комплектация')
+    +preview-catalog()
+    +form-section({
+        titleVariant: 'variant-2',
+        titleAccentWord:  "Бесплатный",
+        title: " профессиональный замер у вас дома",
+        text: "Наша компания предлагает уникальную услугу: наш дизайнер-замерщик приедет к вам с образцами материалов и дельными советами по обустройсву и планировке.",
+        button: true,
+        backgroundIcon: false,
+        form: 'designer',
+    })
+    +benefits()
+    +steps()

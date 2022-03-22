@@ -1,0 +1,141 @@
+.kitchen-large {
+  position: relative;
+  &__swiper {
+    position: relative;
+    min-width: 0;
+    overflow: hidden;
+    @include media(md) {
+      height: 100%;
+    }
+  }
+  &__item {
+    @include media(md) {
+      height: 100%;
+    }
+  }
+  &__image {
+    @include media(md) {
+      height: 100%;
+    }
+  }
+  &__discount {
+    z-index: $zIndexLight;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-family: "Philosopher";
+    font-style: italic;
+    font-weight: 700;
+    @include adaptive-value(
+      "border-bottom-left-radius",
+      94,
+      65,
+      map-get($breakpoints, es)
+    );
+    @include adaptive-value("padding-left", 34, 20, map-get($breakpoints, es));
+    @include adaptive-value("padding-right", 8, 5, map-get($breakpoints, es));
+    @include adaptive-value("padding-top", 15, 8, map-get($breakpoints, es));
+    @include adaptive-value("padding-bottom", 15, 8, map-get($breakpoints, es));
+    @include adaptive-value("font-size", 34.5, 25, map-get($breakpoints, es));
+    @include adaptive-value("line-height", 39, 29, map-get($breakpoints, es));
+    @include adaptive-value(
+      "letter-spacing",
+      1.17465,
+      -0.883333,
+      map-get($breakpoints, sm)
+    );
+    background-color: $color-primary;
+  }
+  &__controls {
+    z-index: $zIndexLight;
+  }
+  &__footer {
+    z-index: $zIndexLight;
+    display: flex;
+    margin-top: rem(16);
+    align-items: baseline;
+    margin-left: rem(10);
+    margin-right: rem(10);
+
+    @include media(md) {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+      @include adaptive-value(
+        "padding-bottom",
+        46,
+        20,
+        map-get($breakpoints, md)
+      );
+      @include adaptive-value(
+        "padding-left",
+        35,
+        20,
+        map-get($breakpoints, md)
+      );
+      @include adaptive-value(
+        "padding-right",
+        35,
+        20,
+        map-get($breakpoints, md)
+      );
+    }
+  }
+  &__title {
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%;
+    color: $color-white;
+    font-size: rem(16);
+    margin-right: auto;
+    color: $color-text-secondary;
+    @include media(md) {
+      font-size: rem(24);
+      color: $color-white;
+    }
+  }
+  &__ptice {
+  }
+  &__price-old {
+    font-style: normal;
+    font-weight: 600;
+    @include adaptive-value("font-size", 17, 14, map-get($breakpoints, sm));
+    line-height: 100%;
+    text-decoration: line-through;
+    color: $color-text-secondary;
+    @include media(md) {
+      color: $color-white;
+    }
+  }
+  &__price-current {
+    font-style: normal;
+    font-weight: 700;
+    @include adaptive-value("font-size", 31, 22, map-get($breakpoints, es));
+    line-height: 100%;
+    @include adaptive-value("margin-left", 18, 8, map-get($breakpoints, es));
+    color: $color-primary;
+  }
+  &__price-text {
+    font-style: normal;
+    font-weight: 400;
+    font-size: rem(12);
+    line-height: 100%;
+    text-align: right;
+    color: $color-text-secondary;
+    @include media(md) {
+      color: $color-white;
+    }
+  }
+  &__button {
+    display: none;
+    @include media(md) {
+      display: block;
+      margin-left: rem(15);
+      max-width: rem(240);
+      width: 100%;
+    }
+  }
+}

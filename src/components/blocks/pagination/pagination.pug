@@ -1,0 +1,14 @@
+include ../../Ui-kit/icon/icon
+mixin pagination({className, numbers})
+    div(class= className ? `${className} pagination`: `pagination`).container
+        button.pagination__button.pagination__button_left
+            +icon('arrow-mini', 'pagination__button-icon')
+        .pagination__numbers
+            each number in numbers
+                case number
+                    when 1
+                        button.pagination__number.pagination__number_active=number
+                    default
+                        button.pagination__number=number
+        button.pagination__button.pagination__button_right
+            +icon('arrow-mini', 'pagination__button-icon')

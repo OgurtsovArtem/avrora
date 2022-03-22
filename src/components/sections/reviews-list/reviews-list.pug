@@ -1,0 +1,121 @@
+include ../../blocks/reviews-card/reviews-card
+include ../../blocks/pagination/pagination
+
+mixin reviews-list()
+    section.reviews-list
+        .reviews-list__conatiner.container
+            .reviews-list__body
+                h1.reviews-list__title.masonry-element.h1 Отзывы
+                .reviews-list__column-gap
+                +reviews-card({
+                    className: 'reviews-list__card masonry-element',
+                    title: 'Быстро и качественно, молодцы!',
+                    text: 'Товарищи! постоянное информационно-пропагандистское обеспечение нашей деятельности в значительной степени обуславливает создание систем массового участия.',
+                    stars: 5,
+                    icon: 'icon-1.jpg',
+                    date: '10.01.22',
+                    name: 'Тони Старк',
+                    button: '',
+                    video: '',
+                    image: ''
+                })
+                +reviews-card({
+                    className: 'reviews-list__card masonry-element reviews-list__card_margin-top',
+                    title: 'Всё здорово сделали, мы довольны!',
+                    text: 'Товарищи! постоянное информационно-пропагандистское обеспечение нашей деятельности в значительной степени обуславливает создание систем массового участия. Повседневная практика показывает, что постоянное информационно-пропагандистское обеспечение нашей деятельности требуют от нас анализа форм развития',
+                    stars: 5,
+                    icon: 'icon-2.jpg',
+                    date: '10.01.22',
+                    name: 'Джон Леннон',
+                    button: true,
+                    video: '',
+                    image: ''
+                })
+                +reviews-card({
+                    className: 'reviews-list__card masonry-element',
+                    title: 'Быстро и качественно, молодцы!',
+                    texts: ['Товарищи! постоянное информационно-пропагандистское обеспечение нашей деятельности в значительной степени обуславливает создание систем массового участия.'],
+                    stars: 5,
+                    icon: 'icon-3.jpg',
+                    date: '10.01.22',
+                    name: 'Тони Старк',
+                    button: '',
+                    video: '',
+                    image: ''
+                })
+                +reviews-card({
+                    className: 'reviews-list__card masonry-element',
+                    title: 'Осталась очень довольна проделанной работой, спасибо!',
+                    texts: '',
+                    stars: 5,
+                    icon: 'icon-4.jpg',
+                    date: '10.01.22',
+                    name: 'Клавдия Станиславовна',
+                    button: '',
+                    video: true,
+                    image: ''
+                })
+                +reviews-card({
+                    className: 'reviews-list__card masonry-element',
+                    title: 'Отличная работа!',
+                    texts: '',
+                    stars: 5,
+                    icon: 'icon-5.jpg',
+                    date: '10.01.22',
+                    name: 'Наполеон Иванов',
+                    button: '',
+                    video: '',
+                    image: 'background-1.jpg'
+                })
+                +reviews-card({
+                    className: 'reviews-list__card masonry-element',
+                    title: 'Осталась очень довольна проделанной работой, спасибо!',
+                    texts: '',
+                    stars: 5,
+                    icon: 'icon-7.jpg',
+                    date: '10.01.22',
+                    name: 'Клавдия Станиславовна',
+                    button: '',
+                    video: true,
+                    image: ''
+                })
+                +reviews-card({
+                    className: 'reviews-list__card masonry-element',
+                    title: 'Всё здорово сделали, мы довольны!',
+                    texts: ['Товарищи! постоянное информационно-пропагандистское обеспечение нашей деятельности в значительной степени обуславливает создание систем массового участия. Повседневная практика показывает, что постоянное информационно-пропагандистское обеспечение нашей деятельности требуют от нас анализа форм развития'],
+                    stars: 5,
+                    icon: 'icon-6.jpg',
+                    date: '',
+                    name: 'Джон Леннон',
+                    button: true,
+                    video: '',
+                    image: ''
+                })
+                +reviews-card({
+                    className: 'reviews-list__card masonry-element',
+                    title: 'Быстро и качественно, молодцы!',
+                    texts: ['Товарищи! постоянное информационно-пропагандистское обеспечение нашей деятельности в значительной степени обуславливает создание систем массового участия.', 'Товарищи! постоянное информационно-пропагандистское обеспечение нашей деятельности в значительной степени обуславливает создание систем массового участия. Повседневная практика показывает, что постоянное информационно-пропагандистское обеспечение нашей деятельности требуют от нас анализа форм развития'],
+                    stars: 5,
+                    icon: 'icon-3.jpg',
+                    date: '10.01.22',
+                    name: 'Том Реддл',
+                    button: '',
+                    video: '',
+                    image: ''
+                })
+                +reviews-card({
+                    className: 'reviews-list__card masonry-element',
+                    title: '',
+                    texts: '',
+                    stars: 5,
+                    icon: 'icon-4.jpg',
+                    date: '10.01.22',
+                    name: 'Клементина Марвел',
+                    button: '',
+                    video: '',
+                    image: 'background-2.jpg'
+                })
+        +pagination({
+            className: 'reviews-list__pagination',
+            numbers: [1, 2, 3, 4, 5, 6]
+        })

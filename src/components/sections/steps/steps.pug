@@ -1,0 +1,50 @@
+include ../../Ui-kit/learn-more-button/learn-more-button
+include ../../Ui-kit/button/button
+mixin steps()
+ section.steps.max-container
+    .steps__container.container
+
+        .steps__body
+            .steps__card.steps__card_large
+                h2.steps__title.h2 5 шагов вашей кухни домой
+                .steps__card-body
+                    .steps__card-header.steps__card-header_text-mobile-row
+                        span.steps__card-number.h3 1.
+                        p.steps__card-title Замер
+                    .steps__card-text.txt Начать сотрудничество просто: оставьте заявку и наш дизайнер приедет в удобное время, покажет образцы материалов и посоветует как сделать самый удобный в мире гарнитур. Выезд дизайнера ни к чему вас не обязывает
+                    .steps__card-footnote Выезд дизайнера ни к чему вас не обязывает
+                +button({
+                    text: 'Пригласить дизайнера',
+                    className: 'steps__card-button',
+                })
+            .steps__card.steps__card_white-img
+                .steps__card-body
+                    .steps__card-header
+                        span.steps__card-number.h3 2.
+                        p.steps__card-title Проверка заказа техническим отделом
+                    .steps__card-text.steps__card-text_mobile-hidden.txt Чтобы клиент всегда был доволен результатом, на нашем производстве есть технический отдел. Перед тем, как начать изготовление кухни, мастера осматривают каждую деталь дополнительно
+            .steps__card.steps__card_gray
+                .steps__card-body
+                    .steps__card-header.steps__card-header_text-column
+                        span.steps__card-number.h3 3.
+                        p.steps__card-title  Производство
+                    .steps__card-text.steps__card-text_mobile-hidden.txt На созднание кухни у нас уйдётот нескольких недель до месяца, всё зависит от сложности проекта и поставки материалов.
+                    +learn-more-button({
+                        link: '/production',
+                        className: 'steps__card-link',
+                    })
+            .steps__card.steps__card_black-img
+                .steps__card-body
+                    .steps__card-header.steps__card-header_text-column
+                        span.steps__card-number.h3 4.
+                        p.steps__card-title.steps__card-title_white Доставка и сборка
+                    +learn-more-button({
+                        link: '/delivery',
+                        className: 'steps__card-link',
+                    })
+            .steps__card.steps__card_yellow
+                .steps__card-body
+                    .steps__card-header.steps__card-header_text-column
+                        span.steps__card-number.steps__card-number_white.h3 5.
+                        p.steps__card-title.steps__card-title_white Постпродажное обслуживание
+                    .steps__card-text.steps__card-text_white.steps__card-text_mobile-hidden.txt Мы в ответе за свою работу и даём гарантию на продукт и сборку 2 года. Если в это время что-то пойдёт не так, мы оперативно всё заменим и починим

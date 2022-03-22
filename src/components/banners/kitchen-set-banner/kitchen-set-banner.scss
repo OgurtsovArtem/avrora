@@ -1,0 +1,28 @@
+.kitchen-set-banner {
+  &__container {
+    text-align: right;
+    @include adaptive-value("padding-top", 30, 10, map-get($breakpoints, es));
+    @include adaptive-value(
+      "padding-bottom",
+      30,
+      10,
+      map-get($breakpoints, es)
+    );
+    @include adaptive-value("padding-left", 70, 20, map-get($breakpoints, es));
+    @include adaptive-value("padding-right", 70, 20, map-get($breakpoints, es));
+    background-color: $color-gray-510;
+    border-radius: rem(8);
+  }
+  &__title {
+    font-family: "Philosopher";
+    font-style: normal;
+    font-weight: 400;
+    @include adaptive-value("font-size", 36, 22, map-get($breakpoints, es));
+    line-height: 100%;
+    color: inherit;
+  }
+  &__button {
+    margin-top: rem(16);
+    color: $color-primary;
+  }
+}

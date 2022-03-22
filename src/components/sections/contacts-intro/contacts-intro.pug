@@ -1,0 +1,30 @@
+include ../../Ui-kit/button/button
+include ../../blocks/social-box/social-box
+mixin contacts-intro
+    section.contacts-intro.max-conatiner
+        .contacts-intro__container.container
+            .contacts-intro__map(id='map')
+            .contacts-intro__info
+                h1.contacts-intro__title.h1 Контакты
+                .contacts-intro__call-box
+                    .contacts-intro__call-title.h4 Позвоните нам
+                    .contacts-intro__call-tel.h3 +7 (812) 607-16-42
+                    .contacts-intro__call-footnote ежедневно с 9 до 21
+                .contacts-intro__invite-box
+                    +button({
+                        className: 'contacts-intro__invite-button',
+                        text: 'Пригласить дизайнера'
+                    })
+                    p.contacts-intro__invite-text.txt Выезд на замер по городу <br> СПб и области!
+                .contacts-intro__adress-box
+                    .contacts-intro__adress-title.h4 Приезжайте в гости
+                    .contacts-intro__adress-text.txt Санкт-Петербург, ул. Краснопутиловская, д. 69 лит. А, помещение 227Н, офис 536В
+                .contacts-intro__social-box
+                    .contacts-intro__social-title.h4 Мы в соцсетях
+                    +social-box({
+                        iconsName: ['vk', 'instagram', 'youtube'],
+                        className: "contacts-intro__social-icons"
+                    })
+                .contacts-intro__file-box
+                    +icon('file', "contacts-intro__file-icon")
+                    .contacts-intro___file-text.txt Реквизиты (Скачать PDF)

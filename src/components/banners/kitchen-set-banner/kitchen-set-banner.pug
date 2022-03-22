@@ -1,0 +1,10 @@
+include ../../Ui-kit/learn-more-button/learn-more-button
+
+mixin kitchen-set-banner({className, theme})
+    div(class=className ? `${className} kitchen-set-banner`: `kitchen-set-banner`)
+      .kitchen-set-banner__container
+        h4(class=theme ? `kitchen-set-banner__title_light`: `kitchen-set-banner__title_dark`).kitchen-set-banner__title Выезд замерщика в удобное время
+        +learn-more-button({
+            className: 'kitchen-set-banner__button',
+            color: 'yellow'
+        })
