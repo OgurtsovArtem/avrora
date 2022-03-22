@@ -1,10 +1,50 @@
 .reviews-list {
+  @include adaptive-value("margin-bottom", 90, 60, map-get($breakpoints, es));
+
   &__container {
   }
   &__title {
+    font-family: "Philosopher";
+    font-style: normal;
+    font-weight: 400;
+    line-height: 80%;
+    margin-bottom: rem(66);
+    color: $color-primary;
   }
   &__body {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    @include adaptive-value("margin-top", 35, 25, map-get($breakpoints, sm));
+    overflow: hidden;
+    @include media(md) {
+      padding-left: 0.5%;
+      overflow: initial;
+    }
+  }
+  &__column-gap {
+    @include media(md) {
+      width: 4%;
+    }
+    @include media(lg) {
+      width: 3%;
+    }
   }
   &__card {
+    width: 100%;
+    @include media(md) {
+      width: 48%;
+    }
+    @include media(lg) {
+      width: 32.333%;
+    }
+    @include adaptive-value("margin-bottom", 25, 5, map-get($breakpoints, sm));
+    &_margin-top {
+      @include media(lg) {
+        margin-top: rem(66);
+      }
+    }
+  }
+  &__pagination {
+    @include adaptive-value("margin-top", 70, 40, map-get($breakpoints, sm));
   }
 }

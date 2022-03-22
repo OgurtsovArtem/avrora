@@ -40,6 +40,12 @@
       }
     }
   }
+  &__list {
+    display: none;
+    @include media(md) {
+      display: block;
+    }
+  }
   &__image {
     position: absolute;
     top: 0;
