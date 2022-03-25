@@ -32,14 +32,15 @@
   &__body {
     background-color: $color-gray-600;
     border-bottom-left-radius: rem(8);
-    border-top-right-radius: rem(8);
+    border-bottom-right-radius: rem(8);
     margin-top: rem(30);
     margin-bottom: rem(15);
     overflow: hidden;
     height: 0;
   }
-  &__button {
+  &__filter-button {
     width: 100%;
+    background-color: $color-primary;
     &:not(:last-child) {
       margin-bottom: rem(15);
     }

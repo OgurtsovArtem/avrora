@@ -10,6 +10,6 @@ mixin filter-selector({className, buttonText, selectors})
             .filter-selector__body.ac-panel
                 each selector in selectors
                     +filter-button({
-                        className: 'filter-selector__button',
+                        className: 'filter-selector__filter-button',
                         text: selector
                     })
