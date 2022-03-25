@@ -1,9 +1,8 @@
 .input {
   // Переменная отступа
   $left-padding: rem(15);
-
   position: relative;
-  margin-top: rem(26);
+  margin-top: rem(33);
   &__field {
     font-style: normal;
     font-weight: 400;
@@ -16,13 +15,29 @@
     padding-bottom: rem(8);
     padding-right: rem(8);
     padding-left: $left-padding;
+    &::after {
+      content: attr(data-error-name);
+      position: absolute;
+      top: -100%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transform: translateY(100%);
+      font-size: rem(12);
+      font-weight: 400;
+      font-style: normal;
+      color: $color-warning;
+    }
+    &._error {
+      border-bottom: rem(1) solid $color-warning;
+    }
 
-    &:focus + .input__label {
+    &:focus ~ .input__label-text {
       left: 0;
       transform: translateY(-150%);
       -webkit-line-clamp: 1;
     }
-    &._filled + .input__label {
+    &._filled ~ .input__label-text {
       left: 0;
       transform: translateY(-150%);
       -webkit-line-clamp: 1;
@@ -33,6 +48,10 @@
     }
   }
   &__label {
+    position: relative;
+    height: 100%;
+  }
+  &__label-text {
     pointer-events: none;
     position: absolute;
     top: 50%;
@@ -45,12 +64,22 @@
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
-  }
-  &__label-text {
     font-style: normal;
     font-weight: 400;
     font-size: rem(14);
     line-height: 140%;
     color: $color-text-secondary;
+  }
+  &__error {
+    position: absolute;
+    top: 150%;
+    right: 0;
+    font-style: normal;
+    font-weight: 400;
+    font-size: rem(13);
+    line-height: 140%;
+    color: $color-warning;
+    text-align: right;
+    display: block;
   }
 }

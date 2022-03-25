@@ -1,0 +1,60 @@
+@use "sass:math";
+.circle-text {
+  $size: 160;
+  $speed: 15;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: rem($size);
+  height: rem($size);
+  border-radius: 50%;
+  animation: rotating $speed + s linear infinite;
+  color: $color-primary;
+  //   border: 3px solid #ccc; разметка для настройки
+  &_yellow {
+    background-color: $color-primary;
+    color: $color-secondary;
+    .circle-text__letter {
+      padding-bottom: rem(math.div($size, 2) - 20);
+    }
+  }
+  &_dark-blue {
+    background-color: $color-secondary;
+    color: $color-white;
+    .circle-text__letter {
+      padding-bottom: rem(math.div($size, 2) - 20);
+    }
+  }
+  &__word {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &__letter {
+    // outline: 1px dashed gray; разметка для настройки
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    width: 0;
+    transform-origin: 0 100%;
+    padding-bottom: rem(math.div($size, 2) - 15); //15 - высота строки
+    font-style: normal;
+    font-weight: 400;
+    font-size: rem(15);
+    line-height: 100%;
+    text-transform: uppercase;
+
+    display: block;
+    margin-right: rem(10);
+  }
+}
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,6 @@
+mixin preloader({className, length})
+    div(class=className ? `${className} preloader` : 'preloader')
+        .preloader__container
+            -let id = 1;
+            each el in length
+                span(class=`preloader__item preloader__item_${id++}`)

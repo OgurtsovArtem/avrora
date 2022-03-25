@@ -7,8 +7,10 @@
     position: absolute;
   }
   &__label {
+    position: relative;
     display: flex;
     align-items: center;
+    overflow: hidden;
     background-color: $color-gray-600;
     padding: rem(10) rem(15);
     border-radius: rem(30);
