@@ -14,6 +14,7 @@
     flex: 100%;
     @include adaptive-value("margin-top", 64, 44, map-get($breakpoints, sm));
     @include adaptive-value("margin-bottom", 43, 32, map-get($breakpoints, sm));
+    z-index: $zIndexLight;
   }
   &__body {
     display: grid;
@@ -152,6 +153,7 @@
     }
   }
   &__card-body {
+    z-index: $zIndexLight;
   }
   &__card-header {
     display: flex;
@@ -234,6 +236,7 @@
   }
   &__card-button {
     margin-top: rem(25);
+    z-index: $zIndexLight;
     @include media(md) {
       height: min-content;
       align-self: flex-end;
@@ -244,5 +247,17 @@
   &__card-link {
     @include adaptive-value("margin-top", 22, 12, map-get($breakpoints, sm));
     padding: 0;
+  }
+  &__circle-text {
+    left: 88%;
+    top: 9%;
+    @include media(sm) {
+      left: 78%;
+      top: 62%;
+    }
+    @include media(md) {
+      left: 86%;
+      top: 45%;
+    }
   }
 }

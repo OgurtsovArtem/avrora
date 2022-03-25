@@ -1,5 +1,6 @@
 include ../../Ui-kit/learn-more-button/learn-more-button
 include ../../Ui-kit/button/button
+include ../../Ui-kit/circle-text/circle-text
 mixin steps()
  section.steps.max-container
     .steps__container.container
@@ -16,6 +17,10 @@ mixin steps()
                 +button({
                     text: 'Пригласить дизайнера',
                     className: 'steps__card-button',
+                })(data-popup-open='calc')
+                +circle-text({
+                    className: 'steps__circle-text',
+                    words: [['/','/'], ['б','е','с','п','л','а','т','н','ы','й'],['з','а','м','е','р'], ['/','/'], ['б','е','с','п','л','а','т','н','ы','й'],['з','а','м','е','р']],
                 })
             .steps__card.steps__card_white-img
                 .steps__card-body

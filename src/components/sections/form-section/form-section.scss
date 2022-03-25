@@ -90,10 +90,11 @@
   &__form-box {
     align-self: center;
     @include adaptive-value("padding", 20, 0, map-get($breakpoints, sm));
-    max-width: rem(350);
+
     margin-bottom: rem(45);
     @include media(md) {
       margin-bottom: 0;
+      max-width: rem(350);
     }
   }
   &__background-desctop {

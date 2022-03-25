@@ -4,7 +4,6 @@
     top: 0;
     right: 0;
     width: 100%;
-    z-index: -1;
     height: 500px;
     @include adaptive-value("height", 850, 660, map-get($breakpoints, sm));
     &::after {
@@ -71,6 +70,8 @@
     }
   }
   &__box {
+    position: relative;
+    z-index: $zIndexLight;
     @include media(md) {
       display: grid;
       grid-template-columns: minmax(auto, rem(292)) 1fr;
@@ -135,6 +136,13 @@
     display: none;
     @include media(md) {
       display: flex;
+    }
+  }
+  &__circle-text {
+    top: 75%;
+    left: 10%;
+    @include media(md) {
+      left: 0;
     }
   }
 }
