@@ -1,4 +1,5 @@
 include ../../Ui-kit/learn-more-button/learn-more-button
+include ../../Ui-kit/circle-text/circle-text
 
 mixin kitchen-set-banner({className, theme})
     div(class=className ? `${className} kitchen-set-banner`: `kitchen-set-banner`)
@@ -7,4 +8,8 @@ mixin kitchen-set-banner({className, theme})
         +learn-more-button({
             className: 'kitchen-set-banner__button',
             color: 'yellow'
+        })
+        +circle-text({
+            className: 'kitchen-set-banner__circle-text',
+            words: [['/','/'], ['б','е','с','п','л','а','т','н','ы','й'],['з','а','м','е','р'], ['/','/'], ['б','е','с','п','л','а','т','н','ы','й'],['з','а','м','е','р']],
         })

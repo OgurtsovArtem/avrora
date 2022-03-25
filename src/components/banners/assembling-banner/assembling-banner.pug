@@ -1,4 +1,10 @@
+include ../../Ui-kit/circle-text/circle-text
+
 mixin assembling-banner()
     .assembling-banner
         h3.assembling-banner__discount.h1 10%
         p.assembling-banner__text от стоимости гарнитура
+        +circle-text({
+            className: 'assembling-banner__circle-text',
+            words: [['/','/'], ['б','е','с','п','л','а','т','н','ы','й'],['з','а','м','е','р'], ['/','/'], ['б','е','с','п','л','а','т','н','ы','й'],['з','а','м','е','р']],
+        })
