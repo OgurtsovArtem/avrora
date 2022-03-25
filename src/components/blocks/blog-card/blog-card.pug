@@ -1,5 +1,5 @@
 mixin blog-card({text='', className, image})
     a(class=className ? `${className} blog-card _hover-up`: `blog-card  _hover-up`, href="#", target="_blank", rel="noopener noreferrer")
         .blog-card__image-box
-            img.blog-card__image(src=`/assets/images/blog-card/${image}`, alt="blog-card")
+            img.blog-card__image(data-src=`/assets/images/blog-card/${image}`, alt="blog-card" data-lazy)
             p.blog-card__image-text=text
