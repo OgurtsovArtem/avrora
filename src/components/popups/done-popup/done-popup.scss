@@ -1,0 +1,93 @@
+.done-popup {
+  $media-height: 300px; // используется как ограничивающая высота для медиазапросов. Должна быть равна высоте попапа
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: $zIndexHight;
+  transition: $transitionNormal;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transition: $transitionLight;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: #000000, $alpha: 0.3);
+    z-index: -1;
+  }
+  &._active {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    .done-popup__container {
+      transform: scale(1);
+    }
+  }
+  &__container {
+    transform: scale(0);
+    transition: $transitionNormal;
+    position: relative;
+    background-color: $color-white;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-shadow: $depth2;
+    border: rem(1) solid $color-primary;
+    @include adaptive-value("padding-top", 65, 40, map-get($breakpoints, es));
+    @include adaptive-value(
+      "padding-bottom",
+      65,
+      40,
+      map-get($breakpoints, es)
+    );
+    @include adaptive-value("padding-left", 60, 10, map-get($breakpoints, es));
+    @include adaptive-value("padding-right", 60, 10, map-get($breakpoints, es));
+
+    @media (max-width: (map-get($breakpoints, md)+px)) {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    @media (max-height: $media-height) {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  }
+  &__content {
+    text-align: center;
+    @include media(md) {
+      max-width: rem(350);
+      flex-shrink: 0;
+      width: 100%;
+    }
+    @media (max-height: $media-height) {
+      width: 100%;
+      height: 100%;
+      max-width: 100%;
+    }
+  }
+  &__title {
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%;
+  }
+  &__text {
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+    margin-top: rem(22);
+  }
+  &__button {
+    margin-top: rem(22);
+    width: 100%;
+  }
+}

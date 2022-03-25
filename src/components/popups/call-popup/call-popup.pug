@@ -1,0 +1,7 @@
+include ../../forms/call-form/call-form
+
+mixin call-popup()
+    div.call-popup
+        .call-popup__container
+            button.call-popup__close(type='button')
+            +call-form().call-popup__form

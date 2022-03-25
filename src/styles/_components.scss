@@ -13,6 +13,8 @@
 @import "../components/Ui-kit/circle-button/circle-button.scss";
 @import "../components/Ui-kit/input-file/input-file.scss";
 @import "../components/Ui-kit/checkbox/checkbox.scss";
+@import "../components/Ui-kit/preloader/preloader.scss";
+@import "../components/Ui-kit/circle-text/circle-text.scss";
 
 // BLOCKS
 @import "../components/blocks/main-intro-list/main-intro-list.scss";
@@ -35,10 +37,17 @@
 @import "../components/forms/designer-form/designer-form.scss";
 @import "../components/forms/application-form/application-form.scss";
 @import "../components/forms/payment-form/payment-form.scss";
+@import "../components/forms/calc-form/calc-form.scss";
+@import "../components/forms/call-form/call-form.scss";
 
 // BANNERS
 @import "../components/banners/kitchen-set-banner/kitchen-set-banner.scss";
 @import "../components/banners/assembling-banner/assembling-banner.scss";
+
+// POPUPS
+@import "../components/popups/calc-popup/calc-popup.scss";
+@import "../components/popups/call-popup/call-popup.scss";
+@import "../components/popups/done-popup/done-popup.scss";
 
 // SECTIONS
 @import "../components/sections/main-intro/main-intro.scss";

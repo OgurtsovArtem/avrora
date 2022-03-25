@@ -5,12 +5,14 @@ include ../components/sections/preview-catalog/preview-catalog
 include ../components/sections/form-section/form-section
 include ../components/sections/benefits/benefits
 include ../components/sections/steps/steps
-
+include ../components/popups/calc-popup/calc-popup
+include ../components/popups/call-popup/call-popup
+include ../components/popups/done-popup/done-popup
 block content
   .index
     +main-intro
     +advantages-line('Индивидуальные проекты','Доставка по СПБ и регионам','Изготовление до 30 дней', 'Любая комплектация')
-    +preview-catalog()
+    +preview-catalog
     +form-section({
         titleVariant: 'variant-2',
         titleAccentWord:  "Бесплатный",
@@ -20,5 +22,8 @@ block content
         backgroundIcon: false,
         form: 'designer',
     })
-    +benefits()
-    +steps()
+    +benefits
+    +steps
+    +calc-popup
+    +call-popup
+    +done-popup
