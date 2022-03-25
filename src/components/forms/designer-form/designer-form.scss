@@ -7,8 +7,16 @@
     line-height: 100%;
   }
   &__button {
-    max-width: rem(250);
     width: 100%;
     margin-top: rem(37);
+    @include media(sm) {
+      display: block;
+      max-width: rem(350);
+      margin-left: auto;
+      margin-right: auto;
+    }
+    @include media(md) {
+      max-width: rem(250);
+    }
   }
 }
