@@ -1,5 +1,130 @@
 // ====================== LAZY-LOADING ======================
+class Observer {
+  constructor({
+    element,
+    activationRangeTop,
+    activationRangeBottom,
+    playOnce,
+    updateFrequency,
+    activeClass,
+    top,
+    bottom,
+    imageLoad,
+  }) {
+    this.element = element;
+    this.top = activationRangeTop ? top || 0 : null;
+    this.bottom = activationRangeBottom ? bottom || 0 : null;
+    this.activationRangeTop = activationRangeTop || false;
+    this.activationRangeBottom = activationRangeBottom || false;
+    this.playOnce = playOnce || false;
+    this.updateFrequency = updateFrequency || 20;
+    this.activeClass = activeClass || "_scroll";
+    this.imageLoad = imageLoad;
+    // Внутренние переменные
+    this.entries = null;
+    this.observer = null;
+    this.observe();
+  }
 
+  _thresholdArray() {
+    return Array(this.updateFrequency + 1)
+      .fill(0)
+      .map((item, index) => index / this.updateFrequency || 0);
+  }
+
+  _handleIntersect(entries) {
+    [this.entries] = entries;
+    this.scrollHandler();
+    if (this.playOnce) {
+      this.unobserve();
+    }
+  }
+
+  observe() {
+    this.observer = new IntersectionObserver(this._handleIntersect.bind(this), {
+      threshold: this._thresholdArray(),
+    });
+
+    this.observer.observe(this.element);
+  }
+
+  unobserve() {
+    const destroyWatcher = () => {
+      this.observer.unobserve(this.element);
+      this.element.removeEventListener("transitionend", destroyWatcher);
+    };
+    this.element.addEventListener("transitionend", destroyWatcher);
+  }
+
+  addClass() {
+    this.element.classList.remove(this.activeClass);
+  }
+
+  removeClass() {
+    this.element.classList.add(this.activeClass);
+  }
+
+  scrollHandler() {
+    if (this.activationRangeTop || this.activationRangeBottom) {
+      this.determiningDirection();
+    } else {
+      this.inObject();
+    }
+  }
+
+  determiningDirection() {
+    if (this.activationRangeTop) {
+      this.atDistanceOnTop();
+    } else if (this.activationRangeBottom) {
+      this.atDistanceOnBottom();
+    }
+  }
+
+  atDistanceOnTop() {
+    return this.entries.boundingClientRect.top >= this.top
+      ? this.addClass()
+      : this.removeClass();
+  }
+
+  atDistanceOnBottom() {
+    return this.entries.boundingClientRect.bottom <= this.bottom
+      ? this.addClass()
+      : this.removeClass();
+  }
+  setImageSrc() {
+    const src = this.element.dataset.src;
+
+    this.element.setAttribute("src", src);
+
+    this.element.onload = () => {
+      this.observer.unobserve(this.element);
+      this.element.removeAttribute("data-src");
+      this.element.dataset.lazy = "done";
+    };
+
+    this.element.onerror = () => {
+      this.element.dataset.lazy = "error-loading";
+    };
+  }
+  inObject() {
+    if (this.entries.isIntersecting) {
+      this.addClass();
+      this.imageLoad ? this.setImageSrc() : null;
+    } else {
+      this.removeClass();
+    }
+  }
+}
+const lazyImages = [...document.querySelectorAll("img[data-lazy]")];
+console.log(lazyImages);
+if (lazyImages) {
+  lazyImages.forEach((image) => {
+    const imageObserve = new Observer({
+      element: image,
+      imageLoad: true,
+    });
+  });
+}
 // ====================== POPUPS ======================
 class Popups {
   constructor({ popup, openButtons, closeButtons, activeClass }) {
@@ -17,19 +142,23 @@ class Popups {
       button.addEventListener("click", this.close.bind(this));
     });
     this.openButtons.forEach((button) => {
+      console.log(button);
       button.addEventListener("click", this.open.bind(this));
     });
   }
 
   open() {
     this.popup.classList.add(this.activeClass);
+    document.body.style.position = "fixed";
   }
   close() {
     this.popup.classList.remove(this.activeClass);
+    document.body.style.position = "static";
   }
 }
 
 // ====================== FORM ======================
+console.log(document.querySelectorAll("[data-popup-open='calc']"));
 class Form {
   constructor(form, { errorClass, popupNext, popupCurrent }) {
     this.form = form;
@@ -332,6 +461,7 @@ const kitchenSmallSwiper = new Swiper(".kitchen-large__swiper", {
   loop: true,
   loopAdditionalSlides: 5,
   preloadImages: false,
+  lazy: true,
 
   // Navigation arrows
   navigation: {
@@ -344,6 +474,8 @@ const kitchenLargeSwiper = new Swiper(".kitchen-small__swiper", {
   spaceBetween: 32,
   speed: 800,
   loop: true,
+  preloadImages: false,
+  lazy: true,
 
   // Navigation arrows
   navigation: {
@@ -356,6 +488,8 @@ const kitchenFullSwiper = new Swiper(".kitchen-full__swiper", {
   slidesPerView: 1,
   spaceBetween: 32,
   speed: 800,
+  preloadImages: false,
+  lazy: true,
 
   // Navigation arrows
   navigation: {
@@ -397,6 +531,7 @@ const rewievsCardSwiper = new Swiper(".reviews-card__swiper", {
   spaceBetween: 10,
   speed: 800,
   loop: true,
+  lazy: true,
   navigation: {
     nextEl: ".reviews-card__swiper-controls_right",
     prevEl: ".reviews-card__swiper-controls_left",
