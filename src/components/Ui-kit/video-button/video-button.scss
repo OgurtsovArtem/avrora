@@ -1,4 +1,5 @@
 .video-button {
+  position: relative;
   font-style: normal;
   font-weight: 600;
   font-size: rem(14);
@@ -11,6 +12,39 @@
   padding-top: rem(10);
   padding-bottom: rem(10);
   padding-left: rem(13);
+
+  &_white {
+    color: #fff;
+  }
+
+  &__circle {
+    position: absolute;
+    left: 21px;
+    top: 50%;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: $color-bg-secondary;
+    border: 1px dashed $color-icon-secondary;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: -1;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 176px;
+      height: 176px;
+      border-radius: 50%;
+      background: $color-bg-secondary;
+      border: 1px dashed $color-icon-secondary;
+      opacity: 0.2;
+      transform: translate(-50%, -50%);
+    }
+  }
+
   &__icon-box {
     position: relative;
     display: flex;

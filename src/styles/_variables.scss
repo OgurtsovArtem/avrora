@@ -24,6 +24,9 @@ $color-gray-600: rgba(0, 16, 61, 0.06);
 
 $color-dark-blue-200: #3d4555;
 $color-dark-blue-600: rgba(128, 164, 237, 0.05);
+
+$color-icon-secondary: #BFC1C7;
+
 // Shadows
 $depth2: 0px 4px 32px rgba(0, 16, 61, 0.16);
 $depth3: 0px 16px 48px rgba(0, 16, 61, 0.48);
@@ -54,3 +57,7 @@ $breakpoints: (
   lg: 1280,
   xl: 1600,
 );
+
+// Fonts
+$font-primary: "Source Sans Pro", sans-serif;
+$font-secondary: "Philosopher", sans-serif;

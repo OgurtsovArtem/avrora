@@ -35,7 +35,20 @@
   font-size: rem(18);
   line-height: 1.5;
 }
+
 // Blocks
+.main {
+  padding-top: 60px;
+
+  @include media(lg) {
+    padding-top: 65px;
+  }
+
+  @include media(xl) {
+    padding-top: 85px;
+  }
+}
+
 .container {
   margin: 0 auto;
   width: 100%;

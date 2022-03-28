@@ -1,0 +1,108 @@
+.production-intro {
+  &__screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 694px;
+    padding: 54px 0;
+    color: #fff;
+    background-image: url(/assets/images/production/production.jpg);
+    background-position: center;
+    background-size: cover;
+  }
+
+  &__heading {
+    font-family: $font-secondary;
+    font-weight: 400;
+    font-size: 52px;
+    line-height: 80%;
+  }
+
+  &__video {
+    margin-top: 35px;
+  }
+
+  &__title {
+    margin-top: 46px;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 100%;
+  }
+
+  &__content {
+    padding-bottom: 96px;
+  }
+
+  &__desc {
+    margin-top: 46px;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 160%;
+  }
+
+  &__divider {
+    display: none;
+  }
+
+  &__advantages {
+    margin-top: 52px;
+  }
+
+  @include media(md) {
+    &__screen {
+      min-height: 594px;
+      background-image: url(/assets/images/production/production-md.jpg);
+    }
+  }
+
+  @include media(lg) {
+    .container {
+      padding: 0 63px;
+    }
+
+    &__screen {
+      position: relative;
+      padding: 78px 0;
+
+      .container {
+        padding-right: 43%;
+      }
+    }
+
+    &__heading {
+      font-size: 72px;
+    }
+
+    &__title {
+      margin-top: 27px;
+    }
+
+    &__video {
+      position: absolute;
+      left: 67.6%;
+      top: 50%;
+      margin: 0;
+      transform: translateY(-50%);
+    }
+
+    &__desc {
+      margin-top: 77px;
+      max-width: 1086px;
+    }
+
+    &__divider {
+      display: block;
+      margin: 27px -46px 0;
+    }
+
+    &__advantages {
+      margin-top: 96px;
+    }
+  }
+
+  @include media(xl) {
+    &__screen {
+      min-height: 677px;
+    }
+  }
+}

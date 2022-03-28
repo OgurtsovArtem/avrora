@@ -1,5 +1,7 @@
-mixin video-button({link="#", className, text})
-    button(class= className ? `${className} video-button`: 'video-button')
+mixin video-button({link="#", className, text, color, circle})
+    button(class= className ? `${className} video-button`: 'video-button' class= color ? 'video-button_' + color : '')&attributes(attributes)
+        if circle
+            span.video-button__circle
         span.video-button__icon-box
             +icon('play', 'video-button__icon')
         a.video-button__link(href=link, target="_blank", rel="noopener noreferrer")=text

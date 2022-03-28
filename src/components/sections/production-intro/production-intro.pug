@@ -1,0 +1,20 @@
+include ../../Ui-kit/video-button/video-button
+include ../../blocks/advantages/advantages
+
+mixin production-intro
+  .production-intro
+    .production-intro__screen
+      .container
+        h1.production-intro__heading Производство
+        +video-button({text: 'видео с производства', color: 'white', circle: true}).production-intro__video
+        p.production-intro__title Краткое вступительное слово с рассказом о компании: кто они, как давно работают, упомянуть про принципы работы и философию бренда
+    .production-intro__content
+      .container
+        p.production-intro__desc Повседневная практика показывает, что укрепление и развитие структуры позволяет оценить значение существенных финансовых и административных условий. Товарищи! дальнейшее развитие различных форм деятельности представляет собой интересный эксперимент проверки форм развития. Таким образом консультация с широким активом позволяет оценить значение новых предложений.
+        hr.production-intro__divider
+        +advantages([
+          { num: 'до30', text: 'дней на изготовление' },
+          { num: '638', text: 'кухонь изготовлено за 2021 год' },
+          { num: '5', text: 'гарнитуров в сутки' },
+          { num: '54', text: 'вида материалов' }
+        ]).production-intro__advantages        
