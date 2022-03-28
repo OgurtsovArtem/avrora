@@ -1,6 +1,8 @@
-mixin input({id, placeholder, type='text', name, className})
+mixin input({id, placeholder, type='text', name, className, required})
         div(class= className ? `input ${className}`: 'input')
-            input.input__field(id=id, type=type, name=name || false)
+
             label.input__label(for=id)
+                input.input__field(id=id, type=type, name=name || false)&attributes(attributes)
                 p.input__label-text=placeholder
+                span.input__error
             block

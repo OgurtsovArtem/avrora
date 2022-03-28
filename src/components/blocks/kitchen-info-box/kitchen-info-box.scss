@@ -1,6 +1,10 @@
 @use "sass:math";
 
 .kitchen-info-box {
+  overflow: hidden;
+  @include media(sm) {
+    overflow: initial;
+  }
   &__container {
     @include media(md) {
       max-width: rem(520);

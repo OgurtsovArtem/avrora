@@ -1,2 +1,3 @@
 mixin filter-button({text, className, active})
-    button(class=className ? `${className} ${active ? "filter-button filter-button_active" : 'filter-button'}`: `${active ? "filter-button filter-button_active" : 'filter-button'}`)=text
+    button(class=className ? `${className} ${active ? "filter-button filter-button_active" : 'filter-button'}`: `${active ? "filter-button filter-button_active" : 'filter-button'}`)
+        a.filter-button__link(href="#", target="_blank", rel="noopener noreferrer")=text

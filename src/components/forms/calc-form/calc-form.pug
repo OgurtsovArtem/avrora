@@ -1,0 +1,39 @@
+include ../../Ui-kit/input/input
+include ../../Ui-kit/textarea/textarea
+include ../../Ui-kit/button/button
+include ../../Ui-kit/input-file/input-file
+
+mixin calc-form()
+    form.calc-form&attributes(attributes)(name="calc")
+        legend.calc-form__legend.h3 Рассчитать мой проект
+        +input({
+            id: "calc-form-name",
+            placeholder: "Представьтесь",
+            type: "text",
+            className: 'calc-form__input'
+        })(required minlength="2" maxlength="30")
+        +input({
+            id: "calc-form-tel",
+            type:"tel",
+            placeholder: "Контактный номер телефона",
+            className: 'calc-form__input'
+        })(required)
+        +textarea({
+            id: "calc-form-textarea",
+            placeholder: "Комментарий",
+            className: 'calc-form__textarea',
+            rows: 1,
+        })
+        +input-file({
+            id: "calc-form-file",
+            text: "Хочу приложить эскиз или пример",
+            className: 'calc-form__input',
+            name: 'calc-form-file'
+        })
+        +button({
+            text: 'Отправить',
+            className: 'calc-form__button',
+            type: 'submit'
+        })
+        .calc-form__footnote Нажимая кнопку "Отправить", вы соглашаетесь с условиями
+            a.calc-form__footnote-link(href="#", target="_blank", rel="noopener noreferrer")  Политики конфиденциальности

@@ -1,0 +1,27 @@
+include ../../Ui-kit/input/input
+include ../../Ui-kit/textarea/textarea
+include ../../Ui-kit/button/button
+include ../../Ui-kit/input-file/input-file
+
+mixin call-form()
+    form.call-form&attributes(attributes)(name="call")
+        legend.call-form__legend Обратный звонок
+        +input({
+            id: "call-form-name",
+            placeholder: "Представьтесь",
+            type: "text",
+            className: 'call-form__input'
+        })(required minlength="2" maxlength="30")
+        +input({
+            id: "call-form-tel",
+            type:"tel",
+            placeholder: "Контактный номер телефона",
+            className: 'call-form__input'
+        })(required)
+        +button({
+            text: 'Отправить',
+            className: 'call-form__button',
+            type: 'submit'
+        })
+        .call-form__footnote Нажимая кнопку "Отправить", вы соглашаетесь с условиями
+            a.call-form__footnote-link(href="#", target="_blank", rel="noopener noreferrer")  Политики конфиденциальности

@@ -1,4 +1,5 @@
 .kitchen-set-banner {
+  position: relative;
   &__container {
     text-align: right;
     @include adaptive-value("padding-top", 30, 10, map-get($breakpoints, es));
@@ -24,5 +25,16 @@
   &__button {
     margin-top: rem(16);
     color: $color-primary;
+  }
+  &__circle-text {
+    left: -25%;
+    top: -20%;
+    @include media(sm) {
+      left: -10%;
+    }
+    @include media(md) {
+      left: 4%;
+      top: 31%;
+    }
   }
 }

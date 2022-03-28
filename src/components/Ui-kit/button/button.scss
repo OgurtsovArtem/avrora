@@ -7,9 +7,21 @@
   text-transform: uppercase;
   color: $color-white;
   background-color: $color-primary;
+  position: relative;
   @include adaptive-value("padding", 25, 15, map-get($breakpoints, es));
   &_white {
     color: $color-text-secondary;
     background-color: $color-white;
+  }
+  &::after {
+    content: attr(data-error-name);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    font-size: rem(10);
+    font-weight: 400;
+    font-style: normal;
+    color: $color-warning;
   }
 }

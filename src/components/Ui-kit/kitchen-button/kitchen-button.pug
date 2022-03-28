@@ -1,11 +1,8 @@
 mixin kitchen-button({link='#', className, text, style})
     case style
         when 'fill'
-            button(class= className ? `${className} kitchen-button kitchen-button_fill`: `kitchen-button kitchen-button_fill`)
-                a.kitchen-button__link(href=link, target="_blank", rel="noopener noreferrer")=text
+            button(class= className ? `${className} kitchen-button kitchen-button_fill`: `kitchen-button kitchen-button_fill`)&attributes(attributes)=text
         when 'transperent'
-            button(class= className ? `${className} kitchen-button kitchen-button_transperent`: `kitchen-button kitchen-button_transperent`)
-                a.kitchen-button__link(href=link, target="_blank", rel="noopener noreferrer")=text
+            button(class= className ? `${className} kitchen-button kitchen-button_transperent`: `kitchen-button kitchen-button_transperent`)&attributes(attributes)=text
         default
-            button(class= className ? `${className} kitchen-button kitchen-button_fill`: `kitchen-button kitchen-button_fill`)
-                a.kitchen-button__link(href=link, target="_blank", rel="noopener noreferrer")=text
+            button(class= className ? `${className} kitchen-button kitchen-button_fill`: `kitchen-button kitchen-button_fill`)&attributes(attributes)=text

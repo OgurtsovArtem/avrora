@@ -1,0 +1,7 @@
+include ../../forms/calc-form/calc-form
+
+mixin calc-popup()
+    div.calc-popup
+        .calc-popup__container
+            button.calc-popup__close(type='button')
+            +calc-form().calc-popup__form

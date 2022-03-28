@@ -9,14 +9,16 @@ mixin designer-form()
             id: "designer-form-name",
             placeholder: "Представьтесь",
             type: "text",
+            name:'name',
             className: 'designer-from__input'
-        })
+        })(required minlength="2" maxlength="30")
         +input({
             id: "designer-form-tel",
             type:"tel",
             placeholder: "Контактный номер телефона",
-            className: 'designer-from__input'
-        })
+            className: 'designer-from__input',
+            name:'phone',
+        })(required)
         +textarea({
             id: "designer-form-textarea",
             placeholder: "Комментарий, например, удобное время замера...",
@@ -26,4 +28,5 @@ mixin designer-form()
         +button({
             text: 'Пригласить дизайнера',
             className: 'designer-from__button',
+            type: 'submit'
         })

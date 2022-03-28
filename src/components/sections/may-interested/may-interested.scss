@@ -1,0 +1,40 @@
+.may-interested {
+  background-color: $color-gray-600;
+  @include adaptive-value("margin-top", 80, 60, map-get($breakpoints, es));
+  @include adaptive-value("padding-top", 80, 60, map-get($breakpoints, es));
+  @include adaptive-value("padding-bottom", 80, 60, map-get($breakpoints, es));
+  &__container {
+  }
+  &__title {
+    font-family: "Philosopher";
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+  }
+  &__cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    @include adaptive-value(
+      "grid-auto-rows",
+      400,
+      450,
+      map-get($breakpoints, lg)
+    );
+    @include adaptive-value(
+      "grid-auto-rows",
+      450,
+      130,
+      map-get($breakpoints, sm),
+      map-get($breakpoints, lg)
+    );
+    @include adaptive-value("gap", 60, 17, map-get($breakpoints, sm));
+    @include adaptive-value("margin-top", 67, 18, map-get($breakpoints, sm));
+    @include media(md) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  &__card {
+    border-radius: rem(8);
+    overflow: hidden;
+  }
+}

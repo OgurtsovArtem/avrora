@@ -3,12 +3,13 @@ include ../../Ui-kit/filter-button/filter-button
 
 mixin filter-selector({className, buttonText, selectors})
     div(class= className ? `${className} filter-selector `: `filter-selector`)
-        button.filter-selector__button(type='button', data-accordion-js-button='')
-            +icon('kitchen-filter', 'filter-selector__button-icon')
-            span.filter-selector__button-text=buttonText
-        .filter-selector__body(data-accordion-js-body='')
-            each selector in selectors
-                +filter-button({
-                    className: 'filter-selector__button',
-                    text: selector
-                })
+        div.filter-selector__accordion.ac
+            button.filter-selector__button.ac-trigger(type='button')
+                +icon('kitchen-filter', 'filter-selector__button-icon')
+                span.filter-selector__button-text=buttonText
+            .filter-selector__body.ac-panel
+                each selector in selectors
+                    +filter-button({
+                        className: 'filter-selector__filter-button',
+                        text: selector
+                    })

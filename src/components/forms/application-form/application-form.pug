@@ -1,5 +1,4 @@
 include ../../Ui-kit/input/input
-include ../../Ui-kit/textarea/textarea
 include ../../Ui-kit/button/button
 include ../../Ui-kit/input-file/input-file
 
@@ -10,14 +9,17 @@ mixin application-form()
             id: "application-form-name",
             placeholder: "Представьтесь",
             type: "text",
-            className: 'application-form__input'
-        })
+            className: 'application-form__input',
+            name: 'name'
+        })(required minlength="2" maxlength="30")
         +input({
             id: "application-form-tel",
             type:"tel",
             placeholder: "Контактный номер телефона",
-            className: 'application-form__input'
-        })
+            className: 'application-form__input',
+            name: 'phone',
+            required: true,
+        })(required)
         +input-file({
             id: "application-form-file",
             text: "Хочу приложить эскиз или пример",
@@ -27,4 +29,5 @@ mixin application-form()
         +button({
             text: 'Отправить',
             className: 'application-form__button',
+            type: 'submit'
         })

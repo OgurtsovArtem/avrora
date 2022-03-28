@@ -1,14 +1,12 @@
 .kitchen-button {
   padding: rem(15);
-  &__link {
-    font-style: normal;
-    font-weight: 600;
-    font-size: rem(14);
-    line-height: 143%;
-    text-align: center;
-    text-transform: uppercase;
-    background-color: transparent;
-  }
+  font-style: normal;
+  font-weight: 600;
+  font-size: rem(14);
+  line-height: 143%;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: transparent;
   &_fill {
     color: $color-white;
     background-color: $color-primary;

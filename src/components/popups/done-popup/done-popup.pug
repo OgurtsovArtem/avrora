@@ -1,0 +1,12 @@
+include ../../Ui-kit/button/button
+
+mixin done-popup()
+    div.done-popup
+        .done-popup__container
+            .done-popup__content
+                h2.done-popup__title.h3 Спасибо за обращение!
+                p.done-popup__text.txt Наш менеджер свяжется с вами в ближайшее время и проконсультирует по всем вопросам.
+                +button({
+                    className: 'done-popup__button',
+                    text: 'Ок, понятно!'
+                })
