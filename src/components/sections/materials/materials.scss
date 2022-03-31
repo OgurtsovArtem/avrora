@@ -1,0 +1,249 @@
+.materials {
+  display: none;
+  @include media(md) {
+    @include adaptive-value("margin-top", 100, 70, map-get($breakpoints, md));
+    @include adaptive-value(
+      "padding-bottom",
+      80,
+      50,
+      map-get($breakpoints, md)
+    );
+    display: block;
+    position: relative;
+    overflow: hidden;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 50%;
+      background-color: $color-gray-600;
+    }
+  }
+
+  &__container {
+    @include media(md) {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+      grid-auto-rows: auto;
+    }
+    @include media(lg) {
+      grid-template-columns: minmax(0, 0.8fr) minmax(0, 2fr);
+    }
+  }
+  &__title {
+    @include media(md) {
+      z-index: $zIndexLight;
+      position: relative;
+      grid-area: 1/1/1/1;
+    }
+  }
+  &__swiper {
+    @include media(md) {
+      position: relative;
+      cursor: grab;
+      width: 100%;
+      grid-area: 1/1/3/3;
+      @include adaptive-value("height", 600, 400, map-get($breakpoints, md));
+      @include adaptive-value(
+        "padding-right",
+        200,
+        50,
+        map-get($breakpoints, md)
+      );
+    }
+  }
+  &__item {
+    @include media(md) {
+      position: relative;
+      transform: scale(1);
+      transition: $transitionNormal;
+
+      &.swiper-slide {
+        opacity: 0;
+        .materials__footnote {
+          transition: $transitionNormal;
+          opacity: 0;
+          transform: translateX(100%);
+        }
+        .materials__description {
+          transition: 0.8s;
+          opacity: 0;
+          transform: translateX(-100%);
+        }
+      }
+      &.swiper-slide-active {
+        opacity: 1;
+        .materials__image-box {
+          @include adaptive-value(
+            "margin-left",
+            500,
+            300,
+            map-get($breakpoints, md)
+          );
+        }
+        .materials__footnote {
+          opacity: 1;
+          transform: translateX(0);
+        }
+        .materials__description {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      &.swiper-slide-next {
+        opacity: 1;
+        transform: scale(0.9);
+      }
+    }
+  }
+
+  &__image-box {
+    @include media(md) {
+      position: relative;
+      height: 100%;
+      transition: $transitionNormal;
+    }
+  }
+
+  &__image {
+    @include media(md) {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+  &__control-button {
+    // position: absolute;
+    // right: 0%;
+    // top: 50%;
+    // transform: translateY(-50%) scale(0.9);
+    // height: 100%;
+    // width: 100%;
+    // max-width: rem(150);
+    // z-index: $zIndexLight;
+    // background: linear-gradient(-90deg, #2c2d2e 0%, rgba(40, 49, 67, 0) 100%);
+    // &.swiper-button-disabled {
+    //   opacity: 0;
+    //   visibility: hidden;
+    //   pointer-events: none;
+    // }
+  }
+  &__control-button-icon {
+    @include media(md) {
+      fill: $color-white;
+      width: 100%;
+      height: rem(50);
+      transform: rotate(180deg);
+    }
+  }
+  &__footnote {
+    @include media(md) {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      display: flex;
+      @include adaptive-value("gap", 45, 20, map-get($breakpoints, md));
+      border-top-right-radius: rem(90);
+      background-color: $color-gray-600;
+      max-width: rem(570);
+      @include adaptive-value("padding-top", 33, 20, map-get($breakpoints, md));
+      @include adaptive-value(
+        "padding-bottom",
+        33,
+        20,
+        map-get($breakpoints, md)
+      );
+      @include adaptive-value(
+        "padding-left",
+        50,
+        20,
+        map-get($breakpoints, md)
+      );
+    }
+  }
+  &__footnote-box {
+    @include media(md) {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+    @include media(lg) {
+      flex-direction: row;
+      gap: rem(15);
+    }
+  }
+  &__footnote-name {
+    @include media(md) {
+      font-style: normal;
+      font-weight: 600;
+      line-height: 160%;
+    }
+  }
+  &__footnote-value {
+    @include media(md) {
+      font-style: normal;
+      font-weight: 600;
+      line-height: 160%;
+    }
+  }
+  &__description {
+    @include media(md) {
+      position: absolute;
+      top: 20%;
+      left: 0;
+      // max-width: rem(490);
+      z-index: $zIndexLight;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+    }
+  }
+  &__description-title {
+    @include media(md) {
+      font-style: normal;
+      font-weight: 600;
+      line-height: 100%;
+      @include adaptive-value(
+        "margin-bottom",
+        24,
+        10,
+        map-get($breakpoints, md)
+      );
+    }
+  }
+  &__description-text {
+    @include media(md) {
+      font-style: normal;
+      font-weight: 400;
+      line-height: 160%;
+      color: $color-text-secondary;
+      grid-column-start: 1;
+
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 7;
+      -webkit-box-orient: vertical;
+    }
+  }
+  &__sponsors {
+    @include media(md) {
+      display: flex;
+      flex-wrap: wrap;
+      gap: rem(20);
+      align-self: flex-end;
+      z-index: $zIndexLight;
+      grid-row-start: 2;
+      grid-column-start: 1;
+    }
+  }
+  &__sponsors-icon {
+    @include media(md) {
+      width: calc(50% - rem(20));
+      height: rem(44);
+    }
+  }
+}

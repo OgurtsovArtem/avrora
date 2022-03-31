@@ -47,7 +47,11 @@ mixin catalog-kitchen()
                     className: 'catalog-kitchen__set',
                     version: 'version-1'
                 })
-        +kitchen-advantages()
+        +kitchen-advantages([
+          { num: '0 ₽', text: 'стоимость выезда дизайнера и 3D-проекта' },
+          { num: 'до30', text: 'дней на изготовление' },
+          { num: '100 000+', text: 'циклов работы фурнитуры' },
+        ])
         div.catalog-kitchen__bottom-section.container
             +kitchen-set({
                 className: 'catalog-kitchen__set',

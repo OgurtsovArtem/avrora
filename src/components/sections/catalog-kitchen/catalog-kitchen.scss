@@ -1,10 +1,10 @@
 @use "sass:math";
 
 .catalog-kitchen {
-  overflow: hidden;
-  @include media(sm) {
-    overflow: initial;
-  }
+  // overflow: hidden;
+  // @include media(sm) {
+  //   overflow: initial;
+  // }
   //================ .catalog-kitchen__top-section =========================
   &__top-section {
     background-color: $color-secondary;

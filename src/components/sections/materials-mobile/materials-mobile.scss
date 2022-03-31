@@ -1,0 +1,72 @@
+.materials-mobile {
+  @include adaptive-value(
+    "margin-top",
+    70,
+    50,
+    map-get($breakpoints, es),
+    map-get($breakpoints, md)
+  );
+  @include adaptive-value(
+    "margin-bottom",
+    50,
+    40,
+    map-get($breakpoints, es),
+    map-get($breakpoints, md)
+  );
+  @include media(md) {
+    display: none;
+  }
+  &__container {
+  }
+  &__title {
+    font-family: $font-secondary;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+    margin-bottom: rem(30);
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: rem(40);
+  }
+  &__item {
+  }
+
+  &__image-box {
+  }
+
+  &__image {
+    @include adaptive-value(
+      "height",
+      400,
+      160,
+      map-get($breakpoints, es),
+      map-get($breakpoints, md)
+    );
+  }
+  &__description {
+    margin-top: rem(22);
+  }
+  &__description-title {
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%;
+  }
+  &__description-text {
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+    color: $color-text-secondary;
+    margin-top: rem(6);
+  }
+  &__sponsors {
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(10);
+  }
+  &__sponsors-icon {
+    width: calc(50% - rem(10));
+    height: rem(40);
+  }
+}

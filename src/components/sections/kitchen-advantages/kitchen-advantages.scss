@@ -1,47 +1,49 @@
 .kitchen-advantages {
   @include adaptive-value("margin-top", 87, 110, map-get($breakpoints, lg));
   @include adaptive-value("margin-bottom", 108, 130, map-get($breakpoints, lg));
-  @include adaptive-value(
-    "margin-top",
-    110,
-    50,
-    map-get($breakpoints, es),
-    map-get($breakpoints, lg)
-  );
-  @include adaptive-value(
-    "margin-bottom",
-    130,
-    110,
-    map-get($breakpoints, es),
-    map-get($breakpoints, lg)
-  );
-
-  &__container {
+  &__list {
     display: flex;
     flex-wrap: wrap;
-    @include adaptive-value("gap", 60, 40, map-get($breakpoints, es));
-    @include media(md) {
-      justify-content: space-around;
-    }
+    justify-content: space-between;
+    margin-bottom: rem(-48);
   }
-  &__column {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    @include adaptive-value("gap", 15, 8, map-get($breakpoints, es));
-  }
-  &__text-large {
-    font-family: "Philosopher";
-    font-style: normal;
-    font-weight: 400;
-    line-height: 80%;
 
-    color: $color-text-secondary;
-  }
-  &__text {
-    font-style: normal;
+  &__item {
+    margin-bottom: rem(48);
+    width: calc(50% - rem(28));
     font-weight: 600;
+    font-size: rem(18);
     line-height: 100%;
     color: $color-text-secondary;
+  }
+
+  &__num {
+    display: block;
+    margin-bottom: rem(3);
+    font-family: $font-secondary;
+    font-weight: 400;
+    line-height: 80%;
+    white-space: nowrap;
+  }
+
+  @include media(lg) {
+    &__list {
+      justify-content: space-evenly;
+    }
+
+    &__item {
+      display: flex;
+      align-items: center;
+      width: auto;
+    }
+
+    &__num {
+      flex-shrink: 0;
+      margin-right: rem(11);
+    }
+
+    &__text {
+      max-width: rem(135);
+    }
   }
 }

@@ -3,40 +3,37 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    min-height: 694px;
-    padding: 54px 0;
+    min-height: rem(694);
+    padding: rem(54) 0;
     color: #fff;
     background-image: url(/assets/images/production/production.jpg);
     background-position: center;
     background-size: cover;
   }
 
-  &__heading {
+  &__title {
     font-family: $font-secondary;
     font-weight: 400;
-    font-size: 52px;
     line-height: 80%;
   }
 
-  &__video {
-    margin-top: 35px;
+  &__video-button {
+    margin-top: rem(35);
   }
 
-  &__title {
-    margin-top: 46px;
+  &__text {
+    margin-top: rem(46);
     font-weight: 600;
-    font-size: 28px;
     line-height: 100%;
   }
 
   &__content {
-    padding-bottom: 96px;
   }
 
   &__desc {
-    margin-top: 46px;
+    margin-top: rem(46);
     font-weight: 700;
-    font-size: 15px;
+    font-size: rem(15);
     line-height: 160%;
   }
 
@@ -45,24 +42,24 @@
   }
 
   &__advantages {
-    margin-top: 52px;
+    margin-top: rem(52);
   }
 
   @include media(md) {
     &__screen {
-      min-height: 594px;
+      min-height: rem(594);
       background-image: url(/assets/images/production/production-md.jpg);
     }
   }
 
   @include media(lg) {
     .container {
-      padding: 0 63px;
+      padding: 0 rem(63);
     }
 
     &__screen {
       position: relative;
-      padding: 78px 0;
+      padding: rem(78) 0;
 
       .container {
         padding-right: 43%;
@@ -70,14 +67,14 @@
     }
 
     &__heading {
-      font-size: 72px;
+      font-size: rem(72);
     }
 
     &__title {
-      margin-top: 27px;
+      margin-top: rem(27);
     }
 
-    &__video {
+    &__video-button {
       position: absolute;
       left: 67.6%;
       top: 50%;
@@ -86,23 +83,23 @@
     }
 
     &__desc {
-      margin-top: 77px;
-      max-width: 1086px;
+      margin-top: rem(77);
+      max-width: rem(1086);
     }
 
     &__divider {
       display: block;
-      margin: 27px -46px 0;
+      margin: rem(27) rem(-46) 0;
     }
 
     &__advantages {
-      margin-top: 96px;
+      margin-top: rem(96);
     }
   }
 
   @include media(xl) {
     &__screen {
-      min-height: 677px;
+      min-height: rem(677);
     }
   }
 }

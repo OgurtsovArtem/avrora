@@ -16,6 +16,12 @@
   }
   &__info {
     @include adaptive-value("margin-top", 35, 25, map-get($breakpoints, es));
+    @include adaptive-value(
+      "margin-bottom",
+      110,
+      40,
+      map-get($breakpoints, es)
+    );
   }
   &__title {
     font-family: "Philosopher";

@@ -1,0 +1,102 @@
+.team {
+  background-color: $color-secondary;
+  color: $color-white;
+  @include adaptive-value("padding-top", 130, 50, map-get($breakpoints, es));
+  @include adaptive-value("padding-bottom", 130, 70, map-get($breakpoints, es));
+  &__container {
+    display: flex;
+    flex-direction: column;
+
+    @include media(md) {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      column-gap: rem(20);
+    }
+  }
+
+  &__title {
+    font-family: $font-secondary;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+    @media (max-width: (map-get($breakpoints, md)+px)) {
+      margin-bottom: rem(50);
+    }
+  }
+
+  &__text {
+    font-style: normal;
+    font-weight: 400;
+    line-height: 170%;
+    margin-bottom: rem(15);
+    @include media(md) {
+      grid-column-start: 2;
+    }
+  }
+
+  &__image-box {
+    display: grid;
+    grid-auto-rows: 1fr;
+    overflow-x: auto;
+    overflow-y: hidden;
+    @include adaptive-value("gap", 30, 15, map-get($breakpoints, es));
+    @include adaptive-value("margin-top", 72, 46, map-get($breakpoints, es));
+    @include adaptive-value("margin-bottom", 72, 46, map-get($breakpoints, es));
+
+    &_large {
+      grid-template-columns:
+        minmax(rem(250), 1fr)
+        minmax(rem(250), 2fr)
+        minmax(rem(250), 1fr);
+      @include media(md) {
+        grid-column-start: span 2;
+      }
+    }
+
+    &_medium {
+      grid-template-columns: minmax(rem(180), 1fr) minmax(rem(250), 2fr);
+    }
+  }
+  &__image {
+    object-fit: cover;
+    width: 100%;
+    @include adaptive-value("height", 400, 250, map-get($breakpoints, es));
+  }
+
+  &__advantages {
+    @include adaptive-value("margin-left", 60, 0, map-get($breakpoints, md));
+    @media (max-width: (map-get($breakpoints, md)+px)) {
+      order: 1;
+    }
+  }
+
+  &__advantages-box {
+    @include adaptive-value("margin-top", 72, 46, map-get($breakpoints, es));
+  }
+  &__advantages-title {
+    font-family: $font-primary;
+    font-style: normal;
+    font-weight: 600;
+    font-size: rem(18);
+    line-height: 100%;
+    color: $color-text-secondary;
+    &_accent {
+      font-family: $font-secondary;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 80%;
+      color: $color-primary;
+      margin-right: rem(8);
+    }
+  }
+
+  &__advantages-text {
+    font-family: $font-primary;
+    font-style: normal;
+    font-weight: 600;
+    font-size: rem(18);
+    line-height: 100%;
+    color: $color-text-secondary;
+    margin-top: rem(15);
+  }
+}
