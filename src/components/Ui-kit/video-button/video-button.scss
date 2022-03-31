@@ -19,27 +19,27 @@
 
   &__circle {
     position: absolute;
-    left: 21px;
+    left: rem(21);
     top: 50%;
-    width: 120px;
-    height: 120px;
+    width: rem(120);
+    height: rem(120);
     border-radius: 50%;
     background: $color-bg-secondary;
-    border: 1px dashed $color-icon-secondary;
+    border: rem(1) dashed $color-icon-secondary;
     transform: translate(-50%, -50%);
     pointer-events: none;
     z-index: -1;
-
+    animation: center-rotate 55s linear infinite, expansion 2s;
     &::before {
       content: "";
       position: absolute;
       left: 50%;
       top: 50%;
-      width: 176px;
-      height: 176px;
+      width: rem(176);
+      height: rem(176);
       border-radius: 50%;
       background: $color-bg-secondary;
-      border: 1px dashed $color-icon-secondary;
+      border: rem(1) dashed $color-icon-secondary;
       opacity: 0.2;
       transform: translate(-50%, -50%);
     }
@@ -68,5 +68,21 @@
     z-index: 1;
   }
   &__link {
+  }
+}
+@keyframes expansion {
+  from {
+    transform: translate(-50%, -50%) scale(0);
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+@keyframes center-rotate {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
   }
 }
