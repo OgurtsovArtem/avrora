@@ -10,7 +10,7 @@
   <body>
     <header class="header">
       <div class="header__bar">
-        <button class="header__menu-btn"><span></span></button><a class="header__logo" href="/">
+        <button class="header__menu-btn"><span></span></button><a class="header__logo" href="/avrora/">
           <picture>
             <source srcset="./assets/icons/logo-lg.svg" media="(min-width: 1280px)"/><img class="header__logo-img" src="./assets/icons/logo.svg" alt="Аврора"/>
           </picture></a><a class="header__call" href="tel:+7 (812) 612 30 49">
@@ -544,6 +544,79 @@
               <p class="preview-catalog__image-text">Подборка популярных</p></a></div>
         </div>
       </section>
+      <div class="calc-popup">
+        <div class="calc-popup__container">
+          <button class="calc-popup__close" type="button"></button>
+          <form class="calc-form calc-popup__form" name="calc">
+            <legend class="calc-form__legend h3">Рассчитать мой проект</legend>
+            <div class="input calc-form__input">
+              <label class="input__label" for="calc-form-name">
+                <input class="input__field" id="calc-form-name" type="text" required="required" minlength="2" maxlength="30"/>
+                <p class="input__label-text">Представьтесь</p><span class="input__error"></span>
+              </label>
+            </div>
+            <div class="input calc-form__input">
+              <label class="input__label" for="calc-form-tel">
+                <input class="input__field" id="calc-form-tel" type="tel" required="required"/>
+                <p class="input__label-text">Контактный номер телефона</p><span class="input__error"></span>
+              </label>
+            </div>
+            <div class="textarea calc-form__textarea">
+              <textarea class="textarea__field" id="calc-form-textarea" cols="25" rows="1"></textarea>
+              <label class="textarea__label" for="calc-form-textarea">
+                <p class="textarea__label-text">Комментарий</p>
+              </label>
+            </div>
+            <div class="input-file calc-form__input">
+              <input class="input-file__field" id="calc-form-file" type="file" name="calc-form-file"/>
+              <label class="input-file__label" for="calc-form-file">
+                <div class="input-file__icon-box">
+                  <svg class="input-file__icon input-file__icon_file-clip icon">
+                    <use xlink:href="./assets/icons/sprite.svg#file-clip"></use>
+                  </svg>
+                </div>
+                <p class="input-file__label-text">Хочу приложить эскиз или пример</p>
+              </label>
+            </div>
+            <button class="calc-form__button button" type="submit">Отправить
+            </button>
+            <div class="calc-form__footnote">Нажимая кнопку "Отправить", вы соглашаетесь с условиями<a class="calc-form__footnote-link" href="#" target="_blank" rel="noopener noreferrer"> Политики конфиденциальности</a></div>
+          </form>
+        </div>
+      </div>
+      <div class="call-popup">
+        <div class="call-popup__container">
+          <button class="call-popup__close" type="button"></button>
+          <form class="call-form call-popup__form" name="call">
+            <legend class="call-form__legend">Обратный звонок</legend>
+            <div class="input call-form__input">
+              <label class="input__label" for="call-form-name">
+                <input class="input__field" id="call-form-name" type="text" required="required" minlength="2" maxlength="30"/>
+                <p class="input__label-text">Представьтесь</p><span class="input__error"></span>
+              </label>
+            </div>
+            <div class="input call-form__input">
+              <label class="input__label" for="call-form-tel">
+                <input class="input__field" id="call-form-tel" type="tel" required="required"/>
+                <p class="input__label-text">Контактный номер телефона</p><span class="input__error"></span>
+              </label>
+            </div>
+            <button class="call-form__button button" type="submit">Отправить
+            </button>
+            <div class="call-form__footnote">Нажимая кнопку "Отправить", вы соглашаетесь с условиями<a class="call-form__footnote-link" href="#" target="_blank" rel="noopener noreferrer"> Политики конфиденциальности</a></div>
+          </form>
+        </div>
+      </div>
+      <div class="done-popup">
+        <div class="done-popup__container">
+          <div class="done-popup__content">
+            <h2 class="done-popup__title h3">Спасибо за обращение!</h2>
+            <p class="done-popup__text txt">Наш менеджер свяжется с вами в ближайшее время и проконсультирует по всем вопросам.</p>
+            <button class="done-popup__button button" type="button">Ок, понятно!
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
     <footer class="footer">
       <div class="footer__menu">
