@@ -1,6 +1,5 @@
 import Swiper, { Navigation, Lazy } from "swiper";
 Swiper.use([Navigation, Lazy]);
-import "swiper/css";
 
 export const kitchenSmallSwiper = new Swiper(".kitchen-large__swiper", {
   loop: true,
@@ -92,7 +91,7 @@ export const rewievsCardSwiper = new Swiper(".reviews-card__swiper", {
 
 export const materialsSwiper = new Swiper(".materials__swiper", {
   slidesPerView: 1,
-  spaceBetween: -10,
+  spaceBetween: 10,
   parallax: true,
   enabled: false,
   // loop: true,
