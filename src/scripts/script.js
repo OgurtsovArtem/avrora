@@ -15,6 +15,7 @@ if (lazyImages) {
     const imageObserve = new Observer({
       element: image,
       imageLoad: true,
+      playOnce: true,
     });
   });
 }

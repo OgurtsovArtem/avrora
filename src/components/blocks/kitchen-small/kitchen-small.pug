@@ -5,7 +5,7 @@ mixin kitchen-small({className})
     div(class=className ? `${className} kitchen-small`: `kitchen-small`)
         .kitchen-small__swiper
             .swiper-wrapper
-                a(href="/kitchen-detail.html", target="_blank", rel="noopener noreferrer").kitchen-small__item.swiper-slide
+                a(href="/avrora/kitchen-detail", target="_blank", rel="noopener noreferrer").kitchen-small__item.swiper-slide
                     img.swiper-lazy(data-src="./assets/images/kitchens/small.jpg", alt="kitchen")
             .kitchen-small__discount -50%
             +kitchen-controls({

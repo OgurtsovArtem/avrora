@@ -65,11 +65,7 @@ function scripts() {
 }
 
 function vendorJs() {
-  const modules = [
-    "node_modules/swiper/swiper-bundle.min.js",
-    "node_modules/swiper/swiper-bundle.min.js.map",
-    "node_modules/masonry-layout/dist/masonry.pkgd.min.js",
-  ];
+  const modules = ["node_modules/masonry-layout/dist/masonry.pkgd.min.js"];
 
   return gulp.src(modules).pipe(gulp.dest("dist/assets/libs/js"));
 }
