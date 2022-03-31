@@ -1,5 +1,8 @@
 extends ../layouts/default.pug
 include ../components/sections/reviews-list/reviews-list
-
+include ../components/popups/call-popup/call-popup
+include ../components/popups/done-popup/done-popup
 block content
     +reviews-list
+    +call-popup
+    +done-popup

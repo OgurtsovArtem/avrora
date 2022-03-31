@@ -3,7 +3,8 @@ include ../components/sections/steps/steps
 include ../components/sections/form-section/form-section
 include ../components/sections/popular-kit/popular-kit
 include ../components/sections/blog-list/blog-list
-
+include ../components/popups/call-popup/call-popup
+include ../components/popups/done-popup/done-popup
 
 block content
     +blog-list
@@ -18,3 +19,5 @@ block content
         form: 'application',
     })
     +steps
+    +call-popup
+    +done-popup

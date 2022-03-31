@@ -1,6 +1,10 @@
 extends ../layouts/default.pug
 include ../components/sections/payment-intro/payment-intro
 include ../components/sections/payment-online/payment-online
+include ../components/popups/call-popup/call-popup
+include ../components/popups/done-popup/done-popup
 block content
     +payment-intro()
     +payment-online()
+    +call-popup
+    +done-popup
