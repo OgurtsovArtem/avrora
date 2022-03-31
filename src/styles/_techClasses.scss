@@ -11,7 +11,7 @@
 
 .h3 {
   font-weight: 600;
-  @include adaptive-value("font-size", 28, 24, map-get($breakpoints, sm));
+  @include adaptive-value("font-size", 28, 22, map-get($breakpoints, sm));
   line-height: 1;
 }
 

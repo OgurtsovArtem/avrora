@@ -26,7 +26,7 @@ $color-gray-600: rgba(0, 16, 61, 0.06);
 $color-dark-blue-200: #3d4555;
 $color-dark-blue-600: rgba(128, 164, 237, 0.05);
 
-$color-icon-secondary: #BFC1C7;
+$color-icon-secondary: #bfc1c7;
 
 // Shadows
 $depth2: 0px 4px 32px rgba(0, 16, 61, 0.16);
@@ -52,11 +52,11 @@ $transitionHight: 0.8s;
 
 // Breakpoints
 $breakpoints: (
-  es: 280,
-  sm: 375,
-  md: 770,
-  lg: 1280,
-  xl: 1600,
+  es: 280.5,
+  sm: 375.5,
+  md: 770.5,
+  lg: 1280.5,
+  xl: 1600.5,
 );
 
 // Fonts
