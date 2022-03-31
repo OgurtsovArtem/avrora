@@ -116,7 +116,6 @@ class Observer {
   }
 }
 const lazyImages = [...document.querySelectorAll("img[data-lazy]")];
-console.log(lazyImages);
 if (lazyImages) {
   lazyImages.forEach((image) => {
     const imageObserve = new Observer({
@@ -142,23 +141,21 @@ class Popups {
       button.addEventListener("click", this.close.bind(this));
     });
     this.openButtons.forEach((button) => {
-      console.log(button);
       button.addEventListener("click", this.open.bind(this));
     });
   }
 
   open() {
     this.popup.classList.add(this.activeClass);
-    document.body.style.position = "fixed";
+    document.body.style.overflow = "hidden";
   }
   close() {
     this.popup.classList.remove(this.activeClass);
-    document.body.style.position = "static";
+    document.body.style.overflow = "initial";
   }
 }
 
 // ====================== FORM ======================
-console.log(document.querySelectorAll("[data-popup-open='calc']"));
 class Form {
   constructor(form, { errorClass, popupNext, popupCurrent }) {
     this.form = form;
@@ -538,6 +535,23 @@ const rewievsCardSwiper = new Swiper(".reviews-card__swiper", {
   },
 });
 
+const materialsSwiper = new Swiper(".materials__swiper", {
+  slidesPerView: 1,
+  spaceBetween: -10,
+  parallax: true,
+  enabled: false,
+  // loop: true,
+  speed: 800,
+  navigation: {
+    nextEl: ".materials__control-button",
+  },
+  breakpoints: {
+    770.5: {
+      enabled: true,
+    },
+  },
+});
+
 // ====================== MASONRY ======================
 
 if (document.querySelector(".reviews-list__body")) {
@@ -561,25 +575,30 @@ if (document.querySelector(".filter-selector")) {
   const filterAccordion = new Accordion(".filter-selector", {});
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+if (document.querySelector(".stages__accordion")) {
+  const stagesAccordions = [...document.querySelectorAll(".stages__accordion")];
+  const filterAccordion = new Accordion(stagesAccordions, {});
+}
 
-  function header() {
-    const header = document.querySelector('.header');
-    const menuBtn = document.querySelector('.header__menu-btn');
-    let menuIsActive = false;
-    
-    function toggleMenu() {
-      if (menuIsActive) {
-        header.classList.remove('open-menu');
-        menuIsActive = false;
-      } else {
-        header.classList.add('open-menu');
-        menuIsActive = true;
-      }
+// ====================== HEADER ======================
+function header() {
+  const header = document.querySelector(".header");
+  const menuBtn = document.querySelector(".header__menu-btn");
+  let menuIsActive = false;
+
+  function toggleMenu() {
+    if (menuIsActive) {
+      header.classList.remove("open-menu");
+      menuIsActive = false;
+    } else {
+      header.classList.add("open-menu");
+      menuIsActive = true;
     }
-    
-    menuBtn.addEventListener('click', toggleMenu);
   }
 
+  menuBtn.addEventListener("click", toggleMenu);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
   header();
 });
