@@ -7,7 +7,7 @@
  * Published under MIT License
  */
 
-(function (window) {
+export default (function (window) {
   "use strict";
 
   var uniqueId = 0;

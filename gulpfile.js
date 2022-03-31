@@ -14,6 +14,7 @@ const uglify = require("gulp-uglify");
 const ttf2woff = require("gulp-ttf2woff");
 const ttf2woff2 = require("gulp-ttf2woff2");
 const imagemin = require("gulp-imagemin");
+const webpack = require("webpack-stream");
 
 const isDev = process.env.NODE_ENV !== "production";
 
@@ -41,14 +42,25 @@ function styles() {
     .pipe(gulp.dest("dist/assets/css/"));
 }
 
+// function scripts() {
+//   return gulp
+//     .src("src/scripts/*.js")
+//     .pipe(plumber())
+//     .pipe(gulpIf(isDev, sourcemaps.init()))
+//     .pipe(gulpIf(isDev, sourcemaps.write()))
+//     .pipe(gulpIf(!isDev, uglify()))
+//     .pipe(rename({ suffix: ".min" }))
+//     .pipe(gulp.dest("dist/assets/js/"));
+// }
+
 function scripts() {
   return gulp
     .src("src/scripts/*.js")
-    .pipe(plumber())
-    .pipe(gulpIf(isDev, sourcemaps.init()))
-    .pipe(gulpIf(isDev, sourcemaps.write()))
-    .pipe(gulpIf(!isDev, uglify()))
-    .pipe(rename({ suffix: ".min" }))
+    .pipe(
+      webpack({
+        config: require("./webpack.config.js"),
+      })
+    )
     .pipe(gulp.dest("dist/assets/js/"));
 }
 
