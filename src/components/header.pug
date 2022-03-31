@@ -1,5 +1,5 @@
 include ./Ui-kit/icon/icon
-
+include ./blocks/social-box/social-box
 mixin header
   header.header
     .header__bar
@@ -17,37 +17,34 @@ mixin header
             button.header__link.header__link_sub Каталог кухонь
               +icon('angle').header__link-arrow
             .header__subnav
-              a.header__sublink.header__sublink_main(href="/") Все кухни
-              a.header__sublink(href="/") Прямые кухни
-              a.header__sublink(href="/") Угловые кухни
-              a.header__sublink(href="/") П-образные кухни
-              a.header__sublink(href="/") Маленькие кухни
-              a.header__sublink(href="/") Кухни с барной стойкой
-              a.header__sublink(href="/") Кухни с островом
-              a.header__sublink(href="/")
+              a.header__sublink.header__sublink_main(href="/catalog.html") Все кухни
+              a.header__sublink(href="/catalog.html") Прямые кухни
+              a.header__sublink(href="/catalog.html") Угловые кухни
+              a.header__sublink(href="/catalog.html") П-образные кухни
+              a.header__sublink(href="/catalog.html") Маленькие кухни
+              a.header__sublink(href="/catalog.html") Кухни с барной стойкой
+              a.header__sublink(href="/catalog.html") Кухни с островом
+              a.header__sublink(href="/catalog.html")
                 +icon('crown').header__sublink-icon
                 | Популярные кухни
           .header__nav-item
-            a.header__link(href="/") Производство
+            a.header__link(href="/production.html") Производство
           .header__nav-item
-            a.header__link(href="/") Доставка и сборка
+            a.header__link(href="/delivery-assembly.html") Доставка и сборка
           .header__nav-item
-            a.header__link(href="/") Отзывы
+            a.header__link(href="/reviews.html") Отзывы
           .header__nav-item
-            a.header__link(href="/") Акции
+            a.header__link(href="/stocks.html") Акции
           .header__nav-item
-            a.header__link(href="/") Блог
+            a.header__link(href="/blog.html") Блог
           .header__nav-item
-            a.header__link(href="/") Контакты
-        .header__social
-          a.header__social-item(href="/" target="_blank")
-            +icon('youtube')(width="30" height="21")
-          a.header__social-item(href="/" target="_blank")
-            +icon('vk')(width="21" height="13")
-          a.header__social-item(href="/" target="_blank")
-            +icon('instagram')(width="28" height="28")
+            a.header__link(href="/contacts.html") Контакты
+        +social-box({
+            iconsName: ['vk', 'instagram', 'youtube'],
+            className: "header__social"
+          })
         .header__contacts
           button.header__city Санкт-Петербург
           a.header__phone(href="tel:+7 (812) 612 30 49") +7 (812) 612 30 49
           p.header__time ежедневно с 9 до 21
-        button.header__btn Пригласить дизайнера
+        button.header__btn(data-popup-open="call") Пригласить дизайнера

@@ -19,20 +19,20 @@ mixin footer
           a.footer__link(href="/") Блог
           a.footer__link(href="/") Контакты
       .footer__payment
-        a.footer__payment-link(href="/") Оплата онлайн
+        a.footer__payment-link(href="/payment.html") Оплата онлайн
     .footer__contacts
       img.footer__logo(src="/assets/icons/logo-inv.svg" alt="Аврора")
       p.footer__title Кухни, <span>сконструированые лучше всех остальных</span> от начала дизайна до конца сборки
       .footer__call
         a.footer__phone(href="tel:+7 (812) 612 30 49") +7 (812) 612 30 49
         p.footer__time ежедневно с 9 до 21
-        button.footer__btn пригласить дизайнера
+        button.footer__btn(data-popup-open='call') пригласить дизайнера
       .footer__social
-        a.footer__social-item(href="/" target="_blank")
+        a.footer__social-item(href="/" target="_blank" rel="noopener noreferrer")
           +icon('youtube').footer__social-icon
-        a.footer__social-item(href="/" target="_blank")
+        a.footer__social-item(href="/" target="_blank" rel="noopener noreferrer")
           +icon('vk').footer__social-icon
-        a.footer__social-item(href="/" target="_blank")
+        a.footer__social-item(href="/" target="_blank" rel="noopener noreferrer")
           +icon('instagram').footer__social-icon
       a.footer__email(href="mailto:sample@sample.com") sample@sample.com
       p.footer__address “Аврора Кухни” <br>Санкт-Петербург, ул. Краснопутиловская, д. 69 лит. А, помещение 227Н, офис 536В
