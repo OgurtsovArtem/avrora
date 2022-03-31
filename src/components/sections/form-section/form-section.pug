@@ -36,5 +36,6 @@ mixin form-section({title, titleAccentWord, titleVariant, text, backgroundIcon=f
                         +application-form()
                     default
                         +designer-form()
-            if backgroundIcon
-                +icon('background-pattern-form-section', 'form-section__background-mobile')
+            +icon('background-pattern-form-section', 'form-section__background-mobile')
+        if !backgroundIcon
+            +icon('background-pattern-form-section-v2', 'form-section__background-right')

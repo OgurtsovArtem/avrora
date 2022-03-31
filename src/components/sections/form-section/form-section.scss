@@ -1,7 +1,10 @@
 .form-section {
   background-color: $color-gray-600;
-  overflow: hidden;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
   @include media(md) {
+    overflow: initial;
     background-color: initial;
   }
 
@@ -11,10 +14,14 @@
     grid-template-columns: 1fr;
     @include adaptive-value("gap", 135, 40, map-get($breakpoints, sm));
     @include media(md) {
-      grid-template-columns: 1.4fr 1fr;
+      grid-template-columns: 1.5fr 1fr;
+    }
+    @include media(lg) {
+      grid-template-columns: 2fr 1fr;
     }
   }
   &__description {
+    overflow: hidden;
     position: relative;
     @include adaptive-value(
       "padding-top",
@@ -94,7 +101,7 @@
     margin-bottom: rem(45);
     @include media(md) {
       margin-bottom: 0;
-      max-width: rem(350);
+      max-width: rem(370);
     }
   }
   &__background-desctop {
@@ -118,6 +125,24 @@
     pointer-events: none;
     @include media(md) {
       display: none;
+    }
+  }
+  &__background-right {
+    display: none;
+    @include media(md) {
+      display: block;
+      position: absolute;
+      bottom: 9%;
+      right: -37%;
+      width: 100%;
+      height: 164%;
+      pointer-events: none;
+      z-index: -1;
+    }
+    @media (min-width: 1980px) {
+      bottom: 7%;
+      right: -28%;
+      transform: rotate(28deg);
     }
   }
 }

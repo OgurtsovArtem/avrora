@@ -6,7 +6,7 @@
     min-height: rem(694);
     padding: rem(54) 0;
     color: #fff;
-    background-image: url(./assets/images/production/production.jpg);
+    background-image: url("./assets/images/production/production.jpg");
     background-position: center;
     background-size: cover;
   }
@@ -48,7 +48,7 @@
   @include media(md) {
     &__screen {
       min-height: rem(594);
-      background-image: url(/assets/images/production/production-md.jpg);
+      background-image: url("./assets/images/production/production-md.jpg");
     }
   }
 

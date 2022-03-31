@@ -59,10 +59,10 @@
     @include media(md) {
       position: relative;
       transform: scale(1);
-      transition: $transitionNormal;
 
       &.swiper-slide {
         opacity: 0;
+        transition: $transitionNormal;
         .materials__footnote {
           transition: $transitionNormal;
           opacity: 0;

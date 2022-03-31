@@ -7,8 +7,8 @@ include ../../blocks/pagination/pagination
 mixin catalog-kitchen()
     section.catalog-kitchen
         div.catalog-kitchen__top-section
-            div.catalog-kitchen__container.container
-                .catalog-kitchen__header
+            div.catalog-kitchen__container
+                .catalog-kitchen__header.container
                     .catalog-kitchen__header-description
                         h1.catalog-kitchen__title.h1 Каталог кухонь
                         p.catalog-kitchen__subtitle.txt Дескриптер с пояснительным текстом на одну-две-три строки. Дескриптер с пояснительным текстом на одну-две-три строки. Дескриптер с пояснительным текстом на одну-две-три строки.
@@ -20,11 +20,11 @@ mixin catalog-kitchen()
                             span.catalog-kitchen__count.h1 638
                             p.catalog-kitchen__text.txt выполненных <br> работ в 2021 году
                 +filter-selector({
-                    className: "catalog-kitchen__filter-selector",
+                    className: "catalog-kitchen__filter-selector container",
                     buttonText: 'фильтры',
                     selectors: ['Все кухни', 'Угловые', 'Прямые', 'С барной стойкой'],
                 })
-                .catalog-kitchen__filter
+                .catalog-kitchen__filter.container
 
                     +filter-button({
                         className: "catalog-kitchen__filter-button",
@@ -44,7 +44,7 @@ mixin catalog-kitchen()
                         text: 'С барной стойкой'
                     })
                 +kitchen-set({
-                    className: 'catalog-kitchen__set',
+                    className: 'catalog-kitchen__set container',
                     version: 'version-1'
                 })
         +kitchen-advantages([
@@ -52,12 +52,12 @@ mixin catalog-kitchen()
           { num: 'до30', text: 'дней на изготовление' },
           { num: '100 000+', text: 'циклов работы фурнитуры' },
         ])
-        div.catalog-kitchen__bottom-section.container
+        div.catalog-kitchen__bottom-section
             +kitchen-set({
-                className: 'catalog-kitchen__set',
+                className: 'catalog-kitchen__set container',
                 version: 'version-2'
             })
         +pagination({
-            className: 'catalog-kitchen__pagination',
+            className: 'catalog-kitchen__pagination container',
             numbers: [1, 2, 3, 4, 5, 6]
         })
