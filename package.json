@@ -1,12 +1,27 @@
 {
+  "name": "avrora",
+  "version": "1.0.0",
+  "description": "Kitchens Website",
+  "main": "script.js",
   "scripts": {
     "build": "cross-env NODE_ENV=production gulp build",
-    "start": "cross-env NODE_ENV=development gulp"
+    "start": "cross-env NODE_ENV=development gulp",
+    "deploy": "gh-pages -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adwin-agency/avrora.git"
+  },
+  "author": "Artem Ogurtsov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adwin-agency/avrora/issues"
   },
   "devDependencies": {
     "browser-sync": "2.27.7",
     "cross-env": "7.0.3",
     "del": "6.0.0",
+    "gh-pages": "^3.2.3",
     "gulp": "4.0.2",
     "gulp-changed": "4.0.3",
     "gulp-cssnano": "2.1.3",
