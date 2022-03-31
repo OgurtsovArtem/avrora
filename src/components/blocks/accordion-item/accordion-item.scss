@@ -1,0 +1,79 @@
+.accordion-item {
+  &.is-active {
+    .accordion-item__button {
+      padding-bottom: 0;
+    }
+
+    .accordion-item__icon {
+      transform: rotate(45deg);
+    }
+  }
+
+  &__button {
+    text-align: start;
+    width: 100%;
+    border-top: rem(1) solid $color-gray-500;
+    display: flex;
+    justify-content: space-between;
+    @include adaptive-value("padding-top", 32, 22, map-get($breakpoints, sm));
+    @include adaptive-value(
+      "padding-bottom",
+      32,
+      22,
+      map-get($breakpoints, sm)
+    );
+    transition: padding $transitionNormal;
+  }
+
+  &__title {
+    pointer-events: none;
+    font-style: normal;
+    font-weight: 400;
+    @include adaptive-value("font-size", 18, 16, map-get($breakpoints, sm));
+    line-height: 150%;
+    text-transform: uppercase;
+  }
+
+  &__icon {
+    pointer-events: none;
+    position: relative;
+    @include adaptive-value("width", 27, 20, map-get($breakpoints, sm));
+    @include adaptive-value("height", 27, 20, map-get($breakpoints, sm));
+    flex-shrink: 0;
+    transition: transform $transitionNormal;
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      width: 100%;
+      height: rem(2);
+      background-color: $color-text-secondary;
+    }
+    &::after {
+      transform: rotate(90deg);
+    }
+  }
+
+  &__body {
+    overflow: hidden;
+    height: 0;
+  }
+
+  &__text {
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    color: $color-text-secondary;
+    transition: $transitionNormal;
+    max-width: rem(520);
+    @include adaptive-value("padding-top", 33, 10, map-get($breakpoints, sm));
+    padding-bottom: rem(19);
+
+    &:not(:last-child) {
+      margin-bottom: rem(20);
+    }
+  }
+}

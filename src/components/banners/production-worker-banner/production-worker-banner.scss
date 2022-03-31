@@ -1,0 +1,142 @@
+.production-worker-banner {
+  &_reverse {
+    color: $color-white;
+    .production-worker-banner__description {
+      margin-left: auto;
+    }
+    .production-worker-banner__image {
+      object-position: 30%;
+    }
+  }
+  &__container {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    @include adaptive-value("min-height", 600, 450, map-get($breakpoints, es));
+    @include adaptive-value("padding-top", 130, 70, map-get($breakpoints, es));
+    @include adaptive-value(
+      "padding-bottom",
+      130,
+      40,
+      map-get($breakpoints, es)
+    );
+    @include adaptive-value("padding-left", 160, 12, map-get($breakpoints, es));
+    @include adaptive-value(
+      "padding-right",
+      120,
+      12,
+      map-get($breakpoints, es)
+    );
+    @media (max-width: (map-get($breakpoints, md)+ px)) {
+      margin-left: rem(-$containerIndentation);
+      margin-right: rem(-$containerIndentation);
+    }
+    @media (max-width: (map-get($breakpoints, es)+ px)) {
+      margin-left: rem(-$containerIndentationMin);
+      margin-right: rem(-$containerIndentationMin);
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+    &_one {
+      &::after {
+        background: linear-gradient(
+          270deg,
+          #202329 23.36%,
+          rgba(40, 49, 67, 0.1) 52.34%
+        );
+        @include media(md) {
+          background: linear-gradient(
+            269.01deg,
+            #202329 38.52%,
+            rgba(40, 49, 67, 0.1) 60.59%
+          );
+        }
+      }
+    }
+    &_two {
+      &::after {
+        background: linear-gradient(
+          89.34deg,
+          #eff0f2 47.02%,
+          rgba(250, 251, 253, 0.2) 71.04%
+        );
+        @include media(md) {
+          background: linear-gradient(
+            90deg,
+            #f9f9f9 55.49%,
+            rgba(235, 235, 235, 0) 70.32%
+          );
+        }
+      }
+    }
+    &_tree {
+      &::after {
+        background: radial-gradient(
+          42.99% 147.87% at 78.97% 19.38%,
+          rgba(211, 198, 185, 0) 0%,
+          #ccc0b0 100%
+        );
+        @include media(md) {
+          background: linear-gradient(
+            268.74deg,
+            rgba(211, 198, 185, 0) 31.48%,
+            #ccc0b0 49.65%
+          );
+        }
+      }
+    }
+  }
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    object-position: 65%;
+    @include media(sm) {
+      object-position: center;
+    }
+  }
+  &__description {
+    position: relative;
+    max-width: rem(460);
+    z-index: $zIndexLight;
+    &_one {
+    }
+    &_two {
+    }
+    &_tree {
+    }
+  }
+  &__text {
+    font-family: $font-secondary;
+    font-style: normal;
+    font-weight: 700;
+    @include adaptive-value("font-size", 24, 20, map-get($breakpoints, es));
+    line-height: 140%;
+    margin-top: rem(10);
+  }
+  &__name {
+    font-style: normal;
+    font-weight: 700;
+    font-size: rem(15);
+    line-height: 100%;
+    @include adaptive-value("margin-top", 33, 20, map-get($breakpoints, es));
+  }
+  &__post {
+    font-style: normal;
+    font-weight: 400;
+    font-size: rem(15);
+    line-height: 100%;
+    margin-top: rem(8);
+  }
+}

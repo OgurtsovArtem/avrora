@@ -1,17 +1,16 @@
 extends ../layouts/default.pug
 
 include ../components/sections/production-intro/production-intro
-include ../components/sections/stage-project/stage-project
-include ../components/sections/stage-production/stage-production
-include ../components/sections/stage-delivery/stage-delivery
+include ../components/sections/stages/stages
 include ../components/sections/preview-catalog/preview-catalog
 include ../components/sections/form-section/form-section
+include ../components/sections/team/team
+include ../components/sections/materials/materials
+include ../components/sections/materials-mobile/materials-mobile
 
 block content
     +production-intro
-    +stage-project
-    +stage-production
-    +stage-delivery
+    +stages
     +form-section({
         titleVariant: 'variant-1',
         titleAccentWord:  "бесплатно ?",
@@ -21,4 +20,7 @@ block content
         backgroundIcon: true,
         form: 'application',
     })
+    +materials
+    +materials-mobile
+    +team
     +preview-catalog

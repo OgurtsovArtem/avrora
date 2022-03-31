@@ -1,0 +1,9 @@
+mixin accordion-item({className, title, texts})
+    div(class= className ? `${className} accordion-item` : 'accordion-item').ac&attributes(attributes)
+        button.accordion-item__button.ac-trigger
+            p.accordion-item__title.dd=title
+            span.accordion-item__icon
+        .accordion-item__body.ac-panel
+            each text in texts
+                p.accordion-item__text=text
+            block

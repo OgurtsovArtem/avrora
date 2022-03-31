@@ -1,0 +1,9 @@
+mixin production-worker-banner({image, texts, name, post, modificator})
+    .production-worker-banner&attributes(attributes)
+        .production-worker-banner__container(class=`production-worker-banner__container_${modificator}` )
+            img.production-worker-banner__image(data-src=`/assets/images/banners/production/${image}`, alt="banner", data-lazy)
+            .production-worker-banner__description(class=`production-worker-banner__description_${modificator}` )
+                each text in texts
+                    p.production-worker-banner__text=text
+                p.production-worker-banner__name=name
+                p.production-worker-banner__post=post
