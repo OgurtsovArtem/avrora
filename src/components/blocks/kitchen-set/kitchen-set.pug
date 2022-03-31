@@ -1,6 +1,7 @@
 include ../../blocks/kitchen-small/kitchen-small
 include ../../blocks/kitchen-large/kitchen-large
 include ../../banners/kitchen-set-banner/kitchen-set-banner
+include ../../Ui-kit/kitchen-button/kitchen-button
 
 mixin kitchen-set({className, version})
 
@@ -25,6 +26,11 @@ mixin kitchen-set({className, version})
                 +kitchen-small({
                     className: 'kitchen-set__small-kitchen'
                 })
+                +kitchen-button({
+                    className: 'kitchen-set__button-sticky',
+                    text: "Рассчитать мой проект",
+                    style: 'fill'
+                })(data-popup-open='calc')
         when 'version-2'
             div(class=className ? `${className} kitchen-set`: `kitchen-set`)
                 +kitchen-small({
@@ -45,6 +51,11 @@ mixin kitchen-set({className, version})
                 +kitchen-small({
                     className: 'kitchen-set__small-kitchen'
                 })
+                +kitchen-button({
+                    className: 'kitchen-set__button-sticky',
+                    text: "Рассчитать мой проект",
+                    style: 'fill'
+                })(data-popup-open='calc')
         default
             div(class=className ? `${className} kitchen-set`: `kitchen-set`)
                 +kitchen-large({
@@ -65,3 +76,8 @@ mixin kitchen-set({className, version})
                 +kitchen-small({
                     className: 'kitchen-set__small-kitchen'
                 })
+                +kitchen-button({
+                    className: 'kitchen-set__button-sticky',
+                    text: "Рассчитать мой проект",
+                    style: 'fill'
+                })(data-popup-open='calc')
