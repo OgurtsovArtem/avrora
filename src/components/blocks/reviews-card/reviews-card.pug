@@ -7,7 +7,7 @@ mixin reviews-card({className, title, texts, stars, icon, date, name, button, vi
         if image
             .reviews-card__swiper
                 .swiper-wrapper
-                    img.reviews-card__image.swiper-slide.swiper-lazy(data-src=`/assets/images/reviews/${image}`, alt="preview")
+                    img.reviews-card__image.swiper-slide.swiper-lazy(data-src=`./assets/images/reviews/${image}`, alt="preview")
                 +kitchen-controls({className: 'reviews-card__swiper-controls'})
         .reviews-card__description(class= image ? 'reviews-card__description_remove-top-padding' : button ? 'reviews-card__description_remove-bottom-padding' : '')
             h3.reviews-card__title.h3=title
@@ -21,7 +21,7 @@ mixin reviews-card({className, title, texts, stars, icon, date, name, button, vi
                 })
             .reviews-card__info
                 .reviews-card__author
-                    img.reviews-card__avatar(src=`/assets/images/reviews/${icon}`, alt="avatar")
+                    img.reviews-card__avatar(data-src=`./assets/images/reviews/${icon}`, alt="avatar" data-lazy)
                     .reviews-card__author-name.h4=name
                     .reviews-card__date.txt=date
                 +stars({
