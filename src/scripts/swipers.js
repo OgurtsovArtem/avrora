@@ -1,5 +1,5 @@
-import Swiper, { Navigation, Lazy } from "swiper";
-Swiper.use([Navigation, Lazy]);
+import Swiper, { Navigation, Lazy, FreeMode } from "swiper";
+Swiper.use([Navigation, Lazy, FreeMode]);
 
 export const kitchenSmallSwiper = new Swiper(".kitchen-large__swiper", {
   loop: true,
