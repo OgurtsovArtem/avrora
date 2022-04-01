@@ -87,33 +87,36 @@
             </div>
           </div>
           <div class="payment-intro__cards">
-            <div class="payment-intro__card payment-card">
+            <div class="payment-intro__card payment-card" data-poup-direct-card="pay">
               <h3 class="payment-card__title h4">Единовременный платёж</h3><span class="payment-card__number h2">1</span>
             </div>
-            <div class="payment-intro__popup payment-popup">
-              <div class="payment-popup__container"><span class="payment-popup__close"></span>
+            <div class="payment-intro__popup payment-popup" data-poup-direct-desc="pay">
+              <div class="payment-popup__container">
+                <button class="payment-popup__close" data-poup-direct-close="pay"></button>
                 <h4 class="payment-popup__title h4">Условия оплаты выбранного способа</h4>
                 <p class="payment-popup__text txt">Подробное описание условий выбранного способа оплаты.</p>
                 <p class="payment-popup__text txt">Значимость этих проблем настолько очевидна, что сложившаяся структура организации в значительной степени обуславливает создание форм развития. Не следует, однако забывать, что постоянное информационно-пропагандистское обеспечение нашей деятельности требуют определения и уточнения позиций, занимаемых участниками в отношении поставленных задач. Значимость этих проблем настолько очевидна, что сложившаяся структура организации в значительной степени обуславливает создание форм развития.</p>
                 <p class="payment-popup__footnote h4">Если у вас остались вопросы, на них готовы ответить наши менеджеры по телефону +7 (812) 612 30 49</p>
               </div>
             </div>
-            <div class="payment-intro__card payment-card">
+            <div class="payment-intro__card payment-card" data-poup-direct-card="installments">
               <h3 class="payment-card__title h4">Рассрочка без первого взноса</h3><span class="payment-card__number h2">2</span>
             </div>
-            <div class="payment-intro__popup payment-popup">
-              <div class="payment-popup__container"><span class="payment-popup__close"></span>
+            <div class="payment-intro__popup payment-popup" data-poup-direct-desc="installments">
+              <div class="payment-popup__container">
+                <button class="payment-popup__close" data-poup-direct-close="installments"></button>
                 <h4 class="payment-popup__title h4">Условия оплаты выбранного способа</h4>
                 <p class="payment-popup__text txt">Подробное описание условий выбранного способа оплаты.</p>
                 <p class="payment-popup__text txt">Значимость этих проблем настолько очевидна, что сложившаяся структура организации в значительной степени обуславливает создание форм развития. Не следует, однако забывать, что постоянное информационно-пропагандистское обеспечение нашей деятельности требуют определения и уточнения позиций, занимаемых участниками в отношении поставленных задач. Значимость этих проблем настолько очевидна, что сложившаяся структура организации в значительной степени обуславливает создание форм развития.</p>
                 <p class="payment-popup__footnote h4">Если у вас остались вопросы, на них готовы ответить наши менеджеры по телефону +7 (812) 612 30 49</p>
               </div>
             </div>
-            <div class="payment-intro__card payment-card">
+            <div class="payment-intro__card payment-card" data-poup-direct-card="credit">
               <h3 class="payment-card__title h4">Кредит без первого взноса до 2 лет</h3><span class="payment-card__number h2">3</span>
             </div>
-            <div class="payment-intro__popup payment-popup">
-              <div class="payment-popup__container"><span class="payment-popup__close"></span>
+            <div class="payment-intro__popup payment-popup" data-poup-direct-desc="credit">
+              <div class="payment-popup__container">
+                <button class="payment-popup__close" data-poup-direct-close="credit"></button>
                 <h4 class="payment-popup__title h4">Условия оплаты выбранного способа</h4>
                 <p class="payment-popup__text txt">Подробное описание условий выбранного способа оплаты.</p>
                 <p class="payment-popup__text txt">Значимость этих проблем настолько очевидна, что сложившаяся структура организации в значительной степени обуславливает создание форм развития. Не следует, однако забывать, что постоянное информационно-пропагандистское обеспечение нашей деятельности требуют определения и уточнения позиций, занимаемых участниками в отношении поставленных задач. Значимость этих проблем настолько очевидна, что сложившаяся структура организации в значительной степени обуславливает создание форм развития.</p>
@@ -137,14 +140,14 @@
                 <h4 class="payment-form__box-title"></h4>
                 <div class="input payment-form__input">
                   <label class="input__label" for="payment-form-name">
-                    <input class="input__field" id="payment-form-name" type="text"/>
+                    <input class="input__field" id="payment-form-name" type="text" minlength="2" maxlength="30" required="required"/>
                     <p class="input__label-text">Ваше ФИО</p><span class="input__error"></span>
                   </label>
                 </div>
                 <div class="payment-form__input-twice">
                   <div class="input payment-form__input">
                     <label class="input__label" for="payment-form-name">
-                      <input class="input__field" id="payment-form-name" type="tel"/>
+                      <input class="input__field" id="payment-form-name" type="tel" required="required"/>
                       <p class="input__label-text">Контактный телефон</p><span class="input__error"></span>
                     </label>
                   </div>
@@ -161,13 +164,13 @@
                 <div class="payment-form__input-twice">
                   <div class="input payment-form__input">
                     <label class="input__label" for="payment-form-name">
-                      <input class="input__field" id="payment-form-name" type="text"/>
+                      <input class="input__field" id="payment-form-name" type="text" required="required"/>
                       <p class="input__label-text">Номер договора</p><span class="input__error"></span>
                     </label>
                   </div>
                   <div class="input payment-form__input">
                     <label class="input__label" for="payment-form-name">
-                      <input class="input__field" id="payment-form-name" type="number"/>
+                      <input class="input__field" id="payment-form-name" type="number" minlength="1" maxlength="30" required="required"/>
                       <p class="input__label-text">Сумма оплаты, ₽</p><span class="input__error"></span>
                     </label>
                   </div>
