@@ -35,7 +35,6 @@ export default class Form {
         this.submitButton = element;
       }
     });
-    console.log(this.inputs);
   }
   // Установка слушателя на каждый input
   inputObserve() {

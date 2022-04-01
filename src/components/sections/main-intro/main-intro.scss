@@ -1,4 +1,5 @@
 .main-intro {
+  position: relative;
   &__image-box {
     position: absolute;
     top: 0;
@@ -69,7 +70,13 @@
     position: relative;
     min-height: rem(640);
     padding-bottom: rem(20);
-    @include adaptive-value("padding-top", 256, 95, map-get($breakpoints, sm));
+    @include adaptive-value(
+      "padding-top",
+      171,
+      35,
+      map-get($breakpoints, sm),
+      map-get($breakpoints, lg)
+    );
     @include media(md) {
       min-height: auto;
     }

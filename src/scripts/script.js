@@ -66,6 +66,29 @@ const paymentFrom = new Form(payment, {
   errorClass: "input__error",
   popupNext: donePopup,
 });
+// ====================== POPUP DIRECTED ======================
+if (document.querySelector(".payment-intro__cards")) {
+  const payPopupDirected = new PopupDirected({
+    description: document.querySelector("[data-poup-direct-desc='pay']"),
+    card: document.querySelector("[data-poup-direct-card='pay']"),
+    close: document.querySelector("[data-poup-direct-close='pay']"),
+  });
+
+  const installmentsPopupDirected = new PopupDirected({
+    description: document.querySelector(
+      "[data-poup-direct-desc='installments']"
+    ),
+    card: document.querySelector("[data-poup-direct-card='installments']"),
+    close: document.querySelector("[data-poup-direct-close='installments']"),
+  });
+
+  const creditPopupDirected = new PopupDirected({
+    description: document.querySelector("[data-poup-direct-desc='credit']"),
+    card: document.querySelector("[data-poup-direct-card='credit']"),
+    close: document.querySelector("[data-poup-direct-close='credit']"),
+  });
+}
+
 // ====================== MASONRY ======================
 
 if (document.querySelector(".reviews-list__body")) {

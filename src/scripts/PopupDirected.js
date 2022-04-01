@@ -1,6 +1,5 @@
 export default class PopupDirected {
-  constructor({ container, description, card, close }) {
-    this.container = container;
+  constructor({ description, card, close }) {
     this.description = description;
     this.card = card;
     this.close = close;
@@ -50,20 +49,3 @@ export default class PopupDirected {
     this.close.addEventListener("click", this.closePopup.bind(this));
   }
 }
-const payPopupDirected = new PopupDirected({
-  description: document.querySelector("[data-poup-direct-desc='pay']"),
-  card: document.querySelector("[data-poup-direct-card='pay']"),
-  close: document.querySelector("[data-poup-direct-close='pay']"),
-});
-
-const installmentsPopupDirected = new PopupDirected({
-  description: document.querySelector("[data-poup-direct-desc='installments']"),
-  card: document.querySelector("[data-poup-direct-card='installments']"),
-  close: document.querySelector("[data-poup-direct-close='installments']"),
-});
-
-const creditPopupDirected = new PopupDirected({
-  description: document.querySelector("[data-poup-direct-desc='credit']"),
-  card: document.querySelector("[data-poup-direct-card='credit']"),
-  close: document.querySelector("[data-poup-direct-close='credit']"),
-});

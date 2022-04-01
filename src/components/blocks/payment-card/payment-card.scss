@@ -4,6 +4,7 @@
   flex-direction: column;
   justify-content: space-between;
   @include adaptive-value("padding", 48, 38, map-get($breakpoints, es));
+  cursor: pointer;
   &__title {
     font-style: normal;
     font-weight: 600;

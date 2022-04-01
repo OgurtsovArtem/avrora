@@ -45,7 +45,7 @@
     align-items: center;
     height: rem(60);
     padding: 0 rem(15);
-    background-color: #fff;
+    background-color: $color-white;
     box-shadow: $depth2;
     pointer-events: all;
   }
@@ -99,7 +99,7 @@
     }
 
     &-img {
-      width: rem(164);
+      @include adaptive-value("width", 200, 130, map-get($breakpoints, md));
     }
   }
 
@@ -108,8 +108,8 @@
 
     &-icon {
       display: block;
-      width: rem(30);
-      height: rem(30);
+      @include adaptive-value("width", 30, 25, map-get($breakpoints, es));
+      @include adaptive-value("height", 30, 25, map-get($breakpoints, es));
     }
   }
 
@@ -127,7 +127,7 @@
   &__nav-item {
     padding: 0 rem(40);
     margin-bottom: rem(26);
-
+    @include adaptive-value("margin-right", 26, 10, map-get($breakpoints, md));
     &_sub {
       padding: rem(46) rem(40);
       margin-bottom: rem(38);
@@ -220,6 +220,8 @@
     align-items: flex-start;
     margin-top: rem(20);
     padding: 0 rem(40);
+    @include adaptive-value("margin-left", 26, 10, map-get($breakpoints, md));
+    @include adaptive-value("margin-right", 26, 10, map-get($breakpoints, md));
     line-height: 1;
   }
 
@@ -236,7 +238,7 @@
   &__phone {
     margin-top: rem(6);
     font-weight: 700;
-    font-size: rem(30);
+    @include adaptive-value("font-size", 20, 30, map-get($breakpoints, sm));
     transition: opacity 0.3s ease;
 
     &:hover {
@@ -305,7 +307,6 @@
       margin: 0 rem(27);
 
       &-img {
-        width: rem(133);
       }
     }
 
@@ -324,6 +325,7 @@
 
     &__nav {
       display: flex;
+      flex-wrap: wrap;
       margin: 0 auto;
       height: 100%;
 
@@ -396,8 +398,9 @@
 
     &__contacts {
       align-items: flex-end;
-      margin: 0 rem(20);
       padding: 0;
+      margin-top: 0;
+      flex-shrink: 0;
     }
 
     &__city {
@@ -406,7 +409,6 @@
 
     &__phone {
       margin-top: rem(4);
-      font-size: rem(20);
     }
 
     &__time {
@@ -428,13 +430,6 @@
 
     &__logo {
       &-img {
-        width: rem(200);
-      }
-    }
-
-    &__nav {
-      &-item {
-        margin-right: rem(36);
       }
     }
 
@@ -451,17 +446,12 @@
       font-size: rem(16);
     }
 
-    &__contacts {
-      margin: 0 rem(26);
-    }
-
     &__city {
       font-size: rem(13);
     }
 
     &__phone {
       margin-top: rem(6);
-      font-size: rem(22);
     }
 
     &__time {
