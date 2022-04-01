@@ -12,14 +12,14 @@ mixin payment-form()
                 id: 'payment-form-name',
                 placeholder: 'Ваше ФИО',
                 type: 'text'
-            })
+            })(minlength="2" maxlength="30" required)
             div.payment-form__input-twice
                 +input({
                     className: 'payment-form__input',
                     id: 'payment-form-name',
                     placeholder: 'Контактный телефон',
                     type: 'tel'
-                })
+                })(required)
                 +input({
                     className: 'payment-form__input',
                     id: 'payment-form-name',
@@ -35,18 +35,18 @@ mixin payment-form()
                     id: 'payment-form-name',
                     placeholder: 'Номер договора',
                     type: 'text'
-                })
+                })(required)
                 +input({
                     className: 'payment-form__input',
                     id: 'payment-form-name',
                     placeholder: 'Сумма оплаты, ₽',
                     type: 'number'
-                })
+                })(minlength="1" maxlength="30" required)
         div.payment-form__footer
             +checkbox({
                 className: 'payment-form__checkbox',
                 id: 'payment-form-checkbox'
-                })
+                })(required)
                 p.payment-form__checkbox-text Я принимаю условия&#32;
                     a.payment-form__checkbox-link(href="http://", target="_blank", rel="noopener noreferrer") Политики конфиденциальности&#32;
                     | и&#32;

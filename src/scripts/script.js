@@ -60,6 +60,12 @@ const callFrom = new Form(call, {
   popupCurrent: callPopup,
   popupNext: donePopup,
 });
+
+const payment = document.forms.payment;
+const paymentFrom = new Form(payment, {
+  errorClass: "input__error",
+  popupNext: donePopup,
+});
 // ====================== MASONRY ======================
 
 if (document.querySelector(".reviews-list__body")) {
