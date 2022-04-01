@@ -1,0 +1,18 @@
+.breadcrumbs {
+  color: $color-text-secondary;
+  &__list {
+    display: flex;
+    gap: rem(5);
+    flex-wrap: wrap;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: rem(20);
+    padding-bottom: rem(15);
+  }
+  &__item {
+    font-style: normal;
+    font-weight: 400;
+    font-size: rem(11);
+    line-height: 110%;
+  }
+}
