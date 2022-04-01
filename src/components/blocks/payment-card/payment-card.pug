@@ -1,4 +1,4 @@
 mixin payment-card({className, text, number, popupTexts, popupTitle, popupFootnote})
-    div(class=className ? `${className} payment-card`: `payment-card`)
+    div(class=className ? `${className} payment-card`: `payment-card`)&attributes(attributes)
         h3.payment-card__title.h4=text
         span.payment-card__number.h2=number

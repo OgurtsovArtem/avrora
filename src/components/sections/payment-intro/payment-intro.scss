@@ -58,11 +58,9 @@
     @include adaptive-value("min-height", 250, 170, map-get($breakpoints, sm));
   }
   &__popup {
-    max-width: rem(500);
-    left: 80%;
-    top: -20%;
-    transform: translateX(-80%);
-    opacity: 0;
+    @include media(md) {
+      max-width: rem(500);
+    }
   }
   &__icon-background {
     position: absolute;

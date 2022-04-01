@@ -7,6 +7,7 @@ import header from "./header";
 import Observer from "./observer";
 import Popups from "./popups";
 import Form from "./form";
+import PopupDirected from "./PopupDirected";
 
 // ====================== LAZY-LOADING ======================
 const lazyImages = [...document.querySelectorAll("img[data-lazy]")];
