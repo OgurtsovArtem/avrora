@@ -19,35 +19,24 @@
   $value_name,
   $max_value,
   $min_value,
-  $min_width,
+  $min_width: $minWidth,
   $max_width: $maxWidth
 ) {
-  // Если больше максимального значения фиксируем максимальное значение как константу
-  #{$value_name}: math.div($max_value, $mainFontSize) + rem;
-  @media (max-width: ($max_width+px)) {
-    // Получаем возможность регулирования нужной минмальной ширины для адаптива
-    @if ($min_width >= $minWidth) {
-      #{$value_name}: calc(
-        #{$min_value +
-          px} +
-          #{($max_value - $min_value)} *
-          ((100vw - #{$min_width + px}) / #{($max_width - $min_width)})
-      );
-      // Если меньше минимального значения фиксируем минимальное значение как константу
-      @media (max-width: ($min_width+px)) {
-        #{$value_name}: $min_value + px;
-      }
-    } @else {
-      #{$value_name}: calc(
-        #{$min_value +
-          px} +
-          #{($max_value - $min_value)} *
-          ((100vw - #{$minWidth + px}) / #{($maxWidth - $minWidth)})
-      );
-      @media (max-width: ($minWidth+px)) {
-        #{$value_name}: $min_value + px;
-      }
-    }
+  //с мин разрешения до мин указанной границы
+  @media (max-width: ($min_width+px)) {
+    #{$value_name}: math.div($min_value, $mainFontSize) + rem;
+  }
+  //с мин указанного до макс указанного
+  @media (min-width: ($min_width+px)) and (max-width: ($max_width+px)) {
+    #{$value_name}: calc(
+      #{$min_value + px} + #{($max_value - $min_value)} * ((
+              100vw - #{$min_width + px}
+            ) / #{($max_width - $min_width)})
+    );
+  }
+  //с мак суказанной границы до макс
+  @media (min-width: ($max_width+px)) {
+    #{$value_name}: math.div($max_value, $mainFontSize) + rem;
   }
 }
 
