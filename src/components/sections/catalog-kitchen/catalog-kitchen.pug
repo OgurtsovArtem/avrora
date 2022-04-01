@@ -3,10 +3,14 @@ include ../../Ui-kit/filter-button/filter-button
 include ../../sections/kitchen-advantages/kitchen-advantages
 include ../../blocks/filter-selector/filter-selector
 include ../../blocks/pagination/pagination
+include ../../blocks/breadcrumbs/breadcrumbs
 
 mixin catalog-kitchen()
     section.catalog-kitchen
         div.catalog-kitchen__top-section
+            +breadcrumbs({
+                className: 'catalog-kitchen__breadcrumbs'
+            })
             div.catalog-kitchen__container
                 .catalog-kitchen__header.container
                     .catalog-kitchen__header-description

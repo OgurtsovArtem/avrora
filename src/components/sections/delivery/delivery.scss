@@ -1,12 +1,12 @@
 .delivery {
-  @include adaptive-value(
-    "margin-top",
-    102,
-    60,
-    map-get($breakpoints, sm),
-    map-get($breakpoints, lg)
-  );
   &__container {
+    @include adaptive-value(
+      "margin-top",
+      65,
+      20,
+      map-get($breakpoints, es),
+      map-get($breakpoints, lg)
+    );
     @include media(lg) {
       @include adaptive-value(
         "padding-right",

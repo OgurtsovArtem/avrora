@@ -1,14 +1,18 @@
 @use "sass:math";
 
 .catalog-kitchen {
+  &__breadcrumbs {
+    @include adaptive-value("padding-left", 0, 10, map-get($breakpoints, lg));
+    @include adaptive-value("padding-right", 0, 10, map-get($breakpoints, lg));
+  }
   //================ .catalog-kitchen__top-section =========================
   &__top-section {
     background-color: $color-secondary;
-    @include adaptive-value("padding-top", 113, 70, map-get($breakpoints, es));
   }
 
-  //================ .catalog-kitchen__continaer =========================
-  &__continaer {
+  //================ .catalog-kitchen__container =========================
+  &__container {
+    @include adaptive-value("padding-top", 65, 15, map-get($breakpoints, es));
   }
 
   //================ .catalog-kitchen__header =========================

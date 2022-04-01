@@ -1,5 +1,10 @@
+include ../../blocks/breadcrumbs/breadcrumbs
+
 mixin delivery()
     section.delivery.max-container
+        +breadcrumbs({
+            className: 'delivery__breadcrumbs'
+        })
         .delivery__container.container
             .delivery__header
                 h1.delivery__title.h1 Доставка

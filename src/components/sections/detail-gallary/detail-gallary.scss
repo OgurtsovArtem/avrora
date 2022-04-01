@@ -3,6 +3,7 @@
   @include adaptive-value("margin-bottom", 110, 60, map-get($breakpoints, es));
   &__swiper {
     overflow: hidden;
+    cursor: grab;
   }
   &__item {
     width: auto;

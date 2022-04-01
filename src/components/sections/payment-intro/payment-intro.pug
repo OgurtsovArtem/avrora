@@ -1,8 +1,12 @@
 include ../../blocks/payment-card/payment-card
 include ../../blocks/payment-popup/payment-popup
+include ../../blocks/breadcrumbs/breadcrumbs
 include ../../Ui-kit/icon/icon
 mixin payment-intro
     section.payment-intro.max-container
+        +breadcrumbs({
+            className: 'payment-intro__breadcrumbs'
+        })
         .payment-intro__container.container
             .payment-intro__header
                 h1.payment-intro__title.h1 Оплата

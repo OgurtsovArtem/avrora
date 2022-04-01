@@ -1,8 +1,14 @@
 .payment-intro {
   position: relative;
-  @include adaptive-value("padding-top", 87, 45, map-get($breakpoints, sm));
-  @include adaptive-value("padding-bottom", 115, 30, map-get($breakpoints, sm));
+
   &__container {
+    @include adaptive-value("padding-top", 50, 15, map-get($breakpoints, sm));
+    @include adaptive-value(
+      "padding-bottom",
+      115,
+      30,
+      map-get($breakpoints, sm)
+    );
   }
   &__header {
     display: grid;

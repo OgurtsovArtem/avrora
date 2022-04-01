@@ -1,0 +1,11 @@
+.kitchen-card {
+  position: relative;
+  &__breadcrumbs {
+    @include media(md) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: $zIndexNormal;
+    }
+  }
+}

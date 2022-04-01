@@ -1,10 +1,15 @@
 include ../../Ui-kit/button/button
 include ../../blocks/social-box/social-box
+include ../../blocks/breadcrumbs/breadcrumbs
+
 mixin contacts-intro
     section.contacts-intro.max-conatiner
         .contacts-intro__container.container
             .contacts-intro__map(id='map')
             .contacts-intro__info
+                +breadcrumbs({
+                    className: 'contacts-intro__breadcrumbs'
+                })
                 h1.contacts-intro__title.h1 Контакты
                 .contacts-intro__call-box
                     .contacts-intro__call-title.h4 Позвоните нам

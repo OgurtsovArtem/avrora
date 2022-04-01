@@ -1,8 +1,11 @@
 include ../../Ui-kit/video-button/video-button
 include ../../sections/kitchen-advantages/kitchen-advantages
-
+include ../../blocks/breadcrumbs/breadcrumbs
 mixin production-intro
   section.production-intro
+    +breadcrumbs({
+        className: 'production-intro__breadcrumbs'
+      })
     .production-intro__screen
       .container
         h1.production-intro__title.h1 Производство

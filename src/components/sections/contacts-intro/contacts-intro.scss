@@ -15,7 +15,6 @@
     }
   }
   &__info {
-    @include adaptive-value("margin-top", 35, 25, map-get($breakpoints, es));
     @include adaptive-value(
       "margin-bottom",
       110,
@@ -23,11 +22,15 @@
       map-get($breakpoints, es)
     );
   }
+  &__breadcrumbs {
+    padding: 0;
+  }
   &__title {
     font-family: "Philosopher";
     font-style: normal;
     font-weight: 400;
     line-height: 80%;
+    @include adaptive-value("margin-top", 25, 10, map-get($breakpoints, es));
     @include adaptive-value("margin-bottom", 57, 30, map-get($breakpoints, sm));
   }
   &__call-box {

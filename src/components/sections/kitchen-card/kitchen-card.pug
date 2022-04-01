@@ -1,5 +1,9 @@
 include ../../blocks/kitchen-full/kitchen-full
+include ../../blocks/breadcrumbs/breadcrumbs
 
 mixin kitchen-card()
     section.kitchen-card
+        +breadcrumbs({
+            className: 'kitchen-card__breadcrumbs'
+        })
         +kitchen-full

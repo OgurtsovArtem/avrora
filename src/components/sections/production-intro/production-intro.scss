@@ -1,4 +1,13 @@
 .production-intro {
+  position: relative;
+  &__breadcrumbs {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: $zIndexNormal;
+    color: $color-white;
+  }
   &__screen {
     display: flex;
     flex-direction: column;
@@ -6,7 +15,7 @@
     min-height: rem(694);
     padding: rem(54) 0;
     color: #fff;
-    background-image: url("./assets/images/production/production.jpg");
+    background-image: url("../images/production/production.jpg");
     background-position: center;
     background-size: cover;
   }
@@ -48,7 +57,7 @@
   @include media(md) {
     &__screen {
       min-height: rem(594);
-      background-image: url("./assets/images/production/production-md.jpg");
+      background-image: url("../images/production/production-md.jpg");
     }
   }
 

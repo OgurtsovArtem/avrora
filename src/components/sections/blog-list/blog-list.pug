@@ -2,9 +2,13 @@ include ../../Ui-kit/icon/icon
 include ../../blocks/blog-card/blog-card
 include ../../blocks/blog-popular/blog-popular
 include ../../blocks/pagination/pagination
+include ../../blocks/breadcrumbs/breadcrumbs
 
 mixin blog-list()
     section.blog-list.max-container
+        +breadcrumbs({
+            className: 'blog-list__breadcrumbs'
+        })
         .blog-list__container.container
             .blog-list__header
                 h1.blog-list__title.h1 Блог

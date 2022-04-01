@@ -1,8 +1,12 @@
 include ../../blocks/reviews-card/reviews-card
 include ../../blocks/pagination/pagination
+include ../../blocks/breadcrumbs/breadcrumbs
 
 mixin reviews-list()
     section.reviews-list
+        +breadcrumbs({
+            className: 'reviews-list__breadcrumbs'
+        })
         .reviews-list__conatiner.container
             .reviews-list__body
                 h1.reviews-list__title.masonry-element.h1 Отзывы
