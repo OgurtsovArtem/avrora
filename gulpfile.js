@@ -14,6 +14,7 @@ const uglify = require("gulp-uglify");
 const ttf2woff = require("gulp-ttf2woff");
 const ttf2woff2 = require("gulp-ttf2woff2");
 const imagemin = require("gulp-imagemin");
+const autoprefixer = require("gulp-autoprefixer");
 const webpack = require("webpack-stream");
 
 const isDev = process.env.NODE_ENV !== "production";
@@ -34,8 +35,18 @@ function styles() {
   return gulp
     .src("src/styles/*.scss")
     .pipe(plumber())
+
     .pipe(gulpIf(isDev, sourcemaps.init()))
     .pipe(sass.sync({ outputStyle: "expanded" }))
+    .pipe(
+      gulpIf(
+        !isDev,
+        autoprefixer({
+          overrideBrowserslist: ["last 5 versions"],
+          cascade: false,
+        })
+      )
+    )
     .pipe(gulpIf(isDev, sourcemaps.write()))
     .pipe(gulpIf(!isDev, cssnano()))
     .pipe(rename({ suffix: ".min" }))
