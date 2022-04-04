@@ -2,6 +2,16 @@
 .circle-text {
   $size: 160;
   $speed: 17;
+  $fontSize: 15;
+
+  &_small {
+    width: rem(85);
+    height: rem(85);
+    .circle-text__letter {
+      padding-bottom: rem(math.div(85, 2) - 7); //15 - (font-size)
+      font-size: rem(7);
+    }
+  }
   position: absolute;
   top: 50%;
   left: 50%;
@@ -39,10 +49,10 @@
     bottom: 50%;
     width: 0;
     transform-origin: 0 100%;
-    padding-bottom: rem(math.div($size, 2) - 15); //15 - высота строки
+    padding-bottom: rem(math.div($size, 2) - 15); //15 - (font-size)
     font-style: normal;
     font-weight: 400;
-    font-size: rem(15);
+    font-size: 15;
     line-height: 100%;
     text-transform: uppercase;
 

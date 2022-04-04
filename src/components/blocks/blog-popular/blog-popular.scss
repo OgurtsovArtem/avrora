@@ -1,4 +1,20 @@
 .blog-popular {
+  @media (max-width: (map-get($breakpoints, md)+px)) {
+    @include adaptive-value(
+      "margin-left",
+      20,
+      10,
+      map-get($breakpoints, es),
+      map-get($breakpoints, md)
+    );
+    @include adaptive-value(
+      "margin-right",
+      20,
+      10,
+      map-get($breakpoints, es),
+      map-get($breakpoints, md)
+    );
+  }
   &__title {
     font-family: "Philosopher";
     font-style: normal;

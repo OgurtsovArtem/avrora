@@ -40,10 +40,15 @@
   }
 
   &__desc {
-    margin-top: rem(46);
     font-weight: 700;
     font-size: rem(15);
     line-height: 160%;
+    @include adaptive-value("margin-top", 90, 40, map-get($breakpoints, es));
+    @include adaptive-value("margin-bottom", 90, 40, map-get($breakpoints, es));
+  }
+
+  &__desc-text {
+    @include adaptive-value("margin-top", 20, 10, map-get($breakpoints, sm));
   }
 
   &__divider {
@@ -63,7 +68,7 @@
 
   @include media(lg) {
     .container {
-      padding: 0 rem(63);
+      // padding: 0 rem(63);
     }
 
     &__screen {
@@ -92,13 +97,11 @@
     }
 
     &__desc {
-      margin-top: rem(77);
       max-width: rem(1086);
     }
 
     &__divider {
       display: block;
-      margin: rem(27) rem(-46) 0;
     }
 
     &__advantages {

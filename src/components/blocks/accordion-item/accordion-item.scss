@@ -7,6 +7,15 @@
     .accordion-item__icon {
       transform: rotate(45deg);
     }
+    .accordion-item__body {
+      @include adaptive-value("margin-top", 33, 10, map-get($breakpoints, sm));
+      @include adaptive-value(
+        "margin-bottom",
+        33,
+        10,
+        map-get($breakpoints, sm)
+      );
+    }
   }
 
   &__button {
@@ -69,9 +78,10 @@
     color: $color-text-secondary;
     transition: $transitionNormal;
     max-width: rem(520);
-    @include adaptive-value("padding-top", 33, 10, map-get($breakpoints, sm));
-    padding-bottom: rem(19);
-
+    &_accent {
+      font-weight: bold;
+      font-style: italic;
+    }
     &:not(:last-child) {
       margin-bottom: rem(20);
     }

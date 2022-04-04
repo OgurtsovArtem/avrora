@@ -1,15 +1,27 @@
 include ../../Ui-kit/learn-more-button/learn-more-button
 include ../../Ui-kit/circle-text/circle-text
 
-mixin kitchen-set-banner({className, theme})
-    div(class=className ? `${className} kitchen-set-banner`: `kitchen-set-banner`)
+mixin kitchen-set-banner({className, theme, circleDirection})
+    div(class=className ? `${className} kitchen-set-banner`: `kitchen-set-banner`)&attributes(attributes)
       .kitchen-set-banner__container
         h4(class=theme ? `kitchen-set-banner__title_light`: `kitchen-set-banner__title_dark`).kitchen-set-banner__title Выезд замерщика в удобное время
         +learn-more-button({
             className: 'kitchen-set-banner__button',
             color: 'yellow'
         })
-        +circle-text({
-            className: 'kitchen-set-banner__circle-text',
-            words: [['/','/'], ['б','е','с','п','л','а','т','н','ы','й'],['з','а','м','е','р'], ['/','/'], ['б','е','с','п','л','а','т','н','ы','й'],['з','а','м','е','р']],
-        })
+        case circleDirection
+            when 'left'
+                +circle-text({
+                    className: 'kitchen-set-banner__circle-text kitchen-set-banner__circle-text_left',
+                    words: [['/','/'], ['б','е','с','п','л','а','т','н','ы','й'],['з','а','м','е','р'], ['/','/'], ['б','е','с','п','л','а','т','н','ы','й'],['з','а','м','е','р']],
+                })
+            when 'right'
+                +circle-text({
+                    className: 'kitchen-set-banner__circle-text kitchen-set-banner__circle-text_right',
+                    words: [['/','/'], ['б','е','с','п','л','а','т','н','ы','й'],['з','а','м','е','р'], ['/','/'], ['б','е','с','п','л','а','т','н','ы','й'],['з','а','м','е','р']],
+                })
+            default
+                +circle-text({
+                    className: 'kitchen-set-banner__circle-text kitchen-set-banner__circle-text_left',
+                    words: [['/','/'], ['б','е','с','п','л','а','т','н','ы','й'],['з','а','м','е','р'], ['/','/'], ['б','е','с','п','л','а','т','н','ы','й'],['з','а','м','е','р']],
+                })

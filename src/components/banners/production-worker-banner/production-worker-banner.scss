@@ -120,14 +120,14 @@
   &__text {
     font-family: $font-secondary;
     font-style: normal;
-    font-weight: 700;
+    font-weight: 400;
     @include adaptive-value("font-size", 24, 20, map-get($breakpoints, es));
     line-height: 140%;
     margin-top: rem(10);
   }
   &__name {
     font-style: normal;
-    font-weight: 700;
+    font-weight: 600;
     font-size: rem(15);
     line-height: 100%;
     @include adaptive-value("margin-top", 33, 20, map-get($breakpoints, es));

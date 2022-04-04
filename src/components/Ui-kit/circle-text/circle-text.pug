@@ -1,21 +1,20 @@
-mixin circle-text({className, fill, words})
-
-        case fill
-            when 'yellow'
-                div(class=className ? `${className} circle-text circle-text_yellow`: 'circle-text circle-text_yellow')
-                    each word in words
-                        .circle-text__word
-                            each letter in word
-                                .circle-text__letter=letter
-            when 'dark-blue'
-                div(class=className ? `${className} circle-text circle-text_dark-blue`: 'circle-text circle-text_dark-blue')
-                    each word in words
-                        .circle-text__word
-                            each letter in word
-                                .circle-text__letter=letter
-            default
-                div(class=className ? `${className} circle-text`: 'circle-text')
-                    each word in words
-                        .circle-text__word
-                            each letter in word
-                                .circle-text__letter=letter
+mixin circle-text({className, fill, words, small})
+    case fill
+        when 'yellow'
+            div(class=className ? `${className} circle-text circle-text_yellow`: 'circle-text circle-text_yellow', class= small ? "circle-text_small" : '')
+                each word in words
+                    .circle-text__word
+                        each letter in word
+                            .circle-text__letter=letter
+        when 'dark-blue'
+            div(class=className ? `${className} circle-text circle-text_dark-blue`: 'circle-text circle-text_dark-blue', class= small ? "circle-text_small" : '')
+                each word in words
+                    .circle-text__word
+                        each letter in word
+                            .circle-text__letter=letter
+        default
+            div(class=className ? `${className} circle-text`: 'circle-text', class= small ? "circle-text_small" : '')
+                each word in words
+                    .circle-text__word
+                        each letter in word
+                            .circle-text__letter=letter

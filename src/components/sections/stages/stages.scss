@@ -4,6 +4,7 @@
   }
   &__container {
   }
+
   &__dark-block {
     @include adaptive-value(
       "margin-top",
@@ -27,7 +28,9 @@
     background-color: $color-secondary;
     z-index: -2;
   }
-
+  &__white-block {
+    overflow: hidden;
+  }
   &__worker-banner {
   }
 
@@ -122,7 +125,7 @@
   &__marketing-text {
     font-family: $font-secondary;
     font-style: normal;
-    font-weight: 700;
+    font-weight: 400;
     @include adaptive-value("font-size", 52, 25, map-get($breakpoints, es));
     line-height: 120%;
     text-align: center;

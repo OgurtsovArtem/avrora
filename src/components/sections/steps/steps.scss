@@ -63,12 +63,13 @@
       }
       @include media(md) {
         display: grid;
-        grid-template-columns: 2fr 1fr;
+        grid-template-columns: 1.5fr 1fr;
         column-gap: rem(15);
       }
     }
     &_white-img {
       position: relative;
+      padding-right: 0;
       &::after {
         content: "";
         position: absolute;
@@ -136,6 +137,7 @@
     }
     &_yellow {
       position: relative;
+      padding-right: 0;
       &::after {
         content: "";
         position: absolute;
@@ -256,8 +258,8 @@
       top: 62%;
     }
     @include media(md) {
-      left: 86%;
-      top: 45%;
+      left: 78%;
+      top: 43%;
     }
   }
 }

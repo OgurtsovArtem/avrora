@@ -13,6 +13,9 @@
   }
   &__link {
     display: block;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%;
     cursor: pointer;
     @include adaptive-value("padding-top", 27, 17, map-get($breakpoints, lg));
     @include adaptive-value(

@@ -17,6 +17,11 @@
     color: $color-primary;
   }
   &__content {
+    @include media(lg) {
+      max-width: 80%;
+    }
+  }
+  &__form {
   }
   &__text {
     font-style: normal;

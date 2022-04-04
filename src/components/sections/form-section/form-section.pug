@@ -4,7 +4,7 @@ include ../../forms/designer-form/designer-form
 include ../../forms/application-form/application-form
 
 mixin form-section({title, titleAccentWord, titleVariant, text, backgroundIcon=false, button=false, form})
-    section.form-section.max-container
+    section.form-section.max-container(class = backgroundIcon ? 'form-section_overflow-hidden' : '')
         .form-section__container.container
             .form-section__description
                 .form-section__description-box

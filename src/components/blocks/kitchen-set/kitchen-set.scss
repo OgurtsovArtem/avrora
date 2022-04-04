@@ -61,10 +61,14 @@
   //================ .kitchen-set__banner  =========================
   &__banner {
     color: $color-white;
-
+    text-align: right;
     //================ .kitchen-set__banner_dark  =========================
     &_dark {
       color: $color-secondary;
+    }
+
+    &_reverse {
+      text-align: left;
     }
 
     //================ MEDIA QUERIES =========================

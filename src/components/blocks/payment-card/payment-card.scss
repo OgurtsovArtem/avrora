@@ -5,6 +5,13 @@
   justify-content: space-between;
   @include adaptive-value("padding", 48, 38, map-get($breakpoints, es));
   cursor: pointer;
+  transition: $transitionLight;
+  @media (any-hover: hover) {
+    &:hover {
+      opacity: 0.9;
+      z-index: 1;
+    }
+  }
   &__title {
     font-style: normal;
     font-weight: 600;

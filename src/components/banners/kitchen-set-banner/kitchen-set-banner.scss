@@ -1,7 +1,6 @@
 .kitchen-set-banner {
   position: relative;
   &__container {
-    text-align: right;
     @include adaptive-value("padding-top", 30, 10, map-get($breakpoints, es));
     @include adaptive-value(
       "padding-bottom",
@@ -18,7 +17,7 @@
     font-family: "Philosopher";
     font-style: normal;
     font-weight: 400;
-    @include adaptive-value("font-size", 36, 22, map-get($breakpoints, es));
+    @include adaptive-value("font-size", 26, 22, map-get($breakpoints, es));
     line-height: 100%;
     color: inherit;
   }
@@ -27,14 +26,24 @@
     color: $color-primary;
   }
   &__circle-text {
-    left: -25%;
-    top: -20%;
-    @include media(sm) {
-      left: -10%;
+    &_right {
+      display: none;
+      @include media(md) {
+        display: block;
+        right: 4%;
+        top: 31%;
+      }
     }
-    @include media(md) {
-      left: 4%;
-      top: 31%;
+    &_left {
+      left: -25%;
+      top: -20%;
+      @include media(sm) {
+        left: -10%;
+      }
+      @include media(md) {
+        left: 4%;
+        top: 31%;
+      }
     }
   }
 }

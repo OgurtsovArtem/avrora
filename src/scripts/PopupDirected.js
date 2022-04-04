@@ -20,6 +20,7 @@ export default class PopupDirected {
       case left > right:
         this.leftDirection();
         break;
+
       case left < right:
         this.rightDirection();
         break;

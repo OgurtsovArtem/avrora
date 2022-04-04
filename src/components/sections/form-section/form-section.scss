@@ -1,13 +1,13 @@
 .form-section {
   background-color: $color-gray-600;
   position: relative;
-  overflow-x: hidden;
-  overflow-y: auto;
+
   @include media(md) {
-    overflow: initial;
     background-color: initial;
   }
-
+  &_overflow-hidden {
+    overflow: hidden;
+  }
   &__container {
     position: relative;
     display: grid;
@@ -21,8 +21,8 @@
     }
   }
   &__description {
-    overflow: hidden;
     position: relative;
+    @include adaptive-value("padding-left", 70, 0, map-get($breakpoints, md));
     @include adaptive-value(
       "padding-top",
       170,
@@ -30,29 +30,19 @@
       map-get($breakpoints, es),
       map-get($breakpoints, lg)
     );
-
-    @include media(md) {
-      @include adaptive-value(
-        "padding-top",
-        163,
-        170,
-        map-get($breakpoints, lg)
-      );
-      @include adaptive-value(
-        "padding-bottom",
-        277,
-        128,
-        map-get($breakpoints, lg)
-      );
-      @include adaptive-value("padding-left", 70, 0, map-get($breakpoints, lg));
-      @include adaptive-value(
-        "padding-right",
-        40,
-        20,
-        map-get($breakpoints, md),
-        map-get($breakpoints, lg)
-      );
-    }
+    @include adaptive-value(
+      "padding-bottom",
+      277,
+      10,
+      map-get($breakpoints, sm)
+    );
+    @include adaptive-value(
+      "padding-right",
+      40,
+      20,
+      map-get($breakpoints, md),
+      map-get($breakpoints, lg)
+    );
     @include media(md) {
       &::after {
         content: "";

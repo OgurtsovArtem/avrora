@@ -14,11 +14,14 @@
     background-color: $color-gray-600;
     z-index: -1;
   }
-  &:hover {
-    .assembling-card__image {
-      opacity: 0.6;
+  @media (any-hover: hover) {
+    &:hover {
+      .assembling-card__image {
+        opacity: 0.6;
+      }
     }
   }
+
   &__image {
     position: absolute;
     top: 0;

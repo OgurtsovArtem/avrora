@@ -1,11 +1,12 @@
 include ../../Ui-kit/button/button
 include ../../blocks/social-box/social-box
 include ../../blocks/breadcrumbs/breadcrumbs
+include ../../Ui-kit/circle-text/circle-text
 
 mixin contacts-intro
     section.contacts-intro.max-conatiner
+        .contacts-intro__map(id='map')
         .contacts-intro__container.container
-            .contacts-intro__map(id='map')
             .contacts-intro__info
                 +breadcrumbs({
                     className: 'contacts-intro__breadcrumbs'
@@ -21,6 +22,11 @@ mixin contacts-intro
                         text: 'Пригласить дизайнера'
                     })(data-popup-open='call')
                     p.contacts-intro__invite-text.txt Выезд на замер по городу <br> СПб и области!
+                    +circle-text({
+                        className: 'contacts-intro__invite-circle-text',
+                        words: [['/','/'], ['б','е','с','п','л','а','т','н','ы','й'],['з','а','м','е','р'], ['/','/'], ['б','е','с','п','л','а','т','н','ы','й'],['з','а','м','е','р']],
+                        small: true,
+                    })
                 .contacts-intro__adress-box
                     .contacts-intro__adress-title.h4 Приезжайте в гости
                     .contacts-intro__adress-text.txt Санкт-Петербург, ул. Краснопутиловская, д. 69 лит. А, помещение 227Н, офис 536В
