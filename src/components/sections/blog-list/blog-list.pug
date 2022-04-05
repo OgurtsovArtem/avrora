@@ -5,7 +5,7 @@ include ../../blocks/pagination/pagination
 include ../../blocks/breadcrumbs/breadcrumbs
 
 mixin blog-list()
-    section.blog-list.max-container
+    section.blog-list.max-container.content-hidden
         +breadcrumbs({
             className: 'blog-list__breadcrumbs'
         })
@@ -48,6 +48,7 @@ mixin blog-list()
                     text: "5 полезных советов, как выбрать кухню на заказ",
                     image: "card_5.jpg"
                 })
+        +icon('tree', "blog-list__icon-background")
         +pagination({
             className: 'blog-list__pagination',
             numbers: [1, 2, 3, 4, 5, 6]

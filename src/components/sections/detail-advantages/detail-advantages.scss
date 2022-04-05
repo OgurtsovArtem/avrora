@@ -55,11 +55,12 @@
     color: $color-text-secondary;
   }
   &__icon {
+    stroke-width: rem(0.5);
     position: absolute;
-    bottom: 0;
-    right: 0;
-    stroke-width: 1px;
-    @include adaptive-value("width", 895, 500, map-get($breakpoints, es));
-    height: 104%;
+    bottom: 2%;
+    right: -6%;
+    @include adaptive-value("width", 970, 500, map-get($breakpoints, es));
+    @include adaptive-value("height", 970, 500, map-get($breakpoints, es));
+    transform: rotate(-90deg);
   }
 }

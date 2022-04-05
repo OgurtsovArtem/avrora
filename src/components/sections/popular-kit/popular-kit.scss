@@ -40,6 +40,7 @@
     overflow: hidden;
   }
   &__item {
+    z-index: -1;
   }
   &__kitchen-button {
     width: 100%;

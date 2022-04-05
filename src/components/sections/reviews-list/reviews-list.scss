@@ -1,6 +1,6 @@
 .reviews-list {
-  @include adaptive-value("margin-bottom", 90, 60, map-get($breakpoints, es));
-
+  @include adaptive-value("padding-bottom", 90, 60, map-get($breakpoints, es));
+  position: relative;
   &__container {
   }
   &__title {
@@ -46,5 +46,14 @@
   }
   &__pagination {
     @include adaptive-value("margin-top", 70, 40, map-get($breakpoints, sm));
+  }
+  &__icon-background {
+    position: absolute;
+    right: -7%;
+    bottom: -9%;
+    width: rem(600);
+    height: rem(600);
+    transform: rotate(-24.86deg);
+    z-index: -1;
   }
 }

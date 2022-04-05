@@ -24,7 +24,7 @@
       height: 100%;
     }
     & svg {
-      @include adaptive-value("height", 50, 30, map-get($breakpoints, es));
+      @include adaptive-value("height", 23, 20, map-get($breakpoints, es));
     }
   }
   &__button-back {
@@ -35,7 +35,7 @@
   &__info {
     @include adaptive-value(
       "margin-top",
-      -175,
+      -155,
       -130,
       map-get($breakpoints, md)
     );

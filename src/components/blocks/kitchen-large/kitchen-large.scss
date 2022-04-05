@@ -49,6 +49,11 @@
   }
   &__controls {
     z-index: $zIndexLight;
+    & svg {
+      @include adaptive-value("height", 15, 12, map-get($breakpoints, es));
+      stroke-width: rem(2);
+      stroke: $color-white;
+    }
   }
   &__footer {
     z-index: $zIndexLight;

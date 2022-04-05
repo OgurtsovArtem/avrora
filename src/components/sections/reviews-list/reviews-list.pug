@@ -1,9 +1,10 @@
 include ../../blocks/reviews-card/reviews-card
 include ../../blocks/pagination/pagination
 include ../../blocks/breadcrumbs/breadcrumbs
+include ../../Ui-kit/icon/icon
 
 mixin reviews-list()
-    section.reviews-list
+    section.reviews-list.content-hidden
         +breadcrumbs({
             className: 'reviews-list__breadcrumbs'
         })
@@ -119,6 +120,7 @@ mixin reviews-list()
                     video: '',
                     image: 'background-2.jpg'
                 })
+        +icon('tree', "reviews-list__icon-background")
         +pagination({
             className: 'reviews-list__pagination',
             numbers: [1, 2, 3, 4, 5, 6]

@@ -21,7 +21,7 @@
 
     @include adaptive-value("padding-left", 40, 0, map-get($breakpoints, sm));
     @include adaptive-value("padding-right", 40, 0, map-get($breakpoints, sm));
-    @include adaptive-value("padding-top", 34, 30, map-get($breakpoints, sm));
+    @include adaptive-value("padding-top", 36, 30, map-get($breakpoints, sm));
     @include adaptive-value(
       "padding-bottom",
       24,

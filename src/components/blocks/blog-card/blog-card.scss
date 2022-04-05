@@ -1,4 +1,5 @@
 .blog-card {
+  z-index: $zIndexLight;
   &__image-box {
     position: relative;
     height: 100%;
