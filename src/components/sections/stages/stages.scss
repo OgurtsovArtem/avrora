@@ -95,6 +95,7 @@
   }
 
   &__marketing {
+    position: relative;
     color: $color-secondary;
     text-align: center;
     @include adaptive-value("margin-top", 103, 45, map-get($breakpoints, es));
@@ -150,6 +151,28 @@
   &__accordion-item {
     &_white {
       color: $color-white;
+    }
+  }
+  &__circle-text {
+    left: 85%;
+
+    &_yellow {
+      top: 80%;
+      @include media(md) {
+        top: 67%;
+      }
+      @include media(xl) {
+        top: 80%;
+      }
+    }
+    &_dark {
+      top: 85%;
+      @include media(md) {
+        top: 90%;
+      }
+      @include media(xl) {
+        top: 111%;
+      }
     }
   }
 }

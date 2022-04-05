@@ -32,8 +32,8 @@
   &__column {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    @include adaptive-value("row-gap", 150, 50, map-get($breakpoints, es));
-    @include adaptive-value("column-gap", 90, 40, map-get($breakpoints, es));
+    @include adaptive-value("row-gap", 94, 50, map-get($breakpoints, es));
+    @include adaptive-value("column-gap", 100, 40, map-get($breakpoints, es));
   }
   &__box {
     display: flex;
@@ -58,7 +58,8 @@
     position: absolute;
     bottom: 0;
     right: 0;
+    stroke-width: 1px;
     @include adaptive-value("width", 895, 500, map-get($breakpoints, es));
-    height: rem(445);
+    height: 104%;
   }
 }

@@ -1,4 +1,6 @@
 .delivery {
+  position: relative;
+  overflow: hidden;
   &__container {
     @include adaptive-value(
       "margin-top",
@@ -79,6 +81,7 @@
     height: 100%;
     transform: translateX(-50%);
     display: flex;
+    align-items: flex-end;
     @include media(lg) {
       @include adaptive-value(
         "padding-right",
@@ -90,7 +93,6 @@
   }
   &__price-list {
     margin-left: auto;
-    align-self: end;
     display: grid;
     grid-template-columns: 1fr;
     gap: rem(20);
@@ -130,5 +132,22 @@
     line-height: 100%;
     color: $color-primary;
     margin-top: rem(10);
+  }
+  &__footer-circle-text {
+    left: 20%;
+    top: 20%;
+    @include media(md) {
+      left: 12%;
+      top: 10%;
+    }
+  }
+  &__background-icon {
+    position: absolute;
+    top: 9%;
+    left: -9%;
+    transform: rotate(-40deg);
+    width: rem(500);
+    height: rem(500);
+    z-index: -1;
   }
 }

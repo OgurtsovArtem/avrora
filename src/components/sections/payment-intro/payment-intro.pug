@@ -7,7 +7,7 @@ mixin payment-intro
         +breadcrumbs({
             className: 'payment-intro__breadcrumbs'
         })
-        .payment-intro__container.container
+        .payment-intro__container.min-container
             .payment-intro__header
                 h1.payment-intro__title.h1 Оплата
                 .payment-intro__description
@@ -52,4 +52,4 @@ mixin payment-intro
                     footnote: 'Если у вас остались вопросы, на них готовы ответить наши менеджеры по телефону +7 (812) 612 30 49',
                     dataClose: 'credit'
                 })(data-poup-direct-desc='credit')
-        +icon('background-pattern-payment', "payment-intro__icon-background")
+        +icon('tree', "payment-intro__icon-background")

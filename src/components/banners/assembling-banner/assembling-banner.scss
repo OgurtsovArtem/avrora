@@ -1,7 +1,11 @@
 .assembling-banner {
   @include adaptive-value("padding", 37, 20, map-get($breakpoints, es));
   background-color: $color-dark-blue-600;
-  backdrop-filter: blur(rem(10));
+  z-index: $zIndexLight;
+  @supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+    background: $color-dark-blue-600;
+    backdrop-filter: blur(rem(4));
+  }
   &__discount {
     font-family: "Philosopher";
     font-style: normal;
@@ -17,7 +21,7 @@
     color: $color-white;
   }
   &__circle-text {
-    top: 50%;
-    left: 60%;
+    top: 85%;
+    left: 79%;
   }
 }

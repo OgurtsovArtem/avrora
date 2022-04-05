@@ -1,4 +1,5 @@
 .article-section {
+  $max-width-description: 800;
   overflow: hidden;
   &__intro-image {
     min-height: rem(250);
@@ -10,6 +11,8 @@
     grid-template-columns: 1fr;
     @include adaptive-value("column-gap", 40, 20, map-get($breakpoints, sm));
     @include adaptive-value("padding-top", 86, 30, map-get($breakpoints, es));
+    @include adaptive-value("padding-left", 86, 0, map-get($breakpoints, md));
+    @include adaptive-value("padding-right", 86, 0, map-get($breakpoints, md));
     @include adaptive-value("margin-top", -150, 0, map-get($breakpoints, md));
     background-color: $color-white;
     @include media(md) {
@@ -29,6 +32,7 @@
     font-weight: 700;
     font-size: rem(15);
     line-height: 160%;
+    max-width: rem($max-width-description);
     @include media(md) {
       grid-column-start: 2;
     }
@@ -38,6 +42,7 @@
     font-weight: 600;
     font-size: rem(18);
     line-height: 100%;
+    max-width: rem($max-width-description);
     @include adaptive-value("margin-bottom", 27, 22, map-get($breakpoints, es));
     @include adaptive-value("margin-top", 85, 60, map-get($breakpoints, md));
     @include media(md) {
@@ -58,6 +63,7 @@
     font-size: rem(15);
     line-height: 160%;
     margin-bottom: rem(15);
+    max-width: rem($max-width-description);
     @include media(md) {
       grid-column-start: 2;
     }

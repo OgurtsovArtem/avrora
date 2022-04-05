@@ -49,10 +49,18 @@
   }
 }
 
-.container {
+// 2022
+.max-container {
   margin: 0 auto;
   width: 100%;
-  max-width: rem($maxWidthContainer);
+  max-width: rem($maxWidthContainerMax);
+}
+
+// 1800
+.medium-container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: rem($maxWidthContainerMedium);
   padding-top: 0;
   padding-bottom: 0;
   @include adaptive-value(
@@ -71,15 +79,11 @@
   );
 }
 
-.max-container {
+// 1660
+.min-container {
   margin: 0 auto;
   width: 100%;
-  max-width: rem($maxWidthContainerMax);
-}
-.medium-container {
-  margin: 0 auto;
-  width: 100%;
-  max-width: rem(1680);
+  max-width: rem($maxWidthContainerMini);
   padding-top: 0;
   padding-bottom: 0;
   @include adaptive-value(
@@ -97,6 +101,7 @@
     map-get($breakpoints, sm)
   );
 }
+
 .content-hidden {
   overflow: hidden;
 }

@@ -5,7 +5,7 @@ include ../../forms/application-form/application-form
 
 mixin form-section({title, titleAccentWord, titleVariant, text, backgroundIcon=false, button=false, form})
     section.form-section.max-container(class = backgroundIcon ? 'form-section_overflow-hidden' : '')
-        .form-section__container.container
+        .form-section__container.min-container
             .form-section__description
                 .form-section__description-box
                     case titleVariant
@@ -27,7 +27,7 @@ mixin form-section({title, titleAccentWord, titleVariant, text, backgroundIcon=f
                             className: 'form-section__button',
                         })
                 if backgroundIcon
-                    +icon('background-pattern-form-section', 'form-section__background-desctop')
+                    +icon('tree', 'form-section__background-desctop')
             .form-section__form-box
                 case form
                     when 'designer'
@@ -36,6 +36,6 @@ mixin form-section({title, titleAccentWord, titleVariant, text, backgroundIcon=f
                         +application-form()
                     default
                         +designer-form()
-            +icon('background-pattern-form-section', 'form-section__background-mobile')
+            +icon('tree', 'form-section__background-mobile')
         if !backgroundIcon
             +icon('background-pattern-form-section-v2', 'form-section__background-right')

@@ -3,7 +3,7 @@ include ../../Ui-kit/button/button
 include ../../Ui-kit/circle-text/circle-text
 mixin steps()
  section.steps.max-container
-    .steps__container.container
+    .steps__container.min-container
 
         .steps__body
             .steps__card.steps__card_large
@@ -21,6 +21,7 @@ mixin steps()
                 +circle-text({
                     className: 'steps__circle-text',
                     words: [['/','/'], ['б','е','с','п','л','а','т','н','ы','й'],['з','а','м','е','р'], ['/','/'], ['б','е','с','п','л','а','т','н','ы','й'],['з','а','м','е','р']],
+                    small: true,
                 })
             .steps__card.steps__card_white-img
                 .steps__card-body

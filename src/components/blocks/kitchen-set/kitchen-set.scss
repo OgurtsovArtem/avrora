@@ -33,9 +33,6 @@
   }
   @include media(lg) {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-
-    @include adaptive-value("padding-left", 40, 20, map-get($breakpoints, lg));
-    @include adaptive-value("padding-right", 40, 20, map-get($breakpoints, lg));
   }
   //================ .kitchen-set__large-kitchen =========================
   &__large-kitchen {

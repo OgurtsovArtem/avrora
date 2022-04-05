@@ -27,22 +27,27 @@
   }
   &__circle-text {
     &_right {
-      display: none;
+      left: 67%;
+      top: 105%;
+      @include media(sm) {
+        left: 72%;
+        top: 105%;
+      }
       @include media(md) {
-        display: block;
-        right: 4%;
-        top: 31%;
+        left: 89%;
+        top: 79%;
       }
     }
     &_left {
-      left: -25%;
-      top: -20%;
+      left: -3%;
+      top: 83%;
       @include media(sm) {
-        left: -10%;
+        left: 10%;
+        top: 93%;
       }
       @include media(md) {
-        left: 4%;
-        top: 31%;
+        left: 12%;
+        top: 87%;
       }
     }
   }

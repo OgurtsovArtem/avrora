@@ -1,11 +1,14 @@
 include ../../blocks/breadcrumbs/breadcrumbs
+include ../../Ui-kit/circle-text/circle-text
+include ../../Ui-kit/icon/icon
+
 
 mixin delivery()
-    section.delivery.max-container
+    section.delivery.content-hidden.max-container
         +breadcrumbs({
             className: 'delivery__breadcrumbs'
         })
-        .delivery__container.container
+        .delivery__container.min-container
             .delivery__header
                 h1.delivery__title.h1 Доставка
                 ul.delivery__list
@@ -23,7 +26,11 @@ mixin delivery()
                         p.delivery__item-text.txt Фиксированная цена на услугу
         .delivery__footer
             img.delivery__footer-background(data-src="./assets/images/delivery/background.jpg", alt="background" data-lazy)
-            .delivery__price.container
+            +circle-text({
+                className: 'delivery__footer-circle-text',
+                words: [['/','/'], ['б','е','с','п','л','а','т','н','ы','й'],['з','а','м','е','р'], ['/','/'], ['б','е','с','п','л','а','т','н','ы','й'],['з','а','м','е','р']],
+            })
+            .delivery__price.min-container
                 .delivery__price-list
                     .delivery__price-item
                         .delivery__price-value.h2 3 490 &#8381;
@@ -32,3 +39,4 @@ mixin delivery()
                         .delivery__price-value.h2 3 490 &#8381;
                         .delivery__price-text.txt стоимость <br> доставки по ЛО
                             .delivery__price-footnote &#43; 25 &#8381;&#47;км от КАД
+        +icon('tree','delivery__background-icon')

@@ -12,7 +12,7 @@ mixin catalog-kitchen()
                 className: 'catalog-kitchen__breadcrumbs'
             })
             div.catalog-kitchen__container
-                .catalog-kitchen__header.container
+                .catalog-kitchen__header.max-container
                     .catalog-kitchen__header-description
                         h1.catalog-kitchen__title.h1 Каталог кухонь
                         p.catalog-kitchen__subtitle.txt Дескриптер с пояснительным текстом на одну-две-три строки. Дескриптер с пояснительным текстом на одну-две-три строки. Дескриптер с пояснительным текстом на одну-две-три строки.
@@ -28,27 +28,27 @@ mixin catalog-kitchen()
                     buttonText: 'фильтры',
                     selectors: ['Все кухни', 'Угловые', 'Прямые', 'С барной стойкой'],
                 })
-                .catalog-kitchen__filter.container
-
-                    +filter-button({
-                        className: "catalog-kitchen__filter-button",
-                        text: 'Все кухни',
-                        active: true
-                    })
-                    +filter-button({
-                        className: "catalog-kitchen__filter-button",
-                        text: 'Угловые'
-                    })
-                    +filter-button({
-                        className: "catalog-kitchen__filter-button",
-                        text: 'Прямые'
-                    })
-                    +filter-button({
-                        className: "catalog-kitchen__filter-button",
-                        text: 'С барной стойкой'
-                    })
+                .catalog-kitchen__filter.max-container
+                    .catalog-kitchen__filter-container
+                        +filter-button({
+                            className: "catalog-kitchen__filter-button",
+                            text: 'Все кухни',
+                            active: true
+                        })
+                        +filter-button({
+                            className: "catalog-kitchen__filter-button",
+                            text: 'Угловые'
+                        })
+                        +filter-button({
+                            className: "catalog-kitchen__filter-button",
+                            text: 'Прямые'
+                        })
+                        +filter-button({
+                            className: "catalog-kitchen__filter-button",
+                            text: 'С барной стойкой'
+                        })
                 +kitchen-set({
-                    className: 'catalog-kitchen__set container',
+                    className: 'catalog-kitchen__set medium-container',
                     version: 'version-1'
                 })
         +kitchen-advantages([
@@ -58,7 +58,7 @@ mixin catalog-kitchen()
         ])
         div.catalog-kitchen__bottom-section
             +kitchen-set({
-                className: 'catalog-kitchen__set container',
+                className: 'catalog-kitchen__set medium-container',
                 version: 'version-2'
             })
         +pagination({

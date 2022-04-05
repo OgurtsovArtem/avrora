@@ -1,7 +1,11 @@
-mixin kitchen-advantages(items)
-  .kitchen-advantages.container&attributes(attributes)
+mixin kitchen-advantages(items, line)
+  if line
+    hr.kitchen-advantages__line
+  .kitchen-advantages.min-container&attributes(attributes)
     .kitchen-advantages__list
       each item in items
         div.kitchen-advantages__item
           h2.kitchen-advantages__num.h1= item.num
           p.kitchen-advantages__text.txt= item.text
+  if line
+    hr.kitchen-advantages__line

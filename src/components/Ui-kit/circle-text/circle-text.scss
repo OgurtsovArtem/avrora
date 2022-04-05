@@ -1,39 +1,40 @@
 @use "sass:math";
 .circle-text {
-  $size: 160;
   $speed: 17;
-  $fontSize: 15;
-
   &_small {
-    width: rem(85);
-    height: rem(85);
     .circle-text__letter {
-      padding-bottom: rem(math.div(85, 2) - 7); //15 - (font-size)
-      font-size: rem(7);
+      padding-bottom: rem(math.div(115, 2) - 7); //15 - (font-size)
+      font-size: rem(10.6);
     }
   }
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: rem($size);
-  height: rem($size);
+  width: auto;
+  height: auto;
   border-radius: 50%;
   animation: rotating $speed + s linear infinite;
   color: $color-primary;
   //   border: 3px solid #ccc; разметка для настройки
   &_yellow {
-    background-color: $color-primary;
     color: $color-secondary;
+    background-color: $color-primary;
+    width: rem(150);
+    height: rem(150);
     .circle-text__letter {
-      padding-bottom: rem(math.div($size, 2) - 20);
+      padding-bottom: rem(55);
+      font-size: rem(11);
     }
   }
   &_dark-blue {
-    background-color: $color-secondary;
     color: $color-white;
+    width: rem(150);
+    height: rem(150);
+    background-color: $color-secondary;
     .circle-text__letter {
-      padding-bottom: rem(math.div($size, 2) - 20);
+      padding-bottom: rem(55);
+      font-size: rem(11);
     }
   }
   &__word {
@@ -49,10 +50,15 @@
     bottom: 50%;
     width: 0;
     transform-origin: 0 100%;
-    padding-bottom: rem(math.div($size, 2) - 15); //15 - (font-size)
+    @include adaptive-value(
+      "padding-bottom",
+      80,
+      60,
+      map-get($breakpoints, sm)
+    );
     font-style: normal;
     font-weight: 400;
-    font-size: 15;
+    @include adaptive-value("font-size", 15, 11, map-get($breakpoints, sm));
     line-height: 100%;
     text-transform: uppercase;
 

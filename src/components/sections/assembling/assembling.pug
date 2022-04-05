@@ -3,7 +3,7 @@ include ../../banners/assembling-banner/assembling-banner
 
 mixin assembling()
     section.assembling.content-hidden
-        .assembling__container.container
+        .assembling__container.min-container
             h2.assembling__title.h2 Сборка
             .assembling__cards
                 +assembling-card({
@@ -42,4 +42,4 @@ mixin assembling()
                     number: '05',
                     img: 'background-card.jpg'
                 })
-        +icon('background-pattern-assembling', 'assembling__background-icon')
+        +icon('tree', 'assembling__background-icon')

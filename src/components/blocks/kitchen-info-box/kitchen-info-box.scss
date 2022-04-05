@@ -19,9 +19,9 @@
     @include adaptive-value("column-gap", 49, 20, map-get($breakpoints, md));
     row-gap: rem(16);
 
-    @include adaptive-value("padding-left", 42, 0, map-get($breakpoints, sm));
-    @include adaptive-value("padding-right", 42, 0, map-get($breakpoints, sm));
-    @include adaptive-value("padding-top", 38, 32, map-get($breakpoints, sm));
+    @include adaptive-value("padding-left", 40, 0, map-get($breakpoints, sm));
+    @include adaptive-value("padding-right", 40, 0, map-get($breakpoints, sm));
+    @include adaptive-value("padding-top", 34, 30, map-get($breakpoints, sm));
     @include adaptive-value(
       "padding-bottom",
       24,
@@ -45,6 +45,9 @@
     }
   }
   &__header {
+    // @include media(md) {
+    //   margin-top: rem(5);
+    // }
   }
   &__title {
     font-style: normal;
@@ -99,6 +102,10 @@
     line-height: 100%;
     grid-column-start: 2;
     color: $color-text-secondary;
+
+    @include media(sm) {
+      margin-top: rem(-10);
+    }
     @include media(md) {
       text-align: right;
     }

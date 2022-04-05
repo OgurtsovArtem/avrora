@@ -14,14 +14,17 @@ mixin kitchen-set-banner({className, theme, circleDirection})
                 +circle-text({
                     className: 'kitchen-set-banner__circle-text kitchen-set-banner__circle-text_left',
                     words: [['/','/'], ['б','е','с','п','л','а','т','н','ы','й'],['з','а','м','е','р'], ['/','/'], ['б','е','с','п','л','а','т','н','ы','й'],['з','а','м','е','р']],
+                    small: true,
                 })
             when 'right'
                 +circle-text({
                     className: 'kitchen-set-banner__circle-text kitchen-set-banner__circle-text_right',
                     words: [['/','/'], ['б','е','с','п','л','а','т','н','ы','й'],['з','а','м','е','р'], ['/','/'], ['б','е','с','п','л','а','т','н','ы','й'],['з','а','м','е','р']],
+                    small: true,
                 })
             default
                 +circle-text({
                     className: 'kitchen-set-banner__circle-text kitchen-set-banner__circle-text_left',
                     words: [['/','/'], ['б','е','с','п','л','а','т','н','ы','й'],['з','а','м','е','р'], ['/','/'], ['б','е','с','п','л','а','т','н','ы','й'],['з','а','м','е','р']],
+                    small: true,
                 })

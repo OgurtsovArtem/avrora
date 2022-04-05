@@ -1,6 +1,11 @@
 .kitchen-advantages {
   @include adaptive-value("margin-top", 87, 110, map-get($breakpoints, lg));
   @include adaptive-value("margin-bottom", 108, 130, map-get($breakpoints, lg));
+  &__line {
+    margin: 0 auto;
+    max-width: rem(1880);
+  }
+
   &__list {
     display: flex;
     flex-wrap: wrap;

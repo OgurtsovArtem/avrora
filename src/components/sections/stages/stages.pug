@@ -1,17 +1,19 @@
 include ../../banners/production-worker-banner/production-worker-banner
 include ../../blocks/accordion-item/accordion-item
+include ../../Ui-kit/circle-text/circle-text
+
 //- при изменении/установке поля modificator в миксине production-worker-banner нужно изменить в production-worker-banner.scss соответствующие модификаторы для элементов
 mixin stages()
-    section.stages
+    section.stages.content-hidden
         +production-worker-banner({
                     image: 'banner_3.jpg',
                     texts: ['Точность измерений, пожелания клиентов и специфика помещения — мы обращаем внимание на всё.'],
                     post: 'дизайнер-замерщик',
                     name: 'Фамилия Имя',
                     modificator: 'one',
-                }).production-worker-banner_reverse.stages__worker-banner.container
+                }).production-worker-banner_reverse.stages__worker-banner.min-container
         .stages__dark-block.max-container
-            .stages__container.container
+            .stages__container.min-container
                 .stages__info.stages__info_color-white
                     h2.stages__title.h2 Замер и 3D-проект
                     p.stages__text.txt Важнейший этап, по окончанию которого наши клиенты будут иметь полное представление о внешнем виде их новенькой кухни.
@@ -40,11 +42,17 @@ mixin stages()
                         }).stages__accordion-item_white
                 .stages__marketing.stages__marketing_yellow-border.stages__marketing_color-white
                     p.stages__marketing-text Мы внимательно следим за каждым этапом работ, чтобы наш клиент получил идеальную кухню.
+                    +circle-text({
+                            className: 'stages__circle-text stages__circle-text_yellow',
+                            words: [['/','/'], ['б','е','с','п','л','а','т','н','ы','й'],['з','а','м','е','р'], ['/','/'], ['б','е','с','п','л','а','т','н','ы','й'],['з','а','м','е','р']],
+                            small: true,
+                            fill: 'yellow'
+                        })
                 .stages__info.stages__info_color-white
                     h2.stages__title.h2 Производство
                     p.stages__text.txt Наша компания имеет собственное производство, что позволяет отслеживать качество гарнитура на всех этапах его изготовления. По желанию клиента мы готовы провести экскурсию по нашим цехам. У нас несколько отделов, которые отвечают за качество изготавливаемого гарнитура: инженерный, производственный и технический.
         .stages__white-block.max-container
-            .stages__container.container
+            .stages__container.min-container
                 +production-worker-banner({
                     image: 'banner_1.jpg',
                     texts: ['"Мимо нас брак не пройдет!', 'Мы внимательно следим за качеством производства и сводим риск получения бракованной вещи к абсолютному минимуму."'],
@@ -111,6 +119,12 @@ mixin stages()
                         })
                 .stages__marketing.stages__marketing_gray-border
                         p.stages__marketing-text Удовлетворять потребности клиентов, реализовывать их задумки и дарить яркие эмоции  — вот наши основные цели.
+                        +circle-text({
+                            className: 'stages__circle-text stages__circle-text_dark',
+                            words: [['/','/'], ['б','е','с','п','л','а','т','н','ы','й'],['з','а','м','е','р'], ['/','/'], ['б','е','с','п','л','а','т','н','ы','й'],['з','а','м','е','р']],
+                            small: true,
+                            fill: 'dark-blue'
+                        })
                 .stages__info.stages__info_gray-background
                         h2.stages__title.h2 Гарантия и постпродажное обслуживание
                         p.stages__text.txt На все наши гарнитуры предоставляется гарантия 24 месяца. После установки гарнитура мы остаемся с клиентами на связи и способны оперативно решить любые вопросы, а также уладить недостатки, появившиеся в процессе эксплуатации.

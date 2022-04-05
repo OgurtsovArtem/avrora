@@ -27,8 +27,8 @@
       map-get($breakpoints, es),
       map-get($breakpoints, lg)
     );
-    @include adaptive-value("padding-left", 0, 10, map-get($breakpoints, lg));
-    @include adaptive-value("padding-right", 0, 10, map-get($breakpoints, lg));
+    @include adaptive-value("padding-left", 20, 10, map-get($breakpoints, es));
+    @include adaptive-value("padding-right", 20, 10, map-get($breakpoints, es));
     @include adaptive-value("margin-bottom", 40, 30, map-get($breakpoints, es));
     //================ MEDIA QUERIES =========================
     @include media(md) {
@@ -99,7 +99,14 @@
 
   //================ .catalog-kitchen__filter =========================
   &__filter {
+  }
+  &__filter-container {
+    position: relative;
     display: none;
+    @include adaptive-value("padding-left", 70, 10, map-get($breakpoints, md));
+    @include adaptive-value("padding-right", 70, 10, map-get($breakpoints, md));
+    @include adaptive-value("margin-left", 20, 10, map-get($breakpoints, md));
+    @include adaptive-value("margin-right", 20, 10, map-get($breakpoints, md));
     @include media(md) {
       display: flex;
       flex-wrap: wrap;
@@ -107,18 +114,6 @@
       background-color: $color-gray-600;
       padding-top: rem(24);
       padding-bottom: rem(24);
-      @include adaptive-value(
-        "padding-left",
-        70,
-        10,
-        map-get($breakpoints, es)
-      );
-      @include adaptive-value(
-        "padding-right",
-        70,
-        10,
-        map-get($breakpoints, es)
-      );
     }
   }
 
