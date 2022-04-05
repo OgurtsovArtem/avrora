@@ -261,10 +261,10 @@
     text-transform: uppercase;
     color: #ffffff;
     background-color: $color-primary;
-    transition: opacity 0.3s ease;
+    transition: background-color $transitionLight ease;
 
     &:hover {
-      opacity: 0.5;
+      background-color: $hover-yellow-button;
     }
   }
 

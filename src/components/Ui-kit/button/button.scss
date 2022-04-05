@@ -8,10 +8,21 @@
   color: $color-white;
   background-color: $color-primary;
   position: relative;
+  transition: background-color $transitionNormal;
   @include adaptive-value("padding", 25, 15, map-get($breakpoints, es));
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: $hover-yellow-button;
+    }
+  }
   &_white {
     color: $color-text-secondary;
     background-color: $color-white;
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: rgba($color: #ffff, $alpha: 0.3);
+      }
+    }
   }
   &::after {
     content: attr(data-error-name);

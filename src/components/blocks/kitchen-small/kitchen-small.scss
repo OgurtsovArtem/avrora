@@ -24,9 +24,11 @@
     letter-spacing: rem(-0.883333);
     background-color: $color-primary;
     z-index: $zIndexLight;
+    transform: translateZ(0);
   }
   &__controls {
     z-index: $zIndexLight;
+    transform: translateZ(0);
     & svg {
       @include adaptive-value("height", 15, 12, map-get($breakpoints, es));
       stroke-width: rem(2);
