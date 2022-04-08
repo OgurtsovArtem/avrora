@@ -3,7 +3,10 @@
   <head>
     <title>Аврора</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+<link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
     <link href="./assets/libs/style/swiper-bundle.min.css" rel="stylesheet">
     <link href="./assets/css/style.min.css" rel="stylesheet">
   </head>
@@ -72,7 +75,7 @@
           </ul>
         </section>
         <div class="payment-intro__container min-container">
-          <div class="payment-intro__header">
+          <div class="payment-intro__header _short-content">
             <h1 class="payment-intro__title h1">Оплата</h1>
             <div class="payment-intro__description">
               <div class="payment-intro__text">Вы можете произвести оплату любым удобным способом: наличными, по карте или банковским переводом.</div>
@@ -86,41 +89,47 @@
               </div>
             </div>
           </div>
-          <div class="payment-intro__cards">
-            <div class="payment-intro__card payment-card" data-poup-direct-card="pay">
+          <div class="payment-intro__cards _short-content">
+            <div class="payment-intro__card payment-card" data-popup-open="one-time-payment">
               <h3 class="payment-card__title h4">Единовременный платёж</h3><span class="payment-card__number h2">1</span>
             </div>
-            <div class="payment-intro__popup payment-popup" data-poup-direct-desc="pay">
+            <div class="payment-intro__popup payment-intro__popup_one-time-payment payment-popup popup-close-one-time-payment">
               <div class="payment-popup__container">
-                <button class="payment-popup__close" data-poup-direct-close="pay"></button>
-                <h4 class="payment-popup__title h4">Условия оплаты выбранного способа</h4>
-                <p class="payment-popup__text txt">Подробное описание условий выбранного способа оплаты.</p>
-                <p class="payment-popup__text txt">Значимость этих проблем настолько очевидна, что сложившаяся структура организации в значительной степени обуславливает создание форм развития. Не следует, однако забывать, что постоянное информационно-пропагандистское обеспечение нашей деятельности требуют определения и уточнения позиций, занимаемых участниками в отношении поставленных задач. Значимость этих проблем настолько очевидна, что сложившаяся структура организации в значительной степени обуславливает создание форм развития.</p>
-                <p class="payment-popup__footnote h4">Если у вас остались вопросы, на них готовы ответить наши менеджеры по телефону +7 (812) 612 30 49</p>
+                <div class="payment-popup__content">
+                  <button class="payment-popup__close popup-close-one-time-payment"></button>
+                  <h4 class="payment-popup__title h4">Условия оплаты выбранного способа</h4>
+                  <p class="payment-popup__text txt">Подробное описание условий выбранного способа оплаты.</p>
+                  <p class="payment-popup__text txt">Значимость этих проблем настолько очевидна, что сложившаяся структура организации в значительной степени обуславливает создание форм развития. Не следует, однако забывать, что постоянное информационно-пропагандистское обеспечение нашей деятельности требуют определения и уточнения позиций, занимаемых участниками в отношении поставленных задач. Значимость этих проблем настолько очевидна, что сложившаяся структура организации в значительной степени обуславливает создание форм развития.</p>
+                  <p class="payment-popup__footnote h4">Если у вас остались вопросы, на них готовы ответить наши менеджеры по телефону +7 (812) 612 30 49</p>
+                </div>
               </div>
             </div>
-            <div class="payment-intro__card payment-card" data-poup-direct-card="installments">
+            <div class="payment-intro__card payment-card" data-popup-open="installments">
               <h3 class="payment-card__title h4">Рассрочка без первого взноса</h3><span class="payment-card__number h2">2</span>
             </div>
-            <div class="payment-intro__popup payment-popup" data-poup-direct-desc="installments">
+            <div class="payment-intro__popup payment-intro__popup_installments payment-popup popup-close-installments">
               <div class="payment-popup__container">
-                <button class="payment-popup__close" data-poup-direct-close="installments"></button>
-                <h4 class="payment-popup__title h4">Условия оплаты выбранного способа</h4>
-                <p class="payment-popup__text txt">Подробное описание условий выбранного способа оплаты.</p>
-                <p class="payment-popup__text txt">Значимость этих проблем настолько очевидна, что сложившаяся структура организации в значительной степени обуславливает создание форм развития. Не следует, однако забывать, что постоянное информационно-пропагандистское обеспечение нашей деятельности требуют определения и уточнения позиций, занимаемых участниками в отношении поставленных задач. Значимость этих проблем настолько очевидна, что сложившаяся структура организации в значительной степени обуславливает создание форм развития.</p>
-                <p class="payment-popup__footnote h4">Если у вас остались вопросы, на них готовы ответить наши менеджеры по телефону +7 (812) 612 30 49</p>
+                <div class="payment-popup__content">
+                  <button class="payment-popup__close popup-close-installments"></button>
+                  <h4 class="payment-popup__title h4">Условия оплаты выбранного способа</h4>
+                  <p class="payment-popup__text txt">Подробное описание условий выбранного способа оплаты.</p>
+                  <p class="payment-popup__text txt">Значимость этих проблем настолько очевидна, что сложившаяся структура организации в значительной степени обуславливает создание форм развития. Не следует, однако забывать, что постоянное информационно-пропагандистское обеспечение нашей деятельности требуют определения и уточнения позиций, занимаемых участниками в отношении поставленных задач. Значимость этих проблем настолько очевидна, что сложившаяся структура организации в значительной степени обуславливает создание форм развития.</p>
+                  <p class="payment-popup__footnote h4">Если у вас остались вопросы, на них готовы ответить наши менеджеры по телефону +7 (812) 612 30 49</p>
+                </div>
               </div>
             </div>
-            <div class="payment-intro__card payment-card" data-poup-direct-card="credit">
+            <div class="payment-intro__card payment-card" data-popup-open="credit">
               <h3 class="payment-card__title h4">Кредит без первого взноса до 2 лет</h3><span class="payment-card__number h2">3</span>
             </div>
-            <div class="payment-intro__popup payment-popup" data-poup-direct-desc="credit">
+            <div class="payment-intro__popup payment-intro__popup_credit payment-popup popup-close-credit">
               <div class="payment-popup__container">
-                <button class="payment-popup__close" data-poup-direct-close="credit"></button>
-                <h4 class="payment-popup__title h4">Условия оплаты выбранного способа</h4>
-                <p class="payment-popup__text txt">Подробное описание условий выбранного способа оплаты.</p>
-                <p class="payment-popup__text txt">Значимость этих проблем настолько очевидна, что сложившаяся структура организации в значительной степени обуславливает создание форм развития. Не следует, однако забывать, что постоянное информационно-пропагандистское обеспечение нашей деятельности требуют определения и уточнения позиций, занимаемых участниками в отношении поставленных задач. Значимость этих проблем настолько очевидна, что сложившаяся структура организации в значительной степени обуславливает создание форм развития.</p>
-                <p class="payment-popup__footnote h4">Если у вас остались вопросы, на них готовы ответить наши менеджеры по телефону +7 (812) 612 30 49</p>
+                <div class="payment-popup__content">
+                  <button class="payment-popup__close popup-close-credit"></button>
+                  <h4 class="payment-popup__title h4">Условия оплаты выбранного способа</h4>
+                  <p class="payment-popup__text txt">Подробное описание условий выбранного способа оплаты.</p>
+                  <p class="payment-popup__text txt">Значимость этих проблем настолько очевидна, что сложившаяся структура организации в значительной степени обуславливает создание форм развития. Не следует, однако забывать, что постоянное информационно-пропагандистское обеспечение нашей деятельности требуют определения и уточнения позиций, занимаемых участниками в отношении поставленных задач. Значимость этих проблем настолько очевидна, что сложившаяся структура организации в значительной степени обуславливает создание форм развития.</p>
+                  <p class="payment-popup__footnote h4">Если у вас остались вопросы, на них готовы ответить наши менеджеры по телефону +7 (812) 612 30 49</p>
+                </div>
               </div>
             </div>
           </div>
@@ -190,9 +199,9 @@
           </div>
         </div>
       </section>
-      <div class="call-popup">
+      <div class="call-popup popup-close-call">
         <div class="call-popup__container">
-          <button class="call-popup__close" type="button"></button>
+          <button class="call-popup__close popup-close-call" type="button"></button>
           <form class="call-form call-popup__form" name="call">
             <legend class="call-form__legend">Обратный звонок</legend>
             <div class="input call-form__input">
@@ -213,12 +222,12 @@
           </form>
         </div>
       </div>
-      <div class="done-popup">
+      <div class="done-popup popup-close-done">
         <div class="done-popup__container">
           <div class="done-popup__content">
             <h2 class="done-popup__title h3">Спасибо за обращение!</h2>
             <p class="done-popup__text txt">Наш менеджер свяжется с вами в ближайшее время и проконсультирует по всем вопросам.</p>
-            <button class="done-popup__button button" type="button">Ок, понятно!
+            <button class="done-popup__button popup-close-done button" type="button">Ок, понятно!
             </button>
           </div>
         </div>
@@ -238,16 +247,23 @@
           <p class="footer__time">ежедневно с 9 до 21</p>
           <button class="footer__btn" data-popup-open="call">пригласить дизайнера</button>
         </div>
-        <div class="footer__social"><a class="footer__social-item" href="/" target="_blank" rel="noopener noreferrer">
-            <svg class="undefined undefined_youtube icon_youtube footer__social-icon">
-              <use xlink:href="./assets/icons/sprite.svg#youtube"></use>
-            </svg></a><a class="footer__social-item" href="/" target="_blank" rel="noopener noreferrer">
-            <svg class="undefined undefined_vk icon_vk footer__social-icon">
+        <div class="footer__social social-box">
+          <div class="footer__social-icon-container social-box__icon-container">
+            <svg class="social-box__icon social-box__icon_vk icon_vk">
               <use xlink:href="./assets/icons/sprite.svg#vk"></use>
-            </svg></a><a class="footer__social-item" href="/" target="_blank" rel="noopener noreferrer">
-            <svg class="undefined undefined_instagram icon_instagram footer__social-icon">
+            </svg>
+          </div>
+          <div class="footer__social-icon-container social-box__icon-container">
+            <svg class="social-box__icon social-box__icon_instagram icon_instagram">
               <use xlink:href="./assets/icons/sprite.svg#instagram"></use>
-            </svg></a></div><a class="footer__email" href="mailto:sample@sample.com">sample@sample.com</a>
+            </svg>
+          </div>
+          <div class="footer__social-icon-container social-box__icon-container">
+            <svg class="social-box__icon social-box__icon_youtube icon_youtube">
+              <use xlink:href="./assets/icons/sprite.svg#youtube"></use>
+            </svg>
+          </div>
+        </div><a class="footer__email" href="mailto:sample@sample.com">sample@sample.com</a>
         <p class="footer__address">“Аврора Кухни” <br>Санкт-Петербург, ул. Краснопутиловская, д. 69 лит. А, помещение 227Н, офис 536В</p>
       </div>
       <div class="footer__bottom"><a class="footer__policy" href="/" target="_blank" rel="noopener noreferrer">Политика конфиденциальности</a></div>

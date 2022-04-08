@@ -3,7 +3,10 @@
   <head>
     <title>Аврора</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+<link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
     <link href="./assets/libs/style/swiper-bundle.min.css" rel="stylesheet">
     <link href="./assets/css/style.min.css" rel="stylesheet">
   </head>
@@ -91,54 +94,9 @@
           </div>
         </div>
         <div class="delivery__footer"><img class="delivery__footer-background" data-src="./assets/images/delivery/background.jpg" alt="background" data-lazy="data-lazy"/>
-          <div class="delivery__footer-circle-text circle-text">
-            <div class="circle-text__word">
-              <div class="circle-text__letter">/</div>
-              <div class="circle-text__letter">/</div>
-            </div>
-            <div class="circle-text__word">
-              <div class="circle-text__letter">б</div>
-              <div class="circle-text__letter">е</div>
-              <div class="circle-text__letter">с</div>
-              <div class="circle-text__letter">п</div>
-              <div class="circle-text__letter">л</div>
-              <div class="circle-text__letter">а</div>
-              <div class="circle-text__letter">т</div>
-              <div class="circle-text__letter">н</div>
-              <div class="circle-text__letter">ы</div>
-              <div class="circle-text__letter">й</div>
-            </div>
-            <div class="circle-text__word">
-              <div class="circle-text__letter">з</div>
-              <div class="circle-text__letter">а</div>
-              <div class="circle-text__letter">м</div>
-              <div class="circle-text__letter">е</div>
-              <div class="circle-text__letter">р</div>
-            </div>
-            <div class="circle-text__word">
-              <div class="circle-text__letter">/</div>
-              <div class="circle-text__letter">/</div>
-            </div>
-            <div class="circle-text__word">
-              <div class="circle-text__letter">б</div>
-              <div class="circle-text__letter">е</div>
-              <div class="circle-text__letter">с</div>
-              <div class="circle-text__letter">п</div>
-              <div class="circle-text__letter">л</div>
-              <div class="circle-text__letter">а</div>
-              <div class="circle-text__letter">т</div>
-              <div class="circle-text__letter">н</div>
-              <div class="circle-text__letter">ы</div>
-              <div class="circle-text__letter">й</div>
-            </div>
-            <div class="circle-text__word">
-              <div class="circle-text__letter">з</div>
-              <div class="circle-text__letter">а</div>
-              <div class="circle-text__letter">м</div>
-              <div class="circle-text__letter">е</div>
-              <div class="circle-text__letter">р</div>
-            </div>
-          </div>
+          <svg class="delivery__footer-circle-text _rotating delivery__footer-circle-text _rotating_circle-text-fixed-cost icon_circle-text-fixed-cost">
+            <use xlink:href="./assets/icons/sprite.svg#circle-text-fixed-cost"></use>
+          </svg>
           <div class="delivery__price min-container">
             <div class="delivery__price-list">
               <div class="delivery__price-item">
@@ -161,7 +119,7 @@
       <section class="assembling content-hidden max-container">
         <div class="assembling__container min-container">
           <h2 class="assembling__title h2">Сборка</h2>
-          <div class="assembling__cards">
+          <div class="assembling__cards _short-content">
             <div class="assembling__card assembling-card"><img class="assembling-card__image" data-src="./assets/images/assembling/background-card.jpg" alt="card-background" data-lazy="data-lazy"/>
               <p class="assembling-card__text txt">Расстановка и выравнивание нижних модулей</p><span class="assembling-card__number h2">01</span>
             </div>
@@ -281,9 +239,9 @@
           </svg>
         </div>
       </section>
-      <div class="call-popup">
+      <div class="call-popup popup-close-call">
         <div class="call-popup__container">
-          <button class="call-popup__close" type="button"></button>
+          <button class="call-popup__close popup-close-call" type="button"></button>
           <form class="call-form call-popup__form" name="call">
             <legend class="call-form__legend">Обратный звонок</legend>
             <div class="input call-form__input">
@@ -304,12 +262,12 @@
           </form>
         </div>
       </div>
-      <div class="done-popup">
+      <div class="done-popup popup-close-done">
         <div class="done-popup__container">
           <div class="done-popup__content">
             <h2 class="done-popup__title h3">Спасибо за обращение!</h2>
             <p class="done-popup__text txt">Наш менеджер свяжется с вами в ближайшее время и проконсультирует по всем вопросам.</p>
-            <button class="done-popup__button button" type="button">Ок, понятно!
+            <button class="done-popup__button popup-close-done button" type="button">Ок, понятно!
             </button>
           </div>
         </div>
@@ -329,16 +287,23 @@
           <p class="footer__time">ежедневно с 9 до 21</p>
           <button class="footer__btn" data-popup-open="call">пригласить дизайнера</button>
         </div>
-        <div class="footer__social"><a class="footer__social-item" href="/" target="_blank" rel="noopener noreferrer">
-            <svg class="undefined undefined_youtube icon_youtube footer__social-icon">
-              <use xlink:href="./assets/icons/sprite.svg#youtube"></use>
-            </svg></a><a class="footer__social-item" href="/" target="_blank" rel="noopener noreferrer">
-            <svg class="undefined undefined_vk icon_vk footer__social-icon">
+        <div class="footer__social social-box">
+          <div class="footer__social-icon-container social-box__icon-container">
+            <svg class="social-box__icon social-box__icon_vk icon_vk">
               <use xlink:href="./assets/icons/sprite.svg#vk"></use>
-            </svg></a><a class="footer__social-item" href="/" target="_blank" rel="noopener noreferrer">
-            <svg class="undefined undefined_instagram icon_instagram footer__social-icon">
+            </svg>
+          </div>
+          <div class="footer__social-icon-container social-box__icon-container">
+            <svg class="social-box__icon social-box__icon_instagram icon_instagram">
               <use xlink:href="./assets/icons/sprite.svg#instagram"></use>
-            </svg></a></div><a class="footer__email" href="mailto:sample@sample.com">sample@sample.com</a>
+            </svg>
+          </div>
+          <div class="footer__social-icon-container social-box__icon-container">
+            <svg class="social-box__icon social-box__icon_youtube icon_youtube">
+              <use xlink:href="./assets/icons/sprite.svg#youtube"></use>
+            </svg>
+          </div>
+        </div><a class="footer__email" href="mailto:sample@sample.com">sample@sample.com</a>
         <p class="footer__address">“Аврора Кухни” <br>Санкт-Петербург, ул. Краснопутиловская, д. 69 лит. А, помещение 227Н, офис 536В</p>
       </div>
       <div class="footer__bottom"><a class="footer__policy" href="/" target="_blank" rel="noopener noreferrer">Политика конфиденциальности</a></div>
