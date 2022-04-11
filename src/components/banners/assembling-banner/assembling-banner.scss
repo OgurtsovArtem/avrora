@@ -2,6 +2,7 @@
   @include adaptive-value("padding", 37, 20, map-get($breakpoints, es));
   background-color: $color-dark-blue-600;
   z-index: $zIndexLight;
+  position: relative;
   @supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
     background: $color-dark-blue-600;
     backdrop-filter: blur(rem(4));
