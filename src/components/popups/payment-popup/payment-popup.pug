@@ -1,0 +1,9 @@
+mixin payment-popup({className, texts, title, footnote, dataClose})
+    div(class=className ? `${className} payment-popup popup-close-${dataClose}`: `payment-popup popup-close-${dataClose}`)&attributes(attributes)
+        .payment-popup__container
+            .payment-popup__content
+                button.payment-popup__close(class=`popup-close-${dataClose}`)
+                h4.payment-popup__title.h4=title
+                each text in texts
+                    p.payment-popup__text.txt=text
+                p.payment-popup__footnote.h4=footnote

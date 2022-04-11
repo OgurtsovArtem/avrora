@@ -1,7 +1,7 @@
 include ../../forms/call-form/call-form
 
 mixin call-popup()
-    div.call-popup
+    div.call-popup.popup-close-call
         .call-popup__container
-            button.call-popup__close(type='button')
+            button.call-popup__close.popup-close-call(type='button')
             +call-form().call-popup__form
