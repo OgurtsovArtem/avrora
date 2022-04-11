@@ -22,6 +22,12 @@
     @include media(md) {
       margin-top: rem(0);
     }
+    &._active {
+      .specifications__item {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
   }
   &__item {
     display: grid;
@@ -30,6 +36,9 @@
     padding-bottom: rem(20);
     padding-top: rem(20);
     border-bottom: 1px solid $color-gray-500;
+    transform: translateY(rem(100));
+    transition-duration: $transitionNormal;
+    opacity: 0;
     @include media(sm) {
       grid-template-columns: 1fr 1fr;
     }

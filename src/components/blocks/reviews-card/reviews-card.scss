@@ -65,7 +65,7 @@
   }
   &__info {
     @include adaptive-value("margin-top", 30, 20, map-get($breakpoints, es));
-    @include media(sm) {
+    @include media(es) {
       display: flex;
       flex-wrap: wrap;
 
@@ -74,7 +74,7 @@
   }
 
   &__author {
-    @include media(sm) {
+    @include media(es) {
       display: grid;
       grid-template-columns: 1fr 2fr;
       column-gap: rem(20);
@@ -86,6 +86,9 @@
     font-weight: 600;
     line-height: 100%;
     align-self: flex-end;
+    @media (max-width: ( map-get($breakpoints, md)+px)) {
+      max-width: rem(113);
+    }
   }
   &__avatar {
     width: rem(73);

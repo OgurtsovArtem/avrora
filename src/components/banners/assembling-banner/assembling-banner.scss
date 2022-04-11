@@ -9,6 +9,7 @@
   &__discount {
     font-family: "Philosopher";
     font-style: normal;
+    @include adaptive-value("font-size", 96, 86, map-get($breakpoints, es));
     font-weight: 400;
     line-height: 100%;
     color: $color-primary;
@@ -19,9 +20,23 @@
     @include adaptive-value("font-size", 18, 16, map-get($breakpoints, es));
     line-height: 100%;
     color: $color-white;
+    max-width: rem(170);
+    @include media(md) {
+      max-width: initial;
+    }
   }
   &__circle-text {
-    top: 85%;
-    left: 79%;
+    position: absolute;
+    top: 41%;
+    left: 47%;
+    @include media(sm) {
+      left: rem(150);
+    }
+    @include media(md) {
+      top: 62%;
+      left: 56%;
+    }
+    @include adaptive-value("width", 180, 130, map-get($breakpoints, es));
+    @include adaptive-value("height", 180, 130, map-get($breakpoints, es));
   }
 }
