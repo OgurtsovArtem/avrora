@@ -1,7 +1,7 @@
 .may-interested {
   background-color: $color-gray-600;
-  @include adaptive-value("margin-top", 80, 60, map-get($breakpoints, es));
-  @include adaptive-value("padding-top", 80, 60, map-get($breakpoints, es));
+  @include adaptive-value("margin-top", 90, 60, map-get($breakpoints, es));
+  @include adaptive-value("padding-top", 110, 60, map-get($breakpoints, es));
   @include adaptive-value("padding-bottom", 80, 60, map-get($breakpoints, es));
   &__container {
   }

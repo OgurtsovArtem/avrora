@@ -2,10 +2,10 @@ include ../../blocks/assembling-card/assembling-card
 include ../../banners/assembling-banner/assembling-banner
 
 mixin assembling()
-    section.assembling.content-hidden
+    section.assembling.content-hidden.max-container
         .assembling__container.min-container
             h2.assembling__title.h2 Сборка
-            .assembling__cards
+            .assembling__cards._short-content
                 +assembling-card({
                     className: 'assembling__card',
                     text: 'Расстановка и выравнивание нижних модулей',

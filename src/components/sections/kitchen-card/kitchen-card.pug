@@ -1,9 +1,11 @@
 include ../../blocks/kitchen-full/kitchen-full
 include ../../blocks/breadcrumbs/breadcrumbs
+include ../../sections/detail-advantages/detail-advantages
 
 mixin kitchen-card()
-    section.kitchen-card
+    section.kitchen-card.content-hidden.max-container
         +breadcrumbs({
             className: 'kitchen-card__breadcrumbs'
         })
         +kitchen-full
+        +detail-advantages

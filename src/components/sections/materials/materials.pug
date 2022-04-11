@@ -1,4 +1,5 @@
 include ../../Ui-kit/icon/icon
+include ../../Ui-kit/circle-button/circle-button
 
 mixin materials()
     section.materials.max-container
@@ -75,10 +76,14 @@ mixin materials()
                         .materials__description
                             h3.materials__description-title.h3 Техника
                             p.materials__description-text.txt Встраиваемая техника от ведущих компаний из Италии, Китая и России. Широкий выбор и богатый ассортимент. Подбираем варианты, основываясь на проекте вашей будущей кухни.
-                button.materials__control-button
-                    +icon('arrow-mini', `materials__control-button-icon`)
+                +circle-button({
+                        className: "materials__control-button",
+                        style: 'fill'
+                    })
+                //- button.materials__control-button
+                //-     +icon('arrow-mini', `materials__control-button-icon`)
             .materials__sponsors
-                +icon('logo-egger-1', `materials__sponsors-icon`)
                 +icon('logo-kronospan-1', `materials__sponsors-icon`)
                 +icon('logo-lemark-1', `materials__sponsors-icon`)
-                img(src="./assets/icons/logo-kedr-1.svg", alt="").materials__sponsors-icon
+                img(src="./assets/icons/logo-kedr-1.svg", alt="").materials__sponsors-icon.icon_logo-kedr-1
+                +icon('logo-egger-1', `materials__sponsors-icon`)

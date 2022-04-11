@@ -8,7 +8,7 @@
   background-color: $color-dark-blue-200;
   color: $color-white;
   &_active {
-    background-color: $color-accent;
+    background-color: $color-accent !important;
   }
   &__link {
     display: block;

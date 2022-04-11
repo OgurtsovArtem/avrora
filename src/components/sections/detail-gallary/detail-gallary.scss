@@ -2,6 +2,7 @@
   @include adaptive-value("margin-top", 162, 60, map-get($breakpoints, es));
   @include adaptive-value("margin-bottom", 110, 60, map-get($breakpoints, es));
   &__swiper {
+    position: relative;
     overflow: hidden;
     cursor: grab;
   }
@@ -21,5 +22,21 @@
       map-get($breakpoints, sm),
       map-get($breakpoints, lg)
     );
+  }
+  &__button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10%;
+    z-index: $zIndexLight;
+    transition: $transitionLight;
+    & svg {
+      transform: rotate(180deg);
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        transform: translate(0.5rem, -50%);
+      }
+    }
   }
 }

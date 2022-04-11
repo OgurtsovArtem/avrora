@@ -2,6 +2,9 @@
   background-color: $color-secondary;
   @include adaptive-value("padding-top", 110, 40, map-get($breakpoints, es));
   @include adaptive-value("padding-bottom", 110, 40, map-get($breakpoints, es));
+  @media (max-width: (map-get($breakpoints, md)+px)) {
+    overflow: hidden;
+  }
   &__container {
   }
   &__header {
@@ -37,7 +40,9 @@
     }
   }
   &__swiper {
-    overflow: hidden;
+    @include media(md) {
+      overflow: hidden;
+    }
   }
   &__item {
     z-index: -1;

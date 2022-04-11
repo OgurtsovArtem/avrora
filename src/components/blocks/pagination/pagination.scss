@@ -8,6 +8,9 @@
   }
   &__button {
     @include adaptive-value("padding", 15, 5, map-get($breakpoints, es));
+    display: flex;
+    align-items: center;
+    justify-content: center;
     &_left {
     }
     &_right {

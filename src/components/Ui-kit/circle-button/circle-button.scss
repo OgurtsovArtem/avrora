@@ -19,6 +19,14 @@
   justify-content: center;
   align-items: center;
   padding: 0;
+  &_fill {
+    border: none;
+    background-color: $color-primary;
+    box-shadow: $depth3;
+    .circle-button__icon {
+      fill: $color-secondary;
+    }
+  }
   &__icon {
     width: rem(20);
     height: rem(15);

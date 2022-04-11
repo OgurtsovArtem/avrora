@@ -1,5 +1,5 @@
 include ../../blocks/payment-card/payment-card
-include ../../blocks/payment-popup/payment-popup
+include ../../popups/payment-popup/payment-popup
 include ../../blocks/breadcrumbs/breadcrumbs
 include ../../Ui-kit/icon/icon
 mixin payment-intro
@@ -8,48 +8,48 @@ mixin payment-intro
             className: 'payment-intro__breadcrumbs'
         })
         .payment-intro__container.min-container
-            .payment-intro__header
+            .payment-intro__header._short-content
                 h1.payment-intro__title.h1 Оплата
                 .payment-intro__description
                     .payment-intro__text Вы можете произвести оплату любым удобным способом: наличными, по карте или банковским переводом.
                     .payment-intro__icons
                         +icon('masterCard', 'payment-intro__icon')
                         +icon('visa', 'payment-intro__icon')
-            .payment-intro__cards
+            .payment-intro__cards._short-content
                 +payment-card({
                     className: "payment-intro__card",
                     text: "Единовременный платёж",
                     number: "1",
-                })(data-poup-direct-card='pay')
+                })(data-popup-open='one-time-payment')
                 +payment-popup({
-                    className: "payment-intro__popup",
+                    className: "payment-intro__popup payment-intro__popup_one-time-payment",
                     texts: ["Подробное описание условий выбранного способа оплаты.", "Значимость этих проблем настолько очевидна, что сложившаяся структура организации в значительной степени обуславливает создание форм развития. Не следует, однако забывать, что постоянное информационно-пропагандистское обеспечение нашей деятельности требуют определения и уточнения позиций, занимаемых участниками в отношении поставленных задач. Значимость этих проблем настолько очевидна, что сложившаяся структура организации в значительной степени обуславливает создание форм развития."],
                     title: 'Условия оплаты выбранного способа',
                     footnote: 'Если у вас остались вопросы, на них готовы ответить наши менеджеры по телефону +7 (812) 612 30 49',
-                    dataClose: 'pay'
-                })(data-poup-direct-desc='pay')
+                    dataClose: 'one-time-payment'
+                })
                 +payment-card({
                     className: "payment-intro__card",
                     text: "Рассрочка без первого взноса",
                     number: "2",
-                })(data-poup-direct-card='installments')
+                })(data-popup-open='installments')
                 +payment-popup({
-                    className: "payment-intro__popup",
+                    className: "payment-intro__popup payment-intro__popup_installments",
                     texts: ["Подробное описание условий выбранного способа оплаты.", "Значимость этих проблем настолько очевидна, что сложившаяся структура организации в значительной степени обуславливает создание форм развития. Не следует, однако забывать, что постоянное информационно-пропагандистское обеспечение нашей деятельности требуют определения и уточнения позиций, занимаемых участниками в отношении поставленных задач. Значимость этих проблем настолько очевидна, что сложившаяся структура организации в значительной степени обуславливает создание форм развития."],
                     title: 'Условия оплаты выбранного способа',
                     footnote: 'Если у вас остались вопросы, на них готовы ответить наши менеджеры по телефону +7 (812) 612 30 49',
                     dataClose: 'installments'
-                })(data-poup-direct-desc='installments')
+                })
                 +payment-card({
                     className: "payment-intro__card",
                     text: "Кредит без первого взноса до 2 лет",
                     number: "3",
-                })(data-poup-direct-card='credit')
+                })(data-popup-open='credit')
                 +payment-popup({
-                    className: "payment-intro__popup",
+                    className: "payment-intro__popup payment-intro__popup_credit",
                     texts: ["Подробное описание условий выбранного способа оплаты.", "Значимость этих проблем настолько очевидна, что сложившаяся структура организации в значительной степени обуславливает создание форм развития. Не следует, однако забывать, что постоянное информационно-пропагандистское обеспечение нашей деятельности требуют определения и уточнения позиций, занимаемых участниками в отношении поставленных задач. Значимость этих проблем настолько очевидна, что сложившаяся структура организации в значительной степени обуславливает создание форм развития."],
                     title: 'Условия оплаты выбранного способа',
                     footnote: 'Если у вас остались вопросы, на них готовы ответить наши менеджеры по телефону +7 (812) 612 30 49',
                     dataClose: 'credit'
-                })(data-poup-direct-desc='credit')
+                })
         +icon('tree', "payment-intro__icon-background")

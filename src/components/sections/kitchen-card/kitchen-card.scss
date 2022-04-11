@@ -1,5 +1,6 @@
 .kitchen-card {
   position: relative;
+  background-color: $color-gray-600;
   &__breadcrumbs {
     @include media(md) {
       position: absolute;

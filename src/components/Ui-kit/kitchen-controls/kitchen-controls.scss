@@ -9,6 +9,8 @@
   pointer-events: none;
   z-index: $zIndexLight;
   &__button {
+    display: flex;
+    align-items: center;
     pointer-events: auto;
     width: rem(40);
     height: rem(72);

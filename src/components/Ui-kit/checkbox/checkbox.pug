@@ -1,4 +1,5 @@
 mixin checkbox({className, id})
-    input.checkbox(type="checkbox", id=id)
-    label.checkbox__icon(for=id)
-        block
+    .checkbox
+        input.checkbox__input(type="checkbox", id=id)
+        label.checkbox__icon(for=id)
+            block

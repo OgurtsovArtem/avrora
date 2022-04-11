@@ -114,6 +114,14 @@
     border-radius: rem(6);
     padding: 0;
     margin-top: rem(25);
+    border: rem(1) solid transparent;
+    transition: $transitionNormal;
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: rgb(247 249 252);
+        border: rem(1) solid $color-gray-600;
+      }
+    }
     @include media(md) {
       display: block;
       margin-left: auto;

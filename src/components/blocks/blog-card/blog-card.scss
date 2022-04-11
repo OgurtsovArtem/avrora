@@ -36,8 +36,8 @@
     @include adaptive-value("padding-right", 47, 15, map-get($breakpoints, es));
     @include adaptive-value(
       "padding-bottom",
-      25,
-      15,
+      35,
+      20,
       map-get($breakpoints, es),
       map-get($breakpoints, md)
     );

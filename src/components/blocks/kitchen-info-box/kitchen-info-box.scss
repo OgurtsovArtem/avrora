@@ -19,8 +19,20 @@
     @include adaptive-value("column-gap", 49, 20, map-get($breakpoints, md));
     row-gap: rem(16);
 
-    @include adaptive-value("padding-left", 40, 0, map-get($breakpoints, sm));
-    @include adaptive-value("padding-right", 40, 0, map-get($breakpoints, sm));
+    @include adaptive-value(
+      "padding-left",
+      40,
+      0,
+      map-get($breakpoints, sm),
+      map-get($breakpoints, md)
+    );
+    @include adaptive-value(
+      "padding-right",
+      40,
+      0,
+      map-get($breakpoints, sm),
+      map-get($breakpoints, md)
+    );
     @include adaptive-value("padding-top", 36, 30, map-get($breakpoints, sm));
     @include adaptive-value(
       "padding-bottom",

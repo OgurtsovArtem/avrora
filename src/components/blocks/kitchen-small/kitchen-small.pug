@@ -1,12 +1,12 @@
 include ../../Ui-kit/kitchen-controls/kitchen-controls
 include ../../Ui-kit/kitchen-button/kitchen-button
 
-mixin kitchen-small({className})
+mixin kitchen-small({className, anim})
     div(class=className ? `${className} kitchen-small`: `kitchen-small`)
         .kitchen-small__swiper
             .swiper-wrapper
                 a(href="/avrora/kitchen-detail", target="_blank", rel="noopener noreferrer").kitchen-small__item.swiper-slide
-                    img.swiper-lazy(data-src="./assets/images/kitchens/small.jpg", alt="kitchen")
+                    img(src="./assets/images/kitchens/small.jpg", alt="kitchen")
             .kitchen-small__discount -50%
             +kitchen-controls({
                 className: "kitchen-small__controls"

@@ -1,10 +1,10 @@
 include ../../Ui-kit/learn-more-button/learn-more-button
 include ../../Ui-kit/circle-text/circle-text
 
-mixin kitchen-set-banner({className, theme, circleDirection})
+mixin kitchen-set-banner({className, theme, circleDirection, title})
     div(class=className ? `${className} kitchen-set-banner`: `kitchen-set-banner`)&attributes(attributes)
       .kitchen-set-banner__container
-        h4(class=theme ? `kitchen-set-banner__title_light`: `kitchen-set-banner__title_dark`).kitchen-set-banner__title Выезд замерщика в удобное время
+        h4(class=theme ? `kitchen-set-banner__title_light`: `kitchen-set-banner__title_dark`).kitchen-set-banner__title=title
         +learn-more-button({
             className: 'kitchen-set-banner__button',
             color: 'yellow'

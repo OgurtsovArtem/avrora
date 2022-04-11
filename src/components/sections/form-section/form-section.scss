@@ -8,6 +8,9 @@
   &_overflow-hidden {
     overflow: hidden;
   }
+  &_background-gray {
+    background-color: $color-gray-600;
+  }
   &__container {
     position: relative;
     display: grid;
@@ -37,7 +40,7 @@
     );
     @include adaptive-value(
       "padding-right",
-      40,
+      90,
       20,
       map-get($breakpoints, md),
       map-get($breakpoints, lg)
@@ -85,12 +88,14 @@
   }
   &__form-box {
     align-self: center;
-    @include adaptive-value("padding", 20, 0, map-get($breakpoints, sm));
-
+    @include adaptive-value("padding-left", 20, 0, map-get($breakpoints, sm));
+    @include adaptive-value("padding-right", 20, 0, map-get($breakpoints, sm));
     margin-bottom: rem(45);
     @include media(md) {
       margin-bottom: 0;
       max-width: rem(370);
+      padding-top: rem(50);
+      padding-bottom: rem(50);
     }
   }
   &__background-desctop {
@@ -125,20 +130,23 @@
   }
   &__background-right {
     display: none;
+    opacity: 0.2;
+    @include adaptive-value("width", 970, 450, map-get($breakpoints, md));
+    @include adaptive-value("height", 970, 450, map-get($breakpoints, md));
     @include media(md) {
       display: block;
       position: absolute;
-      bottom: 9%;
-      right: -37%;
-      width: 100%;
-      height: 164%;
+      bottom: 19%;
+      right: -22.5%;
       pointer-events: none;
       z-index: -1;
+      transform: rotate(-30deg);
     }
     @media (min-width: 1980px) {
-      bottom: 7%;
-      right: -28%;
-      transform: rotate(28deg);
+      bottom: -24%;
+      right: -13%;
+      // bottom: -28%;
+      // right: 1%;
     }
   }
 }

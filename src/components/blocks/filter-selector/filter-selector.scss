@@ -30,19 +30,28 @@
     text-transform: uppercase;
   }
   &__body {
-    background-color: $color-gray-600;
+    background-color: rgb(61 69 85);
     border-bottom-left-radius: rem(8);
     border-bottom-right-radius: rem(8);
-    margin-top: rem(30);
     margin-bottom: rem(15);
+    padding-left: rem(10);
+    padding-right: rem(10);
     overflow: hidden;
     height: 0;
   }
   &__filter-button {
+    z-index: $zIndexLight;
     width: 100%;
-    background-color: $color-primary;
-    &:not(:last-child) {
-      margin-bottom: rem(15);
+    color: $color-white;
+    background-color: rgb(80 87 102);
+
+    margin-bottom: rem(15);
+    & .filter-button__link {
+      padding-top: rem(20);
+      padding-bottom: rem(20);
+    }
+    &:first-child {
+      margin-top: rem(45);
     }
   }
 }

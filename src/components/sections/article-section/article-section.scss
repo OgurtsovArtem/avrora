@@ -11,8 +11,8 @@
     grid-template-columns: 1fr;
     @include adaptive-value("column-gap", 40, 20, map-get($breakpoints, sm));
     @include adaptive-value("padding-top", 86, 30, map-get($breakpoints, es));
-    @include adaptive-value("padding-left", 86, 0, map-get($breakpoints, md));
-    @include adaptive-value("padding-right", 86, 0, map-get($breakpoints, md));
+    @include adaptive-value("padding-left", 86, 15, map-get($breakpoints, md));
+    @include adaptive-value("padding-right", 86, 15, map-get($breakpoints, md));
     @include adaptive-value("margin-top", -150, 0, map-get($breakpoints, md));
     background-color: $color-white;
     @include media(md) {
@@ -70,9 +70,9 @@
   }
   &__image {
     object-fit: cover;
-    width: 110%;
-    margin-left: rem(-$containerIndentationMin);
-    margin-right: rem(-$containerIndentationMin);
+    width: 117%;
+    margin-left: rem(-$containerIndentation);
+    margin-right: rem(-$containerIndentation);
     @include adaptive-value(
       "margin-top",
       25,
@@ -81,10 +81,6 @@
       map-get($breakpoints, md)
     );
     @include adaptive-value("height", 512, 240, map-get($breakpoints, sm));
-    @include media(sm) {
-      margin-left: rem(-$containerIndentation);
-      margin-right: rem(-$containerIndentation);
-    }
     @include media(md) {
       width: 100%;
       margin-left: auto;

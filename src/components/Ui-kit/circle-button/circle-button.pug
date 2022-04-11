@@ -1,3 +1,11 @@
-mixin circle-button({text, className})
-    button(class=className ? `${className} circle-button _hover-scale`: `circle-button _hover-scale`)
-        +icon('arrow-medium', 'circle-button__icon')
+mixin circle-button({text, className, style})
+    case style
+        when 'fill'
+            button(class=className ? `${className} circle-button circle-button_fill`: `circle-button `)
+                +icon('arrow-medium', 'circle-button__icon')
+        when 'dashed'
+            button(class=className ? `${className} circle-button _hover-scale`: `circle-button _hover-scale`)
+                +icon('arrow-medium', 'circle-button__icon')
+        default
+            button(class=className ? `${className} circle-button _hover-scale`: `circle-button _hover-scale`)
+                +icon('arrow-medium', 'circle-button__icon')

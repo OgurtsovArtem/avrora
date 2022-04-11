@@ -9,22 +9,23 @@ mixin kitchen-set({className, version})
         when 'version-1'
             div(class=className ? `${className} kitchen-set`: `kitchen-set`)
                 +kitchen-large({
-                    className: 'kitchen-set__large-kitchen'
+                    className: 'kitchen-set__large-kitchen _anim-upwards'
                 })
                 +kitchen-small({
-                    className: 'kitchen-set__small-kitchen'
+                    className: 'kitchen-set__small-kitchen _anim-upwards _anim-delay-300'
                 })
                 +kitchen-set-banner({
-                    className: 'kitchen-set__banner'
+                    className: 'kitchen-set__banner _anim-upwards _anim-delay-400',
+                    title: 'Выезд замерщика в удобное время'
                 })
                 +kitchen-small({
-                    className: 'kitchen-set__small-kitchen'
+                    className: 'kitchen-set__small-kitchen _anim-upwards _anim-delay-500'
                 })
                 +kitchen-small({
-                    className: 'kitchen-set__small-kitchen'
+                    className: 'kitchen-set__small-kitchen _anim-upwards _anim-delay-600'
                 })
                 +kitchen-small({
-                    className: 'kitchen-set__small-kitchen'
+                    className: 'kitchen-set__small-kitchen _anim-upwards _anim-delay-700'
                 })
                 +kitchen-button({
                     className: 'kitchen-set__button-sticky',
@@ -34,23 +35,24 @@ mixin kitchen-set({className, version})
         when 'version-2'
             div(class=className ? `${className} kitchen-set`: `kitchen-set`)
                 +kitchen-small({
-                    className: 'kitchen-set__small-kitchen'
+                    className: 'kitchen-set__small-kitchen _anim-upwards'
                 })
                 +kitchen-large({
-                    className: 'kitchen-set__large-kitchen kitchen-set__large-kitchen_row-start'
+                    className: 'kitchen-set__large-kitchen kitchen-set__large-kitchen_row-start _anim-upwards _anim-delay-300'
                 })
                 +kitchen-set-banner({
-                    className: 'kitchen-set__banner kitchen-set__banner_dark kitchen-set__banner_reverse',
-                    circleDirection: 'right'
+                    className: 'kitchen-set__banner kitchen-set__banner_dark kitchen-set__banner_reverse _anim-upwards _anim-delay-400',
+                    circleDirection: 'right',
+                    title: 'Фиксированная стоимость доставки и сборки',
                 })
                 +kitchen-small({
-                    className: 'kitchen-set__small-kitchen'
+                    className: 'kitchen-set__small-kitchen _anim-upwards _anim-delay-500'
                 })
                 +kitchen-small({
-                    className: 'kitchen-set__small-kitchen'
+                    className: 'kitchen-set__small-kitchen _anim-upwards _anim-delay-600'
                 })
                 +kitchen-small({
-                    className: 'kitchen-set__small-kitchen'
+                    className: 'kitchen-set__small-kitchen _anim-upwards _anim-delay-700'
                 })
                 +kitchen-button({
                     className: 'kitchen-set__button-sticky',
@@ -60,22 +62,22 @@ mixin kitchen-set({className, version})
         default
             div(class=className ? `${className} kitchen-set`: `kitchen-set`)
                 +kitchen-large({
-                    className: 'kitchen-set__large-kitchen'
+                    className: 'kitchen-set__large-kitchen _anim-upwards'
                 })
                 +kitchen-small({
-                    className: 'kitchen-set__small-kitchen'
+                    className: 'kitchen-set__small-kitchen _anim-upwards _anim-delay-300'
                 })
                 +kitchen-set-banner({
-                    className: 'kitchen-set__banner'
+                    className: 'kitchen-set__banner _anim-upwards _anim-delay-400'
                 })
                 +kitchen-small({
-                    className: 'kitchen-set__small-kitchen'
+                    className: 'kitchen-set__small-kitchen _anim-upwards _anim-delay-500'
                 })
                 +kitchen-small({
-                    className: 'kitchen-set__small-kitchen'
+                    className: 'kitchen-set__small-kitchen _anim-upwards _anim-delay-600'
                 })
                 +kitchen-small({
-                    className: 'kitchen-set__small-kitchen'
+                    className: 'kitchen-set__small-kitchen _anim-upwards _anim-delay-700'
                 })
                 +kitchen-button({
                     className: 'kitchen-set__button-sticky',

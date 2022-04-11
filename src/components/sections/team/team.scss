@@ -3,6 +3,9 @@
   color: $color-white;
   @include adaptive-value("padding-top", 130, 50, map-get($breakpoints, es));
   @include adaptive-value("padding-bottom", 130, 70, map-get($breakpoints, es));
+  @media (max-width: (map-get($breakpoints, md) + px)) {
+    overflow: hidden;
+  }
   &__container {
     display: flex;
     flex-direction: column;
@@ -35,14 +38,17 @@
   }
 
   &__image-box {
+    cursor: grab;
+
     display: grid;
     grid-auto-rows: 1fr;
-    overflow-x: auto;
-    overflow-y: hidden;
     @include adaptive-value("gap", 30, 15, map-get($breakpoints, es));
     @include adaptive-value("margin-top", 72, 46, map-get($breakpoints, es));
     @include adaptive-value("margin-bottom", 72, 46, map-get($breakpoints, es));
 
+    @include media(md) {
+      overflow: hidden;
+    }
     &_large {
       grid-template-columns:
         minmax(rem(250), 1fr)
@@ -57,10 +63,18 @@
       grid-template-columns: minmax(rem(180), 1fr) minmax(rem(250), 2fr);
     }
   }
+  &__item-box {
+    height: 100%;
+    width: 100%;
+    &.swiper-slide {
+      width: auto;
+      @include adaptive-value("height", 400, 250, map-get($breakpoints, es));
+    }
+  }
   &__image {
     object-fit: cover;
     width: 100%;
-    @include adaptive-value("height", 400, 250, map-get($breakpoints, es));
+    height: 100%;
   }
 
   &__advantages {

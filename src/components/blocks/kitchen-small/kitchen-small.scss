@@ -28,7 +28,7 @@
   }
   &__controls {
     z-index: $zIndexLight;
-    transform: translateZ(0);
+    transform: translateZ(0) translateY(-50%);
     & svg {
       @include adaptive-value("height", 15, 12, map-get($breakpoints, es));
       stroke-width: rem(2);

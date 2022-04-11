@@ -8,8 +8,15 @@ mixin filter-selector({className, buttonText, selectors})
                 +icon('kitchen-filter', 'filter-selector__button-icon')
                 span.filter-selector__button-text=buttonText
             .filter-selector__body.ac-panel
-                each selector in selectors
-                    +filter-button({
-                        className: 'filter-selector__filter-button',
-                        text: selector
-                    })
+                each selector, index in selectors
+                    if index === 0
+                        +filter-button({
+                            className: 'filter-selector__filter-button',
+                            text: selector,
+                            active: true
+                        })
+                    else
+                        +filter-button({
+                            className: 'filter-selector__filter-button',
+                            text: selector,
+                        })

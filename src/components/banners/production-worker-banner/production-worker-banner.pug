@@ -1,9 +1,12 @@
 mixin production-worker-banner({image, texts, name, post, modificator})
     .production-worker-banner&attributes(attributes)
         .production-worker-banner__container(class=`production-worker-banner__container_${modificator}` )
-            img.production-worker-banner__image(data-src=`./assets/images/banners/production/${image}`, alt="banner", data-lazy)
-            .production-worker-banner__description(class=`production-worker-banner__description_${modificator}` )
+            picture.production-worker-banner__image
+                source(data-srcset=`./assets/images/banners/production/${image}.jpg` media="(min-width: 1380px)" data-lazy)
+                source(data-srcset=`./assets/images/banners/production/${image}_medium.jpg` media="(min-width: 430px)" data-lazy)
+                img(data-src=`./assets/images/banners/production/${image}_mobile.jpg`, alt="banner", data-lazy)
+            .production-worker-banner__description(class=`production-worker-banner__description_${modificator}`)
                 each text in texts
-                    p.production-worker-banner__text=text
-                p.production-worker-banner__name=name
-                p.production-worker-banner__post=post
+                    p.production-worker-banner__text._anim-upwards=text
+                p.production-worker-banner__name._anim-upwards._anim-delay-300=name
+                p.production-worker-banner__post._anim-upwards._anim-delay-400=post

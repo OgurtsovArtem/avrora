@@ -4,7 +4,6 @@ include ../components/sections/form-section/form-section
 include ../components/sections/catalog-kitchen/catalog-kitchen
 include ../components/sections/kitchen-advantages/kitchen-advantages
 include ../components/sections/kitchen-card/kitchen-card
-include ../components/sections/detail-advantages/detail-advantages
 include ../components/sections/specifications/specifications
 include ../components/sections/detail-gallary/detail-gallary
 include ../components/sections/detail-feedback/detail-feedback
@@ -15,27 +14,27 @@ include ../components/popups/done-popup/done-popup
 
 
 block content
-    +kitchen-card
-    +detail-advantages
-    +specifications
-    +detail-gallary
-    +detail-feedback
-    +kitchen-advantages([
-          { num: '0 ₽', text: 'стоимость выезда дизайнера и 3D-проекта' },
-          { num: 'до30', text: 'дней на изготовление' },
-          { num: '100 000+', text: 'циклов работы фурнитуры' },
-        ], line=true)
-    +form-section({
-        titleVariant: 'variant-1',
-        titleAccentWord:  "бесплатно ?",
-        title: "Хотите получить проект своей будущей кухни ",
-        text: "Да, увидеть проект по вашим размерам своими глазами! Заполните форму рядом и мы мигом свяжемся с вами и расскажем, как это сделать",
-        button: false,
-        backgroundIcon: true,
-        form: 'application',
-    })
-    +popular-kit
-    +steps
-    +calc-popup
-    +call-popup
-    +done-popup
+    .content-hidden
+        +kitchen-card
+        +specifications
+        +detail-gallary
+        +detail-feedback
+        +kitchen-advantages([
+            { num: '0 ₽', text: 'стоимость выезда дизайнера и 3D-проекта' },
+            { num: 'до30', text: 'дней на изготовление' },
+            { num: '100 000+', text: 'циклов работы фурнитуры' },
+            ], line=true)
+        +form-section({
+            titleVariant: 'variant-1',
+            titleAccentWord:  "бесплатно ?",
+            title: "Хотите получить проект своей будущей кухни ",
+            text: "Да, увидеть проект по вашим размерам своими глазами! Заполните форму рядом и мы мигом свяжемся с вами и расскажем, как это сделать",
+            button: false,
+            backgroundIcon: true,
+            form: 'application',
+        })
+        +popular-kit
+        +steps
+        +calc-popup
+        +call-popup
+        +done-popup

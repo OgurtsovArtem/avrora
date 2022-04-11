@@ -1,6 +1,6 @@
 .kitchen-advantages {
-  @include adaptive-value("margin-top", 87, 110, map-get($breakpoints, lg));
-  @include adaptive-value("margin-bottom", 108, 130, map-get($breakpoints, lg));
+  @include adaptive-value("margin-top", 100, 50, map-get($breakpoints, sm));
+  @include adaptive-value("margin-bottom", 100, 50, map-get($breakpoints, sm));
   &__line {
     margin: 0 auto;
     max-width: rem(1880);
@@ -10,11 +10,13 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin-bottom: rem(-48);
+    gap: rem(48);
+    @media (max-width: (map-get($breakpoints, lg)+px)) {
+      max-width: rem(800);
+    }
   }
 
   &__item {
-    margin-bottom: rem(48);
     width: calc(50% - rem(28));
     font-weight: 600;
     font-size: rem(18);

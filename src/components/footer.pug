@@ -27,13 +27,10 @@ mixin footer
         a.footer__phone(href="tel:+7 (812) 612 30 49") +7 (812) 612 30 49
         p.footer__time ежедневно с 9 до 21
         button.footer__btn(data-popup-open='call') пригласить дизайнера
-      .footer__social
-        a.footer__social-item(href="/" target="_blank" rel="noopener noreferrer")
-          +icon('youtube').footer__social-icon
-        a.footer__social-item(href="/" target="_blank" rel="noopener noreferrer")
-          +icon('vk').footer__social-icon
-        a.footer__social-item(href="/" target="_blank" rel="noopener noreferrer")
-          +icon('instagram').footer__social-icon
+      +social-box({
+            iconsName: ['vk', 'instagram', 'youtube'],
+            className: "footer__social"
+        })
       a.footer__email(href="mailto:sample@sample.com") sample@sample.com
       p.footer__address “Аврора Кухни” <br>Санкт-Петербург, ул. Краснопутиловская, д. 69 лит. А, помещение 227Н, офис 536В
     .footer__bottom

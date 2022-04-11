@@ -38,7 +38,12 @@
       map-get($breakpoints, sm)
     );
     @include adaptive-value("padding-left", 101, 20, map-get($breakpoints, sm));
-    @include adaptive-value("padding-right", 40, 10, map-get($breakpoints, es));
+    @include adaptive-value(
+      "padding-right",
+      101,
+      20,
+      map-get($breakpoints, es)
+    );
     @include media($centralBreakpoint) {
       justify-content: flex-end;
     }
@@ -231,7 +236,11 @@
       width: 104%;
       height: 100%;
       background-color: $color-gray-600;
+      @include media(md) {
+        width: 108%;
+      }
     }
+
     @include media(md) {
       padding-left: rem(5);
     }
@@ -247,19 +256,14 @@
     }
   }
   &__card-link {
-    @include adaptive-value("margin-top", 22, 12, map-get($breakpoints, sm));
+    @include adaptive-value("margin-top", 32, 22, map-get($breakpoints, sm));
     padding: 0;
   }
   &__circle-text {
-    left: 85%;
-    top: 28%;
+    left: 103%;
+    top: 53%;
     @include media(sm) {
-      left: 89%;
-      top: 63%;
-    }
-    @include media(md) {
-      left: 84%;
-      top: 67%;
+      top: -19%;
     }
   }
 }

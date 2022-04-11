@@ -3,9 +3,12 @@ mixin learn-more-button({link="#", className, color})
         when 'yellow'
             button(class= className ? `learn-more-button ${className}`: 'learn-more-button')
                 a.learn-more-button__link.learn-more-button__link_yellow(href=link, target="_blank", rel="noopener noreferrer") Узнать больше
+                block
         when 'blue'
             button(class= className ? `learn-more-button ${className}`: 'learn-more-button')
                 a.learn-more-button__link.learn-more-button__link_blue(href=link, target="_blank", rel="noopener noreferrer") Узнать больше
+                block
         default
             button(class= className ? `learn-more-button ${className}`: 'learn-more-button')
                 a.learn-more-button__link.learn-more-button__link_blue(href=link, target="_blank", rel="noopener noreferrer") Узнать больше
+                block

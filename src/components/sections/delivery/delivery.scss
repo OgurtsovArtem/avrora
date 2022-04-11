@@ -1,6 +1,9 @@
 .delivery {
   position: relative;
   overflow: hidden;
+  @include media(md) {
+    overflow: initial;
+  }
   &__container {
     @include adaptive-value(
       "margin-top",
@@ -134,11 +137,14 @@
     margin-top: rem(10);
   }
   &__footer-circle-text {
-    left: 20%;
-    top: 20%;
+    position: absolute;
+    @include adaptive-value("width", 200, 130, map-get($breakpoints, sm));
+    @include adaptive-value("height", 200, 130, map-get($breakpoints, sm));
+    left: 3%;
+    top: -3%;
     @include media(md) {
-      left: 12%;
-      top: 10%;
+      left: 4%;
+      top: -8%;
     }
   }
   &__background-icon {

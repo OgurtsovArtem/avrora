@@ -135,31 +135,11 @@
     justify-content: center;
     margin-top: rem(24);
 
-    &-item {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: rem(57);
-      height: rem(57);
-      margin-right: rem(12);
-      border: rem(1) solid $color-primary;
-      transition: opacity 0.3s ease;
-
-      &:hover {
-        opacity: 0.5;
-      }
-
-      &:last-child {
-        margin-right: 0;
-      }
-    }
-
     &-icon {
       width: rem(28);
       height: rem(28);
     }
   }
-
   &__email {
     display: none;
     transition: opacity 0.3s ease;
@@ -277,18 +257,14 @@
     &__social {
       justify-content: flex-start;
       margin-top: rem(10);
-
-      &-item {
-        width: rem(41);
-        height: rem(41);
-      }
-
-      &-icon {
-        width: rem(20);
-        height: rem(20);
+    }
+    &__social-icon-container {
+      width: rem(41);
+      height: rem(41);
+      & svg {
+        padding: rem(8);
       }
     }
-
     &__email {
       display: inline-block;
       margin-top: rem(28);

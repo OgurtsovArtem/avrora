@@ -1,10 +1,15 @@
 @use "sass:math";
 .circle-text {
-  $speed: 17;
+  $speed: 25;
   &_small {
     .circle-text__letter {
-      padding-bottom: rem(math.div(115, 2) - 7); //15 - (font-size)
-      font-size: rem(10.6);
+      @include adaptive-value(
+        "padding-bottom",
+        50,
+        40,
+        map-get($breakpoints, sm)
+      );
+      @include adaptive-value("font-size", 10.6, 9, map-get($breakpoints, sm));
     }
   }
   position: absolute;
@@ -64,13 +69,5 @@
 
     display: block;
     margin-right: rem(10);
-  }
-}
-@keyframes rotating {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
   }
 }

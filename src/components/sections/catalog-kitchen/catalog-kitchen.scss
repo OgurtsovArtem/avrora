@@ -49,6 +49,9 @@
 
   //================ .catalog-kitchen__header-column =========================
   &__header-column {
+    @include media(md) {
+      flex-shrink: 0;
+    }
   }
 
   //================ .catalog-kitchen__title =========================
@@ -77,6 +80,11 @@
     line-height: 160%;
     color: $color-text-secondary;
     margin-top: rem(20);
+    &_bold {
+      font-weight: 600;
+      @include adaptive-value("font-size", 18, 16, map-get($breakpoints, es));
+      line-height: 100%;
+    }
   }
 
   //================ .catalog-kitchen__discount =========================

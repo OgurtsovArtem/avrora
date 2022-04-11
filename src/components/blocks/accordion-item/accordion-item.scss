@@ -19,9 +19,11 @@
   }
 
   &__button {
+    outline: none;
     text-align: start;
     width: 100%;
     border-top: rem(1) solid $color-gray-500;
+    @include adaptive-value("gap", 32, 22, map-get($breakpoints, sm));
     display: flex;
     justify-content: space-between;
     @include adaptive-value("padding-top", 32, 22, map-get($breakpoints, sm));
@@ -32,6 +34,9 @@
       map-get($breakpoints, sm)
     );
     transition: padding $transitionNormal;
+    &:active {
+      outline: none;
+    }
   }
 
   &__title {

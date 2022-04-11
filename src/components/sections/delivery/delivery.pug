@@ -4,7 +4,7 @@ include ../../Ui-kit/icon/icon
 
 
 mixin delivery()
-    section.delivery.content-hidden.max-container
+    section.delivery.max-container
         +breadcrumbs({
             className: 'delivery__breadcrumbs'
         })
@@ -26,10 +26,7 @@ mixin delivery()
                         p.delivery__item-text.txt Фиксированная цена на услугу
         .delivery__footer
             img.delivery__footer-background(data-src="./assets/images/delivery/background.jpg", alt="background" data-lazy)
-            +circle-text({
-                className: 'delivery__footer-circle-text',
-                words: [['/','/'], ['б','е','с','п','л','а','т','н','ы','й'],['з','а','м','е','р'], ['/','/'], ['б','е','с','п','л','а','т','н','ы','й'],['з','а','м','е','р']],
-            })
+            +icon('circle-text-fixed-cost', 'delivery__footer-circle-text _rotating')
             .delivery__price.min-container
                 .delivery__price-list
                     .delivery__price-item

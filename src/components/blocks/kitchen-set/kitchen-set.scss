@@ -66,6 +66,9 @@
 
     &_reverse {
       text-align: left;
+      & .kitchen-set-banner__title {
+        margin-left: 0;
+      }
     }
 
     //================ MEDIA QUERIES =========================

@@ -14,11 +14,20 @@
   @include adaptive-value("padding-right", 25, 22, map-get($breakpoints, es));
   @include adaptive-value("padding-top", 15, 8, map-get($breakpoints, es));
   @include adaptive-value("padding-bottom", 15, 8, map-get($breakpoints, es));
-  z-index: $zIndexLight;
+  z-index: $zIndexNormal;
+  transition: $transitionLight;
+  border: rem(1) solid $color-white;
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: rgb(247 249 252);
+      border: rem(1) solid $color-gray-600;
+    }
+  }
   &__icon {
     width: rem(16);
     height: rem(16);
     margin-right: rem(10);
     fill: $color-link;
+    pointer-events: none;
   }
 }

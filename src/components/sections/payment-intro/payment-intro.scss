@@ -1,6 +1,8 @@
 .payment-intro {
   position: relative;
-
+  @media (max-width: (map-get($breakpoints, lg)+px)) {
+    overflow: hidden;
+  }
   &__container {
     @include adaptive-value("padding-top", 50, 15, map-get($breakpoints, sm));
     @include adaptive-value(
@@ -58,9 +60,6 @@
     @include adaptive-value("min-height", 250, 170, map-get($breakpoints, sm));
   }
   &__popup {
-    @include media(md) {
-      max-width: rem(500);
-    }
   }
   &__icon-background {
     position: absolute;
@@ -74,6 +73,10 @@
     @include media(lg) {
       left: -40%;
       bottom: -13%;
+    }
+    @media (min-width: 1920px) {
+      transform: rotate(0);
+      left: -30%;
     }
   }
 }
