@@ -34,6 +34,15 @@
   @include media(lg) {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
+  & ._anim-delay-300,
+  & ._anim-delay-400,
+  & ._anim-delay-500,
+  & ._anim-delay-600,
+  & ._anim-delay-700 {
+    @media (max-width: (map-get($breakpoints, md)+px)) {
+      transition-delay: 0s;
+    }
+  }
   //================ .kitchen-set__large-kitchen =========================
   &__large-kitchen {
     @include media(md) {
