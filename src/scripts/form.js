@@ -8,12 +8,14 @@ export default class Form {
     //константы
     this.submitButton = null;
     this.inputs = [];
+    this.errorTimouts = 1000;
 
     //Текст ошибок валидации
     this.words = {
       validationLenght: "Недостаточно символов",
       validationNull: "Это обязательное поле",
       validationEmail: "Неправильный формат Email",
+      validationCheckbox: "Подтвердите согласие",
       submitError: "Ошибка отправки формы",
     };
 
@@ -46,6 +48,8 @@ export default class Form {
   cleanInputs() {
     this.inputs.forEach((input) => {
       input.value = "";
+      this.removeFilledClass(input);
+      this.removeInputError(input);
     });
   }
   //Валидация формы при клике на кнопку submit
@@ -97,7 +101,12 @@ export default class Form {
   }
   //Валидация инпута
   checkInputValidity(input) {
-    const { validationLenght, validationNull, validationEmail } = this.words;
+    const {
+      validationLenght,
+      validationNull,
+      validationEmail,
+      validationCheckbox,
+    } = this.words;
 
     this.removeInputError(input); // удалям предыдущие ошибки
 
@@ -110,6 +119,9 @@ export default class Form {
         break;
       case input.validity.typeMismatch:
         this.inputError(input, validationEmail);
+        break;
+      case !input.checked && input.type === "checkbox":
+        this.inputError(input, validationCheckbox);
         break;
       default:
         this.removeInputError(input);

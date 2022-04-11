@@ -2,27 +2,25 @@
 export default class Observer {
   constructor({
     element,
-    activationRangeTop,
-    activationRangeBottom,
+    rootMargin,
     playOnce,
     updateFrequency,
     activeClass,
-    top,
-    bottom,
     imageLoad,
   }) {
     this.element = element;
-    this.top = activationRangeTop ? top || 0 : null;
-    this.bottom = activationRangeBottom ? bottom || 0 : null;
-    this.activationRangeTop = activationRangeTop || false;
-    this.activationRangeBottom = activationRangeBottom || false;
+    this.rootMargin = rootMargin || "0px";
     this.playOnce = playOnce || false;
     this.updateFrequency = updateFrequency || 20;
-    this.activeClass = activeClass || "_scroll";
+    this.activeClass = activeClass || "_active";
     this.imageLoad = imageLoad;
     // Внутренние переменные
     this.entries = null;
     this.observer = null;
+
+    if (!this.element) {
+      return;
+    }
     this.observe();
   }
 
@@ -43,6 +41,7 @@ export default class Observer {
   observe() {
     this.observer = new IntersectionObserver(this._handleIntersect.bind(this), {
       threshold: this._thresholdArray(),
+      rootMargin: this.rootMargin,
     });
 
     this.observer.observe(this.element);
@@ -57,11 +56,11 @@ export default class Observer {
   }
 
   addClass() {
-    this.element.classList.remove(this.activeClass);
+    this.element.classList.add(this.activeClass);
   }
 
   removeClass() {
-    this.element.classList.add(this.activeClass);
+    this.element.classList.remove(this.activeClass);
   }
 
   scrollHandler() {
@@ -71,34 +70,22 @@ export default class Observer {
       this.inObject();
     }
   }
-
-  determiningDirection() {
-    if (this.activationRangeTop) {
-      this.atDistanceOnTop();
-    } else if (this.activationRangeBottom) {
-      this.atDistanceOnBottom();
-    }
-  }
-
-  atDistanceOnTop() {
-    return this.entries.boundingClientRect.top >= this.top
-      ? this.addClass()
-      : this.removeClass();
-  }
-
-  atDistanceOnBottom() {
-    return this.entries.boundingClientRect.bottom <= this.bottom
-      ? this.addClass()
-      : this.removeClass();
-  }
   setImageSrc() {
     const src = this.element.dataset.src;
+    let srcset = null;
+    if (this.element.dataset.srcset) {
+      srcset = this.element.dataset.srcset;
+      this.element.setAttribute("srcset", srcset);
+    }
 
     this.element.setAttribute("src", src);
 
     this.element.onload = () => {
       this.observer.unobserve(this.element);
       this.element.removeAttribute("data-src");
+      if (srcset) {
+        this.element.removeAttribute("data-srcset");
+      }
       this.element.dataset.lazy = "done";
     };
 
@@ -111,7 +98,10 @@ export default class Observer {
       this.addClass();
       this.imageLoad ? this.setImageSrc() : null;
     } else {
-      this.removeClass();
+      if (!this.playOnce) {
+        // Убирает баг когда элемент не закночил анимацию но класс убирается (случается если резко провернуть колесико туда-обратно)
+        this.removeClass();
+      }
     }
   }
 }

@@ -1,17 +1,12 @@
-import Swiper, { Navigation, Lazy, FreeMode } from "swiper";
-Swiper.use([Navigation, Lazy, FreeMode]);
+import Swiper, { Navigation, Lazy, FreeMode, Autoplay } from "swiper";
+Swiper.use([Navigation, Lazy, FreeMode, Autoplay]);
 
 export const kitchenSmallSwiper = new Swiper(".kitchen-large__swiper", {
-  loop: true,
-  observer: true,
-  observerParents: true,
   slidesPerView: 1,
   spaceBetween: 32,
   speed: 800,
   loop: true,
-  loopAdditionalSlides: 5,
-  preloadImages: false,
-  lazy: true,
+  loadPrevNext: true,
   observer: true,
   observeParents: true,
   // Navigation arrows
@@ -26,7 +21,7 @@ export const kitchenLargeSwiper = new Swiper(".kitchen-small__swiper", {
   speed: 800,
   loop: true,
   preloadImages: false,
-  lazy: true,
+  loadPrevNext: true,
 
   // Navigation arrows
   navigation: {
@@ -40,7 +35,7 @@ export const kitchenFullSwiper = new Swiper(".kitchen-full__swiper", {
   spaceBetween: 32,
   speed: 800,
   preloadImages: false,
-  lazy: true,
+  loadPrevNext: true,
 
   // Navigation arrows
   navigation: {
@@ -53,6 +48,11 @@ export const gallaryDetailSwiper = new Swiper(".detail-gallary__swiper", {
   slidesPerView: "auto",
   spaceBetween: 20,
   freeMode: true,
+  loadPrevNext: true,
+  speed: 800,
+  navigation: {
+    nextEl: ".detail-gallary__button",
+  },
 });
 export const popularKitSwiper = new Swiper(".popular-kit__swiper", {
   slidesPerView: 1,
@@ -82,7 +82,7 @@ export const rewievsCardSwiper = new Swiper(".reviews-card__swiper", {
   spaceBetween: 10,
   speed: 800,
   loop: true,
-  lazy: true,
+  loadPrevNext: true,
   navigation: {
     nextEl: ".reviews-card__swiper-controls_right",
     prevEl: ".reviews-card__swiper-controls_left",
@@ -96,6 +96,7 @@ export const materialsSwiper = new Swiper(".materials__swiper", {
   enabled: false,
   // loop: true,
   speed: 800,
+  loadPrevNext: true,
   navigation: {
     nextEl: ".materials__control-button",
   },
@@ -104,4 +105,22 @@ export const materialsSwiper = new Swiper(".materials__swiper", {
       enabled: true,
     },
   },
+});
+
+export const teamMediumSwiper = new Swiper(".team__image-box_medium", {
+  loop: true,
+  slidesPerView: "auto",
+  spaceBetween: 20,
+  freeMode: true,
+  loadPrevNext: true,
+  speed: 800,
+});
+
+export const teamLargeSwiper = new Swiper(".team__image-box_large", {
+  loop: true,
+  slidesPerView: "auto",
+  spaceBetween: 20,
+  freeMode: true,
+  loadPrevNext: true,
+  speed: 800,
 });

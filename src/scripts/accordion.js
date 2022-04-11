@@ -371,9 +371,6 @@ export default (function (window) {
           activeClass = _this$options11.activeClass,
           showMultiple = _this$options11.showMultiple;
         if (showMultiple) return;
-
-        console.log(this);
-
         this.elements.map(function (element, idx) {
           var isActive = element.classList.contains(activeClass);
 

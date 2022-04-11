@@ -7,35 +7,64 @@ import header from "./header";
 import Observer from "./observer";
 import Popups from "./popups";
 import Form from "./form";
-import PopupDirected from "./PopupDirected";
 
 // ====================== LAZY-LOADING ======================
-const lazyImages = [...document.querySelectorAll("img[data-lazy]")];
+const lazyImages = [
+  ...document.querySelectorAll("img[data-lazy], source[data-lazy]"),
+];
 if (lazyImages) {
   lazyImages.forEach((image) => {
     const imageObserve = new Observer({
       element: image,
       imageLoad: true,
+    });
+  });
+}
+// ====================== ANIMATION ======================
+const animUpwards = [...document.querySelectorAll("._anim-upwards")];
+if (animUpwards) {
+  animUpwards.forEach((animEl) => {
+    const upWardsAnimation = new Observer({
+      element: animEl,
       playOnce: true,
+      rootMargin: "-20%",
     });
   });
 }
 // ====================== POPUPS ======================
 
 const calcPopup = new Popups({
-  popup: document.querySelector(".calc-popup"),
-  closeButtons: document.querySelectorAll(".calc-popup__close"),
+  popupClass: "calc-popup",
+  closeButtonClass: "popup-close-calc",
   openButtons: document.querySelectorAll("[data-popup-open='calc']"),
 });
 const callPopup = new Popups({
-  popup: document.querySelector(".call-popup"),
-  closeButtons: document.querySelectorAll(".call-popup__close"),
+  popupClass: "call-popup",
+  closeButtonClass: "popup-close-call",
   openButtons: document.querySelectorAll("[data-popup-open='call']"),
 });
 const donePopup = new Popups({
-  popup: document.querySelector(".done-popup"),
-  closeButtons: document.querySelectorAll(".done-popup__button"),
+  popupClass: "done-popup",
+  closeButtonClass: "popup-close-done",
   openButtons: document.querySelectorAll("[data-popup-open='done']"),
+});
+const payPopupDirected = new Popups({
+  popupClass: "payment-intro__popup_one-time-payment",
+  closeButtonClass: "popup-close-one-time-payment",
+  openButtons: document.querySelectorAll(
+    "[data-popup-open='one-time-payment']"
+  ),
+});
+const installmentsPopupDirected = new Popups({
+  popupClass: "payment-intro__popup_installments",
+  closeButtonClass: "popup-close-installments",
+  openButtons: document.querySelectorAll("[data-popup-open='installments']"),
+});
+
+const creditPopupDirected = new Popups({
+  popupClass: "payment-intro__popup_credit",
+  closeButtonClass: "popup-close-credit",
+  openButtons: document.querySelectorAll("[data-popup-open='credit']"),
 });
 // ====================== FORM ======================
 const application = document.forms.application;
@@ -61,33 +90,14 @@ const callFrom = new Form(call, {
   popupNext: donePopup,
 });
 
+callPopup.form = callFrom; // передаем форму для использование методов
+calcPopup.form = calcFrom; // передаем форму для использование методов
+
 const payment = document.forms.payment;
 const paymentFrom = new Form(payment, {
   errorClass: "input__error",
   popupNext: donePopup,
 });
-// ====================== POPUP DIRECTED ======================
-if (document.querySelector(".payment-intro__cards")) {
-  const payPopupDirected = new PopupDirected({
-    description: document.querySelector("[data-poup-direct-desc='pay']"),
-    card: document.querySelector("[data-poup-direct-card='pay']"),
-    close: document.querySelector("[data-poup-direct-close='pay']"),
-  });
-
-  const installmentsPopupDirected = new PopupDirected({
-    description: document.querySelector(
-      "[data-poup-direct-desc='installments']"
-    ),
-    card: document.querySelector("[data-poup-direct-card='installments']"),
-    close: document.querySelector("[data-poup-direct-close='installments']"),
-  });
-
-  const creditPopupDirected = new PopupDirected({
-    description: document.querySelector("[data-poup-direct-desc='credit']"),
-    card: document.querySelector("[data-poup-direct-card='credit']"),
-    close: document.querySelector("[data-poup-direct-close='credit']"),
-  });
-}
 
 // ====================== MASONRY ======================
 
@@ -104,7 +114,6 @@ if (document.querySelector(".reviews-list__body")) {
 
 if (document.querySelector(".benefits__body")) {
   const benefitsAccordion = new Accordion(".benefits__body", {
-    openOnInit: [0],
     collapse: true,
   });
 }
