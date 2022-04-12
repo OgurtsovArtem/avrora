@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>Аврора</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+<link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link href="./assets/libs/style/swiper-bundle.min.css" rel="stylesheet">
+    <link href="./assets/css/style.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__bar">
+        <button class="header__menu-btn"><span></span></button><a class="header__logo" href="/avrora/">
+          <picture>
+            <source srcset="./assets/icons/logo-lg.svg" media="(min-width: 1280px)"/><img class="header__logo-img" src="./assets/icons/logo.svg" alt="Аврора"/>
+          </picture></a><a class="header__call" href="tel:+7 (812) 612 30 49">
+          <svg class="header__call-icon header__call-icon_phone icon_phone">
+            <use xlink:href="./assets/icons/sprite.svg#phone"></use>
+          </svg></a>
+        <div class="header__menu">
+          <nav class="header__nav">
+            <div class="header__nav-item header__nav-item_sub">
+              <button class="header__link header__link_sub">Каталог кухонь
+                <svg class="undefined undefined_angle icon_angle header__link-arrow">
+                  <use xlink:href="./assets/icons/sprite.svg#angle"></use>
+                </svg>
+              </button>
+              <div class="header__subnav"><a class="header__sublink header__sublink_main" href="/avrora/catalog">Все кухни</a><a class="header__sublink" href="/avrora/catalog">Прямые кухни</a><a class="header__sublink" href="/avrora/catalog">Угловые кухни</a><a class="header__sublink" href="/avrora/catalog">П-образные кухни</a><a class="header__sublink" href="/avrora/catalog">Маленькие кухни</a><a class="header__sublink" href="/avrora/catalog">Кухни с барной стойкой</a><a class="header__sublink" href="/avrora/catalog">Кухни с островом</a><a class="header__sublink" href="/avrora/catalog">
+                  <svg class="undefined undefined_crown icon_crown header__sublink-icon">
+                    <use xlink:href="./assets/icons/sprite.svg#crown"></use>
+                  </svg>Популярные кухни</a></div>
+            </div>
+            <div class="header__nav-item"><a class="header__link" href="/avrora/production">Производство</a></div>
+            <div class="header__nav-item"><a class="header__link" href="/avrora/delivery-assembly">Доставка и сборка</a></div>
+            <div class="header__nav-item"><a class="header__link" href="/avrora/reviews">Отзывы</a></div>
+            <div class="header__nav-item"><a class="header__link" href="/avrora/stocks">Акции</a></div>
+            <div class="header__nav-item"><a class="header__link" href="/avrora/blog">Блог</a></div>
+            <div class="header__nav-item"><a class="header__link" href="/avrora/contacts">Контакты</a></div>
+          </nav>
+          <div class="header__social social-box">
+            <div class="header__social-icon-container social-box__icon-container">
+              <svg class="social-box__icon social-box__icon_vk icon_vk">
+                <use xlink:href="./assets/icons/sprite.svg#vk"></use>
+              </svg>
+            </div>
+            <div class="header__social-icon-container social-box__icon-container">
+              <svg class="social-box__icon social-box__icon_instagram icon_instagram">
+                <use xlink:href="./assets/icons/sprite.svg#instagram"></use>
+              </svg>
+            </div>
+            <div class="header__social-icon-container social-box__icon-container">
+              <svg class="social-box__icon social-box__icon_youtube icon_youtube">
+                <use xlink:href="./assets/icons/sprite.svg#youtube"></use>
+              </svg>
+            </div>
+          </div>
+          <div class="header__contacts">
+            <button class="header__city">Санкт-Петербург</button><a class="header__phone" href="tel:+7 (812) 612 30 49">+7 (812) 612 30 49</a>
+            <p class="header__time">ежедневно с 9 до 21</p>
+          </div>
+          <button class="header__btn" data-popup-open="call">Пригласить дизайнера</button>
+        </div>
+      </div>
+    </header>
+    <div class="main">
+      <section class="blog-list max-container content-hidden">
+        <section class="breadcrumbs blog-list__breadcrumbs medium-container">
+          <ul class="breadcrumbs__list">
+            <li class="breadcrumbs__item"><a href="#">Главная</a></li>
+            <li class="breadcrumbs__item"><a href="#">// Каталог</a></li>
+            <li class="breadcrumbs__item"><a href="#">// Название гарнитура</a></li>
+          </ul>
+        </section>
+        <div class="blog-list__container medium-container">
+          <div class="blog-list__header">
+            <h1 class="blog-list__title h1">Блог</h1>
+            <form class="blog-list__form" name="blog-search">
+              <div class="blog-list__input-box">
+                <input class="blog-list__input" type="text" placeholder="Поиск статьи"/>
+                <button class="blog-list__form-button _hover-scale" type="submit">
+                  <svg class="blog-list__input-icon blog-list__input-icon_loupe icon_loupe">
+                    <use xlink:href="./assets/icons/sprite.svg#loupe"></use>
+                  </svg>
+                </button>
+              </div>
+            </form>
+          </div>
+          <div class="blog-list__body"><a class="blog-list__card blog-card _hover-up" href="/avrora/article" target="_blank" rel="noopener noreferrer">
+              <div class="blog-card__image-box"><img class="blog-card__image" data-src="./assets/images/blog-card/card_1.jpg" alt="blog-card" data-lazy="data-lazy"/>
+                <p class="blog-card__image-text">5 полезных советов, как выбрать кухню на заказ</p>
+              </div></a><a class="blog-list__card blog-card _hover-up" href="/avrora/article" target="_blank" rel="noopener noreferrer">
+              <div class="blog-card__image-box"><img class="blog-card__image" data-src="./assets/images/blog-card/card_2.jpg" alt="blog-card" data-lazy="data-lazy"/>
+                <p class="blog-card__image-text">Как выбрать самую прочную столешницу</p>
+              </div></a>
+            <div class="blog-list__popular blog-popular">
+              <h2 class="blog-popular__title h2">ТОП популярных статей</h2>
+              <ul class="blog-popular__list">
+                <li class="blog-popular__item"><a class="blog-popular__link _hover-right" href="#" target="_blank" rel="noopener noreferrer"><span class="blog-popular__number h2">1</span>
+                    <p class="blog-popular__text txt">Фасады в светлых тонах: тренд сезона или вечная классика</p></a></li>
+                <li class="blog-popular__item"><a class="blog-popular__link _hover-right" href="#" target="_blank" rel="noopener noreferrer"><span class="blog-popular__number h2">2</span>
+                    <p class="blog-popular__text txt">Как выбрать кухню на заказ. Советы бывалых.</p></a></li>
+                <li class="blog-popular__item"><a class="blog-popular__link _hover-right" href="#" target="_blank" rel="noopener noreferrer"><span class="blog-popular__number h2">3</span>
+                    <p class="blog-popular__text txt">5 полезных советов, как выбрать кухню на заказ</p></a></li>
+              </ul>
+            </div><a class="blog-list__card blog-card _hover-up" href="/avrora/article" target="_blank" rel="noopener noreferrer">
+              <div class="blog-card__image-box"><img class="blog-card__image" data-src="./assets/images/blog-card/card_3.jpg" alt="blog-card" data-lazy="data-lazy"/>
+                <p class="blog-card__image-text">5 полезных советов, как выбрать кухню на заказ</p>
+              </div></a><a class="blog-list__card blog-card _hover-up" href="/avrora/article" target="_blank" rel="noopener noreferrer">
+              <div class="blog-card__image-box"><img class="blog-card__image" data-src="./assets/images/blog-card/card_4.jpg" alt="blog-card" data-lazy="data-lazy"/>
+                <p class="blog-card__image-text">10 способов сделать кухню уютнее</p>
+              </div></a><a class="blog-list__card blog-card _hover-up" href="/avrora/article" target="_blank" rel="noopener noreferrer">
+              <div class="blog-card__image-box"><img class="blog-card__image" data-src="./assets/images/blog-card/card_5.jpg" alt="blog-card" data-lazy="data-lazy"/>
+                <p class="blog-card__image-text">5 полезных советов, как выбрать кухню на заказ</p>
+              </div></a>
+          </div>
+        </div>
+        <svg class="blog-list__icon-background blog-list__icon-background_tree icon_tree">
+          <use xlink:href="./assets/icons/sprite.svg#tree"></use>
+        </svg>
+        <div class="blog-list__pagination pagination container">
+          <button class="pagination__button pagination__button_left">
+            <svg class="pagination__button-icon pagination__button-icon_arrow-mini icon_arrow-mini">
+              <use xlink:href="./assets/icons/sprite.svg#arrow-mini"></use>
+            </svg>
+          </button>
+          <div class="pagination__numbers">
+            <button class="pagination__number pagination__number_active">1</button>
+            <button class="pagination__number">2</button>
+            <button class="pagination__number">3</button>
+            <button class="pagination__number">4</button>
+            <button class="pagination__number">5</button>
+            <button class="pagination__number">6</button>
+          </div>
+          <button class="pagination__button pagination__button_right">
+            <svg class="pagination__button-icon pagination__button-icon_arrow-mini icon_arrow-mini">
+              <use xlink:href="./assets/icons/sprite.svg#arrow-mini"></use>
+            </svg>
+          </button>
+        </div>
+      </section>
+      <section class="popular-kit max-container">
+        <div class="popular-kit__container min-container">
+          <div class="popular-kit__header">
+            <h2 class="popular-kit__title h2">Полулярные проекты</h2>
+            <div class="popular-kit__controls">
+              <button class="popular-kit__button popular-kit__button_left circle-button _hover-scale">
+                <svg class="circle-button__icon circle-button__icon_arrow-medium icon_arrow-medium">
+                  <use xlink:href="./assets/icons/sprite.svg#arrow-medium"></use>
+                </svg>
+              </button>
+              <button class="popular-kit__button popular-kit__button_right circle-button _hover-scale">
+                <svg class="circle-button__icon circle-button__icon_arrow-medium icon_arrow-medium">
+                  <use xlink:href="./assets/icons/sprite.svg#arrow-medium"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="popular-kit__swiper">
+            <div class="swiper-wrapper">
+              <div class="popular-kit__item swiper-slide kitchen-small">
+                <div class="kitchen-small__swiper">
+                  <div class="swiper-wrapper"><a class="kitchen-small__item swiper-slide" href="/avrora/kitchen-detail" target="_blank" rel="noopener noreferrer"><img src="./assets/images/kitchens/small.jpg" alt="kitchen"/></a></div>
+                  <div class="kitchen-small__discount">-50%</div>
+                  <div class="kitchen-small__controls kitchen-controls">
+                    <button class="kitchen-controls__button kitchen-controls__button_left kitchen-small__controls_left" type="button">
+                      <svg class="kitchen-controls__button-icon kitchen-controls__button-icon_arrow-mini-v2 icon_arrow-mini-v2">
+                        <use xlink:href="./assets/icons/sprite.svg#arrow-mini-v2"></use>
+                      </svg>
+                    </button>
+                    <button class="kitchen-controls__button kitchen-controls__button_right kitchen-small__controls_right" type="button">
+                      <svg class="kitchen-controls__button-icon kitchen-controls__button-icon_arrow-mini-v2 icon_arrow-mini-v2">
+                        <use xlink:href="./assets/icons/sprite.svg#arrow-mini-v2"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="kitchen-small__footer">
+                  <h3 class="kitchen-small__title">Название</h3>
+                  <div class="kitchen-small__price"><span class="kitchen-small__price-old">100 500 Р</span><span class="kitchen-small__price-current">100 500 ₽</span>
+                    <p class="kitchen-small__price-text">цена за весь гарнитур</p>
+                  </div>
+                  <button class="kitchen-small__button kitchen-button kitchen-button_transperent" data-popup-open="calc">Рассчитать мой проект</button>
+                </div>
+              </div>
+              <div class="popular-kit__item swiper-slide kitchen-small">
+                <div class="kitchen-small__swiper">
+                  <div class="swiper-wrapper"><a class="kitchen-small__item swiper-slide" href="/avrora/kitchen-detail" target="_blank" rel="noopener noreferrer"><img src="./assets/images/kitchens/small.jpg" alt="kitchen"/></a></div>
+                  <div class="kitchen-small__discount">-50%</div>
+                  <div class="kitchen-small__controls kitchen-controls">
+                    <button class="kitchen-controls__button kitchen-controls__button_left kitchen-small__controls_left" type="button">
+                      <svg class="kitchen-controls__button-icon kitchen-controls__button-icon_arrow-mini-v2 icon_arrow-mini-v2">
+                        <use xlink:href="./assets/icons/sprite.svg#arrow-mini-v2"></use>
+                      </svg>
+                    </button>
+                    <button class="kitchen-controls__button kitchen-controls__button_right kitchen-small__controls_right" type="button">
+                      <svg class="kitchen-controls__button-icon kitchen-controls__button-icon_arrow-mini-v2 icon_arrow-mini-v2">
+                        <use xlink:href="./assets/icons/sprite.svg#arrow-mini-v2"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="kitchen-small__footer">
+                  <h3 class="kitchen-small__title">Название</h3>
+                  <div class="kitchen-small__price"><span class="kitchen-small__price-old">100 500 Р</span><span class="kitchen-small__price-current">100 500 ₽</span>
+                    <p class="kitchen-small__price-text">цена за весь гарнитур</p>
+                  </div>
+                  <button class="kitchen-small__button kitchen-button kitchen-button_transperent" data-popup-open="calc">Рассчитать мой проект</button>
+                </div>
+              </div>
+              <div class="popular-kit__item swiper-slide kitchen-small">
+                <div class="kitchen-small__swiper">
+                  <div class="swiper-wrapper"><a class="kitchen-small__item swiper-slide" href="/avrora/kitchen-detail" target="_blank" rel="noopener noreferrer"><img src="./assets/images/kitchens/small.jpg" alt="kitchen"/></a></div>
+                  <div class="kitchen-small__discount">-50%</div>
+                  <div class="kitchen-small__controls kitchen-controls">
+                    <button class="kitchen-controls__button kitchen-controls__button_left kitchen-small__controls_left" type="button">
+                      <svg class="kitchen-controls__button-icon kitchen-controls__button-icon_arrow-mini-v2 icon_arrow-mini-v2">
+                        <use xlink:href="./assets/icons/sprite.svg#arrow-mini-v2"></use>
+                      </svg>
+                    </button>
+                    <button class="kitchen-controls__button kitchen-controls__button_right kitchen-small__controls_right" type="button">
+                      <svg class="kitchen-controls__button-icon kitchen-controls__button-icon_arrow-mini-v2 icon_arrow-mini-v2">
+                        <use xlink:href="./assets/icons/sprite.svg#arrow-mini-v2"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="kitchen-small__footer">
+                  <h3 class="kitchen-small__title">Название</h3>
+                  <div class="kitchen-small__price"><span class="kitchen-small__price-old">100 500 Р</span><span class="kitchen-small__price-current">100 500 ₽</span>
+                    <p class="kitchen-small__price-text">цена за весь гарнитур</p>
+                  </div>
+                  <button class="kitchen-small__button kitchen-button kitchen-button_transperent" data-popup-open="calc">Рассчитать мой проект</button>
+                </div>
+              </div>
+              <div class="popular-kit__item swiper-slide kitchen-small">
+                <div class="kitchen-small__swiper">
+                  <div class="swiper-wrapper"><a class="kitchen-small__item swiper-slide" href="/avrora/kitchen-detail" target="_blank" rel="noopener noreferrer"><img src="./assets/images/kitchens/small.jpg" alt="kitchen"/></a></div>
+                  <div class="kitchen-small__discount">-50%</div>
+                  <div class="kitchen-small__controls kitchen-controls">
+                    <button class="kitchen-controls__button kitchen-controls__button_left kitchen-small__controls_left" type="button">
+                      <svg class="kitchen-controls__button-icon kitchen-controls__button-icon_arrow-mini-v2 icon_arrow-mini-v2">
+                        <use xlink:href="./assets/icons/sprite.svg#arrow-mini-v2"></use>
+                      </svg>
+                    </button>
+                    <button class="kitchen-controls__button kitchen-controls__button_right kitchen-small__controls_right" type="button">
+                      <svg class="kitchen-controls__button-icon kitchen-controls__button-icon_arrow-mini-v2 icon_arrow-mini-v2">
+                        <use xlink:href="./assets/icons/sprite.svg#arrow-mini-v2"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="kitchen-small__footer">
+                  <h3 class="kitchen-small__title">Название</h3>
+                  <div class="kitchen-small__price"><span class="kitchen-small__price-old">100 500 Р</span><span class="kitchen-small__price-current">100 500 ₽</span>
+                    <p class="kitchen-small__price-text">цена за весь гарнитур</p>
+                  </div>
+                  <button class="kitchen-small__button kitchen-button kitchen-button_transperent" data-popup-open="calc">Рассчитать мой проект</button>
+                </div>
+              </div>
+              <div class="popular-kit__item swiper-slide kitchen-small">
+                <div class="kitchen-small__swiper">
+                  <div class="swiper-wrapper"><a class="kitchen-small__item swiper-slide" href="/avrora/kitchen-detail" target="_blank" rel="noopener noreferrer"><img src="./assets/images/kitchens/small.jpg" alt="kitchen"/></a></div>
+                  <div class="kitchen-small__discount">-50%</div>
+                  <div class="kitchen-small__controls kitchen-controls">
+                    <button class="kitchen-controls__button kitchen-controls__button_left kitchen-small__controls_left" type="button">
+                      <svg class="kitchen-controls__button-icon kitchen-controls__button-icon_arrow-mini-v2 icon_arrow-mini-v2">
+                        <use xlink:href="./assets/icons/sprite.svg#arrow-mini-v2"></use>
+                      </svg>
+                    </button>
+                    <button class="kitchen-controls__button kitchen-controls__button_right kitchen-small__controls_right" type="button">
+                      <svg class="kitchen-controls__button-icon kitchen-controls__button-icon_arrow-mini-v2 icon_arrow-mini-v2">
+                        <use xlink:href="./assets/icons/sprite.svg#arrow-mini-v2"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="kitchen-small__footer">
+                  <h3 class="kitchen-small__title">Название</h3>
+                  <div class="kitchen-small__price"><span class="kitchen-small__price-old">100 500 Р</span><span class="kitchen-small__price-current">100 500 ₽</span>
+                    <p class="kitchen-small__price-text">цена за весь гарнитур</p>
+                  </div>
+                  <button class="kitchen-small__button kitchen-button kitchen-button_transperent" data-popup-open="calc">Рассчитать мой проект</button>
+                </div>
+              </div>
+              <div class="popular-kit__item swiper-slide kitchen-small">
+                <div class="kitchen-small__swiper">
+                  <div class="swiper-wrapper"><a class="kitchen-small__item swiper-slide" href="/avrora/kitchen-detail" target="_blank" rel="noopener noreferrer"><img src="./assets/images/kitchens/small.jpg" alt="kitchen"/></a></div>
+                  <div class="kitchen-small__discount">-50%</div>
+                  <div class="kitchen-small__controls kitchen-controls">
+                    <button class="kitchen-controls__button kitchen-controls__button_left kitchen-small__controls_left" type="button">
+                      <svg class="kitchen-controls__button-icon kitchen-controls__button-icon_arrow-mini-v2 icon_arrow-mini-v2">
+                        <use xlink:href="./assets/icons/sprite.svg#arrow-mini-v2"></use>
+                      </svg>
+                    </button>
+                    <button class="kitchen-controls__button kitchen-controls__button_right kitchen-small__controls_right" type="button">
+                      <svg class="kitchen-controls__button-icon kitchen-controls__button-icon_arrow-mini-v2 icon_arrow-mini-v2">
+                        <use xlink:href="./assets/icons/sprite.svg#arrow-mini-v2"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="kitchen-small__footer">
+                  <h3 class="kitchen-small__title">Название</h3>
+                  <div class="kitchen-small__price"><span class="kitchen-small__price-old">100 500 Р</span><span class="kitchen-small__price-current">100 500 ₽</span>
+                    <p class="kitchen-small__price-text">цена за весь гарнитур</p>
+                  </div>
+                  <button class="kitchen-small__button kitchen-button kitchen-button_transperent" data-popup-open="calc">Рассчитать мой проект</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="popular-kit__kitchen-button kitchen-button kitchen-button_transperent" data-popup-open="calc">Рассчитать мой проект</button>
+        </div>
+      </section>
+      <section class="form-section max-container form-section_overflow-hidden">
+        <div class="form-section__container min-container">
+          <div class="form-section__description">
+            <div class="form-section__description-box">
+              <h2 class="form-section__title h2">Хотите получить проект своей будущей кухни <span class="form-section__title_accent">бесплатно ?</span></h2>
+              <p class="form-section__text txt">Да, увидеть проект по вашим размерам своими глазами! Заполните форму рядом и мы мигом свяжемся с вами и расскажем, как это сделать</p>
+            </div>
+            <svg class="form-section__background-desctop form-section__background-desctop_tree icon_tree">
+              <use xlink:href="./assets/icons/sprite.svg#tree"></use>
+            </svg>
+          </div>
+          <div class="form-section__form-box">
+            <form class="application-form" name="application">
+              <legend class="application-form__legend">Оставить заявку</legend>
+              <div class="input application-form__input">
+                <label class="input__label" for="application-form-name">
+                  <input class="input__field" id="application-form-name" type="text" name="name" required="required" minlength="2" maxlength="30"/>
+                  <p class="input__label-text">Представьтесь</p><span class="input__error"></span>
+                </label>
+              </div>
+              <div class="input application-form__input">
+                <label class="input__label" for="application-form-tel">
+                  <input class="input__field" id="application-form-tel" type="tel" name="phone" required="required"/>
+                  <p class="input__label-text">Контактный номер телефона</p><span class="input__error"></span>
+                </label>
+              </div>
+              <div class="input-file application-form__input">
+                <input class="input-file__field" id="application-form-file" type="file" name="aplication-form-file"/>
+                <label class="input-file__label" for="application-form-file">
+                  <div class="input-file__icon-box">
+                    <svg class="input-file__icon input-file__icon_file-clip icon_file-clip">
+                      <use xlink:href="./assets/icons/sprite.svg#file-clip"></use>
+                    </svg>
+                  </div>
+                  <p class="input-file__label-text">Хочу приложить эскиз или пример</p>
+                </label>
+              </div>
+              <button class="application-form__button button" type="submit">Отправить
+              </button>
+            </form>
+          </div>
+          <svg class="form-section__background-mobile form-section__background-mobile_tree icon_tree">
+            <use xlink:href="./assets/icons/sprite.svg#tree"></use>
+          </svg>
+        </div>
+      </section>
+      <section class="steps max-container">
+        <div class="steps__container min-container">
+          <div class="steps__body">
+            <div class="steps__card steps__card_large">
+              <h2 class="steps__title h2">5 шагов вашей кухни домой</h2>
+              <div class="steps__card-body">
+                <div class="steps__card-header steps__card-header_text-mobile-row"><span class="steps__card-number h3">1.</span>
+                  <p class="steps__card-title">Замер</p>
+                </div>
+                <div class="steps__card-text txt">Начать сотрудничество просто: оставьте заявку и наш дизайнер приедет в удобное время, покажет образцы материалов и посоветует как сделать самый удобный в мире гарнитур. Выезд дизайнера ни к чему вас не обязывает</div>
+                <div class="steps__card-footnote">Выезд дизайнера ни к чему вас не обязывает</div>
+              </div>
+              <button class="steps__card-button button" type="button" data-popup-open="call">Пригласить дизайнера
+                <div class="steps__circle-text circle-text circle-text_small">
+                  <div class="circle-text__word">
+                    <div class="circle-text__letter">/</div>
+                    <div class="circle-text__letter">/</div>
+                  </div>
+                  <div class="circle-text__word">
+                    <div class="circle-text__letter">б</div>
+                    <div class="circle-text__letter">е</div>
+                    <div class="circle-text__letter">с</div>
+                    <div class="circle-text__letter">п</div>
+                    <div class="circle-text__letter">л</div>
+                    <div class="circle-text__letter">а</div>
+                    <div class="circle-text__letter">т</div>
+                    <div class="circle-text__letter">н</div>
+                    <div class="circle-text__letter">ы</div>
+                    <div class="circle-text__letter">й</div>
+                  </div>
+                  <div class="circle-text__word">
+                    <div class="circle-text__letter">з</div>
+                    <div class="circle-text__letter">а</div>
+                    <div class="circle-text__letter">м</div>
+                    <div class="circle-text__letter">е</div>
+                    <div class="circle-text__letter">р</div>
+                  </div>
+                  <div class="circle-text__word">
+                    <div class="circle-text__letter">/</div>
+                    <div class="circle-text__letter">/</div>
+                  </div>
+                  <div class="circle-text__word">
+                    <div class="circle-text__letter">б</div>
+                    <div class="circle-text__letter">е</div>
+                    <div class="circle-text__letter">с</div>
+                    <div class="circle-text__letter">п</div>
+                    <div class="circle-text__letter">л</div>
+                    <div class="circle-text__letter">а</div>
+                    <div class="circle-text__letter">т</div>
+                    <div class="circle-text__letter">н</div>
+                    <div class="circle-text__letter">ы</div>
+                    <div class="circle-text__letter">й</div>
+                  </div>
+                  <div class="circle-text__word">
+                    <div class="circle-text__letter">з</div>
+                    <div class="circle-text__letter">а</div>
+                    <div class="circle-text__letter">м</div>
+                    <div class="circle-text__letter">е</div>
+                    <div class="circle-text__letter">р</div>
+                  </div>
+                </div>
+              </button>
+            </div>
+            <div class="steps__card steps__card_white-img">
+              <div class="steps__card-body">
+                <div class="steps__card-header"><span class="steps__card-number h3">2.</span>
+                  <p class="steps__card-title">Проверка заказа техническим отделом</p>
+                </div>
+                <div class="steps__card-text steps__card-text_mobile-hidden txt">Чтобы клиент всегда был доволен результатом, на нашем производстве есть технический отдел. Перед тем, как начать изготовление кухни, мастера осматривают каждую деталь дополнительно</div>
+              </div>
+            </div>
+            <div class="steps__card steps__card_gray">
+              <div class="steps__card-body">
+                <div class="steps__card-header steps__card-header_text-column"><span class="steps__card-number h3">3.</span>
+                  <p class="steps__card-title"> Производство</p>
+                </div>
+                <div class="steps__card-text steps__card-text_mobile-hidden txt">На созднание кухни у нас уйдётот нескольких недель до месяца, всё зависит от сложности проекта и поставки материалов.</div>
+                <button class="learn-more-button steps__card-link"><a class="learn-more-button__link learn-more-button__link_blue" href="/avrora/production" target="_blank" rel="noopener noreferrer">Узнать больше</a>
+                </button>
+              </div>
+            </div>
+            <div class="steps__card steps__card_black-img">
+              <div class="steps__card-body">
+                <div class="steps__card-header steps__card-header_text-column"><span class="steps__card-number h3">4.</span>
+                  <p class="steps__card-title steps__card-title_white">Доставка и сборка</p>
+                </div>
+                <button class="learn-more-button steps__card-link"><a class="learn-more-button__link learn-more-button__link_blue" href="/avrora/delivery-assembly" target="_blank" rel="noopener noreferrer">Узнать больше</a>
+                </button>
+              </div>
+            </div>
+            <div class="steps__card steps__card_yellow">
+              <div class="steps__card-body">
+                <div class="steps__card-header steps__card-header_text-column"><span class="steps__card-number steps__card-number_white h3">5.</span>
+                  <p class="steps__card-title steps__card-title_white">Постпродажное обслуживание</p>
+                </div>
+                <div class="steps__card-text steps__card-text_white steps__card-text_mobile-hidden txt">Мы в ответе за свою работу и даём гарантию на продукт и сборку 2 года. Если в это время что-то пойдёт не так, мы оперативно всё заменим и починим</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="call-popup popup-close-call">
+        <div class="call-popup__container">
+          <button class="call-popup__close popup-close-call" type="button"></button>
+          <form class="call-form call-popup__form" name="call">
+            <legend class="call-form__legend">Обратный звонок</legend>
+            <div class="input call-form__input">
+              <label class="input__label" for="call-form-name">
+                <input class="input__field" id="call-form-name" type="text" required="required" minlength="2" maxlength="30"/>
+                <p class="input__label-text">Представьтесь</p><span class="input__error"></span>
+              </label>
+            </div>
+            <div class="input call-form__input">
+              <label class="input__label" for="call-form-tel">
+                <input class="input__field" id="call-form-tel" type="tel" required="required"/>
+                <p class="input__label-text">Контактный номер телефона</p><span class="input__error"></span>
+              </label>
+            </div>
+            <button class="call-form__button button" type="submit">Отправить
+            </button>
+            <div class="call-form__footnote">Нажимая кнопку "Отправить", вы соглашаетесь с условиями<a class="call-form__footnote-link" href="#" target="_blank" rel="noopener noreferrer"> Политики конфиденциальности</a></div>
+          </form>
+        </div>
+      </div>
+      <div class="calc-popup popup-close-calc">
+        <div class="calc-popup__container">
+          <button class="calc-popup__close popup-close-calc" type="button"></button>
+          <form class="calc-form calc-popup__form" name="calc">
+            <legend class="calc-form__legend h3">Рассчитать мой проект</legend>
+            <div class="input calc-form__input">
+              <label class="input__label" for="calc-form-name">
+                <input class="input__field" id="calc-form-name" type="text" required="required" minlength="2" maxlength="30"/>
+                <p class="input__label-text">Представьтесь</p><span class="input__error"></span>
+              </label>
+            </div>
+            <div class="input calc-form__input">
+              <label class="input__label" for="calc-form-tel">
+                <input class="input__field" id="calc-form-tel" type="tel" required="required"/>
+                <p class="input__label-text">Контактный номер телефона</p><span class="input__error"></span>
+              </label>
+            </div>
+            <div class="textarea calc-form__textarea">
+              <textarea class="textarea__field" id="calc-form-textarea" cols="25" rows="1"></textarea>
+              <label class="textarea__label" for="calc-form-textarea">
+                <p class="textarea__label-text">Комментарий</p>
+              </label>
+            </div>
+            <div class="input-file calc-form__input">
+              <input class="input-file__field" id="calc-form-file" type="file" name="calc-form-file"/>
+              <label class="input-file__label" for="calc-form-file">
+                <div class="input-file__icon-box">
+                  <svg class="input-file__icon input-file__icon_file-clip icon_file-clip">
+                    <use xlink:href="./assets/icons/sprite.svg#file-clip"></use>
+                  </svg>
+                </div>
+                <p class="input-file__label-text">Хочу приложить эскиз или пример</p>
+              </label>
+            </div>
+            <button class="calc-form__button button" type="submit">Отправить
+            </button>
+            <div class="calc-form__footnote">Нажимая кнопку "Отправить", вы соглашаетесь с условиями<a class="calc-form__footnote-link" href="#" target="_blank" rel="noopener noreferrer"> Политики конфиденциальности</a></div>
+          </form>
+        </div>
+      </div>
+      <div class="done-popup popup-close-done">
+        <div class="done-popup__container">
+          <div class="done-popup__content">
+            <h2 class="done-popup__title h3">Спасибо за обращение!</h2>
+            <p class="done-popup__text txt">Наш менеджер свяжется с вами в ближайшее время и проконсультирует по всем вопросам.</p>
+            <button class="done-popup__button popup-close-done button" type="button">Ок, понятно!
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="footer__menu">
+        <div class="footer__nav">
+          <div class="footer__nav-group"><a class="footer__link footer__link_cat footer__link_main" href="/avrora/catalog">Все кухни</a><a class="footer__link footer__link_cat" href="/avrora/catalog">Прямые кухни</a><a class="footer__link footer__link_cat" href="/avrora/production">Угловые кухни</a><a class="footer__link footer__link_cat" href="/avrora/catalog">П-образные кухни</a><a class="footer__link footer__link_cat" href="/avrora/catalog">Маленькие кухни</a></div>
+          <div class="footer__nav-group"><a class="footer__link" href="/avrora/production">Производство</a><a class="footer__link" href="/avrora/payment">Оплата</a><a class="footer__link" href="/avrora/delivery-assembly">Доставка и сборка</a><a class="footer__link" href="/avrora/reviews">Отзывы</a><a class="footer__link" href="/avrora/stocks">Акции</a><a class="footer__link" href="/avrora/blog">Блог</a><a class="footer__link" href="/avrora/contacts">Контакты</a></div>
+        </div>
+        <div class="footer__payment"><a class="footer__payment-link" href="/avrora/payment">Оплата онлайн</a></div>
+      </div>
+      <div class="footer__contacts"><img class="footer__logo" src="./assets/icons/logo-inv.svg" alt="Аврора"/>
+        <p class="footer__title">Кухни, <span>сконструированые лучше всех остальных</span> от начала дизайна до конца сборки</p>
+        <div class="footer__call"><a class="footer__phone" href="tel:+7 (812) 612 30 49">+7 (812) 612 30 49</a>
+          <p class="footer__time">ежедневно с 9 до 21</p>
+          <button class="footer__btn" data-popup-open="call">пригласить дизайнера</button>
+        </div>
+        <div class="footer__social social-box">
+          <div class="footer__social-icon-container social-box__icon-container">
+            <svg class="social-box__icon social-box__icon_vk icon_vk">
+              <use xlink:href="./assets/icons/sprite.svg#vk"></use>
+            </svg>
+          </div>
+          <div class="footer__social-icon-container social-box__icon-container">
+            <svg class="social-box__icon social-box__icon_instagram icon_instagram">
+              <use xlink:href="./assets/icons/sprite.svg#instagram"></use>
+            </svg>
+          </div>
+          <div class="footer__social-icon-container social-box__icon-container">
+            <svg class="social-box__icon social-box__icon_youtube icon_youtube">
+              <use xlink:href="./assets/icons/sprite.svg#youtube"></use>
+            </svg>
+          </div>
+        </div><a class="footer__email" href="mailto:sample@sample.com">sample@sample.com</a>
+        <p class="footer__address">“Аврора Кухни” <br>Санкт-Петербург, ул. Краснопутиловская, д. 69 лит. А, помещение 227Н, офис 536В</p>
+      </div>
+      <div class="footer__bottom"><a class="footer__policy" href="/" target="_blank" rel="noopener noreferrer">Политика конфиденциальности</a></div>
+    </footer>
+    <script src="./assets/libs/js/masonry.pkgd.min.js"></script>
+    <script src="./assets/js/script.min.js"></script>
+  </body>
+</html>
