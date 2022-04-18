@@ -14,5 +14,14 @@
     font-weight: 400;
     font-size: rem(11);
     line-height: 110%;
+    &:not(:last-child) {
+      &::after {
+        content: "//";
+        position: relative;
+        right: 0;
+        top: 0;
+        padding-left: rem(4);
+      }
+    }
   }
 }

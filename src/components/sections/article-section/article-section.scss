@@ -2,7 +2,7 @@
   $max-width-description: 800;
   overflow: hidden;
   &__intro-image {
-    min-height: rem(250);
+    @include adaptive-value("height", 706, 250, map-get($breakpoints, md));
     object-fit: cover;
   }
   &__body {
@@ -90,14 +90,28 @@
     &_first {
       @include media(md) {
         position: relative;
-        width: 119%;
-        left: -19%;
+        width: 114%;
+        left: -14%;
+      }
+      @include media(xl) {
+        width: 136%;
+        left: -36%;
+      }
+      @media (min-width: ($maxWidth + px)) {
+        width: 149%;
+        left: -49%;
       }
     }
     &_second {
       @include media(md) {
         position: relative;
+        width: 107%;
+      }
+      @include media(xl) {
         width: 119%;
+      }
+      @media (min-width: ($maxWidth + px)) {
+        width: 125%;
       }
     }
   }

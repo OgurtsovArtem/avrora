@@ -8,13 +8,7 @@
   padding-right: 0;
   @include adaptive-value("margin-top", 70, 25, map-get($breakpoints, md));
   @include adaptive-value("padding-bottom", 120, 60, map-get($breakpoints, es));
-  @include adaptive-value(
-    "row-gap",
-    100,
-    40,
-    map-get($breakpoints, es),
-    map-get($breakpoints, md)
-  );
+  @include adaptive-value("row-gap", 100, 40, map-get($breakpoints, es), map-get($breakpoints, md));
   @include adaptive-value(
     "column-gap",
     40,
@@ -39,7 +33,7 @@
   & ._anim-delay-500,
   & ._anim-delay-600,
   & ._anim-delay-700 {
-    @media (max-width: (map-get($breakpoints, md)+px)) {
+    @media (max-width: (map-get($breakpoints, lg)+px)) {
       transition-delay: 0s;
     }
   }

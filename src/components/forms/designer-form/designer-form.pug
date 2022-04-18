@@ -3,7 +3,7 @@ include ../../Ui-kit/textarea/textarea
 include ../../Ui-kit/button/button
 
 mixin designer-form()
-    form.designer-from(name="designer")
+    form.designer-from(name="designer" action='/send.php')
         legend.designer-from__legend Оставить заявку
         +input({
             id: "designer-form-name",
