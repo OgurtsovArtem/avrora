@@ -1,5 +1,6 @@
 import * as accordion from "./accordion";
 import * as circleText from "./circleText";
+import * as map from "./map";
 import * as swipers from "./swipers";
 
 import header from "./header";
@@ -9,9 +10,7 @@ import Popups from "./popups";
 import Form from "./form";
 
 // ====================== LAZY-LOADING ======================
-const lazyImages = [
-  ...document.querySelectorAll("img[data-lazy], source[data-lazy]"),
-];
+const lazyImages = [...document.querySelectorAll("img[data-lazy], source[data-lazy]")];
 if (lazyImages) {
   lazyImages.forEach((image) => {
     const imageObserve = new Observer({
@@ -51,9 +50,7 @@ const donePopup = new Popups({
 const payPopupDirected = new Popups({
   popupClass: "payment-intro__popup_one-time-payment",
   closeButtonClass: "popup-close-one-time-payment",
-  openButtons: document.querySelectorAll(
-    "[data-popup-open='one-time-payment']"
-  ),
+  openButtons: document.querySelectorAll("[data-popup-open='one-time-payment']"),
 });
 const installmentsPopupDirected = new Popups({
   popupClass: "payment-intro__popup_installments",

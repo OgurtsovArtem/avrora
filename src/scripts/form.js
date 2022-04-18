@@ -73,9 +73,7 @@ export default class Form {
     this.checkInputValidity(target);
 
     // Анимация placeholder
-    target.value.length > 0
-      ? this.addFilledCalss(target)
-      : this.removeFilledClass(target);
+    target.value.length > 0 ? this.addFilledCalss(target) : this.removeFilledClass(target);
   }
 
   //Шаблон ошибки
@@ -92,21 +90,13 @@ export default class Form {
   removeInputError(input) {
     input.classList.remove("_error");
     const nextElement = input.nextSibling;
-    if (
-      nextElement.nodeType == 1 &&
-      nextElement.classList.contains(this.errorClass)
-    ) {
+    if (nextElement.nodeType == 1 && nextElement.classList.contains(this.errorClass)) {
       nextElement.remove();
     }
   }
   //Валидация инпута
   checkInputValidity(input) {
-    const {
-      validationLenght,
-      validationNull,
-      validationEmail,
-      validationCheckbox,
-    } = this.words;
+    const { validationLenght, validationNull, validationEmail, validationCheckbox } = this.words;
 
     this.removeInputError(input); // удалям предыдущие ошибки
 
@@ -139,10 +129,7 @@ export default class Form {
   }
   // активировать прелоудер  кнопки
   runPreloader() {
-    this.submitButton.insertAdjacentHTML(
-      "beforeend",
-      this.preloaderTemplate().trim()
-    );
+    this.submitButton.insertAdjacentHTML("beforeend", this.preloaderTemplate().trim());
   }
   // остановить прелоудер  кнопки
   stopPreloader() {
@@ -187,7 +174,7 @@ export default class Form {
       name: this.form.name,
       data: JSON.stringify(data),
     });
-    const url = "/";
+    const url = this.form.action;
     return fetch(url, {
       method: "POST",
       credentials: "include",
