@@ -8,7 +8,13 @@
     position: relative;
   }
   &__item-image {
-    @include adaptive-value("height", 733, 380, map-get($breakpoints, es));
+    @include adaptive-value(
+      "height",
+      800,
+      380,
+      map-get($breakpoints, es),
+      map-get($breakpoints, xl)
+    );
     object-fit: cover;
   }
   &__controls {
@@ -33,12 +39,7 @@
     @include adaptive-value("right", 50, 10, map-get($breakpoints, es));
   }
   &__info {
-    @include adaptive-value(
-      "margin-top",
-      -155,
-      -130,
-      map-get($breakpoints, md)
-    );
+    @include adaptive-value("margin-top", -155, -130, map-get($breakpoints, md));
     @media (max-width: (map-get($breakpoints, md) + px)) {
       margin-top: 0;
     }

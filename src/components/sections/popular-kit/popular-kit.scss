@@ -11,12 +11,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    @include adaptive-value(
-      "padding-bottom",
-      35,
-      20,
-      map-get($breakpoints, es)
-    );
+    @include adaptive-value("padding-bottom", 35, 20, map-get($breakpoints, es));
   }
   &__title {
     font-family: "Philosopher";
@@ -29,6 +24,13 @@
     display: flex;
   }
   &__button {
+    &.swiper-button-disabled {
+      border-color: $color-text-secondary;
+      pointer-events: none;
+      & svg {
+        fill: $color-text-secondary;
+      }
+    }
     &_left {
       transform: translateX(10%);
     }

@@ -23,7 +23,7 @@
   $max_width: $maxWidth
 ) {
   //с мак суказанной границы до макс
-  @media (min-width: ($max_width+px)) {
+  @media (min-width: ($max_width + 1px)) {
     #{$value_name}: math.div($max_value, $mainFontSize) + rem;
   }
   //с мин разрешения до мин указанной границы
@@ -33,9 +33,9 @@
   //с мин указанного до макс указанного
   @media (min-width: ($min_width+px)) and (max-width: ($max_width+px)) {
     #{$value_name}: calc(
-      #{$min_value + px} + #{($max_value - $min_value)} * ((
-              100vw - #{$min_width + px}
-            ) / #{($max_width - $min_width)})
+      #{$min_value + px} + #{($max_value - $min_value)} * ((100vw - #{$min_width + px}) / #{(
+              $max_width - $min_width
+            )})
     );
   }
 }

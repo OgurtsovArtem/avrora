@@ -1,13 +1,6 @@
 // ====================== LAZY-LOADING ======================
 export default class Observer {
-  constructor({
-    element,
-    rootMargin,
-    playOnce,
-    updateFrequency,
-    activeClass,
-    imageLoad,
-  }) {
+  constructor({ element, rootMargin, playOnce, updateFrequency, activeClass, imageLoad }) {
     this.element = element;
     this.rootMargin = rootMargin || "0px";
     this.playOnce = playOnce || false;
@@ -91,6 +84,7 @@ export default class Observer {
 
     this.element.onerror = () => {
       this.element.dataset.lazy = "error-loading";
+      this.observer.unobserve(this.element);
     };
   }
   inObject() {

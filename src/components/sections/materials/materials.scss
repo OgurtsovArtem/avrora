@@ -2,12 +2,7 @@
   display: none;
   @include media(md) {
     @include adaptive-value("margin-top", 100, 70, map-get($breakpoints, md));
-    @include adaptive-value(
-      "padding-bottom",
-      80,
-      50,
-      map-get($breakpoints, md)
-    );
+    @include adaptive-value("padding-bottom", 80, 50, map-get($breakpoints, md));
     display: block;
     position: relative;
     overflow: hidden;
@@ -50,12 +45,7 @@
       width: 100%;
       grid-area: 1/1/3/3;
       @include adaptive-value("height", 600, 400, map-get($breakpoints, md));
-      @include adaptive-value(
-        "padding-right",
-        200,
-        50,
-        map-get($breakpoints, md)
-      );
+      @include adaptive-value("padding-right", 200, 50, map-get($breakpoints, md));
     }
   }
   &__item {
@@ -76,22 +66,26 @@
           opacity: 0;
           transform: translateX(-100%);
         }
+        .materials__sponsors-box {
+          transition: 0.8s;
+          opacity: 0;
+          transform: translateX(-100%);
+        }
       }
       &.swiper-slide-active {
         opacity: 1;
         .materials__image-box {
-          @include adaptive-value(
-            "margin-left",
-            500,
-            300,
-            map-get($breakpoints, md)
-          );
+          @include adaptive-value("margin-left", 500, 300, map-get($breakpoints, md));
         }
         .materials__footnote {
           opacity: 1;
           transform: translateX(0);
         }
         .materials__description {
+          opacity: 1;
+          transform: translateX(0);
+        }
+        .materials__sponsors-box {
           opacity: 1;
           transform: translateX(0);
         }
@@ -160,18 +154,13 @@
       background-color: $color-gray-600;
       max-width: rem(570);
       @include adaptive-value("padding-top", 33, 20, map-get($breakpoints, md));
-      @include adaptive-value(
-        "padding-bottom",
-        33,
-        20,
-        map-get($breakpoints, md)
-      );
-      @include adaptive-value(
-        "padding-left",
-        50,
-        20,
-        map-get($breakpoints, md)
-      );
+      @include adaptive-value("padding-bottom", 33, 20, map-get($breakpoints, md));
+      @include adaptive-value("padding-left", 50, 20, map-get($breakpoints, md));
+    }
+    &_hidden {
+      visibility: hidden;
+      opacity: 0;
+      pointer-events: none;
     }
   }
   &__footnote-box {
@@ -204,7 +193,6 @@
       position: absolute;
       top: 20%;
       left: 0;
-      // max-width: rem(490);
       z-index: $zIndexLight;
       display: grid;
       grid-template-columns: 1fr 2fr;
@@ -215,12 +203,7 @@
       font-style: normal;
       font-weight: 600;
       line-height: 100%;
-      @include adaptive-value(
-        "margin-bottom",
-        24,
-        10,
-        map-get($breakpoints, md)
-      );
+      @include adaptive-value("margin-bottom", 24, 10, map-get($breakpoints, md));
     }
   }
   &__description-text {
@@ -239,6 +222,14 @@
     }
   }
   &__sponsors {
+    position: absolute;
+    bottom: 6%;
+    left: 0;
+    z-index: $zIndexLight;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+  &__sponsors-box {
     @include media(md) {
       display: flex;
       flex-wrap: wrap;
@@ -248,7 +239,7 @@
       grid-row-start: 2;
       grid-column-start: 1;
       margin-right: rem(10);
-      max-width: rem(300);
+      max-width: rem(320);
     }
   }
   &__sponsors-icon {
@@ -257,18 +248,18 @@
       height: rem(44);
     }
     @include media(md) {
-      &.icon_logo-egger-1 {
-        order: 3;
-      }
-      &.icon_logo-kronospan-1 {
-        order: 1;
-      }
-      &.icon_logo-lemark-1 {
-        order: 2;
-      }
-      &.icon_logo-kedr-1 {
-        order: 2;
-      }
+      // &.icon_logo-egger-1 {
+      //   order: 3;
+      // }
+      // &.icon_logo-kronospan-1 {
+      //   order: 1;
+      // }
+      // &.icon_logo-lemark-1 {
+      //   order: 2;
+      // }
+      // &.icon_logo-kedr-1 {
+      //   order: 2;
+      // }
     }
   }
 }

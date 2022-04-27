@@ -1,0 +1,9 @@
+include ../../forms/call-form/call-form
+
+mixin video-popup()
+    div.video-popup.popup-close-video
+        button.video-popup__close.popup-close-video(type='button')
+        .video-popup__container
+            video.video-popup__player(src="" controls preload='metadata')
+            .video-popup__error
+                h3.video-popup__error-title.h2 Кажется с этим видео что то не так :(

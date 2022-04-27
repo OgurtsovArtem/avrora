@@ -3,6 +3,17 @@
   position: relative;
   &__container {
   }
+  &__stamp {
+    display: none;
+    @include media(lg) {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 30%;
+      height: rem(150);
+    }
+  }
   &__title {
     font-family: "Philosopher";
     font-style: normal;

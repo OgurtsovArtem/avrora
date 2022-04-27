@@ -5,10 +5,12 @@ export default class Form {
     this.popupNext = popupNext;
     this.popupCurrent = popupCurrent;
 
-    //константы
+    // Внутренние переменные
     this.submitButton = null;
     this.inputs = [];
     this.errorTimouts = 1000;
+    this.formIsValid = false;
+    this.dataAttributes = {};
 
     //Текст ошибок валидации
     this.words = {
@@ -27,6 +29,12 @@ export default class Form {
       this.submit(); // ставим event submit на форму для отправки
     }
   }
+  // Получает массив обьектов с атрибутами, используется когда форма в попапе (см.popup.js функция checkAttributes)
+  addAttributes(attributes) {
+    if (attributes) {
+      this.dataAttributes = attributes;
+    }
+  }
   // Поиск нужных полей формы
   searchFormElements() {
     [...this.form.elements].forEach((element) => {
@@ -36,7 +44,61 @@ export default class Form {
       if (element.nodeName === "BUTTON" && element.type === "submit") {
         this.submitButton = element;
       }
+      if (element.type === "file") {
+        this.formfileHandler(element);
+      }
     });
+  }
+  formFileClear() {
+    // Установка текста по умолчанию
+    if (!this.textFileSelector) {
+      return;
+    }
+    this.textFileSelector.textContent = this.initialFileText;
+  }
+  // Поле с файлом настроено на работу как при добавлении 1 файла так и нескольких.
+
+  formfileHandler(inputFile) {
+    // Поиск текстового поля, в которое записывается название прикрепляемого файла
+    this.textFileSelector = this.form.querySelector(".input-file-text-js");
+    // Сохранение текстового значения по умолчанию.
+    this.initialFileText = this.textFileSelector.textContent;
+    let fileList;
+
+    // Событие выбора файла(ов)
+    inputFile.addEventListener("change", () => {
+      // создаём массив файлов
+      fileList = [];
+      for (let i = 0; i < inputFile.files.length; i++) {
+        fileList.push(inputFile.files[i]);
+      }
+
+      // вызов функции для каждого файла
+      fileList.forEach((file) => {
+        uploadFile(file);
+      });
+    });
+
+    // Проверяем размер файлов и выводим название
+    const uploadFile = (file) => {
+      // файла < 20 Мб
+      if (file.size > 20 * 1024 * 1024) {
+        alert(` Файл должен быть не более 20 МБ. (${file.name})`);
+        return;
+      }
+
+      // Показ загружаемых файлов
+      if (file && fileList.length > 1) {
+        if (fileList.length <= 4) {
+          this.textFileSelector.textContent = `Выбрано ${fileList.length} файла`;
+        }
+        if (fileList.length > 4) {
+          this.textFileSelector.textContent = `Выбрано ${fileList.length} файлов`;
+        }
+      } else {
+        this.textFileSelector.textContent = file.name;
+      }
+    };
   }
   // Установка слушателя на каждый input
   inputObserve() {
@@ -51,6 +113,7 @@ export default class Form {
       this.removeFilledClass(input);
       this.removeInputError(input);
     });
+    this.formFileClear();
   }
   //Валидация формы при клике на кнопку submit
   checkFormValidity() {
@@ -94,6 +157,7 @@ export default class Form {
       nextElement.remove();
     }
   }
+
   //Валидация инпута
   checkInputValidity(input) {
     const { validationLenght, validationNull, validationEmail, validationCheckbox } = this.words;
@@ -103,18 +167,23 @@ export default class Form {
     switch (true) {
       case input.validity.tooShort:
         this.inputError(input, validationLenght);
+        this.formIsValid = false;
         break;
       case input.validity.valueMissing:
         this.inputError(input, validationNull);
+        this.formIsValid = false;
         break;
       case input.validity.typeMismatch:
         this.inputError(input, validationEmail);
+        this.formIsValid = false;
         break;
       case !input.checked && input.type === "checkbox":
         this.inputError(input, validationCheckbox);
+        this.formIsValid = false;
         break;
       default:
         this.removeInputError(input);
+        this.formIsValid = true;
         break;
     }
   }
@@ -135,26 +204,52 @@ export default class Form {
   stopPreloader() {
     this.submitButton.lastChild.remove();
   }
+  formDataSettings(formData) {
+    // Коменджик
+    let comagicData = window.Comagic ? window.Comagic.getCredentials() : null;
+    for (let item in comagicData)
+      comagicData.hasOwnProperty(item) && formData.append(item, comagicData[item]);
+
+    // Отправка названия формы
+    this.form.getAttribute("name") ? formData.append("type", this.form.getAttribute("name")) : null;
+
+    // Добавляем технические атрибуты с кнопки открытия если они есть
+    for (let key in this.dataAttributes) {
+      formData.append(key, this.dataAttributes[key]);
+    }
+  }
   // Обработка отправки
   submit() {
     let isSending = false; // флаг для избежания спама кликов
     this.form.addEventListener("submit", (event) => {
       event.preventDefault();
+      if (!this.formIsValid) {
+        return;
+      }
       // проверяем не закончился ли еще предыдущий запрос
       if (isSending) {
         return;
       }
       const formData = new FormData(this.form);
+      this.formDataSettings(formData);
+
       isSending = true; // запрещаем последующие запросы пока не завершится текущий
 
       this.runPreloader(); // запускаем лоудер при отправке
       this.submitButton.dataset.errorName = ""; // обнуляем сообщение об ошибке
 
       this.sendForm(formData)
-        .then(() => {
+        .then((res) => {
+          console.log(res);
           this.form.dataset.state = "success"; // Статус формы
           this.popupCurrent ? this.popupCurrent.close() : null; // закрываем текущий попап при успешной отправке
           this.popupNext ? this.popupNext.open() : null; // открываем следующий попап(например с успешной отправкой формы)
+          window.ym && ym(69035068, "reachGoal", "formsubmit"); // метрика
+
+          // редирект страницы оплаты
+          if (res.confirmation_url) {
+            document.location.href = res.confirmation_url;
+          }
         })
         .catch((error) => {
           this.form.dataset.state = "error"; // Статус формы
@@ -170,10 +265,6 @@ export default class Form {
   }
   // Отправка формы
   sendForm(data) {
-    const body = JSON.stringify({
-      name: this.form.name,
-      data: JSON.stringify(data),
-    });
     const url = this.form.action;
     return fetch(url, {
       method: "POST",
@@ -182,12 +273,12 @@ export default class Form {
       headers: {
         "Content-Type": "form/multipart",
       },
-      body,
+      body: data,
     }).then((response) => {
       if (!response.ok) {
         throw response;
       }
-      return response;
+      return response.json();
     });
   }
   // Маска на поле телефона

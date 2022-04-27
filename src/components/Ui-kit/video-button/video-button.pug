@@ -4,4 +4,4 @@ mixin video-button({link="#", className, text, color, circle})
             span.video-button__circle
         span.video-button__icon-box
             +icon('play', 'video-button__icon')
-        a.video-button__link(href=link, target="_blank", rel="noopener noreferrer")=text
+        p.video-button__link=text

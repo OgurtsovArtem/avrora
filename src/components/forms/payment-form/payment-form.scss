@@ -10,12 +10,7 @@
     border: none;
     padding: 0;
     &:not(:last-child) {
-      @include adaptive-value(
-        "margin-bottom",
-        95,
-        65,
-        map-get($breakpoints, es)
-      );
+      @include adaptive-value("margin-bottom", 95, 65, map-get($breakpoints, es));
     }
   }
   &__box-title {
@@ -26,6 +21,12 @@
     font-size: rem(16);
     line-height: 140%;
     color: $color-white;
+    &_mail ~ .input__error {
+      top: 220%;
+      @media (min-width: (map-get($breakpoints, md)+px)) and (max-width: 880px) {
+        top: 320%;
+      }
+    }
   }
   &__input-twice {
     @include media(md) {

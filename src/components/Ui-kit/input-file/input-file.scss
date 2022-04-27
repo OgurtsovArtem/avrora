@@ -36,6 +36,7 @@
     height: rem(40);
     border-radius: 50%;
     background-color: $color-gray-200;
+    flex-shrink: 0;
   }
   &__icon {
     width: rem(15);
@@ -50,5 +51,11 @@
     line-height: 120%;
     margin-left: rem(10);
     transition: color $transitionNormal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
   }
 }

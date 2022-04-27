@@ -27,13 +27,9 @@
   &__item {
     border-bottom: rem(1) solid $color-gray-510;
     @include adaptive-value("margin-top", 35, 15, map-get($breakpoints, es));
-    @include adaptive-value(
-      "padding-bottom",
-      35,
-      15,
-      map-get($breakpoints, es)
-    );
+    @include adaptive-value("padding-bottom", 35, 15, map-get($breakpoints, es));
     padding-left: rem(15);
+    padding-right: rem(10);
   }
   &__link {
     display: grid;

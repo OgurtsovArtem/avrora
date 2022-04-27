@@ -2,12 +2,15 @@ import * as accordion from "./accordion";
 import * as circleText from "./circleText";
 import * as map from "./map";
 import * as swipers from "./swipers";
-
+import trottleResize from "./throttle";
 import header from "./header";
 
 import Observer from "./observer";
 import Popups from "./popups";
+import VideoPopup from "./video-popup";
 import Form from "./form";
+
+// trottleResize(); // Если нужен оптимизированный скролл
 
 // ====================== LAZY-LOADING ======================
 const lazyImages = [...document.querySelectorAll("img[data-lazy], source[data-lazy]")];
@@ -26,7 +29,7 @@ if (animUpwards) {
     const upWardsAnimation = new Observer({
       element: animEl,
       playOnce: true,
-      rootMargin: "-20%",
+      rootMargin: "-10%",
     });
   });
 }
@@ -63,6 +66,12 @@ const creditPopupDirected = new Popups({
   closeButtonClass: "popup-close-credit",
   openButtons: document.querySelectorAll("[data-popup-open='credit']"),
 });
+
+const videoPopup = new VideoPopup({
+  popupClass: "video-popup",
+  closeButtonClass: "popup-close-video",
+  openButtons: document.querySelectorAll("[data-popup-open='video']"),
+});
 // ====================== FORM ======================
 const application = document.forms.application;
 const applicationFrom = new Form(application, {
@@ -93,18 +102,24 @@ calcPopup.form = calcFrom; // передаем форму для использ�
 const payment = document.forms.payment;
 const paymentFrom = new Form(payment, {
   errorClass: "input__error",
-  popupNext: donePopup,
 });
 
 // ====================== MASONRY ======================
 
 if (document.querySelector(".reviews-list__body")) {
+  const stamp = document.querySelector(".reviews-list__stamp");
   const masonryReviews = new Masonry(".reviews-list__body", {
     itemSelector: ".masonry-element",
     columnWidth: ".reviews-list__card",
     gutter: ".reviews-list__column-gap",
     percentPosition: true,
   });
+  if (masonryReviews.items.length <= 3) {
+    masonryReviews.stamp(stamp);
+  } else {
+    masonryReviews.unstamp(stamp);
+  }
+  masonryReviews.layout();
 }
 
 // ====================== ACCORDIONS ======================

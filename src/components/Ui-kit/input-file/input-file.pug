@@ -2,8 +2,8 @@ include ../icon/icon
 
 mixin input-file({id, text, name, className})
         div(class= className ? `input-file ${className}`: 'input-file')
-            input.input-file__field(id=id, type="file", name=name || false)
+            input.input-file__field(id=id, type="file", name="files[]" multiple="multiple")
             label.input-file__label(for=id)
                 .input-file__icon-box
                     +icon("file-clip","input-file__icon")
-                p.input-file__label-text=text
+                p.input-file__label-text.input-file-text-js=text

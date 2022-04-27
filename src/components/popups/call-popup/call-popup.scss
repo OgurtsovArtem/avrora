@@ -20,7 +20,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba($color: #000000, $alpha: 0.3);
+    background: rgba(40, 49, 67, 0.75);
     z-index: -1;
   }
   &._active {
@@ -41,12 +41,7 @@
     box-shadow: $depth2;
     border: rem(1) solid $color-primary;
     @include adaptive-value("padding-top", 63, 40, map-get($breakpoints, es));
-    @include adaptive-value(
-      "padding-bottom",
-      50,
-      20,
-      map-get($breakpoints, es)
-    );
+    @include adaptive-value("padding-bottom", 50, 20, map-get($breakpoints, es));
     @include adaptive-value("padding-left", 60, 10, map-get($breakpoints, es));
     @include adaptive-value("padding-right", 60, 10, map-get($breakpoints, es));
 

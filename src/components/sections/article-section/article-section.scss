@@ -33,6 +33,7 @@
     font-size: rem(15);
     line-height: 160%;
     max-width: rem($max-width-description);
+    @include adaptive-value("margin-bottom", 50, 35, map-get($breakpoints, es));
     @include media(md) {
       grid-column-start: 2;
     }
@@ -47,6 +48,41 @@
     @include adaptive-value("margin-top", 85, 60, map-get($breakpoints, md));
     @include media(md) {
       grid-column-start: 2;
+    }
+    &_top-null {
+      margin-top: 0;
+    }
+    &-s {
+      @include adaptive-value("margin-top", 50, 35, map-get($breakpoints, md));
+      @include adaptive-value("font-size", 22, 18, map-get($breakpoints, md));
+      margin-bottom: rem(17);
+      @include media(md) {
+        grid-column-start: 2;
+      }
+      &_top-null {
+        margin-top: 0;
+      }
+    }
+    &-m {
+      @include adaptive-value("margin-top", 85, 60, map-get($breakpoints, md));
+      @include adaptive-value("font-size", 28, 22, map-get($breakpoints, md));
+      margin-bottom: rem(17);
+      @include media(md) {
+        grid-column-start: 2;
+      }
+      &_top-null {
+        margin-top: 0;
+      }
+    }
+    &-l {
+      @include adaptive-value("font-size", 36, 26, map-get($breakpoints, es));
+      margin-bottom: rem(17);
+      @include media(md) {
+        grid-column-start: 2;
+      }
+      &_top-null {
+        margin-top: 0;
+      }
     }
   }
   &__subtitle-number {
@@ -70,7 +106,7 @@
   }
   &__image {
     object-fit: cover;
-    width: 117%;
+    width: 100vw;
     margin-left: rem(-$containerIndentation);
     margin-right: rem(-$containerIndentation);
     @include adaptive-value(

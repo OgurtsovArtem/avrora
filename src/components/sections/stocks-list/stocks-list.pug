@@ -1,0 +1,32 @@
+mixin stocks-list()
+ section.stocks-list.max-container
+    h1.stocks-list__title.h1.medium-container Акции
+    .stocks-list__container.min-container
+        .stocks-list__banner.stocks-banner.stocks-banner_text-white
+            picture.stocks-banner__background
+                source(data-srcset=`./assets/images/stocks/stock_1.jpg` media="(min-width: 520px)" data-lazy)
+                img(data-src=`./assets/images/stocks/stock_1_mobile.jpg`, alt="banner", data-lazy)
+            h2.stocks-banner__title.h4 Гарантированный подарок на выбор при заключении договора
+            p.stocks-banner__text.txt блендер, стационарный блендер, сковорода гриль, сковорода, бутылочница
+
+        .stocks-list__banner.stocks-banner
+            picture.stocks-banner__background
+                source(data-srcset=`./assets/images/stocks/stock_2.jpg` media="(min-width: 520px)" data-lazy)
+                img(data-src=`./assets/images/stocks/stock_2_mobile.jpg`, alt="banner", data-lazy)
+            h2.stocks-banner__title.h4 Кэшбек 5000 ₽ за рекомендацию
+            p.stocks-banner__text.txt Подробности у операторов по телефону
+
+        .stocks-list__banner.stocks-banner.stocks-banner_text-white
+            picture.stocks-banner__background
+                source(data-srcset=`./assets/images/stocks/stock_3.jpg` media="(min-width: 520px)" data-lazy)
+                img(data-src=`./assets/images/stocks/stock_3_mobile.jpg`, alt="banner", data-lazy)
+            h2.stocks-banner__title.h4 Гарантия лучшей цены
+            p.stocks-banner__text.txt Нашли дешевле? Снизим цену!
+            p.stocks-banner__text.txt Подробности у операторов по телефону
+
+        .stocks-list__banner.stocks-banner
+            picture.stocks-banner__background
+                source(data-srcset=`./assets/images/stocks/stock_4.jpg` media="(min-width: 520px)" data-lazy)
+                img(data-src=`./assets/images/stocks/stock_4_mobile.jpg`, alt="banner", data-lazy)
+            h2.stocks-banner__title.h4 Новосёлам, пенсионерам и ветеранам — скидка 5%
+            p.stocks-banner__text.txt Подробности у операторов по телефону

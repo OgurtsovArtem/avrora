@@ -33,12 +33,7 @@
 
   &__description {
     @include adaptive-value("padding-top", 60, 40, map-get($breakpoints, es));
-    @include adaptive-value(
-      "padding-bottom",
-      60,
-      40,
-      map-get($breakpoints, es)
-    );
+    @include adaptive-value("padding-bottom", 60, 40, map-get($breakpoints, es));
     @include adaptive-value("padding-left", 65, 0, map-get($breakpoints, sm));
     @include adaptive-value("padding-right", 65, 0, map-get($breakpoints, sm));
     &_remove-top-padding {
@@ -62,6 +57,7 @@
     margin-bottom: rem(15);
   }
   &__video-button {
+    margin-bottom: 2rem;
   }
   &__info {
     @include adaptive-value("margin-top", 30, 20, map-get($breakpoints, es));

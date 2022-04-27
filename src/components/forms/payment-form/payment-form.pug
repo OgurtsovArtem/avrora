@@ -21,11 +21,11 @@ mixin payment-form()
                     type: 'tel'
                 })(required)
                 +input({
-                    className: 'payment-form__input',
+                    className: 'payment-form__input ',
                     id: 'payment-form-name',
                     placeholder: 'Mail',
                     type: 'mail'
-                })
+                }).payment-form__input_mail(required)
                     span.payment-form__input-footnote Сюда мы пришлём квитанцию об оплате
         fieldset.payment-form__box
             legend.payment-form__legend.h4 2. Платёжная информация

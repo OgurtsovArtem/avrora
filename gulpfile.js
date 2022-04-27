@@ -100,21 +100,15 @@ function images() {
         progressive: true,
         svgoPlugins: [{ removeViewBox: false }],
         interlaced: true,
-        optimizationLevel: 5, // 0 to 7
+        optimizationLevel: 3, // 0 to 7
       })
     )
     .pipe(gulp.dest("dist/assets/images/"));
 }
 
 function fonts() {
-  gulp
-    .src("src/fonts/*.ttf")
-    .pipe(ttf2woff())
-    .pipe(gulp.dest("dist/assets/fonts/"));
-  return gulp
-    .src("src/fonts/*.ttf")
-    .pipe(ttf2woff2())
-    .pipe(gulp.dest("dist/assets/fonts/"));
+  gulp.src("src/fonts/*.ttf").pipe(ttf2woff()).pipe(gulp.dest("dist/assets/fonts/"));
+  return gulp.src("src/fonts/*.ttf").pipe(ttf2woff2()).pipe(gulp.dest("dist/assets/fonts/"));
 }
 
 function public() {
@@ -127,10 +121,7 @@ function serve() {
   gulp.watch("src/**/*.scss", gulp.series(styles, reload));
   gulp.watch("src/**/*.js", gulp.series(scripts, reload));
   gulp.watch("src/icons/*.svg", gulp.series(icons, reload));
-  gulp.watch(
-    "src/images/**/*.+(png|jpg|gif|ico|svg|webp|jpeg)",
-    gulp.series(images, reload)
-  );
+  gulp.watch("src/images/**/*.+(png|jpg|gif|ico|svg|webp|jpeg)", gulp.series(images, reload));
   gulp.watch("src/fonts/*.ttf", gulp.series(fonts, reload));
   gulp.watch("public/**/*", gulp.series(public, reload));
 }
@@ -142,17 +133,7 @@ function reload(done) {
 
 const build = gulp.series(
   clean,
-  gulp.parallel(
-    views,
-    styles,
-    scripts,
-    icons,
-    images,
-    vendorJs,
-    vendorCss,
-    fonts,
-    public
-  )
+  gulp.parallel(views, styles, scripts, icons, images, vendorJs, vendorCss, fonts, public)
 );
 
 exports.build = build;

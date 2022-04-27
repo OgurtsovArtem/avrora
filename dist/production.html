@@ -77,10 +77,11 @@
         <div class="production-intro__screen">
           <div class="min-container">
             <h1 class="production-intro__title h1">Производство</h1>
-            <button class="video-button video-button_white production-intro__video-button"><span class="video-button__circle"></span><span class="video-button__icon-box">
+            <button class="video-button video-button_white production-intro__video-button" data-video-desktop="http://seohost2-modx.tw1.ru/assets/video/production_intro_video.mp4" data-video-mobile="block/43a/302mxykntcp7jxvvasvu6p6ch4nheiq9.mp4" data-popup-open="video"><span class="video-button__circle"></span><span class="video-button__icon-box">
                 <svg class="video-button__icon video-button__icon_play icon_play">
                   <use xlink:href="./assets/icons/sprite.svg#play"></use>
-                </svg></span><a class="video-button__link" href="#" target="_blank" rel="noopener noreferrer">видео с производства</a>
+                </svg></span>
+              <p class="video-button__link">видео с производства</p>
             </button>
             <p class="production-intro__text h3">Краткое вступительное слово с рассказом о компании: кто они, как давно работают, упомянуть про принципы работы и философию бренда</p>
           </div>
@@ -113,7 +114,7 @@
         </div>
       </section>
       <section class="stages content-hidden">
-        <div class="production-worker-banner production-worker-banner_reverse stages__worker-banner min-container">
+        <div class="production-worker-banner production-worker-banner_reverse production-worker-banner_text-white stages__worker-banner min-container">
           <div class="production-worker-banner__container production-worker-banner__container_one">
             <picture class="production-worker-banner__image">
               <source data-srcset="./assets/images/banners/production/banner_3.jpg" media="(min-width: 1380px)" data-lazy="data-lazy"/>
@@ -421,14 +422,14 @@
                 </label>
               </div>
               <div class="input-file application-form__input">
-                <input class="input-file__field" id="application-form-file" type="file" name="aplication-form-file"/>
+                <input class="input-file__field" id="application-form-file" type="file" name="files[]" multiple="multiple"/>
                 <label class="input-file__label" for="application-form-file">
                   <div class="input-file__icon-box">
                     <svg class="input-file__icon input-file__icon_file-clip icon_file-clip">
                       <use xlink:href="./assets/icons/sprite.svg#file-clip"></use>
                     </svg>
                   </div>
-                  <p class="input-file__label-text">Хочу приложить эскиз или пример</p>
+                  <p class="input-file__label-text input-file-text-js">Хочу приложить эскиз или пример</p>
                 </label>
               </div>
               <button class="application-form__button button" type="submit">Отправить
@@ -462,6 +463,19 @@
                   <h3 class="materials__description-title h3">ЛДСП</h3>
                   <p class="materials__description-text txt">Столешницы и корпус изготавливаются из ЛДСП и имеют сертификат гигиенической безопасности категории Е1. Просты в уходе, отличаются повышенной влаго- и износостойкостью.</p>
                 </div>
+                <div class="materials__sponsors">
+                  <div class="materials__sponsors-box">
+                    <svg class="materials__sponsors-icon materials__sponsors-icon_logo-kronospan-1 icon_logo-kronospan-1">
+                      <use xlink:href="./assets/icons/sprite.svg#logo-kronospan-1"></use>
+                    </svg>
+                    <svg class="materials__sponsors-icon materials__sponsors-icon_logo-lemark-1 icon_logo-lemark-1">
+                      <use xlink:href="./assets/icons/sprite.svg#logo-lemark-1"></use>
+                    </svg><img class="materials__sponsors-icon icon_logo-kedr-1" src="./assets/icons/logo-kedr-1.svg" alt=""/>
+                    <svg class="materials__sponsors-icon materials__sponsors-icon_logo-egger-1 icon_logo-egger-1">
+                      <use xlink:href="./assets/icons/sprite.svg#logo-egger-1"></use>
+                    </svg>
+                  </div>
+                </div>
               </div>
               <div class="materials__item swiper-slide">
                 <div class="materials__image-box"><img class="materials__image" src="./assets/images/materials/desctop.jpg" alt="material"/>
@@ -480,23 +494,18 @@
                   <h3 class="materials__description-title h3">МДФ</h3>
                   <p class="materials__description-text txt">Фасады из МДФ имеют огромное количество расцветок. Они просты в уходе, надежны и экологически безопасны. А так же покрыты специальным влагостойким материалом.</p>
                 </div>
-              </div>
-              <div class="materials__item swiper-slide">
-                <div class="materials__image-box"><img class="materials__image" src="./assets/images/materials/desctop.jpg" alt="material"/>
-                  <div class="materials__footnote">
-                    <div class="materials__footnote-box">
-                      <p class="materials__footnote-name">Толщина ЛДСП</p>
-                      <p class="materials__footnote-value">до 500 мм</p>
-                    </div>
-                    <div class="materials__footnote-box">
-                      <p class="materials__footnote-name">Срок службы</p>
-                      <p class="materials__footnote-value">30 лет</p>
-                    </div>
+                <div class="materials__sponsors">
+                  <div class="materials__sponsors-box">
+                    <svg class="materials__sponsors-icon materials__sponsors-icon_logo-egger-1 icon_logo-egger-1">
+                      <use xlink:href="./assets/icons/sprite.svg#logo-egger-1"></use>
+                    </svg>
+                    <svg class="materials__sponsors-icon materials__sponsors-icon_logo-agt icon_logo-agt">
+                      <use xlink:href="./assets/icons/sprite.svg#logo-agt"></use>
+                    </svg>
+                    <svg class="materials__sponsors-icon materials__sponsors-icon_logo-fenix icon_logo-fenix">
+                      <use xlink:href="./assets/icons/sprite.svg#logo-fenix"></use>
+                    </svg>
                   </div>
-                </div>
-                <div class="materials__description">
-                  <h3 class="materials__description-title h3">Фурнитура</h3>
-                  <p class="materials__description-text txt">Несколько разных вариантов покрытия под любой вкус и бюджет: МДФ+ПВХ, МДФ+ полупластик AGT, МДФ + многослойная эмаль.</p>
                 </div>
               </div>
               <div class="materials__item swiper-slide">
@@ -531,8 +540,58 @@
                   </div>
                 </div>
                 <div class="materials__description">
+                  <h3 class="materials__description-title h3">Фурнитура</h3>
+                  <p class="materials__description-text txt">Несколько разных вариантов покрытия под любой вкус и бюджет: МДФ+ПВХ, МДФ+ полупластик AGT, МДФ + многослойная эмаль.</p>
+                </div>
+                <div class="materials__sponsors">
+                  <div class="materials__sponsors-box">
+                    <svg class="materials__sponsors-icon materials__sponsors-icon_logo-kessebohmer icon_logo-kessebohmer">
+                      <use xlink:href="./assets/icons/sprite.svg#logo-kessebohmer"></use>
+                    </svg>
+                    <svg class="materials__sponsors-icon materials__sponsors-icon_logo-hettich icon_logo-hettich">
+                      <use xlink:href="./assets/icons/sprite.svg#logo-hettich"></use>
+                    </svg>
+                    <svg class="materials__sponsors-icon materials__sponsors-icon_logo-blum icon_logo-blum">
+                      <use xlink:href="./assets/icons/sprite.svg#logo-blum"></use>
+                    </svg>
+                    <svg class="materials__sponsors-icon materials__sponsors-icon_logo-boyard icon_logo-boyard">
+                      <use xlink:href="./assets/icons/sprite.svg#logo-boyard"></use>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div class="materials__item swiper-slide">
+                <div class="materials__image-box"><img class="materials__image" src="./assets/images/materials/desctop.jpg" alt="material"/>
+                  <div class="materials__footnote">
+                    <div class="materials__footnote-box">
+                      <p class="materials__footnote-name">Толщина ЛДСП</p>
+                      <p class="materials__footnote-value">до 500 мм</p>
+                    </div>
+                    <div class="materials__footnote-box">
+                      <p class="materials__footnote-name">Срок службы</p>
+                      <p class="materials__footnote-value">30 лет</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="materials__description">
                   <h3 class="materials__description-title h3">Техника</h3>
                   <p class="materials__description-text txt">Встраиваемая техника от ведущих компаний из Италии, Китая и России. Широкий выбор и богатый ассортимент. Подбираем варианты, основываясь на проекте вашей будущей кухни.</p>
+                </div>
+                <div class="materials__sponsors">
+                  <div class="materials__sponsors-box">
+                    <svg class="materials__sponsors-icon materials__sponsors-icon_logo-kuche icon_logo-kuche">
+                      <use xlink:href="./assets/icons/sprite.svg#logo-kuche"></use>
+                    </svg>
+                    <svg class="materials__sponsors-icon materials__sponsors-icon_logo-candy icon_logo-candy">
+                      <use xlink:href="./assets/icons/sprite.svg#logo-candy"></use>
+                    </svg>
+                    <svg class="materials__sponsors-icon materials__sponsors-icon_logo-midea icon_logo-midea">
+                      <use xlink:href="./assets/icons/sprite.svg#logo-midea"></use>
+                    </svg>
+                    <svg class="materials__sponsors-icon materials__sponsors-icon_logo-simfer-1 icon_logo-simfer-1">
+                      <use xlink:href="./assets/icons/sprite.svg#logo-simfer-1"></use>
+                    </svg>
+                  </div>
                 </div>
               </div>
             </div>
@@ -541,17 +600,6 @@
                 <use xlink:href="./assets/icons/sprite.svg#arrow-medium"></use>
               </svg>
             </button>
-          </div>
-          <div class="materials__sponsors">
-            <svg class="materials__sponsors-icon materials__sponsors-icon_logo-kronospan-1 icon_logo-kronospan-1">
-              <use xlink:href="./assets/icons/sprite.svg#logo-kronospan-1"></use>
-            </svg>
-            <svg class="materials__sponsors-icon materials__sponsors-icon_logo-lemark-1 icon_logo-lemark-1">
-              <use xlink:href="./assets/icons/sprite.svg#logo-lemark-1"></use>
-            </svg><img class="materials__sponsors-icon icon_logo-kedr-1" src="./assets/icons/logo-kedr-1.svg" alt=""/>
-            <svg class="materials__sponsors-icon materials__sponsors-icon_logo-egger-1 icon_logo-egger-1">
-              <use xlink:href="./assets/icons/sprite.svg#logo-egger-1"></use>
-            </svg>
           </div>
         </div>
       </section>
@@ -696,14 +744,14 @@
               </label>
             </div>
             <div class="input-file calc-form__input">
-              <input class="input-file__field" id="calc-form-file" type="file" name="calc-form-file"/>
+              <input class="input-file__field" id="calc-form-file" type="file" name="files[]" multiple="multiple"/>
               <label class="input-file__label" for="calc-form-file">
                 <div class="input-file__icon-box">
                   <svg class="input-file__icon input-file__icon_file-clip icon_file-clip">
                     <use xlink:href="./assets/icons/sprite.svg#file-clip"></use>
                   </svg>
                 </div>
-                <p class="input-file__label-text">Хочу приложить эскиз или пример</p>
+                <p class="input-file__label-text input-file-text-js">Хочу приложить эскиз или пример</p>
               </label>
             </div>
             <button class="calc-form__button button" type="submit">Отправить
@@ -742,6 +790,15 @@
             <p class="done-popup__text txt">Наш менеджер свяжется с вами в ближайшее время и проконсультирует по всем вопросам.</p>
             <button class="done-popup__button popup-close-done button" type="button">Ок, понятно!
             </button>
+          </div>
+        </div>
+      </div>
+      <div class="video-popup popup-close-video">
+        <button class="video-popup__close popup-close-video" type="button"></button>
+        <div class="video-popup__container">
+          <video class="video-popup__player" src="" controls="controls" preload="metadata"></video>
+          <div class="video-popup__error">
+            <h3 class="video-popup__error-title h2">Кажется с этим видео что то не так :(</h3>
           </div>
         </div>
       </div>

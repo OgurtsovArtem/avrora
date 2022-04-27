@@ -1,10 +1,12 @@
+const DATA_FROM_ATTRIBUTES_INCLUDE = ["id", "name"]; // Массив атрибутов для формы
+
 export default class Popups {
   constructor({ popupClass, openButtons, closeButtonClass, activeClass }) {
     this.popupClass = popupClass;
     this.closeButtonClass = closeButtonClass;
     this.openButtons = openButtons;
-
     this.activeClass = activeClass || "_active";
+
     this.form = null;
 
     if (!document.querySelector(`.${this.popupClass}`)) {
@@ -25,10 +27,25 @@ export default class Popups {
     });
   }
 
+  // проверяем кнопку на дополнительные атрибуты
+  checkAttributes(button) {
+    let dataObj = {};
+
+    for (let attr of DATA_FROM_ATTRIBUTES_INCLUDE) {
+      const val = button.getAttribute(`data-${attr}`);
+      val && (dataObj[attr] = val);
+    }
+
+    this.form.addAttributes(dataObj);
+  }
+
   open(event) {
-    event.preventDefault();
     this.popup.classList.add(this.activeClass);
     document.body.style.overflow = "hidden";
+    if (this.form) {
+      window.ym && ym(69035068, "reachGoal", "formopen");
+      this.checkAttributes(event.currentTarget); // отправляем экземпляр кнопки для проверки атрибутов
+    }
   }
 
   checkEvents(event) {

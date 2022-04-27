@@ -108,16 +108,17 @@
                   <button class="kitchen-full__video-button video-button"><span class="video-button__icon-box">
                       <svg class="video-button__icon video-button__icon_play icon_play">
                         <use xlink:href="./assets/icons/sprite.svg#play"></use>
-                      </svg></span><a class="video-button__link" href="#" target="_blank" rel="noopener noreferrer">Видеоотзыв</a>
+                      </svg></span>
+                    <p class="video-button__link">Видеоотзыв</p>
                   </button>
                   <div class="kitchen-info-box__price"><span class="kitchen-info-box__price-current">100 500 ₽</span><span class="kitchen-info-box__price-old">100 500 ₽</span>
                     <p class="kitchen-info-box__price-text">цена за весь гарнитур</p>
                   </div>
                 </div>
                 <div class="kitchen-info-box__bottom">
-                  <button class="kitchen-info-box__button kitchen-info-box__button_white button button_white" type="button" data-popup-open="call">Пригласить замерщика
+                  <button class="kitchen-info-box__button kitchen-info-box__button_white button button_white" type="button" data-popup-open="call" data-id="9" data-name="test5">Пригласить замерщика
                   </button>
-                  <button class="kitchen-info-box__button button" type="button" data-popup-open="calc">Рассчитать мой проект
+                  <button class="kitchen-info-box__button button" type="button" data-popup-open="calc" data-id="9" data-name="test5">Рассчитать мой проект
                   </button>
                 </div>
               </div>
@@ -200,7 +201,8 @@
                 <button class="detail-feedback__video-button video-button"><span class="video-button__icon-box">
                     <svg class="video-button__icon video-button__icon_play icon_play">
                       <use xlink:href="./assets/icons/sprite.svg#play"></use>
-                    </svg></span><a class="video-button__link" href="#" target="_blank" rel="noopener noreferrer">Видеоотзыв</a>
+                    </svg></span>
+                  <p class="video-button__link">Видеоотзыв</p>
                 </button>
                 <div class="detail-feedback__rating">
                   <div class="detail-feedback__stars stars">
@@ -273,14 +275,14 @@
                   </label>
                 </div>
                 <div class="input-file application-form__input">
-                  <input class="input-file__field" id="application-form-file" type="file" name="aplication-form-file"/>
+                  <input class="input-file__field" id="application-form-file" type="file" name="files[]" multiple="multiple"/>
                   <label class="input-file__label" for="application-form-file">
                     <div class="input-file__icon-box">
                       <svg class="input-file__icon input-file__icon_file-clip icon_file-clip">
                         <use xlink:href="./assets/icons/sprite.svg#file-clip"></use>
                       </svg>
                     </div>
-                    <p class="input-file__label-text">Хочу приложить эскиз или пример</p>
+                    <p class="input-file__label-text input-file-text-js">Хочу приложить эскиз или пример</p>
                   </label>
                 </div>
                 <button class="application-form__button button" type="submit">Отправить
@@ -591,14 +593,14 @@
                 </label>
               </div>
               <div class="input-file calc-form__input">
-                <input class="input-file__field" id="calc-form-file" type="file" name="calc-form-file"/>
+                <input class="input-file__field" id="calc-form-file" type="file" name="files[]" multiple="multiple"/>
                 <label class="input-file__label" for="calc-form-file">
                   <div class="input-file__icon-box">
                     <svg class="input-file__icon input-file__icon_file-clip icon_file-clip">
                       <use xlink:href="./assets/icons/sprite.svg#file-clip"></use>
                     </svg>
                   </div>
-                  <p class="input-file__label-text">Хочу приложить эскиз или пример</p>
+                  <p class="input-file__label-text input-file-text-js">Хочу приложить эскиз или пример</p>
                 </label>
               </div>
               <button class="calc-form__button button" type="submit">Отправить
