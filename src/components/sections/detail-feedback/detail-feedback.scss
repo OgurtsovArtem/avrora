@@ -16,19 +16,14 @@
   }
   &__description {
     max-width: rem(940);
+    & > p {
+      font-style: normal;
+      font-weight: 400;
+      line-height: 160%;
+      @include adaptive-value("margin-bottom", 40, 20, map-get($breakpoints, es));
+    }
   }
   &__text {
-    font-style: normal;
-    font-weight: 400;
-    line-height: 160%;
-    &:not(:last-child) {
-      @include adaptive-value(
-        "margin-bottom",
-        40,
-        20,
-        map-get($breakpoints, es)
-      );
-    }
   }
   &__description-footer {
     display: flex;

@@ -42,19 +42,19 @@
     &_remove-bottom-padding {
       padding-bottom: 0;
     }
+    & > p {
+      font-style: normal;
+      font-weight: 400;
+      line-height: 160%;
+      color: $color-text-secondary;
+      margin-bottom: rem(15);
+    }
   }
   &__title {
     font-style: normal;
     font-weight: 600;
     line-height: 100%;
     @include adaptive-value("margin-bottom", 26, 20, map-get($breakpoints, es));
-  }
-  &__text {
-    font-style: normal;
-    font-weight: 400;
-    line-height: 160%;
-    color: $color-text-secondary;
-    margin-bottom: rem(15);
   }
   &__video-button {
     margin-bottom: 2rem;
@@ -115,6 +115,7 @@
     margin-top: rem(25);
     border: rem(1) solid transparent;
     transition: $transitionNormal;
+    text-align: center;
     @media (any-hover: hover) {
       &:hover {
         background-color: rgb(247 249 252);
