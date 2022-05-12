@@ -163,7 +163,7 @@
     line-height: 1.4;
     color: $color-text-secondary;
     transition: opacity 0.3s ease;
-
+    margin-right: rem(10);
     &:hover {
       opacity: 0.5;
     }

@@ -218,6 +218,13 @@ export default class Form {
       formData.append(key, this.dataAttributes[key]);
     }
   }
+  // метрика при успешной отправке формы
+  metric() {
+    window.ym && ym(69035068, "reachGoal", "formsubmit");
+    window.VK && VK.Retargeting.Init("VK-RTRG-1394646-19WVf");
+    window.VK && VK.Retargeting.Event("lead");
+    window.VK && VK.Goal("lead");
+  }
   // Обработка отправки
   submit() {
     let isSending = false; // флаг для избежания спама кликов
@@ -240,12 +247,10 @@ export default class Form {
 
       this.sendForm(formData)
         .then((res) => {
-          console.log(res);
           this.form.dataset.state = "success"; // Статус формы
           this.popupCurrent ? this.popupCurrent.close() : null; // закрываем текущий попап при успешной отправке
           this.popupNext ? this.popupNext.open() : null; // открываем следующий попап(например с успешной отправкой формы)
-          window.ym && ym(69035068, "reachGoal", "formsubmit"); // метрика
-
+          this.metric(); // метрика
           // редирект страницы оплаты
           if (res.confirmation_url) {
             document.location.href = res.confirmation_url;

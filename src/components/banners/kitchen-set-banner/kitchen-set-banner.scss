@@ -2,12 +2,7 @@
   position: relative;
   &__container {
     @include adaptive-value("padding-top", 30, 10, map-get($breakpoints, es));
-    @include adaptive-value(
-      "padding-bottom",
-      30,
-      10,
-      map-get($breakpoints, es)
-    );
+    @include adaptive-value("padding-bottom", 30, 10, map-get($breakpoints, es));
     @include adaptive-value("padding-left", 70, 20, map-get($breakpoints, es));
     @include adaptive-value("padding-right", 70, 20, map-get($breakpoints, es));
     background-color: $color-gray-510;
@@ -24,6 +19,7 @@
     margin-left: auto;
   }
   &__button {
+    display: inline-block;
     margin-top: rem(16);
     color: $color-primary;
     position: relative;

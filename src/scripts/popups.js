@@ -1,4 +1,4 @@
-const DATA_FROM_ATTRIBUTES_INCLUDE = ["id", "name"]; // Массив атрибутов для формы
+const DATA_FROM_ATTRIBUTES_INCLUDE = ["item-id", "item"]; // Массив атрибутов для формы
 
 export default class Popups {
   constructor({ popupClass, openButtons, closeButtonClass, activeClass }) {

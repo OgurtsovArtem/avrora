@@ -63,10 +63,17 @@
   &__sponsors {
     display: flex;
     flex-wrap: wrap;
-    gap: rem(10);
+    justify-content: space-around;
+    gap: rem(30);
+    @media (max-width: (map-get($breakpoints, sm)+px)) {
+      gap: rem(10);
+    }
   }
   &__sponsors-icon {
-    width: calc(50% - rem(10));
+    width: calc(50% - rem(30));
     height: rem(40);
+    @media (max-width: (map-get($breakpoints, sm)+px)) {
+      width: calc(50% - rem(10));
+    }
   }
 }
